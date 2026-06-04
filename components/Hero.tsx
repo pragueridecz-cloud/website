@@ -7,11 +7,17 @@ export default function Hero() {
   useEffect(() => {
     // postMessage listener
     function onMessage(e: MessageEvent) {
-      if (!e.data || e.data.type !== "nll-height") return;
-      const h = Number(e.data.height);
-      if (!h || h < 300) return;
-      const iframe = iframeRef.current;
-      if (iframe) iframe.style.height = h + "px";
+      if (!e.data) return;
+      if (e.data.type === "nll-height") {
+        const h = Number(e.data.height);
+        if (!h || h < 300) return;
+        const iframe = iframeRef.current;
+        if (iframe) iframe.style.height = h + "px";
+      }
+      if (e.data.type === "nll-scroll-top") {
+        const iframe = iframeRef.current;
+        if (iframe) iframe.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
     window.addEventListener("message", onMessage);
 
