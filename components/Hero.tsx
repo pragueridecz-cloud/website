@@ -32,6 +32,8 @@ export default function Hero() {
           title="Rezervační formulář"
           className="w-full block rounded-xl shadow-2xl"
           scrolling="no"
+          style={{ background: "transparent" }}
+          allowTransparency={true}
           onLoad={() => {
             // Po načtení iframe počkej a naslouchej — widget začne posílat výšku
             console.log("[NLL] iframe loaded");
