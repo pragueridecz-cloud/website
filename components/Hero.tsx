@@ -8,7 +8,7 @@ export default function Hero() {
   useEffect(() => {
     function onMessage(e: MessageEvent) {
       if (e.data?.type === "nll-height" && iframeRef.current) {
-        iframeRef.current.style.height = (e.data.height + 20) + "px";
+        iframeRef.current.style.height = (e.data.height + 60) + "px";
       }
     }
     window.addEventListener("message", onMessage);
