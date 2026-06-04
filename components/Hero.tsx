@@ -11,7 +11,7 @@ export default function Hero() {
           alt="Doprava na letiště Praha — Mercedes minivan a Škoda Superb před Letištěm Václava Havla"
           fill
           priority
-          className="object-cover object-center"
+          className="object-contain object-center"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-white/40" />
