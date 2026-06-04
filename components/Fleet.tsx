@@ -1,4 +1,5 @@
 import { Users, Briefcase } from "lucide-react";
+import SectionHeading from "./SectionHeading";
 
 const cars = [
   {
@@ -43,14 +44,7 @@ export default function Fleet() {
   return (
     <section id="vozovy-park" className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-3">
-            Vozový park a ceny
-          </h2>
-          <p className="text-[#475569] max-w-lg mx-auto">
-            Pevné ceny bez překvapení. Vyberte vozidlo podle počtu cestujících a zavazadel.
-          </p>
-        </div>
+        <SectionHeading label="Vozový park" title="Vozový park a ceny" subtitle="Pevné ceny bez překvapení. Vyberte vozidlo podle počtu cestujících a zavazadel." center />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {cars.map((car) => (
             <div

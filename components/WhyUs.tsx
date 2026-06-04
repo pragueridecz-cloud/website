@@ -1,4 +1,5 @@
 import { Shield, Clock, MapPin, CreditCard, Plane, Users } from "lucide-react";
+import SectionHeading from "./SectionHeading";
 
 const features = [
   {
@@ -37,14 +38,7 @@ export default function WhyUs() {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-3">
-            Proč si vybrat nás?
-          </h2>
-          <p className="text-[#475569] max-w-xl mx-auto">
-            Nejsme taxi. Jsme předem rezervovaná doprava s garantovanou cenou a profesionálním přístupem.
-          </p>
-        </div>
+        <SectionHeading label="Výhody" title="Proč si vybrat nás?" highlight="" subtitle="Nejsme taxi. Jsme předem rezervovaná doprava s garantovanou cenou a profesionálním přístupem." center />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((f) => (
             <div

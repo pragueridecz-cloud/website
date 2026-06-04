@@ -1,3 +1,5 @@
+import SectionHeading from "./SectionHeading";
+
 const reviews = [
   {
     name: "Markéta S.",
@@ -23,15 +25,7 @@ export default function Testimonials() {
   return (
     <section className="py-16 bg-[#F8FAFC]">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-3">
-            Co říkají naši zákazníci
-          </h2>
-          <div className="flex items-center justify-center gap-2 text-sm text-[#475569]">
-            <span className="text-yellow-400">★★★★★</span>
-            <span>4,9/5 z 500+ recenzí</span>
-          </div>
-        </div>
+        <SectionHeading label="Recenze" title="Co říkají naši zákazníci" subtitle="4,9/5 z 500+ recenzí na Google a TripAdvisoru" center />
         <div className="grid md:grid-cols-3 gap-6">
           {reviews.map((r) => (
             <div

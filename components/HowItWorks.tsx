@@ -1,3 +1,5 @@
+import SectionHeading from "./SectionHeading";
+
 export default function HowItWorks() {
   const steps = [
     {
@@ -20,14 +22,7 @@ export default function HowItWorks() {
   return (
     <section id="jak-to-funguje" className="py-16 bg-[#EFF6FF]">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-3">
-            Jak to funguje?
-          </h2>
-          <p className="text-[#475569] max-w-lg mx-auto">
-            Rezervace trvá 2 minuty. Vše ostatní zařídíme my.
-          </p>
-        </div>
+        <SectionHeading label="Postup" title="Jak to funguje?" subtitle="Rezervace trvá 2 minuty. Vše ostatní zařídíme my." center />
         <div className="grid md:grid-cols-3 gap-8 relative">
           {/* connector line on desktop */}
           <div className="hidden md:block absolute top-8 left-1/6 right-1/6 h-0.5 bg-[#CBD5E1] z-0" />

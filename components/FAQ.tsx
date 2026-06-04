@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import SectionHeading from "./SectionHeading";
 
 const faqs = [
   {
@@ -39,17 +40,7 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-16 bg-white">
       <div className="max-w-3xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-3">
-            Časté otázky
-          </h2>
-          <p className="text-[#475569]">
-            Nenašli jste odpověď? Zavolejte nám na{" "}
-            <a href="tel:+420606079179" className="text-[#1E3A8A] font-semibold cursor-pointer">
-              +420 606 079 179
-            </a>
-          </p>
-        </div>
+        <SectionHeading label="Otázky" title="Časté otázky" subtitle="Nenašli jste odpověď? Zavolejte nám na +420 606 079 179" center />
         <div className="space-y-3">
           {faqs.map((faq, i) => (
             <div
