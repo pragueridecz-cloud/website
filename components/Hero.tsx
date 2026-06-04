@@ -1,8 +1,22 @@
 "use client";
+import { useEffect } from "react";
 
 export default function Hero() {
+
+  useEffect(() => {
+    function onMessage(e: MessageEvent) {
+      if (!e.data || e.data.type !== "nll-height") return;
+      const h = Number(e.data.height);
+      if (!h || h < 200) return;
+      const iframe = document.querySelector<HTMLIFrameElement>('iframe[title="Rezervační formulář"]');
+      if (iframe) iframe.style.height = h + "px";
+    }
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, []);
+
   return (
-    <section id="rezervace" className="pt-16 bg-[#1E3A8A] flex items-center justify-center px-4 py-10 md:py-16">
+    <section id="rezervace" className="bg-[#1E3A8A] flex items-center justify-center px-4 pt-20 pb-10 md:pb-16">
       <div className="w-full max-w-2xl">
         <iframe
           src="https://taxisaas-widget.vercel.app/widget.html"
