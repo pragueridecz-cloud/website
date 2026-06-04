@@ -5,16 +5,16 @@ export default function Hero() {
   return (
     <section id="rezervace" className="pt-16 relative overflow-hidden min-h-[85vh] flex flex-col justify-center">
       {/* Background image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 flex items-center justify-center">
         <Image
           src="/hero-airport.png"
           alt="Doprava na letiště Praha — Mercedes minivan a Škoda Superb před Letištěm Václava Havla"
-          fill
+          width={1920}
+          height={1080}
           priority
-          className="object-contain object-center"
+          className="w-[80%] h-auto opacity-30"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-white/40" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 py-12 md:py-16 w-full flex flex-col items-center text-center">
