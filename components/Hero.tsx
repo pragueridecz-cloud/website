@@ -14,7 +14,7 @@ export default function Hero() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-white/75" />
+        <div className="absolute inset-0 bg-white/40" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 py-12 md:py-16 w-full flex flex-col items-center text-center">
