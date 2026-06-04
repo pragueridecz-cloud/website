@@ -6,8 +6,11 @@ export default function Hero() {
 
   useEffect(() => {
     function onMessage(e: MessageEvent) {
-      if (e.data?.type === "nll-height" && iframeRef.current) {
-        iframeRef.current.style.height = (e.data.height + 60) + "px";
+      if (e.data?.type === "nll-height") {
+        const iframe = iframeRef.current || document.querySelector('iframe[title="Rezervační formulář"]') as HTMLIFrameElement;
+        if (iframe && e.data.height > 100) {
+          iframe.style.height = (e.data.height + 60) + "px";
+        }
       }
     }
     window.addEventListener("message", onMessage);
