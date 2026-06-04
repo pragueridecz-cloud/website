@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import WidgetInline from "./WidgetInline";
 
 export default function Hero() {
   return (
@@ -59,17 +60,9 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Right — widget, no overflow clip so dropdowns show */}
+            {/* Right — widget inline (no iframe, dropdowns work) */}
             <div className="w-full rounded-2xl shadow-xl border border-[#CBD5E1] bg-white overflow-visible">
-              <iframe
-                src="https://taxisaas-widget.vercel.app/"
-                width="100%"
-                height="700"
-                frameBorder="0"
-                title="Rezervační formulář"
-                className="w-full rounded-2xl block"
-                scrolling="no"
-              />
+              <WidgetInline />
             </div>
 
           </div>
