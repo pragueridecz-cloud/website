@@ -9,7 +9,7 @@ export default function Hero() {
       if (e.data?.type === "nll-height") {
         const iframe = iframeRef.current || document.querySelector('iframe[title="Rezervační formulář"]') as HTMLIFrameElement;
         if (iframe && e.data.height > 100) {
-          iframe.style.height = (e.data.height + 10) + "px";
+          iframe.style.height = e.data.height + "px";
         }
       }
     }
