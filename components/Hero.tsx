@@ -54,7 +54,7 @@ export default function Hero() {
           {/* Right — widget */}
           <div className="w-full rounded-2xl overflow-hidden shadow-xl border border-[#CBD5E1] bg-white">
             <iframe
-              src="https://taxisaas-widget.vercel.app/widget.html"
+              src="https://taxisaas-widget.vercel.app/"
               width="100%"
               height="620"
               frameBorder="0"
