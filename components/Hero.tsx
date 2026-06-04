@@ -27,7 +27,7 @@ export default function Hero() {
           ref={iframeRef}
           src="https://taxisaas-widget.vercel.app/widget.html"
           width="100%"
-          height="650"
+          height="1050"
           frameBorder="0"
           title="Rezervační formulář"
           className="w-full block rounded-xl shadow-2xl"
