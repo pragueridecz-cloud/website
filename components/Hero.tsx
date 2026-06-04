@@ -1,7 +1,20 @@
 "use client";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 export default function Hero() {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    function onMessage(e: MessageEvent) {
+      if (e.data?.type === "nll-height" && iframeRef.current) {
+        iframeRef.current.style.height = (e.data.height + 20) + "px";
+      }
+    }
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, []);
+
   return (
     <section id="rezervace" className="pt-16 relative overflow-visible bg-white">
       {/* Full-width background image — no cropping */}
@@ -62,6 +75,7 @@ export default function Hero() {
             {/* Right — widget */}
             <div className="w-full rounded-2xl overflow-hidden shadow-xl border border-[#CBD5E1] bg-white">
               <iframe
+                ref={iframeRef}
                 src="https://taxisaas-widget.vercel.app/"
                 width="100%"
                 height="700"
