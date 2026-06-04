@@ -1,3 +1,4 @@
+import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import WhyUs from "@/components/WhyUs";
@@ -66,6 +67,14 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
       />
+      <Script id="iframe-resize" strategy="afterInteractive">{`
+        window.addEventListener('message', function(e) {
+          if (e.data && e.data.type === 'nll-height' && e.data.height > 100) {
+            var iframe = document.querySelector('iframe[title="Rezervační formulář"]');
+            if (iframe) iframe.style.height = e.data.height + 'px';
+          }
+        });
+      `}</Script>
       <Navbar />
       <main>
         <Hero />

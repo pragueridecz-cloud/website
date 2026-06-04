@@ -1,21 +1,8 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export default function Hero() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
-
-  useEffect(() => {
-    function onMessage(e: MessageEvent) {
-      if (e.data?.type === "nll-height") {
-        const iframe = iframeRef.current || document.querySelector('iframe[title="Rezervační formulář"]') as HTMLIFrameElement;
-        if (iframe && e.data.height > 100) {
-          iframe.style.height = e.data.height + "px";
-        }
-      }
-    }
-    window.addEventListener("message", onMessage);
-    return () => window.removeEventListener("message", onMessage);
-  }, []);
 
   return (
     <section
