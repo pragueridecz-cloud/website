@@ -37,12 +37,19 @@ export default function RootLayout({
         {children}
         <script dangerouslySetInnerHTML={{__html: `
           window.addEventListener('message', function(e) {
-            if (!e.data || e.data.type !== 'nll-height') return;
-            var h = parseInt(e.data.height);
-            if (!h || h < 100) return;
-            var iframe = document.querySelector('iframe[title="Rezervační formulář"]');
-            if (iframe) { iframe.style.height = h + 'px'; iframe.style.minHeight = h + 'px'; }
+            if (!e.data) return;
+            if (e.data.type === 'nll-height') {
+              var h = parseInt(e.data.height);
+              console.log('[NLL] resize message received, height:', h);
+              if (!h || h < 100) return;
+              var iframe = document.querySelector('iframe[title="Rezervační formulář"]');
+              if (iframe) {
+                iframe.style.height = h + 'px';
+                iframe.removeAttribute('height');
+              }
+            }
           });
+          console.log('[NLL] resize listener registered');
         `}} />
       </body>
     </html>
