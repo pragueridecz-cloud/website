@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { Phone, Mail, Menu, X, ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 const services = [
   { name: "Letištní přeprava", href: "#rezervace" },
@@ -29,14 +30,8 @@ export default function Navbar() {
         <div className="flex items-stretch">
 
           {/* Logo — přes obě řady */}
-          <a href="/" className="flex items-center gap-3 pr-8 border-r border-gray-200 cursor-pointer flex-shrink-0 py-2">
-            <div className="w-10 h-10 bg-[#1E3A8A] rounded-xl flex items-center justify-center flex-shrink-0">
-              <span className="text-white font-bold text-sm">NL</span>
-            </div>
-            <div className="leading-tight">
-              <div className="font-bold text-[#1E3A8A] text-lg">NaLetiště<span className="text-[#F97316]">Levně</span></div>
-              <div className="text-[#475569] text-[10px] font-medium tracking-wide">Doprava na letiště Praha</div>
-            </div>
+          <a href="/" className="flex items-center pr-6 border-r border-gray-200 cursor-pointer flex-shrink-0 py-1">
+            <Image src="/logo.png" alt="NaLetištěLevně.cz" width={160} height={80} className="h-16 w-auto object-contain" priority />
           </a>
 
           {/* Pravá část — kontakty nahoře, nav dole */}

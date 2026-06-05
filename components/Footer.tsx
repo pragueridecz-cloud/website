@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,13 +8,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-10">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-[#1E3A8A] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">NL</span>
-              </div>
-              <span className="font-bold text-lg">
-                NaLetiště<span className="text-[#F97316]">Levně</span>
-              </span>
+            <div className="mb-4">
+              <Image src="/logo.png" alt="NaLetištěLevně.cz" width={140} height={70} className="h-14 w-auto object-contain brightness-0 invert" />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
               Spolehlivá doprava na letiště Praha. Pevná cena, profesionální řidiči, sledování letu.
