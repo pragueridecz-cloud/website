@@ -26,101 +26,92 @@ export default function Navbar() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${scrolled ? "shadow-md" : "border-b border-gray-200"}`}>
-      <div className="w-full flex items-stretch" style={{ height: '80px' }}>
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex items-stretch" style={{ height: '96px' }}>
 
-        {/* LEVÁ POLOVINA – Logo */}
-        <div className="w-1/2 flex items-center pl-6 border-r border-gray-200">
-          <a href="/" className="flex items-center h-full py-2">
-            <Image
-              src="/logo.png"
-              alt="NaLetištěLevně.cz"
-              width={360}
-              height={180}
-              className="h-full w-auto object-contain"
-              priority
-            />
+          {/* Logo */}
+          <a href="/" className="flex items-center pr-6 border-r border-gray-200 cursor-pointer flex-shrink-0 py-2">
+            <Image src="/logo.png" alt="NaLetištěLevně.cz" width={480} height={240} className="h-full w-auto object-contain" priority />
           </a>
-        </div>
 
-        {/* PRAVÁ POLOVINA – Navigace (desktop) */}
-        <div className="w-1/2 hidden md:flex flex-col">
-          {/* Horní řada – kontakty */}
-          <div className="flex items-center justify-end gap-5 border-b border-gray-200 px-6" style={{ height: '32px' }}>
-            <a href="tel:+420606079179" className="flex items-center gap-1.5 text-xs text-[#475569] hover:text-[#1E3A8A] transition-colors cursor-pointer">
-              <Phone size={11} /> +420 606 079 179
-            </a>
-            <a href="mailto:info@naletistelevne.cz" className="flex items-center gap-1.5 text-xs text-[#475569] hover:text-[#1E3A8A] transition-colors cursor-pointer">
-              <Mail size={11} /> info@naletistelevne.cz
-            </a>
-          </div>
-
-          {/* Dolní řada – navigace + tlačítka */}
-          <div className="flex items-center gap-1 px-4 flex-1 justify-between">
-            <a href="/" className="px-2 py-1.5 text-sm font-medium text-[#F97316] cursor-pointer whitespace-nowrap">Úvod</a>
-
-            <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
-              <button className="flex items-center gap-1 px-2 py-1.5 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer whitespace-nowrap">
-                Služby <ChevronDown size={13} className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />
-              </button>
-              {servicesOpen && (
-                <div className="absolute top-full left-0 bg-white border border-gray-200 shadow-lg rounded-b-lg py-2 min-w-[220px] z-50">
-                  {services.map((s) => (
-                    <a key={s.name} href={s.href} className="block px-5 py-2.5 text-sm text-[#0F172A] hover:bg-[#F8FAFC] hover:text-[#1E3A8A] transition-colors cursor-pointer">
-                      {s.name}
-                    </a>
-                  ))}
-                </div>
-              )}
+          {/* Pravá část */}
+          <div className="flex flex-col flex-1 hidden md:flex">
+            {/* Horní řada – kontakty */}
+            <div className="flex items-center justify-end gap-5 border-b border-gray-200 h-9 px-4">
+              <a href="tel:+420606079179" className="flex items-center gap-1.5 text-xs text-[#475569] hover:text-[#1E3A8A] transition-colors cursor-pointer">
+                <Phone size={11} /> +420 606 079 179
+              </a>
+              <a href="mailto:info@naletistelevne.cz" className="flex items-center gap-1.5 text-xs text-[#475569] hover:text-[#1E3A8A] transition-colors cursor-pointer">
+                <Mail size={11} /> info@naletistelevne.cz
+              </a>
             </div>
 
-            <a href="#jak-to-funguje" className="px-2 py-1.5 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer whitespace-nowrap">Jak to funguje</a>
-            <a href="#pro-firmy" className="px-2 py-1.5 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer whitespace-nowrap">Pro firmy</a>
-            <a href="#faq" className="px-2 py-1.5 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer whitespace-nowrap">FAQ</a>
+            {/* Dolní řada – navigace */}
+            <div className="flex items-center gap-1 px-4 flex-1 justify-between">
+              <a href="/" className="px-3 py-1.5 text-sm font-medium text-[#F97316] cursor-pointer">Úvod</a>
 
-            <div className="flex items-center gap-2">
-              {/* Language switcher */}
-              <div className="relative" ref={langRef}>
-                <button
-                  onClick={() => setLangOpen(!langOpen)}
-                  className="flex items-center gap-1.5 px-2 py-1.5 rounded hover:bg-gray-100 transition-colors cursor-pointer text-sm"
-                >
-                  <span className="fi fi-cz rounded-sm" style={{width:'20px',height:'15px',display:'inline-block'}}></span>
-                  <span className="text-xs font-semibold text-[#0F172A]">CS</span>
-                  <ChevronDown size={11} className={`text-[#475569] transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`} />
+              <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
+                <button className="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer">
+                  Služby <ChevronDown size={13} className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />
                 </button>
-                {langOpen && (
-                  <div className="absolute top-full right-0 mt-1 bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden z-50 min-w-[140px]">
-                    <div className="flex items-center gap-2 px-4 py-2.5 bg-[#F8FAFC] border-b border-gray-100">
-                      <span className="fi fi-cz rounded-sm" style={{width:'20px',height:'15px',display:'inline-block'}}></span>
-                      <span className="text-sm font-semibold text-[#1E3A8A]">Čeština</span>
-                      <span className="ml-auto text-[10px] text-[#1E3A8A] font-bold">✓</span>
-                    </div>
-                    <a href="https://www.pragueride.com" target="_blank" rel="noopener noreferrer"
-                      onClick={() => setLangOpen(false)}
-                      className="flex items-center gap-2 px-4 py-2.5 hover:bg-[#F8FAFC] transition-colors cursor-pointer">
-                      <span className="fi fi-gb rounded-sm" style={{width:'20px',height:'15px',display:'inline-block'}}></span>
-                      <span className="text-sm font-medium text-[#0F172A]">English</span>
-                    </a>
+                {servicesOpen && (
+                  <div className="absolute top-full left-0 bg-white border border-gray-200 shadow-lg rounded-b-lg py-2 min-w-[220px] z-50">
+                    {services.map((s) => (
+                      <a key={s.name} href={s.href} className="block px-5 py-2.5 text-sm text-[#0F172A] hover:bg-[#F8FAFC] hover:text-[#1E3A8A] transition-colors cursor-pointer">
+                        {s.name}
+                      </a>
+                    ))}
                   </div>
                 )}
               </div>
 
-              <a href="https://portal.naletistelevne.cz" target="_blank" rel="noopener noreferrer"
-                className="border border-[#1E3A8A] text-[#1E3A8A] hover:bg-[#1E3A8A] hover:text-white font-semibold text-xs px-3 py-1.5 rounded transition-colors cursor-pointer whitespace-nowrap">
-                Přihlásit se
-              </a>
-              <a href="#rezervace"
-                className="bg-[#F97316] hover:bg-[#EA580C] text-white font-semibold text-xs px-3 py-1.5 rounded transition-colors cursor-pointer whitespace-nowrap">
-                + Rezervovat
-              </a>
+              <a href="#jak-to-funguje" className="px-3 py-1.5 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer">Jak to funguje</a>
+              <a href="#pro-firmy" className="px-3 py-1.5 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer">Pro firmy</a>
+              <a href="#faq" className="px-3 py-1.5 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer">FAQ</a>
+
+              <div className="flex items-center gap-2 ml-auto">
+                {/* Language switcher */}
+                <div className="relative" ref={langRef}>
+                  <button onClick={() => setLangOpen(!langOpen)}
+                    className="flex items-center gap-1.5 px-2 py-1.5 rounded hover:bg-gray-100 transition-colors cursor-pointer text-sm">
+                    <span className="fi fi-cz rounded-sm" style={{width:'20px',height:'15px',display:'inline-block'}}></span>
+                    <span className="text-xs font-semibold text-[#0F172A]">CS</span>
+                    <ChevronDown size={11} className={`text-[#475569] transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  {langOpen && (
+                    <div className="absolute top-full right-0 mt-1 bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden z-50 min-w-[140px]">
+                      <div className="flex items-center gap-2 px-4 py-2.5 bg-[#F8FAFC] border-b border-gray-100">
+                        <span className="fi fi-cz rounded-sm" style={{width:'20px',height:'15px',display:'inline-block'}}></span>
+                        <span className="text-sm font-semibold text-[#1E3A8A]">Čeština</span>
+                        <span className="ml-auto text-[10px] text-[#1E3A8A] font-bold">✓</span>
+                      </div>
+                      <a href="https://www.pragueride.com" target="_blank" rel="noopener noreferrer"
+                        onClick={() => setLangOpen(false)}
+                        className="flex items-center gap-2 px-4 py-2.5 hover:bg-[#F8FAFC] transition-colors cursor-pointer">
+                        <span className="fi fi-gb rounded-sm" style={{width:'20px',height:'15px',display:'inline-block'}}></span>
+                        <span className="text-sm font-medium text-[#0F172A]">English</span>
+                      </a>
+                    </div>
+                  )}
+                </div>
+
+                <a href="https://portal.naletistelevne.cz" target="_blank" rel="noopener noreferrer"
+                  className="border border-[#1E3A8A] text-[#1E3A8A] hover:bg-[#1E3A8A] hover:text-white font-semibold text-xs px-3 py-1.5 rounded transition-colors cursor-pointer">
+                  Přihlásit se
+                </a>
+                <a href="#rezervace"
+                  className="bg-[#F97316] hover:bg-[#EA580C] text-white font-semibold text-xs px-3 py-1.5 rounded transition-colors cursor-pointer">
+                  + Rezervovat
+                </a>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Mobile button */}
-        <button className="md:hidden ml-auto flex items-center px-4 cursor-pointer" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
-          {menuOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
+          {/* Mobile button */}
+          <button className="md:hidden ml-auto flex items-center p-2 cursor-pointer" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
