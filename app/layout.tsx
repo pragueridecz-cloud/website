@@ -33,7 +33,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="cs" className="h-full">
-      <body className="min-h-full flex flex-col antialiased">{children}</body>
+      <body className="min-h-full flex flex-col antialiased">
+        {children}
+        <script dangerouslySetInnerHTML={{__html: `
+          window.addEventListener('message', function(e) {
+            if (!e.data || e.data.type !== 'nll-height') return;
+            var h = parseInt(e.data.height);
+            if (!h || h < 100) return;
+            var iframe = document.querySelector('iframe[title="Rezervační formulář"]');
+            if (iframe) { iframe.style.height = h + 'px'; iframe.style.minHeight = h + 'px'; }
+          });
+        `}} />
+      </body>
     </html>
   );
 }
