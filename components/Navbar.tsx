@@ -22,79 +22,68 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "shadow-md" : ""}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${scrolled ? "shadow-md" : "border-b border-gray-200"}`}>
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex items-stretch">
 
-      {/* Top bar — kontakty */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 h-9 flex items-center justify-end gap-6">
-          <a href="tel:+420606079179" className="flex items-center gap-1.5 text-xs text-[#475569] hover:text-[#1E3A8A] transition-colors cursor-pointer">
-            <Phone size={12} /> +420 606 079 179
-          </a>
-          <a href="mailto:info@naletistelevne.cz" className="flex items-center gap-1.5 text-xs text-[#475569] hover:text-[#1E3A8A] transition-colors cursor-pointer">
-            <Mail size={12} /> info@naletistelevne.cz
-          </a>
-        </div>
-      </div>
-
-      {/* Main nav */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between gap-6">
-
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-2 cursor-pointer flex-shrink-0">
-            <div className="w-8 h-8 bg-[#1E3A8A] rounded-lg flex items-center justify-center">
+          {/* Logo — přes obě řady */}
+          <a href="/" className="flex items-center gap-3 pr-8 border-r border-gray-200 cursor-pointer flex-shrink-0 py-2">
+            <div className="w-10 h-10 bg-[#1E3A8A] rounded-xl flex items-center justify-center flex-shrink-0">
               <span className="text-white font-bold text-sm">NL</span>
             </div>
-            <span className="font-bold text-[#1E3A8A] text-lg leading-tight">
-              NaLetiště<span className="text-[#F97316]">Levně</span>
-            </span>
+            <div className="leading-tight">
+              <div className="font-bold text-[#1E3A8A] text-lg">NaLetiště<span className="text-[#F97316]">Levně</span></div>
+              <div className="text-[#475569] text-[10px] font-medium tracking-wide">Doprava na letiště Praha</div>
+            </div>
           </a>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1 flex-1 justify-center">
-            <a href="/" className="px-3 py-2 text-sm font-medium text-[#F97316] cursor-pointer">Úvod</a>
-
-            {/* Služby dropdown */}
-            <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer">
-                Služby <ChevronDown size={14} className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />
-              </button>
-              {servicesOpen && (
-                <div className="absolute top-full left-0 bg-white border border-gray-200 shadow-lg rounded-b-lg py-2 min-w-[220px] z-50">
-                  {services.map((s) => (
-                    <a key={s.name} href={s.href} className="block px-5 py-2.5 text-sm text-[#0F172A] hover:bg-[#F8FAFC] hover:text-[#1E3A8A] transition-colors cursor-pointer">
-                      {s.name}
-                    </a>
-                  ))}
-                </div>
-              )}
+          {/* Pravá část — kontakty nahoře, nav dole */}
+          <div className="flex flex-col flex-1 hidden md:flex">
+            {/* Horní řada — kontakty + CTA */}
+            <div className="flex items-center justify-end gap-5 border-b border-gray-200 h-9 px-4">
+              <a href="tel:+420606079179" className="flex items-center gap-1.5 text-xs text-[#475569] hover:text-[#1E3A8A] transition-colors cursor-pointer">
+                <Phone size={11} /> +420 606 079 179
+              </a>
+              <a href="mailto:info@naletistelevne.cz" className="flex items-center gap-1.5 text-xs text-[#475569] hover:text-[#1E3A8A] transition-colors cursor-pointer">
+                <Mail size={11} /> info@naletistelevne.cz
+              </a>
+              <a href="https://porta.naletistelevne.cz" target="_blank" rel="noopener noreferrer"
+                className="border border-[#1E3A8A] text-[#1E3A8A] hover:bg-[#1E3A8A] hover:text-white font-semibold text-xs px-3 py-1 rounded transition-colors cursor-pointer">
+                Přihlásit se
+              </a>
+              <a href="#rezervace"
+                className="bg-[#F97316] hover:bg-[#EA580C] text-white font-semibold text-xs px-3 py-1 rounded transition-colors cursor-pointer">
+                + Rezervovat
+              </a>
             </div>
 
-            <a href="#jak-to-funguje" className="px-3 py-2 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer">Jak to funguje</a>
-            <a href="#pro-firmy" className="px-3 py-2 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer">Pro firmy</a>
-            <a href="#faq" className="px-3 py-2 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer">FAQ</a>
-          </nav>
+            {/* Dolní řada — navigace */}
+            <div className="flex items-center gap-1 px-4 h-11">
+              <a href="/" className="px-3 py-1.5 text-sm font-medium text-[#F97316] cursor-pointer">Úvod</a>
 
-          {/* CTA buttons */}
-          <div className="hidden md:flex items-center gap-2 flex-shrink-0">
-            <a
-              href="https://porta.naletistelevne.cz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-[#1E3A8A] text-[#1E3A8A] hover:bg-[#1E3A8A] hover:text-white font-semibold text-sm px-4 py-2 rounded-lg transition-colors cursor-pointer"
-            >
-              Přihlásit se
-            </a>
-            <a
-              href="#rezervace"
-              className="bg-[#F97316] hover:bg-[#EA580C] text-white font-semibold text-sm px-4 py-2 rounded-lg transition-colors cursor-pointer"
-            >
-              + Rezervovat
-            </a>
+              <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
+                <button className="flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer">
+                  Služby <ChevronDown size={13} className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />
+                </button>
+                {servicesOpen && (
+                  <div className="absolute top-full left-0 bg-white border border-gray-200 shadow-lg rounded-b-lg py-2 min-w-[220px] z-50">
+                    {services.map((s) => (
+                      <a key={s.name} href={s.href} className="block px-5 py-2.5 text-sm text-[#0F172A] hover:bg-[#F8FAFC] hover:text-[#1E3A8A] transition-colors cursor-pointer">
+                        {s.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <a href="#jak-to-funguje" className="px-3 py-1.5 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer">Jak to funguje</a>
+              <a href="#pro-firmy" className="px-3 py-1.5 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer">Pro firmy</a>
+              <a href="#faq" className="px-3 py-1.5 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer">FAQ</a>
+            </div>
           </div>
 
-          {/* Mobile menu button */}
-          <button className="md:hidden p-2 cursor-pointer" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+          {/* Mobile button */}
+          <button className="md:hidden ml-auto flex items-center p-2 cursor-pointer" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
@@ -102,7 +91,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-b border-gray-200 px-4 py-4 flex flex-col gap-3 text-sm font-medium shadow-lg">
+        <div className="md:hidden bg-white border-t border-gray-200 px-4 py-4 flex flex-col gap-3 text-sm font-medium shadow-lg">
           <a href="/" onClick={() => setMenuOpen(false)} className="text-[#F97316] cursor-pointer">Úvod</a>
           <div className="text-[#0F172A] font-semibold">Služby</div>
           {services.map((s) => (
@@ -111,6 +100,7 @@ export default function Navbar() {
           <a href="#jak-to-funguje" onClick={() => setMenuOpen(false)} className="cursor-pointer">Jak to funguje</a>
           <a href="#pro-firmy" onClick={() => setMenuOpen(false)} className="cursor-pointer">Pro firmy</a>
           <a href="#faq" onClick={() => setMenuOpen(false)} className="cursor-pointer">FAQ</a>
+          <a href="tel:+420606079179" className="text-[#475569] cursor-pointer flex items-center gap-2"><Phone size={13} /> +420 606 079 179</a>
           <div className="flex gap-2 pt-2">
             <a href="https://porta.naletistelevne.cz" target="_blank" rel="noopener noreferrer" className="flex-1 text-center border border-[#1E3A8A] text-[#1E3A8A] font-semibold py-2 rounded-lg cursor-pointer">Přihlásit se</a>
             <a href="#rezervace" onClick={() => setMenuOpen(false)} className="flex-1 text-center bg-[#F97316] text-white font-semibold py-2 rounded-lg cursor-pointer">Rezervovat</a>
