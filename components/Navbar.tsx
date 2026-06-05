@@ -30,8 +30,8 @@ export default function Navbar() {
         <div className="flex items-stretch" style={{ height: '96px' }}>
 
           {/* Logo */}
-          <a href="/" className="flex items-center pr-6 border-r border-gray-200 cursor-pointer flex-shrink-0 py-2">
-            <Image src="/logo.png" alt="NaLetištěLevně.cz" width={480} height={240} className="h-full w-auto object-contain" priority />
+          <a href="/" className="flex items-center pr-4 border-r border-gray-200 cursor-pointer flex-shrink-0 py-1">
+            <Image src="/logo.png" alt="NaLetištěLevně.cz" width={600} height={240} className="h-full w-auto object-contain" priority />
           </a>
 
           {/* Pravá část */}
