@@ -25,12 +25,12 @@ export default function Navbar() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "shadow-md" : ""}`}>
 
       {/* Top bar — kontakty */}
-      <div className="bg-[#0F172A] border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 h-10 flex items-center justify-end gap-6">
-          <a href="tel:+420606079179" className="flex items-center gap-1.5 text-xs text-slate-300 hover:text-white transition-colors cursor-pointer">
+      <div className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 h-9 flex items-center justify-end gap-6">
+          <a href="tel:+420606079179" className="flex items-center gap-1.5 text-xs text-[#475569] hover:text-[#1E3A8A] transition-colors cursor-pointer">
             <Phone size={12} /> +420 606 079 179
           </a>
-          <a href="mailto:info@naletistelevne.cz" className="flex items-center gap-1.5 text-xs text-slate-300 hover:text-white transition-colors cursor-pointer">
+          <a href="mailto:info@naletistelevne.cz" className="flex items-center gap-1.5 text-xs text-[#475569] hover:text-[#1E3A8A] transition-colors cursor-pointer">
             <Mail size={12} /> info@naletistelevne.cz
           </a>
         </div>
