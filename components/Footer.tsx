@@ -62,6 +62,10 @@ export default function Footer() {
                 <span>Letiště Václava Havla, Praha</span>
               </li>
               <li className="text-slate-500 text-xs mt-2">Dispečink: 24/7, 365 dní</li>
+              <li className="flex gap-3 mt-3">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors cursor-pointer text-xs font-semibold">Facebook</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors cursor-pointer text-xs font-semibold">Instagram</a>
+              </li>
             </ul>
           </div>
         </div>
