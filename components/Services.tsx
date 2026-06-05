@@ -58,7 +58,7 @@ export default function Services() {
 
           {/* Meziměstská — 2 řádky */}
           <div className="relative overflow-hidden row-span-2 group cursor-default" style={{minHeight: '442px'}}>
-            <Image src="/service-mezimestska.png" alt="Meziměstská přeprava" fill className="object-cover transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 768px) 50vw, 33vw" />
+            <Image src="/service-mezimestska.png" alt="Meziměstská přeprava" fill className="object-cover object-bottom transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 768px) 50vw, 33vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             <div className="absolute bottom-0 left-0 p-5">
               <div className="text-white font-bold text-lg">Meziměstská přeprava</div>
