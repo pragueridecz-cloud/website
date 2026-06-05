@@ -3,7 +3,7 @@
 export default function Hero() {
   return (
     <section id="rezervace" className="bg-[#1E3A8A] flex items-center justify-center px-4 pt-20 pb-10 md:pb-16">
-      <div className="w-full max-w-2xl">
+      <div className="w-full max-w-lg md:max-w-xl">
         <iframe
           src="https://taxisaas-widget.vercel.app/widget.html"
           width="100%"
