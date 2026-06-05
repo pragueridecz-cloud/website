@@ -83,14 +83,14 @@ export default function Navbar() {
                     onClick={() => setLangOpen(!langOpen)}
                     className="flex items-center gap-1.5 px-2 py-1.5 rounded hover:bg-gray-100 transition-colors cursor-pointer text-sm"
                   >
-                    <span className="text-base">🇨🇿</span>
+                    <span className="fi fi-cz rounded-sm" style={{width:'20px',height:'15px',display:'inline-block'}}></span>
                     <span className="text-xs font-semibold text-[#0F172A]">CS</span>
                     <ChevronDown size={11} className={`text-[#475569] transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`} />
                   </button>
                   {langOpen && (
                     <div className="absolute top-full right-0 mt-1 bg-white border border-gray-200 shadow-lg rounded-lg overflow-hidden z-50 min-w-[140px]">
                       <div className="flex items-center gap-2 px-4 py-2.5 bg-[#F8FAFC] border-b border-gray-100">
-                        <span className="text-base">🇨🇿</span>
+                        <span className="fi fi-cz rounded-sm" style={{width:'20px',height:'15px',display:'inline-block'}}></span>
                         <span className="text-sm font-semibold text-[#1E3A8A]">Čeština</span>
                         <span className="ml-auto text-[10px] text-[#1E3A8A] font-bold">✓</span>
                       </div>
@@ -101,7 +101,7 @@ export default function Navbar() {
                         onClick={() => setLangOpen(false)}
                         className="flex items-center gap-2 px-4 py-2.5 hover:bg-[#F8FAFC] transition-colors cursor-pointer"
                       >
-                        <span className="text-base">🇬🇧</span>
+                        <span className="fi fi-gb rounded-sm" style={{width:'20px',height:'15px',display:'inline-block'}}></span>
                         <span className="text-sm font-medium text-[#0F172A]">English</span>
                       </a>
                     </div>
