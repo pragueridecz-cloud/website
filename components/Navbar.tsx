@@ -39,7 +39,7 @@ export default function Navbar() {
 
           {/* Pravá část — kontakty nahoře, nav dole */}
           <div className="flex flex-col flex-1 hidden md:flex">
-            {/* Horní řada — kontakty + CTA */}
+            {/* Horní řada — kontakty vpravo */}
             <div className="flex items-center justify-end gap-5 border-b border-gray-200 h-9 px-4">
               <a href="tel:+420606079179" className="flex items-center gap-1.5 text-xs text-[#475569] hover:text-[#1E3A8A] transition-colors cursor-pointer">
                 <Phone size={11} /> +420 606 079 179
@@ -47,18 +47,10 @@ export default function Navbar() {
               <a href="mailto:info@naletistelevne.cz" className="flex items-center gap-1.5 text-xs text-[#475569] hover:text-[#1E3A8A] transition-colors cursor-pointer">
                 <Mail size={11} /> info@naletistelevne.cz
               </a>
-              <a href="https://porta.naletistelevne.cz" target="_blank" rel="noopener noreferrer"
-                className="border border-[#1E3A8A] text-[#1E3A8A] hover:bg-[#1E3A8A] hover:text-white font-semibold text-xs px-3 py-1 rounded transition-colors cursor-pointer">
-                Přihlásit se
-              </a>
-              <a href="#rezervace"
-                className="bg-[#F97316] hover:bg-[#EA580C] text-white font-semibold text-xs px-3 py-1 rounded transition-colors cursor-pointer">
-                + Rezervovat
-              </a>
             </div>
 
-            {/* Dolní řada — navigace */}
-            <div className="flex items-center gap-1 px-4 h-11">
+            {/* Dolní řada — navigace + tlačítka vpravo */}
+            <div className="flex items-center gap-1 px-4 h-11 justify-between">
               <a href="/" className="px-3 py-1.5 text-sm font-medium text-[#F97316] cursor-pointer">Úvod</a>
 
               <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
@@ -79,6 +71,18 @@ export default function Navbar() {
               <a href="#jak-to-funguje" className="px-3 py-1.5 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer">Jak to funguje</a>
               <a href="#pro-firmy" className="px-3 py-1.5 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer">Pro firmy</a>
               <a href="#faq" className="px-3 py-1.5 text-sm font-medium text-[#0F172A] hover:text-[#1E3A8A] transition-colors cursor-pointer">FAQ</a>
+
+              {/* Tlačítka vpravo */}
+              <div className="flex items-center gap-2 ml-auto">
+                <a href="https://portal.naletistelevne.cz" target="_blank" rel="noopener noreferrer"
+                  className="border border-[#1E3A8A] text-[#1E3A8A] hover:bg-[#1E3A8A] hover:text-white font-semibold text-xs px-3 py-1.5 rounded transition-colors cursor-pointer">
+                  Přihlásit se
+                </a>
+                <a href="#rezervace"
+                  className="bg-[#F97316] hover:bg-[#EA580C] text-white font-semibold text-xs px-3 py-1.5 rounded transition-colors cursor-pointer">
+                  + Rezervovat
+                </a>
+              </div>
             </div>
           </div>
 
@@ -102,7 +106,7 @@ export default function Navbar() {
           <a href="#faq" onClick={() => setMenuOpen(false)} className="cursor-pointer">FAQ</a>
           <a href="tel:+420606079179" className="text-[#475569] cursor-pointer flex items-center gap-2"><Phone size={13} /> +420 606 079 179</a>
           <div className="flex gap-2 pt-2">
-            <a href="https://porta.naletistelevne.cz" target="_blank" rel="noopener noreferrer" className="flex-1 text-center border border-[#1E3A8A] text-[#1E3A8A] font-semibold py-2 rounded-lg cursor-pointer">Přihlásit se</a>
+            <a href="https://portal.naletistelevne.cz" target="_blank" rel="noopener noreferrer" className="flex-1 text-center border border-[#1E3A8A] text-[#1E3A8A] font-semibold py-2 rounded-lg cursor-pointer">Přihlásit se</a>
             <a href="#rezervace" onClick={() => setMenuOpen(false)} className="flex-1 text-center bg-[#F97316] text-white font-semibold py-2 rounded-lg cursor-pointer">Rezervovat</a>
           </div>
         </div>
