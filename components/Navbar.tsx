@@ -31,7 +31,7 @@ export default function Navbar() {
 
           {/* Logo — přes obě řady */}
           <a href="/" className="flex items-center pr-6 border-r border-gray-200 cursor-pointer flex-shrink-0 py-1">
-            <Image src="/logo.png" alt="NaLetištěLevně.cz" width={160} height={80} className="h-16 w-auto object-contain" priority />
+            <Image src="/logo.png" alt="NaLetištěLevně.cz" width={220} height={110} className="h-20 w-auto object-contain" priority />
           </a>
 
           {/* Pravá část — kontakty nahoře, nav dole */}
