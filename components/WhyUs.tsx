@@ -38,7 +38,7 @@ export default function WhyUs() {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4">
-        <SectionHeading label="Výhody" title="Proč si vybrat nás?" highlight="" subtitle="Nejsme taxi. Jsme předem rezervovaná doprava s garantovanou cenou a profesionálním přístupem." center />
+        <SectionHeading label="Výhody" title="Proč si vybrat nás?" highlight="" subtitle="Nejsme taxi. Jsme předem rezervovaná doprava s garantovanou cenou a profesionálním přístupem." />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((f) => (
             <div
