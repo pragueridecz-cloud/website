@@ -40,7 +40,7 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-16 bg-white">
       <div className="max-w-3xl mx-auto px-4">
-        <SectionHeading label="Otázky" title="Časté otázky" subtitle="Nenašli jste odpověď? Zavolejte nám na +420 606 079 179" center />
+        <SectionHeading label="Otázky" title="Časté otázky" subtitle="Nenašli jste odpověď? Zavolejte nám na +420 606 079 179" />
         <div className="space-y-3">
           {faqs.map((faq, i) => (
             <div
