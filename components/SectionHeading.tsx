@@ -8,22 +8,20 @@ interface Props {
 
 export default function SectionHeading({ label, title, highlight, subtitle, center }: Props) {
   return (
-    <div className={`mb-12 ${center ? "text-center" : ""}`}>
-      <div className={`flex items-center gap-3 mb-3 ${center ? "justify-center" : ""}`}>
-        <span className="w-8 h-0.5 bg-[#F97316]"></span>
-        <span className="text-xs font-bold tracking-widest uppercase text-[#F97316]">{label}</span>
+    <div className={`mb-10 ${center ? "text-center items-center" : "text-left"}`}>
+      <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4 ${center ? "" : ""}`}
+        style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>
+        {label}
       </div>
-      <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A]">
-        {title}
-        {highlight && (
-          <>
-            <br />
-            <span className="text-[#1E3A8A]">{highlight}</span>
-          </>
-        )}
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3" style={{ fontFamily: "Poppins, sans-serif", lineHeight: 1.2 }}>
+        {title}{" "}
+        {highlight && <span style={{ color: "#1E3A8A" }}>{highlight}</span>}
       </h2>
-      <div className={`w-12 h-0.5 bg-[#F97316] mt-4 ${center ? "mx-auto" : ""}`}></div>
-      {subtitle && <p className="text-[#475569] mt-4 max-w-xl mx-auto">{subtitle}</p>}
+      {subtitle && (
+        <p className={`text-gray-500 text-base leading-relaxed ${center ? "max-w-2xl mx-auto" : "max-w-xl"}`}>
+          {subtitle}
+        </p>
+      )}
     </div>
   );
 }
