@@ -22,7 +22,7 @@ export default function HowItWorks() {
   return (
     <section id="jak-to-funguje" className="py-16 bg-[#EFF6FF]">
       <div className="max-w-6xl mx-auto px-4">
-        <SectionHeading label="Postup" title="Jak to funguje?" subtitle="Rezervace trvá 2 minuty. Vše ostatní zařídíme my." center />
+        <SectionHeading label="Postup" title="Jak to funguje?" subtitle="Rezervace trvá 2 minuty. Vše ostatní zařídíme my." />
         <div className="grid md:grid-cols-3 gap-8 relative">
           {/* connector line on desktop */}
           <div className="hidden md:block absolute top-8 left-1/6 right-1/6 h-0.5 bg-[#CBD5E1] z-0" />
