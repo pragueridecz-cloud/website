@@ -31,9 +31,9 @@ export default function Navbar() {
         <div className="flex items-stretch" style={{ height: "88px" }}>
 
           {/* Logo */}
-          <a href="/" className="flex items-center pr-4 cursor-pointer flex-shrink-0 py-1"
+          <a href="/" className="flex items-center pr-6 cursor-pointer flex-shrink-0 py-2"
             style={{ borderRight: "1px solid rgba(255,255,255,.15)" }}>
-            <Image src="/logo-new.png" alt="NaLetištěLevně.cz" width={220} height={80}
+            <Image src="/logo.png" alt="NaLetištěLevně.cz" width={495} height={151}
               className="h-full w-auto object-contain" priority />
           </a>
 
