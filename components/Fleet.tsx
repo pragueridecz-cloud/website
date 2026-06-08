@@ -44,7 +44,7 @@ export default function Fleet() {
   return (
     <section id="vozovy-park" className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4">
-        <SectionHeading label="Vozový park" title="Vozový park a ceny" subtitle="Pevné ceny bez překvapení. Vyberte vozidlo podle počtu cestujících a zavazadel." center />
+        <SectionHeading label="Vozový park" title="Vozový park a ceny" subtitle="Pevné ceny bez překvapení. Vyberte vozidlo podle počtu cestujících a zavazadel." />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {cars.map((car) => (
             <div
