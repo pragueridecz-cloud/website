@@ -14,6 +14,7 @@ const WHY_US = [
 
 export default function Hero() {
   const [open, setOpen] = useState(false);
+  const [openCount, setOpenCount] = useState(0);
 
   return (
     <section id="rezervace" className="bg-[#1E3A8A] px-4 pt-24 pb-10 md:pb-16">
@@ -42,7 +43,7 @@ export default function Hero() {
 
               {/* CTA */}
               <button
-                onClick={() => setOpen(true)}
+                onClick={() => { setOpen(true); setOpenCount(c => c + 1); }}
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: '10px',
                   background: '#F97316', color: '#fff', border: 'none', cursor: 'pointer',
@@ -89,7 +90,7 @@ export default function Hero() {
                     </div>
                   ))}
                 </div>
-                <button onClick={() => setOpen(true)}
+                <button onClick={() => { setOpen(true); setOpenCount(c => c + 1); }}
                   style={{ width: '100%', marginTop: '16px', padding: '11px', background: '#F97316', color: '#fff', border: 'none', borderRadius: '8px', fontFamily: 'Poppins, sans-serif', fontSize: '14px', fontWeight: 700, cursor: 'pointer' }}
                   onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = '#EA580C'; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = '#F97316'; }}
@@ -118,6 +119,7 @@ export default function Hero() {
               width="100%"
               height="680"
               frameBorder="0"
+              key={openCount}
               title="Rezervační formulář"
               className="w-full block rounded-xl shadow-2xl"
               scrolling="no"
