@@ -58,7 +58,7 @@ export default function Fleet() {
               )}
               {/* Placeholder image */}
               <div className="h-40 bg-gradient-to-br from-[#EFF6FF] to-[#DBEAFE] flex items-center justify-center">
-                <div className="text-5xl">🚗</div>
+                <div className="text-5xl"></div>
               </div>
               <div className="p-5 flex flex-col flex-1">
                 <h3 className="font-semibold text-[#0F172A] mb-3">{car.name}</h3>
@@ -73,7 +73,7 @@ export default function Fleet() {
                 <ul className="text-xs text-[#475569] space-y-1 mb-4 flex-1">
                   {car.features.map((f) => (
                     <li key={f} className="flex items-center gap-1">
-                      <span className="text-[#1E3A8A]">✓</span> {f}
+                      <span className="text-[#1E3A8A]"></span> {f}
                     </li>
                   ))}
                 </ul>
