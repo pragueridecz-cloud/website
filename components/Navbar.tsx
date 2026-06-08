@@ -83,7 +83,7 @@ export default function Navbar() {
                       <div className="flex items-center gap-2 px-4 py-2.5 bg-[#F8FAFC] border-b border-gray-100">
                         <span className="fi fi-cz rounded-sm" style={{width:'20px',height:'15px',display:'inline-block'}}></span>
                         <span className="text-sm font-semibold text-[#1E3A8A]">Čeština</span>
-                        <span className="ml-auto text-[10px] text-[#1E3A8A] font-bold">✓</span>
+                        <span className="ml-auto text-[10px] text-[#1E3A8A] font-bold"></span>
                       </div>
                       <a href="https://www.pragueride.com" target="_blank" rel="noopener noreferrer"
                         onClick={() => setLangOpen(false)}
