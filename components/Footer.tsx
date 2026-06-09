@@ -70,10 +70,7 @@ export default function Footer() {
         <div className="border-t border-slate-700 pt-8 mb-6">
           <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-6">
             <div className="flex items-center gap-4">
-              {/* Logo Transfer Prague Car – placeholder, nahradit po nahrání loga */}
-              <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: '#1E3A8A', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <span style={{ color: '#F97316', fontWeight: 900, fontSize: '12px', fontFamily: 'Poppins,sans-serif' }}>TPC</span>
-              </div>
+              <img src="/logo-tpc.png" alt="Transfer Prague Car" style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
               <div>
                 <div className="text-sm font-semibold text-slate-300">Transfer Prague Car s.r.o.</div>
                 <div className="text-xs text-slate-500 mt-0.5">IČO: 25706993 · Sochařská 2, 170 00 Praha</div>
