@@ -66,13 +66,32 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} NaLetistelevne.cz — Všechna práva vyhrazena.</p>
-          <div className="flex gap-4">
-            <a href="https://www.pragueride.com" className="hover:text-slate-300 transition-colors cursor-pointer" target="_blank" rel="noopener noreferrer">
-              PragueRide.com (English)
-            </a>
+        {/* Provozovatel */}
+        <div className="border-t border-slate-700 pt-8 mb-6">
+          <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-6">
+            <div className="flex items-center gap-4">
+              {/* Logo Transfer Prague Car – placeholder, nahradit po nahrání loga */}
+              <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: '#1E3A8A', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <span style={{ color: '#F97316', fontWeight: 900, fontSize: '12px', fontFamily: 'Poppins,sans-serif' }}>TPC</span>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-slate-300">Transfer Prague Car s.r.o.</div>
+                <div className="text-xs text-slate-500 mt-0.5">IČO: 25706993 · Sochařská 2, 170 00 Praha</div>
+              </div>
+            </div>
+            <div className="flex gap-4 text-xs text-slate-500">
+              <a href="https://www.pragueride.com" className="hover:text-slate-300 transition-colors cursor-pointer" target="_blank" rel="noopener noreferrer">
+                PragueRide.com (English)
+              </a>
+              <a href="/obchodni-podminky" className="hover:text-slate-300 transition-colors cursor-pointer">Obchodní podmínky</a>
+              <a href="/ochrana-osobnich-udaju" className="hover:text-slate-300 transition-colors cursor-pointer">GDPR</a>
+            </div>
           </div>
+        </div>
+
+        <div className="border-t border-slate-800 pt-4 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-slate-600">
+          <p>© {new Date().getFullYear()} NaLetistelevne.cz — provozuje Transfer Prague Car s.r.o.</p>
+          <p>Všechna práva vyhrazena.</p>
         </div>
       </div>
     </footer>
