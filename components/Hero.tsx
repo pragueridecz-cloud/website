@@ -77,14 +77,14 @@ export default function Hero() {
         position:"absolute", inset:0, zIndex:0,
         backgroundImage:"url('/hero-prague.png')",
         backgroundSize:"cover",
-        backgroundPosition:"center 40%",
-        opacity:0.45,
+        backgroundPosition:"20% 40%",
+        opacity:0.6,
         mixBlendMode:"luminosity",
       }} />
       {/* Barevný overlay – navy + oranžový přechod jako západ slunce */}
       <div style={{
         position:"absolute", inset:0, zIndex:1,
-        background:"linear-gradient(180deg, rgba(13,31,74,0.75) 0%, rgba(13,31,74,0.55) 40%, rgba(30,58,138,0.92) 100%)",
+        background:"linear-gradient(180deg, rgba(13,31,74,0.5) 0%, rgba(13,31,74,0.35) 40%, rgba(30,58,138,0.85) 100%)",
       }} />
       <div className="max-w-6xl mx-auto pb-56" style={{ position:"relative", zIndex:2 }}>
 
