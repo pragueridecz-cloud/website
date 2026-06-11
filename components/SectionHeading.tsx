@@ -8,17 +8,25 @@ interface Props {
 
 export default function SectionHeading({ label, title, highlight, subtitle, center }: Props) {
   return (
-    <div className={`mb-10 ${center ? "text-center items-center" : "text-left"}`}>
-      <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4 ${center ? "" : ""}`}
-        style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>
-        {label}
+    <div className={`mb-10 ${center ? "text-center" : "text-left"}`}>
+      {/* Label s oranžovou čárou vlevo */}
+      <div className={`flex items-center gap-3 mb-4 ${center ? "justify-center" : ""}`}>
+        <div style={{ width: "32px", height: "2px", background: "#F97316", flexShrink: 0 }} />
+        <span style={{ fontSize: "11px", fontWeight: 700, color: "#F97316", textTransform: "uppercase", letterSpacing: "1.5px" }}>
+          {label}
+        </span>
       </div>
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3" style={{ fontFamily: "Poppins, sans-serif", lineHeight: 1.2 }}>
-        {title}{" "}
-        {highlight && <span style={{ color: "#1E3A8A" }}>{highlight}</span>}
+      {/* Nadpis – velký, tučný, tmavý */}
+      <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.15, color: "#0f172a", fontSize: "clamp(28px,4vw,44px)", margin: "0 0 12px" }}>
+        {title}
+        {highlight && (
+          <><br /><span style={{ color: "#F97316" }}>{highlight}</span></>
+        )}
       </h2>
+      {/* Oranžová linka pod nadpisem */}
+      <div className={center ? "mx-auto" : ""} style={{ width: "48px", height: "3px", background: "#F97316", borderRadius: "2px", marginBottom: subtitle ? "16px" : "0" }} />
       {subtitle && (
-        <p className={`text-gray-500 text-base leading-relaxed ${center ? "max-w-2xl mx-auto" : "max-w-xl"}`}>
+        <p style={{ color: "#64748b", fontSize: "16px", lineHeight: 1.7, maxWidth: center ? "none" : "540px" }}>
           {subtitle}
         </p>
       )}
