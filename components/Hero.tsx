@@ -14,8 +14,7 @@ function PragueSkyline() {
   useEffect(() => {
     const c = canvasRef.current;
     if (!c) return;
-    const ctx = c.getContext('2d');
-    if (!ctx) return;
+    const ctx = c.getContext('2d')!;
     const W = c.width, H = c.height;
 
     const RAW: [number,number][] = [
