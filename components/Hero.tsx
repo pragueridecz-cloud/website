@@ -17,7 +17,7 @@ export default function Hero() {
     WHY_US.forEach((_, i) => {
       setTimeout(() => {
         setVisibleItems(prev => [...prev, i]);
-      }, 300 + i * 180);
+      }, 600 + i * 350);
     });
   }, []);
 
@@ -39,8 +39,11 @@ export default function Hero() {
             <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(32px,4vw,52px)", margin: "0 0 8px" }}>
               Levná přeprava
             </h1>
-            <h1 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(32px,4vw,52px)", margin: "0 0 24px", color: "#F97316" }}>
+            <h1 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(32px,4vw,52px)", margin: "0 0 6px", color: "#F97316" }}>
               na letiště Praha
+            </h1>
+            <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600, lineHeight: 1.3, fontSize: "clamp(16px,2vw,22px)", margin: "0 0 28px", color: "rgba(255,255,255,.7)" }}>
+              a transfery po celé ČR a střední Evropě
             </h1>
             {/* 4 body s čísly */}
             <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginBottom: "32px" }}>
@@ -53,7 +56,7 @@ export default function Hero() {
                 }}>
                   <span style={{ fontFamily: "Poppins, sans-serif", fontSize: "13px", fontWeight: 800, color: "#F97316", minWidth: "26px", opacity: .8 }}>{item.num}</span>
                   <div style={{ width: "1px", height: "20px", background: "rgba(249,115,22,.3)", flexShrink: 0 }} />
-                  <span style={{ color: "rgba(255,255,255,.9)", fontSize: "15px", fontWeight: 500 }}>{item.text}</span>
+                  <span style={{ color: "rgba(255,255,255,.9)", fontSize: "18px", fontWeight: 500 }}>{item.text}</span>
                 </div>
               ))}
             </div>
@@ -64,7 +67,7 @@ export default function Hero() {
           </div>
 
           {/* Widget */}
-          <div className="flex-shrink-0 w-full max-w-md">
+          <div className="flex-shrink-0 w-full max-w-md" style={{ paddingTop: "24px" }}>
             <iframe src="https://taxisaas-widget.vercel.app/widget.html" width="100%" height="680"
               frameBorder="0" title="Rezervační formulář" className="w-full block rounded-xl shadow-2xl"
               scrolling="no" style={{ background: "#1E3A8A" }} />
