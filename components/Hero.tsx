@@ -44,7 +44,7 @@ export default function Hero() {
             </h1>
             <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600, lineHeight: 1.3, fontSize: "clamp(16px,2vw,22px)", margin: "0 0 28px", color: "rgba(255,255,255,.7)" }}>
               a transfery po celé ČR a střední Evropě
-            </h1>
+            </h2>
             {/* 4 body s čísly */}
             <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginBottom: "32px" }}>
               {WHY_US.map((item, i) => (
