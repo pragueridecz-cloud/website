@@ -63,7 +63,7 @@ export default function Navbar() {
               <a href="/" className="px-3 py-1.5 text-sm font-semibold cursor-pointer transition-colors"
                 style={{ color: "#F97316" }}>Úvod</a>
 
-              <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
+              <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setTimeout(() => setServicesOpen(false), 200)}>
                 <button className="flex items-center gap-1 px-3 py-1.5 text-sm font-medium cursor-pointer transition-colors"
                   style={{ color: "rgba(255,255,255,.85)", background: "none", border: "none" }}
                   onMouseEnter={e => (e.currentTarget.style.color = "#F97316")}
