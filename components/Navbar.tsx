@@ -4,11 +4,11 @@ import { Phone, Mail, Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 
 const services = [
-  { name: "Letištní přeprava", href: "#rezervace" },
-  { name: "Vlakové a autobusové nádraží", href: "#rezervace" },
-  { name: "Meziměstská doprava", href: "#rezervace" },
-  { name: "Hodinový pronájem", href: "#rezervace" },
-  { name: "Pro firmy", href: "#pro-firmy" },
+  { name: "Letištní přeprava", href: "/letistni-preprava" },
+  { name: "Vlakové a autobusové nádraží", href: "/vlakove-autobusove-nadrazi" },
+  { name: "Meziměstská doprava", href: "/mezimestska-doprava" },
+  { name: "Hodinový pronájem", href: "/hodinovy-pronajem" },
+  { name: "Pro firmy", href: "/preprava-pro-firmy" },
 ];
 
 export default function Navbar() {
