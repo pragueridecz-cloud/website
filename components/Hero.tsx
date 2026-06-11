@@ -2,14 +2,10 @@
 import { useState, useEffect } from "react";
 
 const WHY_US = [
-  { icon: "ti-shield-check", text: "Fixní cena předem – žádná překvapení" },
-  { icon: "ti-clock-24", text: "Dostupní 24/7, 365 dní v roce" },
-  { icon: "ti-user-check", text: "Profesionální řidiči se zkušenostmi" },
-  { icon: "ti-credit-card", text: "Platba kartou nebo hotově řidiči" },
-  { icon: "ti-plane", text: "Řidič čeká u výstupu s cedulkou" },
-  { icon: "ti-map-2", text: "Celá ČR a střední Evropa" },
-  { icon: "ti-baby-carriage", text: "Dětské sedačky na vyžádání" },
-  { icon: "ti-receipt", text: "Faktura na firmu s DIČ" },
+  { num: "01", text: "Pevná cena — žádná překvapení" },
+  { num: "02", text: "Sledování letů v reálném čase" },
+  { num: "03", text: "Dostupnost 24 hodin denně" },
+  { num: "04", text: "Prověření profesionální řidiči" },
 ];
 
 export default function Hero() {
@@ -21,7 +17,7 @@ export default function Hero() {
     WHY_US.forEach((_, i) => {
       setTimeout(() => {
         setVisibleItems(prev => [...prev, i]);
-      }, 200 + i * 120);
+      }, 300 + i * 180);
     });
   }, []);
 
@@ -32,42 +28,42 @@ export default function Hero() {
         {/* Desktop */}
         <div className="hidden md:flex items-start gap-12">
           <div className="flex-1 pt-6">
-            <div className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full text-xs font-semibold"
-              style={{ background: "rgba(249,115,22,.2)", color: "#F97316", border: "1px solid rgba(249,115,22,.3)" }}>
-              <i className="ti ti-map-2" aria-hidden="true"></i>
-              Celá ČR · Střední Evropa · 24/7
+            {/* Label */}
+            <div className="flex items-center gap-3 mb-5">
+              <div style={{ width: "32px", height: "2px", background: "#F97316" }} />
+              <span style={{ fontSize: "11px", fontWeight: 700, color: "#F97316", textTransform: "uppercase", letterSpacing: "1.5px" }}>
+                Celá ČR · Střední Evropa · 24/7
+              </span>
             </div>
-            <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(32px,4vw,52px)", margin: "0 0 16px" }}>
-              Levná přeprava<br />
-              <span style={{ color: "#F97316" }}>na letiště Praha</span>
+            {/* Nadpis */}
+            <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(32px,4vw,52px)", margin: "0 0 8px" }}>
+              Levná přeprava
             </h1>
-            <p style={{ color: "rgba(255,255,255,.75)", fontSize: "16px", lineHeight: 1.7, margin: "0 0 28px", maxWidth: "460px" }}>
-              Spolehlivý taxi transfer po celé České republice a střední Evropě. Fixní ceny, žádné příplatky, platba kartou nebo hotově.
-            </p>
-            <a href="#rezervace" onClick={() => { setMobileOpen(true); setOpenCount(c => c + 1); }}
-              style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "#F97316", color: "#fff", border: "none", cursor: "pointer", fontSize: "17px", fontWeight: 700, fontFamily: "Poppins, sans-serif", padding: "14px 32px", borderRadius: "12px", boxShadow: "0 8px 32px rgba(249,115,22,.4)", marginBottom: "32px", textDecoration: "none" }}>
-              <i className="ti ti-calendar-plus" style={{ fontSize: 20 }} aria-hidden="true"></i>
-              Rezervovat jízdu
-            </a>
-            {/* Body pod sebou s animací */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+            <h1 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(32px,4vw,52px)", margin: "0 0 24px", color: "#F97316" }}>
+              na letiště Praha
+            </h1>
+            {/* 4 body s čísly */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginBottom: "32px" }}>
               {WHY_US.map((item, i) => (
                 <div key={i} style={{
-                  display: "flex", alignItems: "center", gap: "12px",
+                  display: "flex", alignItems: "center", gap: "16px",
                   opacity: visibleItems.includes(i) ? 1 : 0,
-                  transform: visibleItems.includes(i) ? "translateX(0)" : "translateX(-16px)",
-                  transition: "opacity 0.4s ease, transform 0.4s ease",
+                  transform: visibleItems.includes(i) ? "translateX(0)" : "translateX(-20px)",
+                  transition: "opacity 0.5s ease, transform 0.5s ease",
                 }}>
-                  <div style={{ width: "28px", height: "28px", borderRadius: "8px", background: "rgba(249,115,22,.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <i className={`ti ${item.icon}`} style={{ fontSize: 14, color: "#F97316" }} aria-hidden="true"></i>
-                  </div>
-                  <span style={{ color: "rgba(255,255,255,.85)", fontSize: "14px", fontWeight: 500 }}>{item.text}</span>
+                  <span style={{ fontFamily: "Poppins, sans-serif", fontSize: "13px", fontWeight: 800, color: "#F97316", minWidth: "26px", opacity: .8 }}>{item.num}</span>
+                  <div style={{ width: "1px", height: "20px", background: "rgba(249,115,22,.3)", flexShrink: 0 }} />
+                  <span style={{ color: "rgba(255,255,255,.9)", fontSize: "15px", fontWeight: 500 }}>{item.text}</span>
                 </div>
               ))}
             </div>
+            <a href="#rezervace" onClick={e => { e.preventDefault(); setMobileOpen(true); setOpenCount(c => c + 1); }}
+              style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "#F97316", color: "#fff", border: "none", cursor: "pointer", fontSize: "16px", fontWeight: 700, fontFamily: "Poppins, sans-serif", padding: "14px 32px", borderRadius: "12px", boxShadow: "0 8px 32px rgba(249,115,22,.4)", textDecoration: "none" }}>
+              Rezervovat jízdu →
+            </a>
           </div>
 
-          {/* Widget vpravo */}
+          {/* Widget */}
           <div className="flex-shrink-0 w-full max-w-md">
             <iframe src="https://taxisaas-widget.vercel.app/widget.html" width="100%" height="680"
               frameBorder="0" title="Rezervační formulář" className="w-full block rounded-xl shadow-2xl"
@@ -79,38 +75,34 @@ export default function Hero() {
         <div className="md:hidden flex flex-col">
           {!mobileOpen && (
             <>
-              <div className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full text-xs font-semibold self-start"
-                style={{ background: "rgba(249,115,22,.2)", color: "#F97316", border: "1px solid rgba(249,115,22,.3)" }}>
-                <i className="ti ti-map-2" aria-hidden="true"></i>
-                Celá ČR · Střední Evropa · 24/7
+              <div className="flex items-center gap-3 mb-4">
+                <div style={{ width: "24px", height: "2px", background: "#F97316" }} />
+                <span style={{ fontSize: "10px", fontWeight: 700, color: "#F97316", textTransform: "uppercase", letterSpacing: "1.5px" }}>Celá ČR · Střední Evropa · 24/7</span>
               </div>
-              <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(30px,8vw,42px)", margin: "0 0 14px" }}>
-                Levná přeprava<br />
-                <span style={{ color: "#F97316" }}>na letiště Praha</span>
+              <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(30px,8vw,42px)", margin: "0 0 4px" }}>
+                Levná přeprava
               </h1>
-              <p style={{ color: "rgba(255,255,255,.75)", fontSize: "14px", lineHeight: 1.7, margin: "0 0 20px" }}>
-                Taxi transfer po celé ČR a střední Evropě. Fixní ceny, žádné příplatky.
-              </p>
-              <button onClick={() => { setMobileOpen(true); setOpenCount(c => c + 1); }}
-                style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "#F97316", color: "#fff", border: "none", cursor: "pointer", fontSize: "17px", fontWeight: 700, fontFamily: "Poppins, sans-serif", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 8px 32px rgba(249,115,22,.4)", marginBottom: "24px", alignSelf: "flex-start" }}>
-                <i className="ti ti-calendar-plus" style={{ fontSize: 20 }} aria-hidden="true"></i>
-                Rezervovat jízdu
-              </button>
-              <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              <h1 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(30px,8vw,42px)", margin: "0 0 20px", color: "#F97316" }}>
+                na letiště Praha
+              </h1>
+              <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "24px" }}>
                 {WHY_US.map((item, i) => (
                   <div key={i} style={{
-                    display: "flex", alignItems: "center", gap: "10px",
+                    display: "flex", alignItems: "center", gap: "14px",
                     opacity: visibleItems.includes(i) ? 1 : 0,
-                    transform: visibleItems.includes(i) ? "translateX(0)" : "translateX(-12px)",
-                    transition: "opacity 0.4s ease, transform 0.4s ease",
+                    transform: visibleItems.includes(i) ? "translateX(0)" : "translateX(-16px)",
+                    transition: "opacity 0.5s ease, transform 0.5s ease",
                   }}>
-                    <div style={{ width: "24px", height: "24px", borderRadius: "6px", background: "rgba(249,115,22,.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                      <i className={`ti ${item.icon}`} style={{ fontSize: 12, color: "#F97316" }} aria-hidden="true"></i>
-                    </div>
-                    <span style={{ color: "rgba(255,255,255,.8)", fontSize: "13px", fontWeight: 500 }}>{item.text}</span>
+                    <span style={{ fontFamily: "Poppins, sans-serif", fontSize: "12px", fontWeight: 800, color: "#F97316", minWidth: "22px", opacity: .8 }}>{item.num}</span>
+                    <div style={{ width: "1px", height: "18px", background: "rgba(249,115,22,.3)", flexShrink: 0 }} />
+                    <span style={{ color: "rgba(255,255,255,.9)", fontSize: "14px", fontWeight: 500 }}>{item.text}</span>
                   </div>
                 ))}
               </div>
+              <button onClick={() => { setMobileOpen(true); setOpenCount(c => c + 1); }}
+                style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "#F97316", color: "#fff", border: "none", cursor: "pointer", fontSize: "16px", fontWeight: 700, fontFamily: "Poppins, sans-serif", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 8px 32px rgba(249,115,22,.4)", alignSelf: "flex-start" }}>
+                Rezervovat jízdu →
+              </button>
             </>
           )}
           {mobileOpen && (
@@ -119,8 +111,7 @@ export default function Hero() {
                 <h2 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontSize: "18px", fontWeight: 700, margin: 0 }}>Rezervovat jízdu</h2>
                 <button onClick={() => setMobileOpen(false)}
                   style={{ display: "flex", alignItems: "center", gap: "6px", color: "rgba(255,255,255,.7)", background: "rgba(255,255,255,.1)", border: "1px solid rgba(255,255,255,.2)", borderRadius: "8px", padding: "7px 14px", fontSize: "13px", fontWeight: 600, cursor: "pointer" }}>
-                  <i className="ti ti-arrow-left" style={{ fontSize: 14 }} aria-hidden="true"></i>
-                  Zpět
+                  ← Zpět
                 </button>
               </div>
               <iframe key={openCount} src="https://taxisaas-widget.vercel.app/widget.html"
