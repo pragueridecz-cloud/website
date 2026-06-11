@@ -52,7 +52,8 @@ export default function Navbar() {
           </a>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-1 px-4 flex-1 justify-between">
+          <div className="hidden md:flex items-center px-4 flex-1 justify-between">
+            <div className="flex items-center gap-0">
             <a href="/" className="px-3 py-1.5 text-sm font-semibold cursor-pointer"
               style={{ color: "#F97316" }}>Úvod</a>
 
@@ -93,6 +94,7 @@ export default function Navbar() {
               onMouseEnter={e => (e.currentTarget.style.color = "#F97316")}
               onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,.85)")}>FAQ</a>
 
+            </div>
             <div className="flex items-center gap-2">
               {/* Language switcher */}
               <div className="relative" ref={langRef}>
