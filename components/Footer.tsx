@@ -1,94 +1,128 @@
 import { Phone, Mail, MapPin } from "lucide-react";
-import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F172A] text-white">
+    <footer style={{ background: "#0F172A", color: "#fff" }}>
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-10">
-          {/* Brand */}
+
+          {/* Brand – TPC logo */}
           <div className="md:col-span-1">
             <div className="mb-4">
-              <Image src="/logo.png" alt="NaLetištěLevně.cz" width={140} height={70} className="h-14 w-auto object-contain brightness-0 invert" />
+              <img src="/api/logo-tpc" alt="Transfer Prague Car" style={{ height: "40px", objectFit: "contain" }} />
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              Spolehlivá doprava na letiště Praha. Pevná cena, profesionální řidiči, sledování letu.
+            <p style={{ color: "#94a3b8", fontSize: "13px", lineHeight: 1.7 }}>
+              Spolehlivá doprava na letiště Praha a do celé střední Evropy. Pevná cena, profesionální řidiči, sledování letu.
             </p>
+            {/* Social ikonky */}
+            <div style={{ display: "flex", gap: "10px", marginTop: "16px" }}>
+              {[
+                { href: "https://facebook.com/naletistelevne", label: "Facebook", icon: "ti-brand-facebook" },
+                { href: "https://instagram.com/naletistelevne", label: "Instagram", icon: "ti-brand-instagram" },
+                { href: "https://linkedin.com/company/transfer-prague-car", label: "LinkedIn", icon: "ti-brand-linkedin" },
+              ].map((s) => (
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
+                  aria-label={s.label}
+                  style={{ width: "36px", height: "36px", borderRadius: "8px", background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.12)", display: "flex", alignItems: "center", justifyContent: "center", color: "#94a3b8", textDecoration: "none", transition: "background .15s" }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "rgba(249,115,22,.2)"; (e.currentTarget as HTMLElement).style.color = "#F97316"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,.08)"; (e.currentTarget as HTMLElement).style.color = "#94a3b8"; }}>
+                  <i className={`ti ${s.icon}`} style={{ fontSize: 17 }} aria-hidden="true"></i>
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* Services */}
+          {/* Služby */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-slate-300">Služby</h4>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li><a href="#rezervace" className="hover:text-white transition-colors cursor-pointer">Doprava na letiště Praha</a></li>
-              <li><a href="#vozovy-park" className="hover:text-white transition-colors cursor-pointer">Sedan od 790 Kč</a></li>
-              <li><a href="#vozovy-park" className="hover:text-white transition-colors cursor-pointer">Minivan od 990 Kč</a></li>
-              <li><a href="#pro-firmy" className="hover:text-white transition-colors cursor-pointer">Firemní doprava</a></li>
-              <li><a href="#rezervace" className="hover:text-white transition-colors cursor-pointer">Mezinárodní transfery</a></li>
+            <h4 style={{ fontWeight: 600, marginBottom: "16px", fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "#cbd5e1" }}>Služby</h4>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
+              {[
+                { label: "Letištní přeprava", href: "/letistni-preprava" },
+                { label: "Meziměstská doprava", href: "/mezimestska-doprava" },
+                { label: "Vlakové a autobusové nádraží", href: "/vlakove-autobusove-nadrazi" },
+                { label: "Hodinový pronájem", href: "/hodinovy-pronajem" },
+                { label: "Pro firmy", href: "/preprava-pro-firmy" },
+              ].map((l) => (
+                <li key={l.label}>
+                  <a href={l.href} style={{ color: "#94a3b8", fontSize: "13px", textDecoration: "none" }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "#fff")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "#94a3b8")}>
+                    {l.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Info */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-slate-300">Informace</h4>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li><a href="#jak-to-funguje" className="hover:text-white transition-colors cursor-pointer">Jak to funguje</a></li>
-              <li><a href="#faq" className="hover:text-white transition-colors cursor-pointer">Časté otázky</a></li>
-              <li><a href="/obchodni-podminky" className="hover:text-white transition-colors cursor-pointer">Obchodní podmínky</a></li>
-              <li><a href="/ochrana-osobnich-udaju" className="hover:text-white transition-colors cursor-pointer">Ochrana osobních údajů</a></li>
+            <h4 style={{ fontWeight: 600, marginBottom: "16px", fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "#cbd5e1" }}>Informace</h4>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
+              {[
+                { label: "Jak to funguje", href: "#jak-to-funguje" },
+                { label: "Časté otázky", href: "#faq" },
+                { label: "Obchodní podmínky", href: "/obchodni-podminky" },
+                { label: "Ochrana osobních údajů", href: "/ochrana-osobnich-udaju" },
+                { label: "PragueRide.com (EN)", href: "https://www.pragueride.com" },
+              ].map((l) => (
+                <li key={l.label}>
+                  <a href={l.href} style={{ color: "#94a3b8", fontSize: "13px", textDecoration: "none" }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "#fff")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "#94a3b8")}>
+                    {l.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Kontakt */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-slate-300">Kontakt</h4>
-            <ul className="space-y-3 text-sm text-slate-400">
+            <h4 style={{ fontWeight: 600, marginBottom: "16px", fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "#cbd5e1" }}>Kontakt</h4>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
               <li>
-                <a href="tel:+420606079179" className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer">
-                  <Phone size={14} /> +420 606 079 179
+                <a href="tel:+420606079179" style={{ color: "#94a3b8", fontSize: "13px", textDecoration: "none", display: "flex", alignItems: "center", gap: "8px" }}>
+                  <Phone size={13} /> +420 606 079 179
                 </a>
               </li>
               <li>
-                <a href="mailto:info@naletistelevne.cz" className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer">
-                  <Mail size={14} /> info@naletistelevne.cz
+                <a href="mailto:info@naletistelevne.cz" style={{ color: "#94a3b8", fontSize: "13px", textDecoration: "none", display: "flex", alignItems: "center", gap: "8px" }}>
+                  <Mail size={13} /> info@naletistelevne.cz
                 </a>
               </li>
-              <li className="flex items-start gap-2">
-                <MapPin size={14} className="mt-0.5 flex-shrink-0" />
-                <span>Letiště Václava Havla, Praha</span>
+              <li style={{ color: "#94a3b8", fontSize: "13px", display: "flex", alignItems: "flex-start", gap: "8px" }}>
+                <MapPin size={13} style={{ marginTop: "2px", flexShrink: 0 }} />
+                <span>Sochařská 2, 170 00 Praha 7</span>
               </li>
-              <li className="text-slate-500 text-xs mt-2">Dispečink: 24/7, 365 dní</li>
-              <li className="flex gap-3 mt-3">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors cursor-pointer text-xs font-semibold">Facebook</a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors cursor-pointer text-xs font-semibold">Instagram</a>
-              </li>
+              <li style={{ color: "#64748b", fontSize: "11px", marginTop: "4px" }}>Dispečink 24/7, 365 dní</li>
             </ul>
           </div>
         </div>
 
-        {/* Provozovatel */}
-        <div className="border-t border-slate-700 pt-8 mb-6">
-          <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-6">
-            <div className="flex items-center gap-4">
-              <img src="/logo-tpc.png" alt="Transfer Prague Car" style={{ height: '36px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+        {/* Spodní lišta */}
+        <div style={{ borderTop: "1px solid rgba(255,255,255,.08)", paddingTop: "20px", display: "flex", flexDirection: "column", gap: "8px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "12px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+              <img src="/api/logo-tpc" alt="Transfer Prague Car" style={{ height: "28px", objectFit: "contain", opacity: 0.7 }} />
               <div>
-                <div className="text-sm font-semibold text-slate-300">Transfer Prague Car s.r.o.</div>
-                <div className="text-xs text-slate-500 mt-0.5">IČO: 25706993 · Sochařská 2, 170 00 Praha</div>
+                <div style={{ fontSize: "12px", fontWeight: 600, color: "#94a3b8" }}>Transfer Prague Car s.r.o.</div>
+                <div style={{ fontSize: "11px", color: "#475569" }}>IČO: 25706993 · Sochařská 2, 170 00 Praha</div>
               </div>
             </div>
-            <div className="flex gap-4 text-xs text-slate-500">
-              <a href="https://www.pragueride.com" className="hover:text-slate-300 transition-colors cursor-pointer" target="_blank" rel="noopener noreferrer">
-                PragueRide.com (English)
-              </a>
-              <a href="/obchodni-podminky" className="hover:text-slate-300 transition-colors cursor-pointer">Obchodní podmínky</a>
-              <a href="/ochrana-osobnich-udaju" className="hover:text-slate-300 transition-colors cursor-pointer">GDPR</a>
+            <div style={{ display: "flex", gap: "16px" }}>
+              {["Obchodní podmínky", "GDPR"].map((l) => (
+                <a key={l} href={`/${l.toLowerCase().replace(/ /g, "-")}`}
+                  style={{ fontSize: "11px", color: "#475569", textDecoration: "none" }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "#94a3b8")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "#475569")}>
+                  {l}
+                </a>
+              ))}
             </div>
           </div>
-        </div>
-
-        <div className="border-t border-slate-800 pt-4 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-slate-600">
-          <p>© {new Date().getFullYear()} NaLetistelevne.cz — provozuje Transfer Prague Car s.r.o.</p>
-          <p>Všechna práva vyhrazena.</p>
+          <div style={{ fontSize: "11px", color: "#334155" }}>
+            © {new Date().getFullYear()} NaLetistelevne.cz — provozuje Transfer Prague Car s.r.o. Všechna práva vyhrazena.
+          </div>
         </div>
       </div>
     </footer>
