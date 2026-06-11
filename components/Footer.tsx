@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand – TPC logo */}
           <div className="md:col-span-1">
             <div className="mb-4">
-              <img src="/api/logo-tpc" alt="Transfer Prague Car" style={{ height: "40px", objectFit: "contain" }} />
+              <img src="/logo-tpc.png" alt="Transfer Prague Car" style={{ height: "40px", objectFit: "contain" }} />
             </div>
             <p style={{ color: "#94a3b8", fontSize: "13px", lineHeight: 1.7 }}>
               Spolehlivá doprava na letiště Praha a do celé střední Evropy. Pevná cena, profesionální řidiči, sledování letu.
@@ -104,7 +104,7 @@ export default function Footer() {
         <div style={{ borderTop: "1px solid rgba(255,255,255,.08)", paddingTop: "20px", display: "flex", flexDirection: "column", gap: "8px" }}>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "12px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <img src="/api/logo-tpc" alt="Transfer Prague Car" style={{ height: "28px", objectFit: "contain", opacity: 0.7 }} />
+              <img src="/logo-tpc.png" alt="Transfer Prague Car" style={{ height: "28px", objectFit: "contain", opacity: 0.7 }} />
               <div>
                 <div style={{ fontSize: "12px", fontWeight: 600, color: "#94a3b8" }}>Transfer Prague Car s.r.o.</div>
                 <div style={{ fontSize: "11px", color: "#475569" }}>IČO: 25706993 · Sochařská 2, 170 00 Praha</div>
