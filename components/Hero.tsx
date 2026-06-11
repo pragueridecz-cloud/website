@@ -8,6 +8,54 @@ const WHY_US = [
   { num: "04", text: "Prověření profesionální řidiči" },
 ];
 
+function TypewriterPrice() {
+  const [displayed, setDisplayed] = useState("");
+  const [done, setDone] = useState(false);
+  const full = "již od 790,-";
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i <= full.length) {
+        setDisplayed(full.slice(0, i));
+        i++;
+      } else {
+        setDone(true);
+        clearInterval(interval);
+      }
+    }, 80);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div style={{ marginTop: "8px" }}>
+      <span style={{
+        fontFamily: "Poppins, sans-serif",
+        fontSize: "clamp(42px, 5vw, 68px)",
+        fontWeight: 900,
+        color: "#F97316",
+        letterSpacing: "-1px",
+        lineHeight: 1,
+        display: "inline-block",
+      }}>
+        {displayed}
+        {!done && (
+          <span style={{
+            display: "inline-block",
+            width: "3px",
+            height: "0.8em",
+            background: "#F97316",
+            marginLeft: "4px",
+            verticalAlign: "middle",
+            animation: "blink 0.7s step-end infinite",
+          }} />
+        )}
+      </span>
+      <style>{`@keyframes blink { 0%,100% { opacity:1 } 50% { opacity:0 } }`}</style>
+    </div>
+  );
+}
+
 export default function Hero() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openCount, setOpenCount] = useState(0);
@@ -60,10 +108,7 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-            <a href="#rezervace" onClick={e => { e.preventDefault(); setMobileOpen(true); setOpenCount(c => c + 1); }}
-              style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "#F97316", color: "#fff", border: "none", cursor: "pointer", fontSize: "16px", fontWeight: 700, fontFamily: "Poppins, sans-serif", padding: "14px 32px", borderRadius: "12px", boxShadow: "0 8px 32px rgba(249,115,22,.4)", textDecoration: "none" }}>
-              Rezervovat jízdu →
-            </a>
+            <TypewriterPrice />
           </div>
 
           {/* Widget */}
