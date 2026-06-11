@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 const WHY_US = [
   { num: "01", text: "Pevná cena — žádná překvapení" },
@@ -9,9 +9,9 @@ const WHY_US = [
 ];
 
 function PragueSkyline() {
-  const canvasRef = React.useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const c = canvasRef.current;
     if (!c) return;
     const ctx = c.getContext('2d');
