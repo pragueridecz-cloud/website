@@ -36,7 +36,7 @@ const AIRPORTS_CZ = [
     desc: "Největší a nejrušnější letiště v ČR s více než 17 miliony cestujících ročně. Dvě terminály – T1 pro Schengen, T2 pro mimoevropské lety. Vzdáleno cca 17 km od centra Prahy.",
     price: "od 790 Kč",
     time: "20–35 min",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Prague_Airport_Terminal_2_Arrivals.jpg/1280px-Prague_Airport_Terminal_2_Arrivals.jpg",
+    img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80",
     facts: ["Terminál 1 – Schengen (většina evropských letů)", "Terminál 2 – mimo Schengen, zámořské lety", "17 km od Václavského náměstí", "Sledujeme zpoždění vašeho letu"],
   },
   {
@@ -46,7 +46,7 @@ const AIRPORTS_CZ = [
     desc: "Druhé největší letiště v ČR. Pravidelné linky do Londýna, Amsterdamu, Frankfurtu a dalších evropských destinací. Ideální alternativa pro cestující z jižní Moravy.",
     price: "od 2 900 Kč",
     time: "2,5 hod z Prahy",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Brnoletisteturanyjpg.jpg/1280px-Brnoletisteturanyjpg.jpg",
+    img: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=800&q=80",
     facts: ["210 km od Prahy", "Pravidelné linky Ryanair, Wizz Air", "Velké parkoviště, jednoduchá orientace", "Ideální pro cestovatele z Moravy"],
   },
   {
@@ -56,7 +56,7 @@ const AIRPORTS_CZ = [
     desc: "Letiště v srdci Slezska. Sezónní i pravidelné charterové lety do celé Evropy a Turecka. Dobré spojení s Polskem a Slovenskem.",
     price: "od 4 900 Kč",
     time: "3,5 hod z Prahy",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Ostrava_Airport_OSR.jpg/1280px-Ostrava_Airport_OSR.jpg",
+    img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
     facts: ["360 km od Prahy", "Charterové lety do Turecka, Řecka, Egypta", "Blízko polských hranic", "Kapacitní záchytné parkoviště"],
   },
 ]
@@ -69,7 +69,7 @@ const AIRPORTS_INTL = [
     desc: "Největší letiště ve středoevropském regionu s přímými lety do celého světa. Skvělá alternativa pro lety do Asie, Ameriky nebo Blízkého východu, které z Prahy neodjíždí přímo.",
     price: "od 4 500 Kč",
     time: "3,5 hod",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Vienna_International_Airport_-_Terminal_3_overview.jpg/1280px-Vienna_International_Airport_-_Terminal_3_overview.jpg",
+    img: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=800&q=80",
     facts: ["330 km od Prahy", "Přímé lety do 200+ destinací", "Hub Emirates, Austrian Airlines", "Výborná alternativa pro asijské lety"],
   },
   {
@@ -79,7 +79,7 @@ const AIRPORTS_INTL = [
     desc: "Blízké slovenské letiště, které používají zejména nízkonákladové aerolinie. Ryanair zde létá do mnoha destinací, které nejsou dostupné z Prahy. Vzdálenost jen 330 km.",
     price: "od 4 200 Kč",
     time: "3,5 hod",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/BTS_Airport_Terminal.jpg/1280px-BTS_Airport_Terminal.jpg",
+    img: "https://images.unsplash.com/photo-1583170598970-cf6e74bb9f68?w=800&q=80",
     facts: ["330 km od Prahy", "Silná základna Ryanair", "Levnější lety do mnoha destinací", "Bez front u bezpečnostní kontroly"],
   },
   {
@@ -89,7 +89,7 @@ const AIRPORTS_INTL = [
     desc: "Jedno z nejrušnějších letišť ve střední Evropě s výborným spojením do celého světa. Wizz Air má v Budapešti silnou základnu s levnými lety do stovek destinací.",
     price: "od 6 900 Kč",
     time: "5 hod",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Budapest_Liszt_Ferenc_International_Airport_terminal_2B.jpg/1280px-Budapest_Liszt_Ferenc_International_Airport_terminal_2B.jpg",
+    img: "https://images.unsplash.com/photo-1605379399642-870262d3d051?w=800&q=80",
     facts: ["520 km od Prahy", "Největší základna Wizz Air", "Lety do Asie a Ameriky", "Moderní terminály"],
   },
   {
@@ -99,7 +99,7 @@ const AIRPORTS_INTL = [
     desc: "Druhé největší německé letiště a jeden z největších hubů v Evropě. Lufthansa zde operuje mezikontinentální lety do Ameriky, Asie a Austrálie s výbornými přestupy.",
     price: "od 7 900 Kč",
     time: "4 hod",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Munich_airport_terminal_2_-_2014.jpg/1280px-Munich_airport_terminal_2_-_2014.jpg",
+    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
     facts: ["380 km od Prahy", "Hub Lufthansy a Star Alliance", "Dva terminály, výborné přestupy", "Moderní, komfortní letiště"],
   },
   {
@@ -109,7 +109,7 @@ const AIRPORTS_INTL = [
     desc: "Největší německé letiště a jeden z nejvytíženějších hubů v celé Evropě. Lufthansa a její partneři odtud létají do téměř každého koutu světa. Ideální pro transatlantické přestupy.",
     price: "od 8 900 Kč",
     time: "4,5 hod",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Frankfurt_Airport_from_the_air.jpg/1280px-Frankfurt_Airport_from_the_air.jpg",
+    img: "https://images.unsplash.com/photo-1596451190630-186aff535bf2?w=800&q=80",
     facts: ["480 km od Prahy", "Největší hub v Evropě", "150+ airlines, 300+ destinací", "Přímé spojení na letiště vlakem"],
   },
   {
@@ -119,7 +119,7 @@ const AIRPORTS_INTL = [
     desc: "Malé a přehledné německé letiště pouhých 155 km od Prahy. Ideální pro rychlé lety do Německa a dalších evropských destinací bez přestupu v přeplněném Frankfurtu.",
     price: "od 3 900 Kč",
     time: "1,5 hod",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Dresden_Airport_Flughafen_Dresden.jpg/1280px-Dresden_Airport_Flughafen_Dresden.jpg",
+    img: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?w=800&q=80",
     facts: ["155 km od Prahy – nejbližší zahraniční letiště", "Bez front a stresu", "Lety Lufthansa, Eurowings", "Jednoduché parkování"],
   },
 ]
