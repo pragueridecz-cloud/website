@@ -11,7 +11,7 @@ const WHY_US = [
 function TypewriterPrice() {
   const [displayed, setDisplayed] = useState("");
   const [done, setDone] = useState(false);
-  const full = "již od 790,-";
+  const full = "již od 740,-";
 
   useEffect(() => {
     let i = 0;
