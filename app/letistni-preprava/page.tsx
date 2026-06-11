@@ -209,7 +209,7 @@ export default function LetistniPreprava() {
                     <div className="md:w-2/5 flex-shrink-0">
                       <img src={airport.img} alt={airport.name}
                         style={{ width: "100%", height: "280px", objectFit: "cover" }}
-                        onError={(e) => { (e.target as HTMLImageElement).src = "/service-airport.png" }}
+  
                       />
                     </div>
                     <div className="flex-1 p-8">
@@ -268,7 +268,7 @@ export default function LetistniPreprava() {
                   <div className="relative">
                     <img src={airport.img} alt={airport.name}
                       style={{ width: "100%", height: "200px", objectFit: "cover" }}
-                      onError={(e) => { (e.target as HTMLImageElement).src = "/service-airport.png" }}
+
                     />
                     <div style={{ position: "absolute", top: "12px", left: "12px", background: "#1E3A8A", color: "#fff", fontFamily: "monospace", fontWeight: 700, padding: "4px 10px", borderRadius: "6px", fontSize: "14px" }}>
                       {airport.code}
