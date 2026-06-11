@@ -70,10 +70,10 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Services />
-        <TrustSection />
         <HowItWorks />
+        <Services />
         <Fleet />
+        <TrustSection />
         <Testimonials />
         <B2B />
         <FAQ />
