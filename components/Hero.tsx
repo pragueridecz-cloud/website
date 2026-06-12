@@ -78,7 +78,8 @@ export default function Hero() {
         backgroundImage:"url('/hero-prague.png')",
         backgroundSize:"160%",
         backgroundPosition:"60% 40%",
-        opacity:0.5,
+        opacity:0.8,
+        mixBlendMode:"luminosity",
       }} />
       {/* Barevný overlay – navy + oranžový přechod jako západ slunce */}
       <div style={{
