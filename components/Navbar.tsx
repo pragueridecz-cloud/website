@@ -81,15 +81,15 @@ export default function Navbar() {
               )}
             </div>
 
-            <a href="#jak-to-funguje" className="px-3 py-1.5 text-sm font-medium cursor-pointer"
+            <a href="/#jak-to-funguje" className="px-3 py-1.5 text-sm font-medium cursor-pointer"
               style={{ color: "rgba(255,255,255,.85)" }}
               onMouseEnter={e => (e.currentTarget.style.color = "#F97316")}
               onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,.85)")}>Jak to funguje</a>
-            <a href="#pro-firmy" className="px-3 py-1.5 text-sm font-medium cursor-pointer"
+            <a href="/#pro-firmy" className="px-3 py-1.5 text-sm font-medium cursor-pointer"
               style={{ color: "rgba(255,255,255,.85)" }}
               onMouseEnter={e => (e.currentTarget.style.color = "#F97316")}
               onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,.85)")}>Pro firmy</a>
-            <a href="#faq" className="px-3 py-1.5 text-sm font-medium cursor-pointer"
+            <a href="/#faq" className="px-3 py-1.5 text-sm font-medium cursor-pointer"
               style={{ color: "rgba(255,255,255,.85)" }}
               onMouseEnter={e => (e.currentTarget.style.color = "#F97316")}
               onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,.85)")}>FAQ</a>
@@ -129,7 +129,7 @@ export default function Navbar() {
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,.08)"; }}>
                 Přihlásit se
               </a>
-              <a href="#rezervace"
+              <a href="/#rezervace"
                 className="text-xs font-bold px-4 py-1.5 rounded cursor-pointer"
                 style={{ background: "#F97316", color: "#fff", textDecoration: "none" }}
                 onMouseEnter={e => ((e.currentTarget as HTMLElement).style.background = "#EA580C")}
@@ -165,14 +165,14 @@ export default function Navbar() {
             <a key={s.name} href={s.href} onClick={() => setMenuOpen(false)}
               className="pl-2" style={{ color: "rgba(255,255,255,.8)", textDecoration: "none" }}>{s.name}</a>
           ))}
-          <a href="#jak-to-funguje" onClick={() => setMenuOpen(false)} style={{ color: "rgba(255,255,255,.8)" }}>Jak to funguje</a>
-          <a href="#pro-firmy" onClick={() => setMenuOpen(false)} style={{ color: "rgba(255,255,255,.8)" }}>Pro firmy</a>
-          <a href="#faq" onClick={() => setMenuOpen(false)} style={{ color: "rgba(255,255,255,.8)" }}>FAQ</a>
+          <a href="/#jak-to-funguje" onClick={() => setMenuOpen(false)} style={{ color: "rgba(255,255,255,.8)" }}>Jak to funguje</a>
+          <a href="/#pro-firmy" onClick={() => setMenuOpen(false)} style={{ color: "rgba(255,255,255,.8)" }}>Pro firmy</a>
+          <a href="/#faq" onClick={() => setMenuOpen(false)} style={{ color: "rgba(255,255,255,.8)" }}>FAQ</a>
           <div className="flex gap-2 pt-1">
             <a href="https://portal.naletistelevne.cz" target="_blank" rel="noopener noreferrer"
               className="flex-1 text-center py-2.5 rounded-lg font-semibold text-sm"
               style={{ border: "1px solid rgba(255,255,255,.3)", color: "#fff", textDecoration: "none" }}>Přihlásit se</a>
-            <a href="#rezervace" onClick={() => setMenuOpen(false)}
+            <a href="/#rezervace" onClick={() => setMenuOpen(false)}
               className="flex-1 text-center py-2.5 rounded-lg font-bold text-sm"
               style={{ background: "#F97316", color: "#fff", textDecoration: "none" }}>Rezervovat</a>
           </div>
