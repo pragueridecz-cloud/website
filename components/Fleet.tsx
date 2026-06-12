@@ -90,7 +90,7 @@ function CarCard({ car }: { car: any }) {
         </div>
       )}
       {/* Bílé pozadí + auto */}
-      <div style={{ height: "176px", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", padding: "16px", borderBottom: "1px solid #f1f5f9" }}>
+      <div style={{ height: "176px", background: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px", borderBottom: "1px solid #f1f5f9" }}>
         <img src={car.img} alt={car.name}
           style={{ maxHeight: "144px", maxWidth: "100%", objectFit: "contain", display: "block" }} />
       </div>
