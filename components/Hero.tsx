@@ -77,8 +77,9 @@ export default function Hero() {
         position:"absolute", inset:0, zIndex:0,
         backgroundImage:"url('/hero-prague.png')",
         backgroundSize:"cover",
-        backgroundPosition:"10% 40%",
-        opacity:0.7,
+        backgroundPosition:"35% 40%",
+        backgroundSize:"130%",
+        opacity:0.65,
         mixBlendMode:"luminosity",
       }} />
       {/* Barevný overlay – navy + oranžový přechod jako západ slunce */}
