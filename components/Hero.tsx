@@ -77,27 +77,20 @@ export default function Hero() {
         position:"absolute", inset:0, zIndex:0,
         backgroundImage:"url('/hero-prague.png')",
         backgroundSize:"cover",
-        backgroundPosition:"20% 40%",
-        opacity:0.6,
+        backgroundPosition:"10% 40%",
+        opacity:0.7,
         mixBlendMode:"luminosity",
       }} />
       {/* Barevný overlay – navy + oranžový přechod jako západ slunce */}
       <div style={{
         position:"absolute", inset:0, zIndex:1,
-        background:"linear-gradient(180deg, rgba(13,31,74,0.5) 0%, rgba(13,31,74,0.35) 40%, rgba(30,58,138,0.85) 100%)",
+        background:"linear-gradient(180deg, rgba(13,31,74,0.4) 0%, rgba(13,31,74,0.25) 40%, rgba(30,58,138,0.8) 100%)",
       }} />
       <div className="max-w-6xl mx-auto pb-56" style={{ position:"relative", zIndex:2 }}>
 
         {/* Desktop */}
         <div className="hidden md:flex items-start gap-12">
           <div className="flex-1 pt-6">
-            {/* Label */}
-            <div className="flex items-center gap-3 mb-5">
-              <div style={{ width: "32px", height: "2px", background: "#F97316" }} />
-              <span style={{ fontSize: "11px", fontWeight: 700, color: "#F97316", textTransform: "uppercase", letterSpacing: "1.5px" }}>
-                Celá ČR · Střední Evropa · 24/7
-              </span>
-            </div>
             {/* Nadpis */}
             <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(32px,4vw,52px)", margin: "0 0 8px" }}>
               Levná přeprava
@@ -138,10 +131,6 @@ export default function Hero() {
         <div className="md:hidden flex flex-col">
           {!mobileOpen && (
             <>
-              <div className="flex items-center gap-3 mb-4">
-                <div style={{ width: "24px", height: "2px", background: "#F97316" }} />
-                <span style={{ fontSize: "10px", fontWeight: 700, color: "#F97316", textTransform: "uppercase", letterSpacing: "1.5px" }}>Celá ČR · Střední Evropa · 24/7</span>
-              </div>
               <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(30px,8vw,42px)", margin: "0 0 4px" }}>
                 Levná přeprava
               </h1>
