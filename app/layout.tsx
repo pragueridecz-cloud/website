@@ -33,6 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="cs" className="h-full">
+      <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+      </head>
       <body className="min-h-full flex flex-col antialiased">
         {children}
         <script dangerouslySetInnerHTML={{__html: `
