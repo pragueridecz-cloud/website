@@ -77,7 +77,7 @@ export default function Hero() {
         position:"absolute", inset:0, zIndex:0,
         backgroundImage:"url('/hero-prague.png')",
         backgroundSize:"160%",
-        backgroundPosition:"25% 40%",
+        backgroundPosition:"60% 40%",
         opacity:0.65,
         mixBlendMode:"luminosity",
       }} />
