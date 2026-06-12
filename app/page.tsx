@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import TrustSection from "@/components/TrustSection";
 import HowItWorks from "@/components/HowItWorks";
 import Fleet from "@/components/Fleet";
 import Testimonials from "@/components/Testimonials";
@@ -73,7 +72,6 @@ export default function Home() {
         <HowItWorks />
         <Services />
         <Fleet />
-        <TrustSection />
         <Testimonials />
         <B2B />
         <FAQ />
