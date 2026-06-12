@@ -38,7 +38,7 @@ export default function B2B() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-1 gap-12 items-start" style={{ maxWidth: "680px" }}>
           <div>
             {/* Případy užití */}
             <div className="grid grid-cols-2 gap-4 mb-8">
