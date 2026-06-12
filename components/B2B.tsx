@@ -7,6 +7,11 @@ const perks = [
   { icon: PhoneCall, text: "Dedikovaná telefonní linka pro firemní zákazníky" },
 ];
 
+const partners = [
+  { name: "Česká televize", logo: "/partner-ct.png", desc: "Mediální partner" },
+  { name: "Blažek", logo: "/partner-blazek.png", desc: "Módní partner" },
+];
+
 export default function B2B() {
   return (
     <section id="pro-firmy" className="py-20 bg-[#1E3A8A]">
@@ -46,13 +51,23 @@ export default function B2B() {
             </a>
           </div>
 
-          {/* Vpravo – fotka */}
-          <div className="rounded-2xl overflow-hidden shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&q=80"
-              alt="Firemní přeprava"
-              style={{ width: "100%", height: "420px", objectFit: "cover", display: "block" }}
-            />
+          {/* Vpravo – partneři */}
+          <div>
+            <div style={{ fontSize: "11px", fontWeight: 700, color: "rgba(255,255,255,0.4)", textTransform: "uppercase" as const, letterSpacing: "2px", marginBottom: "24px" }}>
+              Nám důvěřují
+            </div>
+            <div className="grid grid-cols-2 gap-6">
+              {partners.map((p) => (
+                <div key={p.name} className="flex items-center justify-center rounded-2xl p-8"
+                  style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)", minHeight: "140px" }}>
+                  <img src={p.logo} alt={p.name}
+                    style={{ maxHeight: "80px", maxWidth: "160px", objectFit: "contain", filter: "brightness(0) invert(1)" }} />
+                </div>
+              ))}
+            </div>
+            <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "12px", marginTop: "16px", textAlign: "center" as const }}>
+              a mnoho dalších firem po celé ČR
+            </p>
           </div>
 
         </div>
