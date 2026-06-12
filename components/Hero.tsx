@@ -68,7 +68,7 @@ export default function Hero() {
             <h1 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(32px,4vw,52px)", margin: "0 0 6px", color: "#F97316" }}>
               na letiště Praha
             </h1>
-            <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600, lineHeight: 1.3, fontSize: "clamp(16px,2vw,22px)", margin: "0 0 28px", color: "rgba(255,255,255,.7)" }}>
+            <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600, lineHeight: 1.3, fontSize: "clamp(16px,2vw,22px)", margin: "0 0 28px", color: "#fff" }}>
               a transfery po celé ČR a střední Evropě
             </h2>
             {/* 4 body s čísly */}
@@ -117,7 +117,7 @@ export default function Hero() {
                   }}>
                     <span style={{ fontFamily: "Poppins, sans-serif", fontSize: "12px", fontWeight: 800, color: "#F97316", minWidth: "22px", opacity: .8 }}>{item.num}</span>
                     <div style={{ width: "1px", height: "18px", background: "rgba(249,115,22,.3)", flexShrink: 0 }} />
-                    <span style={{ color: "rgba(255,255,255,.9)", fontSize: "14px", fontWeight: 500 }}>{item.text}</span>
+                    <span style={{ color: "#fff", fontSize: "14px", fontWeight: 500 }}>{item.text}</span>
                   </div>
                 ))}
               </div>
@@ -132,7 +132,7 @@ export default function Hero() {
               <div className="flex items-center justify-between mb-4">
                 <h2 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontSize: "18px", fontWeight: 700, margin: 0 }}>Rezervovat jízdu</h2>
                 <button onClick={() => setMobileOpen(false)}
-                  style={{ display: "flex", alignItems: "center", gap: "6px", color: "rgba(255,255,255,.7)", background: "rgba(255,255,255,.1)", border: "1px solid rgba(255,255,255,.2)", borderRadius: "8px", padding: "7px 14px", fontSize: "13px", fontWeight: 600, cursor: "pointer" }}>
+                  style={{ display: "flex", alignItems: "center", gap: "6px", color: "#fff", background: "rgba(255,255,255,.1)", border: "1px solid rgba(255,255,255,.2)", borderRadius: "8px", padding: "7px 14px", fontSize: "13px", fontWeight: 600, cursor: "pointer" }}>
                   ← Zpět
                 </button>
               </div>
