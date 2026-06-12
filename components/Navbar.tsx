@@ -9,7 +9,7 @@ const services = [
   { name: "Vlakové a autobusové nádraží", href: "/vlakove-autobusove-nadrazi" },
   { name: "Meziměstská doprava", href: "/mezimestska-doprava" },
   { name: "Hodinový pronájem", href: "/hodinovy-pronajem" },
-  { name: "Pro firmy", href: "/preprava-pro-firmy" },
+  { name: "Pro firmy a korporace", href: "/preprava-pro-firmy" },
 ];
 
 export default function Navbar() {
