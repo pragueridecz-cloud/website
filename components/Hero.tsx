@@ -71,7 +71,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="rezervace" className="px-4 pt-20 pb-0 md:pb-0" style={{ position:"relative", overflow:"hidden", background:"#0d1f4a" }}>
+    <section id="rezervace" className="px-4 pt-28 pb-0 md:pb-0" style={{ position:"relative", overflow:"hidden", background:"#0d1f4a" }}>
       {/* Praha fotka v pozadí */}
       <div style={{
         position:"absolute", inset:0, zIndex:0,
@@ -89,8 +89,8 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto pb-56" style={{ position:"relative", zIndex:2 }}>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-start gap-12">
-          <div className="flex-1 pt-6">
+        <div className="hidden md:flex items-center gap-12" style={{ paddingTop:"60px", paddingBottom:"40px" }}>
+          <div className="flex-1">
             {/* Nadpis */}
             <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(32px,4vw,52px)", margin: "0 0 8px" }}>
               Levná přeprava
@@ -120,7 +120,7 @@ export default function Hero() {
           </div>
 
           {/* Widget */}
-          <div className="flex-shrink-0 w-full max-w-md" style={{ paddingTop: "24px" }}>
+          <div className="flex-shrink-0 w-full max-w-md">
             <iframe src="https://taxisaas-widget.vercel.app/widget.html" width="100%" height="680"
               frameBorder="0" title="Rezervační formulář" className="w-full block rounded-xl shadow-2xl"
               scrolling="no" style={{ background: "#1E3A8A" }} />
