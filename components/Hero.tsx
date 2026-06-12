@@ -82,7 +82,7 @@ export default function Hero() {
                 }}>
                   <span style={{ fontFamily: "Poppins, sans-serif", fontSize: "13px", fontWeight: 800, color: "#F97316", minWidth: "26px", opacity: .8 }}>{item.num}</span>
                   <div style={{ width: "1px", height: "20px", background: "rgba(249,115,22,.3)", flexShrink: 0 }} />
-                  <span style={{ color: "rgba(255,255,255,.9)", fontSize: "18px", fontWeight: 500 }}>{item.text}</span>
+                  <span style={{ color: "#fff", fontSize: "18px", fontWeight: 500 }}>{item.text}</span>
                 </div>
               ))}
             </div>
