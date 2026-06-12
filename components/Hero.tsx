@@ -89,8 +89,8 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto pb-56" style={{ position:"relative", zIndex:2 }}>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-12" style={{ paddingTop:"60px", paddingBottom:"40px" }}>
-          <div className="flex-1">
+        <div className="hidden md:flex items-start gap-12" style={{ paddingTop:"48px", paddingBottom:"40px" }}>
+          <div className="flex-1" style={{ paddingTop: "0" }}>
             {/* Nadpis */}
             <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(32px,4vw,52px)", margin: "0 0 8px" }}>
               Levná přeprava
