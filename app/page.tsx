@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero"
 import TrustNumbers from "@/components/TrustNumbers"
 import FloatingCTA from "@/components/FloatingCTA"
-import ScrollToTop from "@/components/ScrollToTop";
 import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
 import Fleet from "@/components/Fleet";
@@ -98,7 +97,6 @@ export default function Home() {
         </a>
       </div>
       <FloatingCTA />
-      <ScrollToTop />
     </>
   );
 }
