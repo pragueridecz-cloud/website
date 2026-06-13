@@ -40,32 +40,25 @@ export default function NadraziPage() {
       <Navbar />
       <main>
 
-        <section style={{ background: "linear-gradient(135deg, #1E3A8A 0%, #162d6e 100%)", paddingTop: "120px", paddingBottom: "64px" }}>
-          <div className="max-w-5xl mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center gap-12">
-              <div className="flex-1">
-                <div className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full text-xs font-semibold"
-                  style={{ background: "rgba(249,115,22,.2)", color: "#F97316", border: "1px solid rgba(249,115,22,.3)" }}>
-                  Vlak · Autobus · Praha
-                </div>
-                <h1 className="text-white font-bold mb-4" style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(32px,5vw,52px)", lineHeight: 1.1 }}>
-                  Transfer na vlakové<br />a autobusové nádraží<br />
-                  <span style={{ color: "#F97316" }}>v Praze</span>
-                </h1>
-                <p className="mb-8" style={{ color: "rgba(255,255,255,.75)", fontSize: "17px", lineHeight: 1.7, maxWidth: "480px" }}>
-                  Spolehlivá přeprava na Hlavní nádraží, Florenc, Smíchovské nádraží a všechna ostatní pražská nádraží. Přijedeme včas, ať stihnete spoj.
-                </p>
-                <a href="/#rezervace" className="inline-flex items-center gap-3 font-bold rounded-xl text-white"
-                  style={{ background: "#F97316", padding: "14px 32px", fontSize: "17px", fontFamily: "Poppins, sans-serif", textDecoration: "none" }}>
-                  Rezervovat transfer →
-                </a>
-              </div>
-              <div className="flex-shrink-0">
-                <img src="/service-vlakautobus.png" alt="Transfer na nádraží Praha" className="rounded-2xl shadow-2xl" style={{ maxWidth: "380px", width: "100%" }} />
-              </div>
+                {/* Hero nadpis */}
+        <div style={{ background: "#1E3A8A", padding: "100px 24px 60px" }}>
+          <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
+              <div style={{ width: "32px", height: "2px", background: "#F97316" }} />
+              <span style={{ fontSize: "11px", fontWeight: 700, color: "#F97316", textTransform: "uppercase", letterSpacing: "1.5px" }}>
+                Nádraží
+              </span>
             </div>
+            <h1 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.15, color: "#fff", fontSize: "clamp(32px,5vw,56px)", margin: "0 0 16px" }}>
+              Transfer na nádraží<br />
+              <span style={{ color: "#F97316" }}>vlak i autobus</span>
+            </h1>
+            <div style={{ width: "48px", height: "3px", background: "#F97316", borderRadius: "2px", marginBottom: "20px" }} />
+            <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "18px", lineHeight: 1.7, maxWidth: "600px" }}>
+              Dovezeme vás přesně na vlakové nebo autobusové nádraží. Hlavní nádraží, Florenc, Holešovice.
+            </p>
           </div>
-        </section>
+        </div>
 
         <section className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4">
