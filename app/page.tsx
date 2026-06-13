@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero"
 import TrustNumbers from "@/components/TrustNumbers"
 import FloatingCTA from "@/components/FloatingCTA"
-import CoverageMap from "@/components/CoverageMap"
 import ScrollToTop from "@/components/ScrollToTop";
 import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
@@ -78,7 +77,6 @@ export default function Home() {
         <Services />
         <Fleet />
         <Testimonials />
-        <CoverageMap />
         <B2B />
         <FAQ />
       </main>
