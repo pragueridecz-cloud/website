@@ -133,59 +133,25 @@ export default function LetistniPreprava() {
       <main>
 
         {/* HERO */}
-        <section style={{ background: "linear-gradient(135deg, #1E3A8A 0%, #0d1f4a 100%)", paddingTop: "100px", paddingBottom: "0", overflow: "hidden" }}>
-          <div className="max-w-6xl mx-auto px-4 pb-16">
-            <div className="flex flex-col md:flex-row items-end gap-8">
-              <div className="flex-1 pb-8">
-                <div className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full text-xs font-semibold"
-                  style={{ background: "rgba(249,115,22,.2)", color: "#F97316", border: "1px solid rgba(249,115,22,.3)" }}>
-                  🛫 Praha · Vídeň · Bratislava · Mnichov · Frankfurt
-                </div>
-                <h1 className="text-white font-bold mb-5" style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(36px,5.5vw,64px)", lineHeight: 1.05 }}>
-                  Transfer<br />na letiště<br />
-                  <span style={{ color: "#F97316" }}>odkudkoli</span>
-                </h1>
-                <p style={{ color: "rgba(255,255,255,.75)", fontSize: "18px", lineHeight: 1.7, marginBottom: "32px", maxWidth: "460px" }}>
-                  Přepravujeme na letiště Václava Havla Praha, ale také do Vídně, Bratislavy, Mnichova, Frankfurtu a dalších blízkých letišť. Pevná cena, sledování letu, řidič s cedulkou.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <a href="/#rezervace" style={{ background: "#F97316", color: "#fff", padding: "15px 36px", borderRadius: "12px", fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "17px", textDecoration: "none", display: "inline-block" }}>
-                    Rezervovat transfer
-                  </a>
-                  <a href="tel:+420606079179" style={{ background: "rgba(255,255,255,.1)", border: "1px solid rgba(255,255,255,.25)", color: "#fff", padding: "15px 28px", borderRadius: "12px", fontFamily: "Poppins, sans-serif", fontWeight: 600, fontSize: "15px", textDecoration: "none", display: "inline-block" }}>
-                    📞 Zavolat
-                  </a>
-                </div>
-              </div>
-              <div className="flex-shrink-0 w-full md:w-1/2">
-                <img
-                  src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80"
-                  alt="Letiště Praha Václava Havla terminal"
-                  style={{ width: "100%", borderRadius: "16px 16px 0 0", objectFit: "cover", height: "420px", display: "block" }}
-                />
-              </div>
+                {/* Hero nadpis */}
+        <div style={{ background: "#1E3A8A", padding: "100px 24px 60px" }}>
+          <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
+              <div style={{ width: "32px", height: "2px", background: "#F97316" }} />
+              <span style={{ fontSize: "11px", fontWeight: 700, color: "#F97316", textTransform: "uppercase", letterSpacing: "1.5px" }}>
+                Letištní přeprava
+              </span>
             </div>
+            <h1 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.15, color: "#fff", fontSize: "clamp(32px,5vw,56px)", margin: "0 0 16px" }}>
+              Transfer na letiště<br />
+              <span style={{ color: "#F97316" }}>Praha a střední Evropa</span>
+            </h1>
+            <div style={{ width: "48px", height: "3px", background: "#F97316", borderRadius: "2px", marginBottom: "20px" }} />
+            <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "18px", lineHeight: 1.7, maxWidth: "600px" }}>
+              Přepravujeme na všechna hlavní letiště v dosahu 700 km. Pevná cena, sledování letu, řidič na místě.
+            </p>
           </div>
-
-          {/* Stats bar */}
-          <div style={{ background: "rgba(0,0,0,.3)", borderTop: "1px solid rgba(255,255,255,.08)" }}>
-            <div className="max-w-6xl mx-auto px-4 py-4">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                {[
-                  { num: "od 790 Kč", label: "Cena do letiště Praha" },
-                  { num: "24/7", label: "Dostupnost" },
-                  { num: "8+", label: "Letišť v dosahu" },
-                  { num: "0 Kč", label: "Příplatek za zpoždění" },
-                ].map((s, i) => (
-                  <div key={i}>
-                    <div style={{ fontFamily: "Poppins, sans-serif", fontSize: "22px", fontWeight: 900, color: "#F97316" }}>{s.num}</div>
-                    <div style={{ fontSize: "12px", color: "rgba(255,255,255,.55)", marginTop: "2px" }}>{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        </div>
 
         {/* LETIŠTĚ V ČR */}
         <section className="py-20 bg-white">
