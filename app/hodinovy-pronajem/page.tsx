@@ -30,32 +30,25 @@ export default function HodinPronajem() {
       <Navbar />
       <main>
 
-        <section style={{ background: "linear-gradient(135deg, #1E3A8A 0%, #162d6e 100%)", paddingTop: "120px", paddingBottom: "64px" }}>
-          <div className="max-w-5xl mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center gap-12">
-              <div className="flex-1">
-                <div className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full text-xs font-semibold"
-                  style={{ background: "rgba(249,115,22,.2)", color: "#F97316", border: "1px solid rgba(249,115,22,.3)" }}>
-                  Chauffeur service · Praha
-                </div>
-                <h1 className="text-white font-bold mb-4" style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(32px,5vw,52px)", lineHeight: 1.1 }}>
-                  Auto s řidičem<br />
-                  <span style={{ color: "#F97316" }}>na hodiny</span>
-                </h1>
-                <p className="mb-8" style={{ color: "rgba(255,255,255,.75)", fontSize: "17px", lineHeight: 1.7, maxWidth: "480px" }}>
-                  Prohlídka Prahy, firemní schůzky, nákupy nebo výlet za město. Pronajměte si komfortní vozidlo s profesionálním řidičem na libovolný čas.
-                </p>
-                <a href="/#rezervace" className="inline-flex items-center gap-3 font-bold rounded-xl text-white"
-                  style={{ background: "#F97316", padding: "14px 32px", fontSize: "17px", fontFamily: "Poppins, sans-serif", textDecoration: "none" }}>
-                  Rezervovat →
-                </a>
-              </div>
-              <div className="flex-shrink-0">
-                <img src="/service-hodinovy.png" alt="Hodinový pronájem auta s řidičem" className="rounded-2xl shadow-2xl" style={{ maxWidth: "380px", width: "100%" }} />
-              </div>
+                {/* Hero nadpis */}
+        <div style={{ background: "#1E3A8A", padding: "100px 24px 60px" }}>
+          <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
+              <div style={{ width: "32px", height: "2px", background: "#F97316" }} />
+              <span style={{ fontSize: "11px", fontWeight: 700, color: "#F97316", textTransform: "uppercase", letterSpacing: "1.5px" }}>
+                Hodinový pronájem
+              </span>
             </div>
+            <h1 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.15, color: "#fff", fontSize: "clamp(32px,5vw,56px)", margin: "0 0 16px" }}>
+              Auto s řidičem<br />
+              <span style={{ color: "#F97316" }}>na hodiny nebo celý den</span>
+            </h1>
+            <div style={{ width: "48px", height: "3px", background: "#F97316", borderRadius: "2px", marginBottom: "20px" }} />
+            <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "18px", lineHeight: 1.7, maxWidth: "600px" }}>
+              Řidič k dispozici přesně tak dlouho, jak potřebujete. Ideální pro obchodní schůzky, výlety nebo VIP hosty.
+            </p>
           </div>
-        </section>
+        </div>
 
         <section className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4">
