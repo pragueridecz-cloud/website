@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Navbar from "@/components/Navbar"
+import CoverageMap from "@/components/CoverageMap"
 import Footer from "@/components/Footer"
 
 export const metadata: Metadata = {
@@ -339,6 +340,9 @@ export default function LetistniPreprava() {
             </div>
           </div>
         </section>
+
+        {/* Mapa pokrytí */}
+        <CoverageMap />
 
         {/* FAQ */}
         <section className="py-20" style={{ background: "#f8fafc" }}>
