@@ -97,6 +97,8 @@ export default function Home() {
           Rezervovat online
         </a>
       </div>
+      <FloatingCTA />
+      <ScrollToTop />
     </>
   );
 }
