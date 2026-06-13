@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next"
+import ProgressBar from "@/components/ProgressBar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -36,6 +37,7 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
       </head>
+      <ProgressBar />
       <body className="min-h-full flex flex-col antialiased">
         {children}
         <script dangerouslySetInnerHTML={{__html: `
