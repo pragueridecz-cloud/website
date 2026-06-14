@@ -23,9 +23,12 @@ const P = ({ children }: { children: React.ReactNode }) => (
 )
 
 const Ul = ({ items }: { items: string[] }) => (
-  <ul style={{ paddingLeft: "20px", marginBottom: "12px" }}>
+  <ul style={{ listStyle: "none", padding: 0, margin: "0 0 12px" }}>
     {items.map((item, i) => (
-      <li key={i} style={{ marginBottom: "6px" }}>{item}</li>
+      <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "8px", fontSize: "15px", color: "#374151", lineHeight: 1.6 }}>
+        <i className="ti ti-point-filled" style={{ color: "#F97316", fontSize: "10px", marginTop: "6px", flexShrink: 0 }} />
+        <span>{item}</span>
+      </li>
     ))}
   </ul>
 )
