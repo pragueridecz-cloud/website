@@ -23,16 +23,21 @@ const P = ({ children }: { children: React.ReactNode }) => (
 )
 
 const Ul = ({ items }: { items: (string | React.ReactNode)[] }) => (
-  <ul style={{ paddingLeft: "20px", marginBottom: "12px" }}>
+  <ul style={{ listStyle: "none", padding: 0, margin: "0 0 12px" }}>
     {items.map((item, i) => (
-      <li key={i} style={{ marginBottom: "8px" }}>{item}</li>
+      <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "8px", fontSize: "15px", color: "#374151", lineHeight: 1.6 }}>
+        <i className="ti ti-point-filled" style={{ color: "#F97316", fontSize: "10px", marginTop: "6px", flexShrink: 0 }} />
+        <span>{item}</span>
+      </li>
     ))}
   </ul>
 )
 
 const RightBox = ({ icon, title, text }: { icon: string; title: string; text: string }) => (
-  <div style={{ background: "#f0f4ff", border: "1px solid #dbeafe", borderRadius: "10px", padding: "16px 20px", marginBottom: "10px", display: "flex", gap: "14px" }}>
-    <div style={{ fontSize: "24px", flexShrink: 0 }}>{icon}</div>
+  <div style={{ background: "#f0f4ff", border: "1px solid #dbeafe", borderRadius: "10px", padding: "16px 20px", marginBottom: "10px", display: "flex", gap: "14px", alignItems: "flex-start" }}>
+    <div style={{ width: "36px", height: "36px", borderRadius: "8px", background: "#1E3A8A", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+      <i className={icon} style={{ fontSize: "16px", color: "#fff" }} />
+    </div>
     <div>
       <div style={{ fontWeight: 700, color: "#1E3A8A", fontSize: "14px", marginBottom: "4px" }}>{title}</div>
       <div style={{ color: "#475569", fontSize: "13px", lineHeight: 1.6 }}>{text}</div>
@@ -152,12 +157,12 @@ export default function OchranaOsobnichUdaju() {
           <Section title="5. Vaše práva">
             <P>Jako subjekt údajů máte tato práva, která můžete uplatnit kdykoliv kontaktováním správce:</P>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "10px", marginBottom: "16px" }}>
-              <RightBox icon="👁️" title="Právo na přístup" text="Máte právo vědět, jaké údaje o vás zpracováváme a získat jejich kopii." />
-              <RightBox icon="✏️" title="Právo na opravu" text="Pokud jsou vaše údaje nesprávné nebo neúplné, máte právo na jejich opravu." />
-              <RightBox icon="🗑️" title="Právo na výmaz" text="Za určitých podmínek máte právo požádat o smazání vašich osobních údajů." />
-              <RightBox icon="⏸️" title="Právo na omezení" text="Můžete požádat o omezení zpracování, například pokud zpochybňujete přesnost údajů." />
-              <RightBox icon="📦" title="Právo na přenositelnost" text="Údaje zpracovávané automatizovaně na základě souhlasu nebo smlouvy vám předáme ve strojově čitelném formátu." />
-              <RightBox icon="🚫" title="Právo vznést námitku" text="Proti zpracování na základě oprávněného zájmu můžete kdykoliv vznést námitku." />
+              <RightBox icon="ti ti-eye" title="Právo na přístup" text="Máte právo vědět, jaké údaje o vás zpracováváme a získat jejich kopii." />
+              <RightBox icon="ti ti-pencil" title="Právo na opravu" text="Pokud jsou vaše údaje nesprávné nebo neúplné, máte právo na jejich opravu." />
+              <RightBox icon="ti ti-trash" title="Právo na výmaz" text="Za určitých podmínek máte právo požádat o smazání vašich osobních údajů." />
+              <RightBox icon="ti ti-player-pause" title="Právo na omezení" text="Můžete požádat o omezení zpracování, například pokud zpochybňujete přesnost údajů." />
+              <RightBox icon="ti ti-package" title="Právo na přenositelnost" text="Údaje zpracovávané automatizovaně na základě souhlasu nebo smlouvy vám předáme ve strojově čitelném formátu." />
+              <RightBox icon="ti ti-ban" title="Právo vznést námitku" text="Proti zpracování na základě oprávněného zájmu můžete kdykoliv vznést námitku." />
             </div>
             <P>Svá práva uplatněte e-mailem na <a href="mailto:info@naletistelevne.cz" style={{ color: "#1E3A8A" }}>info@naletistelevne.cz</a>. Na vaši žádost odpovíme do <strong>30 dnů</strong>.</P>
             <P>Pokud se domníváte, že zpracováváme vaše údaje v rozporu s GDPR, máte právo podat stížnost u Úřadu pro ochranu osobních údajů (<a href="https://www.uoou.cz" target="_blank" rel="noopener noreferrer" style={{ color: "#1E3A8A" }}>www.uoou.cz</a>).</P>
