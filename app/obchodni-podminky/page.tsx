@@ -3,8 +3,8 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 
 export const metadata: Metadata = {
-  title: "Obchodní podmínky | Transfer Prague Car s.r.o.",
-  description: "Obchodní podmínky společnosti Transfer Prague Car s.r.o. provozující službu Naletiště Levně. Přepravní podmínky, storno podmínky, reklamace.",
+  title: "Obchodní podmínky | transfer-prague-car s.r.o.",
+  description: "Obchodní podmínky společnosti transfer-prague-car s.r.o. provozující službu Naletiště Levně. Přepravní podmínky, storno podmínky, reklamace.",
 }
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
@@ -51,7 +51,7 @@ export default function ObchodniPodminky() {
           </h1>
           <div style={{ width: "48px", height: "3px", background: "#F97316", borderRadius: "2px", marginBottom: "16px" }} />
           <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "14px" }}>
-            Platné od {updated} · Transfer Prague Car s.r.o.
+            Platné od {updated} · transfer-prague-car s.r.o.
           </p>
         </div>
       </div>
@@ -63,20 +63,20 @@ export default function ObchodniPodminky() {
           <Section title="1. Provozovatel a identifikační údaje">
             <P>Provozovatelem přepravní služby <strong>Naletiště Levně</strong> (dostupné na adrese <a href="https://www.naletistelevne.cz" style={{ color: "#1E3A8A" }}>naletistelevne.cz</a>) je:</P>
             <div style={{ background: "#f0f4ff", border: "1px solid #dbeafe", borderRadius: "10px", padding: "16px 20px", marginBottom: "12px" }}>
-              <strong>Transfer Prague Car s.r.o.</strong><br />
-              Sídlo: [doplňte sídlo]<br />
-              IČO: [doplňte IČO]<br />
-              DIČ: [doplňte DIČ]<br />
-              Zapsáno v obchodním rejstříku vedeném [příslušným soudem]<br />
+              <strong>transfer-prague-car s.r.o.</strong><br />
+              Sídlo: Sochařská 333/2, 170 00 Praha, Česká republika<br />
+              IČO: 25706993<br />
+              DIČ: CZ25706993<br />
+              Zapsáno v obchodním rejstříku vedeném Městským soudem v Praze<br />
               E-mail: <a href="mailto:info@naletistelevne.cz" style={{ color: "#1E3A8A" }}>info@naletistelevne.cz</a><br />
-              Telefon: <a href="tel:+420777123456" style={{ color: "#1E3A8A" }}>+420 777 123 456</a>
+              Telefon: <a href="tel:+420606079179" style={{ color: "#1E3A8A" }}>+420 606 079 179</a>
             </div>
             <P>Tyto obchodní podmínky upravují vztahy mezi provozovatelem a zákazníkem při objednávání a poskytování přepravních služeb.</P>
           </Section>
 
           <Section title="2. Vymezení pojmů">
             <Ul items={[
-              "Provozovatel – Transfer Prague Car s.r.o., provozovatel přepravní platformy Naletiště Levně",
+              "Provozovatel – transfer-prague-car s.r.o., provozovatel přepravní platformy Naletiště Levně",
               "Zákazník – fyzická nebo právnická osoba, která objednává přepravní službu",
               "Řidič – smluvní partner provozovatele zajišťující fyzickou přepravu",
               "Rezervace – závazná objednávka přepravy vytvoření prostřednictvím rezervačního formuláře",
@@ -90,7 +90,7 @@ export default function ObchodniPodminky() {
             <P>Rezervaci lze provést:</P>
             <Ul items={[
               "Online přes rezervační formulář na naletistelevne.cz",
-              "Telefonicky na +420 777 123 456",
+              "Telefonicky na +420 606 079 179",
               "E-mailem na info@naletistelevne.cz",
             ]} />
           </Section>
@@ -169,7 +169,7 @@ export default function ObchodniPodminky() {
             <P>Zákazník má právo podat reklamaci do <strong>30 dnů</strong> od uskutečnění jízdy. Reklamaci lze uplatnit:</P>
             <Ul items={[
               "E-mailem: info@naletistelevne.cz",
-              "Telefonicky: +420 777 123 456",
+              "Telefonicky: +420 606 079 179",
             ]} />
             <P>Provozovatel se zavazuje reklamaci vyřídit do <strong>14 pracovních dnů</strong> od jejího obdržení.</P>
             <P>Zákazník, který je spotřebitelem, má právo na mimosoudní řešení spotřebitelského sporu prostřednictvím České obchodní inspekce (www.coi.cz).</P>
