@@ -4,7 +4,7 @@ import Footer from "@/components/Footer"
 
 export const metadata: Metadata = {
   title: "Obchodní podmínky | transfer-prague-car s.r.o.",
-  description: "Obchodní podmínky společnosti transfer-prague-car s.r.o. provozující službu Naletiště Levně. Přepravní podmínky, storno podmínky, reklamace.",
+  description: "Obchodní podmínky společnosti transfer-prague-car s.r.o. provozující službu www.naletistelevne.cz. Přepravní podmínky, storno podmínky, reklamace.",
 }
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
@@ -61,7 +61,7 @@ export default function ObchodniPodminky() {
         <div style={{ maxWidth: "860px", margin: "0 auto", background: "#fff", borderRadius: "16px", padding: "clamp(24px,5vw,56px)", boxShadow: "0 2px 16px rgba(0,0,0,0.06)" }}>
 
           <Section title="1. Provozovatel a identifikační údaje">
-            <P>Provozovatelem přepravní služby <strong>Naletiště Levně</strong> (dostupné na adrese <a href="https://www.naletistelevne.cz" style={{ color: "#1E3A8A" }}>naletistelevne.cz</a>) je:</P>
+            <P>Provozovatelem přepravní platformy <strong>www.naletistelevne.cz</strong> (dostupné na adrese <a href="https://www.naletistelevne.cz" style={{ color: "#1E3A8A" }}>naletistelevne.cz</a>) je:</P>
             <div style={{ background: "#f0f4ff", border: "1px solid #dbeafe", borderRadius: "10px", padding: "16px 20px", marginBottom: "12px" }}>
               <strong>transfer-prague-car s.r.o.</strong><br />
               Sídlo: Sochařská 333/2, 170 00 Praha, Česká republika<br />
@@ -76,7 +76,7 @@ export default function ObchodniPodminky() {
 
           <Section title="2. Vymezení pojmů">
             <Ul items={[
-              "Provozovatel – transfer-prague-car s.r.o., provozovatel přepravní platformy Naletiště Levně",
+              "Provozovatel – transfer-prague-car s.r.o., provozovatel přepravní platformy www.naletistelevne.cz",
               "Zákazník – fyzická nebo právnická osoba, která objednává přepravní službu",
               "Řidič – smluvní partner provozovatele zajišťující fyzickou přepravu",
               "Rezervace – závazná objednávka přepravy vytvoření prostřednictvím rezervačního formuláře",
