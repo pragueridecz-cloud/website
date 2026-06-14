@@ -23,10 +23,10 @@ const P = ({ children }: { children: React.ReactNode }) => (
 )
 
 const Ul = ({ items }: { items: (string | React.ReactNode)[] }) => (
-  <ul style={{ listStyle: "none", padding: 0, margin: "0 0 12px" }}>
+  <ul style={{ margin: "4px 0 16px 0", padding: 0, listStyle: "none" }}>
     {items.map((item, i) => (
-      <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "8px", fontSize: "15px", color: "#374151", lineHeight: 1.6 }}>
-        <i className="ti ti-point-filled" style={{ color: "#F97316", fontSize: "10px", marginTop: "6px", flexShrink: 0 }} />
+      <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "8px", marginBottom: "7px", fontSize: "15px", color: "#374151", lineHeight: 1.65 }}>
+        <span style={{ display: "inline-block", width: "8px", height: "8px", borderRadius: "50%", background: "#F97316", flexShrink: 0, marginTop: "7px" }} />
         <span>{item}</span>
       </li>
     ))}
