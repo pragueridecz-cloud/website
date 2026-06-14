@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 
 export const metadata: Metadata = {
-  title: "Zásady zpracování cookies | Transfer Prague Car s.r.o.",
+  title: "Zásady zpracování cookies | transfer-prague-car s.r.o.",
   description: "Informace o cookies používaných na webu naletistelevne.cz – jaké cookies používáme, k čemu slouží a jak je spravovat.",
 }
 
@@ -58,7 +58,7 @@ export default function ZasadyCookies() {
           </h1>
           <div style={{ width: "48px", height: "3px", background: "#F97316", borderRadius: "2px", marginBottom: "16px" }} />
           <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "14px" }}>
-            Platné od {updated} · Transfer Prague Car s.r.o.
+            Platné od {updated} · transfer-prague-car s.r.o.
           </p>
         </div>
       </div>
