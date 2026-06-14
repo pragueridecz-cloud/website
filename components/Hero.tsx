@@ -40,6 +40,17 @@ export default function Hero() {
     });
   }, []);
 
+  useEffect(() => {
+    const handler = (e: MessageEvent) => {
+      if (e.data?.type === 'nll-resize' && e.data?.height) {
+        const frame = document.getElementById('nll-widget-frame') as HTMLIFrameElement;
+        if (frame) frame.style.height = (e.data.height + 40) + 'px';
+      }
+    };
+    window.addEventListener('message', handler);
+    return () => window.removeEventListener('message', handler);
+  }, []);
+
   return (
     <section id="rezervace" className="px-4 pt-28 pb-0 md:pb-0" style={{ position:"relative", overflow:"hidden", background:"#0d1f4a" }}>
       {/* Praha fotka v pozadí */}
