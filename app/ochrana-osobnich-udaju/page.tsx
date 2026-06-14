@@ -3,8 +3,8 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 
 export const metadata: Metadata = {
-  title: "Ochrana osobních údajů (GDPR) | Transfer Prague Car s.r.o.",
-  description: "Zásady ochrany osobních údajů společnosti Transfer Prague Car s.r.o. Jak zpracováváme vaše data, jaká máte práva a jak nás kontaktovat.",
+  title: "Ochrana osobních údajů (GDPR) | transfer-prague-car s.r.o.",
+  description: "Zásady ochrany osobních údajů společnosti transfer-prague-car s.r.o. Jak zpracováváme vaše data, jaká máte práva a jak nás kontaktovat.",
 }
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
@@ -73,11 +73,11 @@ export default function OchranaOsobnichUdaju() {
           <Section title="1. Správce osobních údajů">
             <P>Správcem vašich osobních údajů je:</P>
             <div style={{ background: "#f0f4ff", border: "1px solid #dbeafe", borderRadius: "10px", padding: "16px 20px", marginBottom: "12px" }}>
-              <strong>Transfer Prague Car s.r.o.</strong><br />
-              Sídlo: [doplňte sídlo]<br />
-              IČO: [doplňte IČO]<br />
+              <strong>transfer-prague-car s.r.o.</strong><br />
+              Sídlo: Sochařská 333/2, 170 00 Praha, Česká republika<br />
+              IČO: 25706993<br />
               E-mail: <a href="mailto:info@naletistelevne.cz" style={{ color: "#1E3A8A" }}>info@naletistelevne.cz</a><br />
-              Telefon: <a href="tel:+420777123456" style={{ color: "#1E3A8A" }}>+420 777 123 456</a>
+              Telefon: <a href="tel:+420606079179" style={{ color: "#1E3A8A" }}>+420 606 079 179</a>
             </div>
             <P>Tato stránka popisuje, jaké osobní údaje shromažďujeme, k jakým účelům je používáme a jaká máte v souvislosti s jejich zpracováním práva.</P>
           </Section>
