@@ -77,7 +77,7 @@ export default function ZasadyCookies() {
             {/* Nezbytné */}
             <div style={{ marginBottom: "28px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
-                <span style={{ fontSize: "20px" }}>🔒</span>
+                <div style={{ width:"32px", height:"32px", borderRadius:"8px", background:"#1E3A8A", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}><i className="ti ti-lock" style={{ fontSize:"15px", color:"#fff" }} /></div>
                 <div>
                   <div style={{ fontWeight: 700, color: "#1E3A8A", fontSize: "15px" }}>Nezbytné cookies</div>
                   <div style={{ fontSize: "12px", color: "#64748b" }}>Vždy aktivní – bez nich web nemůže fungovat. Souhlas se nevyžaduje.</div>
@@ -106,7 +106,7 @@ export default function ZasadyCookies() {
             {/* Funkční */}
             <div style={{ marginBottom: "28px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
-                <span style={{ fontSize: "20px" }}>⚙️</span>
+                <div style={{ width:"32px", height:"32px", borderRadius:"8px", background:"#92400e", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}><i className="ti ti-settings" style={{ fontSize:"15px", color:"#fff" }} /></div>
                 <div>
                   <div style={{ fontWeight: 700, color: "#1E3A8A", fontSize: "15px" }}>Funkční cookies</div>
                   <div style={{ fontSize: "12px", color: "#64748b" }}>Zlepšují funkčnost webu. Lze odmítnout, ale některé funkce pak nemusí fungovat správně.</div>
@@ -134,7 +134,7 @@ export default function ZasadyCookies() {
             {/* Analytické */}
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
-                <span style={{ fontSize: "20px" }}>📊</span>
+                <div style={{ width:"32px", height:"32px", borderRadius:"8px", background:"#475569", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}><i className="ti ti-chart-bar" style={{ fontSize:"15px", color:"#fff" }} /></div>
                 <div>
                   <div style={{ fontWeight: 700, color: "#1E3A8A", fontSize: "15px" }}>Analytické cookies</div>
                   <div style={{ fontSize: "12px", color: "#64748b" }}>Pomáhají nám pochopit, jak návštěvníci web používají. Všechna data jsou anonymizovaná.</div>
