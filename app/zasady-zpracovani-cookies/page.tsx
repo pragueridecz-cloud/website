@@ -140,9 +140,9 @@ export default function ZasadyCookies() {
                   <div style={{ fontSize: "12px", color: "#64748b" }}>Pomáhají nám pochopit, jak návštěvníci web používají. Všechna data jsou anonymizovaná.</div>
                 </div>
               </div>
-              <P style={{ color: "#64748b", fontSize: "13px" }}>
+              <p style={{ color: "#64748b", fontSize: "13px", marginBottom: "12px" }}>
                 V současné době nepoužíváme žádné analytické cookies třetích stran. Pokud to v budoucnu změníme, tento dokument aktualizujeme a požádáme vás o souhlas.
-              </P>
+              </p>
             </div>
 
           </Section>
