@@ -76,7 +76,7 @@ export default function Hero() {
 
         {/* Desktop */}
                   <div className="hidden md:flex items-start gap-12" style={{ paddingTop:"48px", paddingBottom:"40px", position:"relative" }}>
-          <div className="flex-1" style={{ paddingTop: "0" }}>
+          <div className="flex-1" style={{ paddingTop: "0", display: widgetStep >= 2 ? "none" : undefined }}>
             {/* Nadpis */}
             <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(32px,4vw,52px)", margin: "0 0 8px" }}>
               Levná přeprava
@@ -106,11 +106,11 @@ export default function Hero() {
           </div>
 
           {/* Widget */}
-          <div style={{ flexShrink: 0, width: widgetStep >= 2 ? "100vw" : "52%", position: widgetStep >= 2 ? "fixed" : "relative", inset: widgetStep >= 2 ? "0" : undefined, zIndex: widgetStep >= 2 ? 9999 : undefined, transition: "none" }}>
+          <div style={{ flexShrink: 0, width: widgetStep >= 2 ? "100%" : "52%" }}>
             <iframe id="nll-widget-frame" src="https://taxisaas-widget.vercel.app/widget.html" width="100%"
               frameBorder="0" title="Rezervační formulář" className="w-full block shadow-2xl rounded-xl"
-              scrolling={widgetStep >= 2 ? "yes" : "no"}
-              style={{ background: "#1E3A8A", height: widgetStep >= 2 ? "100vh" : "520px", display: "block" }} />
+              scrolling="no"
+              style={{ background: "#1E3A8A", height: "560px", display: "block" }} />
           </div>
         </div>
 
