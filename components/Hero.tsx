@@ -75,17 +75,7 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto pb-56" style={{ position:"relative", zIndex:2 }}>
 
         {/* Desktop */}
-        
-          {/* Fullscreen overlay pro krok 2+ */}
-          {widgetStep >= 2 && (
-            <div style={{ position: "fixed", inset: 0, zIndex: 9998, background: "#0d1f4a" }}>
-              <iframe id="nll-widget-frame-fs" src="https://taxisaas-widget.vercel.app/widget.html" width="100%" height="100%"
-                frameBorder="0" title="Rezervační formulář"
-                scrolling="yes" style={{ display: "block", border: "none", height: "100vh" }} />
-            </div>
-          )}
-
-          <div className="hidden md:flex items-start gap-12" style={{ paddingTop:"48px", paddingBottom:"40px", position:"relative" }}>
+                  <div className="hidden md:flex items-start gap-12" style={{ paddingTop:"48px", paddingBottom:"40px", position:"relative" }}>
           <div className="flex-1" style={{ paddingTop: "0" }}>
             {/* Nadpis */}
             <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(32px,4vw,52px)", margin: "0 0 8px" }}>
@@ -116,10 +106,11 @@ export default function Hero() {
           </div>
 
           {/* Widget */}
-          <div style={{ flexShrink: 0, width: "52%" }}>
-            <iframe id="nll-widget-frame" src="https://taxisaas-widget.vercel.app/widget.html" width="100%" height="520"
+          <div style={{ flexShrink: 0, width: widgetStep >= 2 ? "100vw" : "52%", position: widgetStep >= 2 ? "fixed" : "relative", inset: widgetStep >= 2 ? "0" : undefined, zIndex: widgetStep >= 2 ? 9999 : undefined, transition: "none" }}>
+            <iframe id="nll-widget-frame" src="https://taxisaas-widget.vercel.app/widget.html" width="100%"
               frameBorder="0" title="Rezervační formulář" className="w-full block shadow-2xl rounded-xl"
-              scrolling="no" style={{ background: "#1E3A8A", transition: "max-width 0.3s ease" }} />
+              scrolling={widgetStep >= 2 ? "yes" : "no"}
+              style={{ background: "#1E3A8A", height: widgetStep >= 2 ? "100vh" : "520px", display: "block" }} />
           </div>
         </div>
 
