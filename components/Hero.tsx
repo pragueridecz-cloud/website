@@ -101,15 +101,15 @@ export default function Hero() {
           </div>
 
           {/* Widget */}
-          <div className="flex-shrink-0 w-full max-w-md">
-            <iframe id="nll-widget-frame" src="https://taxisaas-widget.vercel.app/widget.html" width="100%" height="780"
+          <div className="flex-shrink-0 w-full" style={{ maxWidth: "520px" }}>
+            <iframe id="nll-widget-frame" src="https://taxisaas-widget.vercel.app/widget.html" width="100%" height="680"
               frameBorder="0" title="Rezervační formulář" className="w-full block rounded-xl shadow-2xl"
-              scrolling="no" style={{ background: "#1E3A8A", minHeight: "780px" }} />
+              scrolling="no" style={{ background: "#1E3A8A", minHeight: "680px" }} />
           </div>
         </div>
 
         {/* Mobil */}
-        <div className="md:hidden flex flex-col">
+        <div className="md:hidden flex flex-col" style={{ margin: "0 -16px" }}>
           {!mobileOpen && (
             <>
               <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(30px,8vw,42px)", margin: "0 0 4px" }}>
