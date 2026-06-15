@@ -102,9 +102,9 @@ export default function Hero() {
 
           {/* Widget */}
           <div className="flex-shrink-0 w-full" style={{ maxWidth: "520px" }}>
-            <iframe id="nll-widget-frame" src="https://taxisaas-widget.vercel.app/widget.html" width="100%" height="680"
+            <iframe id="nll-widget-frame" src="https://taxisaas-widget.vercel.app/widget.html" width="100%" height="520"
               frameBorder="0" title="Rezervační formulář" className="w-full block rounded-xl shadow-2xl"
-              scrolling="no" style={{ background: "#1E3A8A", minHeight: "680px" }} />
+              scrolling="no" style={{ background: "#1E3A8A" }} />
           </div>
         </div>
 
