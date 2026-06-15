@@ -106,7 +106,7 @@ export default function Hero() {
           </div>
 
           {/* Widget */}
-          <div style={{ maxWidth: widgetStep >= 2 ? "none" : "520px", flexShrink: widgetStep >= 2 ? 0 : 1, width: widgetStep >= 2 ? "100%" : undefined, position: widgetStep >= 2 ? "absolute" : "relative", top: widgetStep >= 2 ? 0 : undefined, right: widgetStep >= 2 ? 0 : undefined, left: widgetStep >= 2 ? 0 : undefined, zIndex: widgetStep >= 2 ? 10 : undefined }}>
+          <div style={{ flexShrink: 0, width: widgetStep >= 2 ? "100%" : "52%", position: widgetStep >= 2 ? "absolute" : "relative", top: widgetStep >= 2 ? 0 : undefined, right: widgetStep >= 2 ? 0 : undefined, left: widgetStep >= 2 ? 0 : undefined, bottom: widgetStep >= 2 ? 0 : undefined, zIndex: widgetStep >= 2 ? 10 : undefined, transition: "width 0.3s ease" }}>
             <iframe id="nll-widget-frame" src="https://taxisaas-widget.vercel.app/widget.html" width="100%" height="520"
               frameBorder="0" title="Rezervační formulář" className="w-full block shadow-2xl rounded-xl"
               scrolling="no" style={{ background: "#1E3A8A", transition: "max-width 0.3s ease" }} />
