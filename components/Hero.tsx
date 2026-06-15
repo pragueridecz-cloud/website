@@ -57,7 +57,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="rezervace" className={`px-4 pb-0 md:pb-0 ${widgetStep >= 2 ? "pt-0" : "pt-28"}`} style={{ position:"relative", overflow:"hidden", background:"#0d1f4a" }}>
+    <section id="rezervace" className="px-4 pt-28 pb-0 md:pb-0" style={{ position:"relative", overflow:"hidden", background:"#0d1f4a" }}>
       {/* Praha fotka v pozadí */}
       <div style={{
         position:"absolute", inset:0, zIndex:0,
@@ -75,8 +75,8 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto pb-56" style={{ position:"relative", zIndex:2 }}>
 
         {/* Desktop */}
-        <div className={`hidden md:flex gap-12 ${widgetStep >= 2 ? "flex-col items-stretch pt-6 pb-0" : "items-start"}`} style={widgetStep < 2 ? { paddingTop:"48px", paddingBottom:"40px" } : {}}>
-          <div className={`flex-1 ${widgetStep >= 2 ? "hidden" : ""}`} style={{ paddingTop: "0" }}>
+        <div className="hidden md:flex items-start gap-12" style={{ paddingTop:"48px", paddingBottom:"40px", position:"relative" }}>
+          <div className={`flex-1 transition-all duration-300 ${widgetStep >= 2 ? "opacity-0 pointer-events-none" : "opacity-100"}`} style={{ paddingTop: "0" }}>
             {/* Nadpis */}
             <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(32px,4vw,52px)", margin: "0 0 8px" }}>
               Levná přeprava
@@ -106,10 +106,10 @@ export default function Hero() {
           </div>
 
           {/* Widget */}
-          <div className={widgetStep >= 2 ? "w-full" : "flex-shrink-0 w-full"} style={widgetStep < 2 ? { maxWidth: "520px" } : {}}>
+          <div style={{ maxWidth: widgetStep >= 2 ? "none" : "520px", flexShrink: widgetStep >= 2 ? 0 : 1, width: widgetStep >= 2 ? "100%" : undefined, position: widgetStep >= 2 ? "absolute" : "relative", top: widgetStep >= 2 ? 0 : undefined, right: widgetStep >= 2 ? 0 : undefined, left: widgetStep >= 2 ? 0 : undefined, zIndex: widgetStep >= 2 ? 10 : undefined }}>
             <iframe id="nll-widget-frame" src="https://taxisaas-widget.vercel.app/widget.html" width="100%" height="520"
-              frameBorder="0" title="Rezervační formulář" className={`w-full block shadow-2xl ${widgetStep >= 2 ? "rounded-none" : "rounded-xl"}`}
-              scrolling="no" style={{ background: "#1E3A8A" }} />
+              frameBorder="0" title="Rezervační formulář" className="w-full block shadow-2xl rounded-xl"
+              scrolling="no" style={{ background: "#1E3A8A", transition: "max-width 0.3s ease" }} />
           </div>
         </div>
 
