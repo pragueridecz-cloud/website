@@ -61,6 +61,7 @@ export default function Hero() {
           boxShadow: "0 32px 80px rgba(0,0,0,0.45)",
           overflowY: "auto" as const,
           WebkitOverflowScrolling: "touch" as const,
+          overscrollBehavior: "contain" as const,
         });
         return;
       }
