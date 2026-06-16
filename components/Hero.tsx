@@ -69,6 +69,7 @@ export default function Hero() {
     `;
 
     function track() {
+      if (widgetStepRef.current > 1) return; // step 2+ owns positioning
       const r = ghost!.getBoundingClientRect();
       const visible = r.bottom > 0 && r.top < window.innerHeight;
       el!.style.opacity = visible ? "1" : "0";
