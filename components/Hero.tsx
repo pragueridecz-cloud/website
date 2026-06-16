@@ -82,10 +82,9 @@ export default function Hero() {
     const overlayH = `calc(100vh - ${NAVBAR_H + 32}px)`;
     const overlayW = Math.min(1200, window.innerWidth - 80);
 
-    // Base styles via React state (non-position props)
+    // Base styles via React state — top is intentionally excluded so pin() owns it
     setWrapperPos({
-      position: "absolute", // will be overridden by direct DOM below
-      top: NAVBAR_H + 16 + window.scrollY,
+      position: "absolute",
       left: "50%",
       transform: "translateX(-50%)",
       width: overlayW,
@@ -96,8 +95,9 @@ export default function Hero() {
       boxShadow: "0 32px 80px rgba(0,0,0,0.45)",
       overflowY: "auto" as const,
       WebkitOverflowScrolling: "touch" as const,
-      overscrollBehavior: "contain" as const,
     });
+    // Set initial top directly so pin() starts from the correct value
+    el.style.top = (NAVBAR_H + 16 + window.scrollY) + "px";
 
     // Manually keep overlay pinned by updating top directly on scroll (bypasses CSS fixed issues)
     function pin() {
