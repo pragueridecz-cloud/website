@@ -47,59 +47,55 @@ export default function Hero() {
     });
   }, []);
 
-  // Step 1: fixed position tracking ghost div; hide when ghost scrolls out of viewport
-  // Dynamic props (top/left/opacity) go ONLY to direct DOM — never in React state,
-  // so nll-height re-renders cannot reset them.
+  // Position widget in document (absolute) — scrolls with page, stays in hero section.
+  // All props via direct DOM so React re-renders (from nll-height) never overwrite them.
   useEffect(() => {
-    if (widgetStep > 1) return;
+    if (!mounted) return;
     const el = overlayRef.current;
     const ghost = ghostRef.current;
     if (!el || !ghost) return;
 
-    // Static styles only — no top/left/opacity here
-    el.style.cssText = `
-      position: fixed;
-      z-index: 40;
-      border-radius: 12px;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
-      overflow-y: hidden;
-      display: block;
-      background: transparent;
-      pointer-events: auto;
-    `;
-
-    function track() {
-      if (widgetStepRef.current > 1) return; // step 2+ owns positioning
-      const r = ghost!.getBoundingClientRect();
-      const visible = r.bottom > 0 && r.top < window.innerHeight;
-      el!.style.opacity = visible ? "1" : "0";
-      el!.style.pointerEvents = visible ? "auto" : "none";
-      el!.style.top = r.top + "px";
-      el!.style.left = r.left + "px";
-      el!.style.width = r.width + "px";
-      el!.style.height = r.height + "px";
+    function place() {
+      if (!el || !ghost) return;
+      if (widgetStepRef.current <= 1) {
+        // Step 1: align with ghost div in document space
+        const r = ghost.getBoundingClientRect();
+        el.style.cssText = `
+          position: absolute;
+          top: ${r.top + window.scrollY}px;
+          left: ${r.left + window.scrollX}px;
+          width: ${r.width}px;
+          height: ${r.height}px;
+          z-index: 40;
+          border-radius: 12px;
+          box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+          overflow: hidden;
+          display: block;
+          background: transparent;
+        `;
+      } else {
+        // Step 2+: centered below navbar, same document position (scrolls away naturally)
+        const w = Math.min(1200, window.innerWidth - 80);
+        el.style.cssText = `
+          position: absolute;
+          top: ${NAVBAR_H + 16}px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: ${w}px;
+          z-index: 40;
+          border-radius: 16px;
+          box-shadow: 0 32px 80px rgba(0,0,0,0.45);
+          overflow-y: auto;
+          display: block;
+          background: #f0f2f7;
+        `;
+      }
     }
 
-    track();
-    window.addEventListener("scroll", track, { passive: true });
-    window.addEventListener("resize", track, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", track);
-      window.removeEventListener("resize", track);
-    };
-  }, [widgetStep, mounted]);
-
-  // Step 2+: position:fixed via JSX overlayStyle — only update width on resize
-  useEffect(() => {
-    if (widgetStep <= 1) return;
-    const el = overlayRef.current;
-    if (!el) return;
-    function updateWidth() {
-      if (el) el.style.width = Math.min(1200, window.innerWidth - 80) + "px";
-    }
-    window.addEventListener("resize", updateWidth, { passive: true });
-    return () => window.removeEventListener("resize", updateWidth);
-  }, [widgetStep]);
+    place();
+    window.addEventListener("resize", place, { passive: true });
+    return () => window.removeEventListener("resize", place);
+  }, [mounted, widgetStep]);
 
   const widgetStepRef = useRef(1);
 
@@ -111,7 +107,7 @@ export default function Hero() {
         widgetStepRef.current = s;
         setWidgetStep(s);
         if (e.data.height) setWidgetH(e.data.height + 32);
-        if (s > 1) window.scrollTo({ top: 0, behavior: "smooth" });
+        if (s > 1) window.scrollTo({ top: 0, behavior: "instant" });
       }
       // Height update — keep iframe sized to full content when overlay is open
       if (e.data?.type === "nll-height" && e.data?.height) {
@@ -139,25 +135,8 @@ export default function Hero() {
 
   const expanded = widgetStep > 1;
 
-  // Step 1: NO inline styles from React — track() owns all positioning via direct DOM.
-  // Step 2: React manages fixed positioning (constant values, safe to re-render).
-  const overlayStyle: React.CSSProperties = expanded ? {
-    position: "fixed",
-    top: NAVBAR_H + 16,
-    left: "50%",
-    transform: "translateX(-50%)",
-    width: Math.min(1200, typeof window !== "undefined" ? window.innerWidth - 80 : 1120),
-    height: `calc(100vh - ${NAVBAR_H + 32}px)`,
-    zIndex: 40,
-    opacity: 1,
-    borderRadius: "16px",
-    boxShadow: "0 32px 80px rgba(0,0,0,0.45)",
-    overflowY: "auto",
-    background: "#f0f2f7",
-  } : {};
-
   const widgetEl = (
-    <div ref={overlayRef} style={overlayStyle}>
+    <div ref={overlayRef}>
       <iframe
         id="nll-widget-frame"
         src="https://taxisaas-widget.vercel.app/widget.html"
