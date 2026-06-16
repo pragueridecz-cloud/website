@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 const WHY_US = [
   { num: "01", text: "Pevná cena — žádná překvapení" },
@@ -7,7 +7,6 @@ const WHY_US = [
   { num: "03", text: "Dostupnost 24 hodin denně" },
   { num: "04", text: "Prověření profesionální řidiči" },
 ];
-
 
 function PriceTag() {
   return (
@@ -31,6 +30,7 @@ export default function Hero() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openCount, setOpenCount] = useState(0);
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const [widgetStep, setWidgetStep] = useState(1);
 
   useEffect(() => {
     WHY_US.forEach((_, i) => {
@@ -46,10 +46,19 @@ export default function Hero() {
         const frame = document.getElementById('nll-widget-frame') as HTMLIFrameElement;
         if (frame) frame.style.height = (e.data.height + 40) + 'px';
       }
+      if (e.data?.type === 'nll-step') {
+        setWidgetStep(e.data.step || 1);
+        if (e.data.height) {
+          const frame = document.getElementById('nll-widget-frame') as HTMLIFrameElement;
+          if (frame) frame.style.height = (e.data.height + 24) + 'px';
+        }
+      }
     };
     window.addEventListener('message', handler);
     return () => window.removeEventListener('message', handler);
   }, []);
+
+  const expanded = widgetStep > 1;
 
   return (
     <section id="rezervace" className="px-4 pt-28 pb-0 md:pb-0" style={{ position:"relative", overflow:"hidden", background:"#0d1f4a" }}>
@@ -62,7 +71,7 @@ export default function Hero() {
         opacity:0.8,
         mixBlendMode:"luminosity",
       }} />
-      {/* Barevný overlay – navy + oranžový přechod jako západ slunce */}
+      {/* Barevný overlay */}
       <div style={{
         position:"absolute", inset:0, zIndex:1,
         background:"linear-gradient(180deg, rgba(13,31,74,0.4) 0%, rgba(13,31,74,0.25) 40%, rgba(30,58,138,0.8) 100%)",
@@ -71,8 +80,17 @@ export default function Hero() {
 
         {/* Desktop */}
         <div className="hidden md:flex items-start gap-12" style={{ paddingTop:"48px", paddingBottom:"40px" }}>
-          <div className="flex-1" style={{ paddingTop: "0" }}>
-            {/* Nadpis */}
+
+          {/* Levý sloupec — text, schová se po kroku 1 */}
+          <div style={{
+            flex: 1,
+            minWidth: 0,
+            maxWidth: expanded ? "0px" : "600px",
+            opacity: expanded ? 0 : 1,
+            overflow: "hidden",
+            transition: "max-width 0.5s ease, opacity 0.35s ease",
+            paddingTop: "0",
+          }}>
             <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(32px,4vw,52px)", margin: "0 0 8px" }}>
               Levná přeprava
             </h1>
@@ -82,7 +100,6 @@ export default function Hero() {
             <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600, lineHeight: 1.3, fontSize: "clamp(16px,2vw,22px)", margin: "0 0 28px", color: "#fff" }}>
               a transfery po celé ČR a střední Evropě
             </h2>
-            {/* 4 body s čísly */}
             <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginBottom: "32px" }}>
               {WHY_US.map((item, i) => (
                 <div key={i} style={{
@@ -93,18 +110,30 @@ export default function Hero() {
                 }}>
                   <span style={{ fontFamily: "Poppins, sans-serif", fontSize: "13px", fontWeight: 800, color: "#F97316", minWidth: "26px", opacity: .8 }}>{item.num}</span>
                   <div style={{ width: "1px", height: "20px", background: "rgba(249,115,22,.3)", flexShrink: 0 }} />
-                  <span style={{ color: "#fff", fontSize: "18px", fontWeight: 500 }}>{item.text}</span>
+                  <span style={{ color: "#fff", fontSize: "18px", fontWeight: 500, whiteSpace: "nowrap" }}>{item.text}</span>
                 </div>
               ))}
             </div>
             <PriceTag />
           </div>
 
-          {/* Widget */}
-          <div className="flex-shrink-0 w-full" style={{ maxWidth: "520px" }}>
-            <iframe id="nll-widget-frame" src="https://taxisaas-widget.vercel.app/widget.html" width="100%" height="680"
-              frameBorder="0" title="Rezervační formulář" className="w-full block rounded-xl shadow-2xl"
-              scrolling="no" style={{ background: "#1E3A8A", minHeight: "680px" }} />
+          {/* Widget — rozroste na plnou šířku po kroku 1 */}
+          <div style={{
+            flexShrink: 0,
+            width: "100%",
+            maxWidth: expanded ? "100%" : "520px",
+            transition: "max-width 0.5s ease",
+          }}>
+            <iframe
+              id="nll-widget-frame"
+              src="https://taxisaas-widget.vercel.app/widget.html"
+              width="100%"
+              frameBorder="0"
+              title="Rezervační formulář"
+              className="w-full block rounded-xl shadow-2xl"
+              scrolling="no"
+              style={{ background: "#1E3A8A", height: "680px", display: "block" }}
+            />
           </div>
         </div>
 
