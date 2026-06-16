@@ -36,7 +36,6 @@ export default function Hero() {
   const [widgetStep, setWidgetStep] = useState(1);
   const [widgetH, setWidgetH] = useState(680);
   const ghostRef = useRef<HTMLDivElement>(null);
-  const [wrapperPos, setWrapperPos] = useState<React.CSSProperties>({ opacity: 0 });
   const [mounted, setMounted] = useState(false);
   const overlayRef = useRef<HTMLDivElement>(null);
 
@@ -49,26 +48,25 @@ export default function Hero() {
   }, []);
 
   // Step 1: fixed position tracking ghost div; hide when ghost scrolls out of viewport
+  // Dynamic props (top/left/opacity) go ONLY to direct DOM — never in React state,
+  // so nll-height re-renders cannot reset them.
   useEffect(() => {
     if (widgetStep > 1) return;
     const el = overlayRef.current;
     const ghost = ghostRef.current;
     if (!el || !ghost) return;
 
-    // Set static styles once via React state
-    const r = ghost.getBoundingClientRect();
-    setWrapperPos({
-      position: "fixed",
-      top: r.top,
-      left: r.left,
-      width: r.width,
-      height: r.height,
-      zIndex: 40,
-      opacity: 1,
-      borderRadius: "12px",
-      boxShadow: "0 25px 60px rgba(0,0,0,0.3)",
-      overflowY: "hidden" as const,
-    });
+    // Static styles only — no top/left/opacity here
+    el.style.cssText = `
+      position: fixed;
+      z-index: 40;
+      border-radius: 12px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+      overflow-y: hidden;
+      display: block;
+      background: transparent;
+      pointer-events: auto;
+    `;
 
     function track() {
       const r = ghost!.getBoundingClientRect();
@@ -90,29 +88,11 @@ export default function Hero() {
     };
   }, [widgetStep, mounted]);
 
-  // Step 2+: position:fixed — no scroll listener needed, React state never changes top
+  // Step 2+: position:fixed via JSX overlayStyle — only update width on resize
   useEffect(() => {
     if (widgetStep <= 1) return;
     const el = overlayRef.current;
     if (!el) return;
-
-    const overlayW = Math.min(1200, window.innerWidth - 80);
-
-    setWrapperPos({
-      position: "fixed",
-      top: NAVBAR_H + 16,
-      left: "50%",
-      transform: "translateX(-50%)",
-      width: overlayW,
-      height: `calc(100vh - ${NAVBAR_H + 32}px)`,
-      zIndex: 40,
-      opacity: 1,
-      borderRadius: "16px",
-      boxShadow: "0 32px 80px rgba(0,0,0,0.45)",
-      overflowY: "auto" as const,
-      WebkitOverflowScrolling: "touch" as const,
-    });
-
     function updateWidth() {
       if (el) el.style.width = Math.min(1200, window.innerWidth - 80) + "px";
     }
@@ -157,17 +137,26 @@ export default function Hero() {
   }, []);
 
   const expanded = widgetStep > 1;
-  const hidden = typeof wrapperPos.opacity === "number" && wrapperPos.opacity === 0;
+
+  // Step 1: NO inline styles from React — track() owns all positioning via direct DOM.
+  // Step 2: React manages fixed positioning (constant values, safe to re-render).
+  const overlayStyle: React.CSSProperties = expanded ? {
+    position: "fixed",
+    top: NAVBAR_H + 16,
+    left: "50%",
+    transform: "translateX(-50%)",
+    width: Math.min(1200, typeof window !== "undefined" ? window.innerWidth - 80 : 1120),
+    height: `calc(100vh - ${NAVBAR_H + 32}px)`,
+    zIndex: 40,
+    opacity: 1,
+    borderRadius: "16px",
+    boxShadow: "0 32px 80px rgba(0,0,0,0.45)",
+    overflowY: "auto",
+    background: "#f0f2f7",
+  } : {};
 
   const widgetEl = (
-    <div
-      ref={overlayRef}
-      style={{
-        ...wrapperPos,
-        display: hidden ? "none" : "block",
-        background: expanded ? "#f0f2f7" : "transparent",
-      }}
-    >
+    <div ref={overlayRef} style={overlayStyle}>
       <iframe
         id="nll-widget-frame"
         src="https://taxisaas-widget.vercel.app/widget.html"
