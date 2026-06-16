@@ -88,7 +88,7 @@ export default function Hero() {
       window.removeEventListener("scroll", track);
       window.removeEventListener("resize", track);
     };
-  }, [widgetStep]);
+  }, [widgetStep, mounted]);
 
   // Step 2+: set overlay base styles, then pin position via direct DOM on every scroll
   useEffect(() => {
