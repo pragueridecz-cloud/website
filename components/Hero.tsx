@@ -48,29 +48,10 @@ export default function Hero() {
     });
   }, []);
 
-  // Measure ghost div and position wrapper (step 1: over ghost, step 2+: scrollable overlay)
+  // Step 1: measure ghost div once (on mount + resize), position wrapper absolutely
   useEffect(() => {
+    if (widgetStep > 1) return;
     function updatePos() {
-      if (widgetStep > 1) {
-        // Overlay mode: fixed, scrollable, background page scroll allowed
-        setWrapperPos({
-          position: "fixed",
-          top: NAVBAR_H + 16,
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "min(1200px, calc(100vw - 80px))",
-          height: `calc(100vh - ${NAVBAR_H + 32}px)`,
-          zIndex: 40,
-          opacity: 1,
-          borderRadius: "16px",
-          boxShadow: "0 32px 80px rgba(0,0,0,0.45)",
-          overflowY: "auto" as const,
-          WebkitOverflowScrolling: "touch" as const,
-          overscrollBehavior: "contain" as const,
-        });
-        return;
-      }
-      // Step 1: absolute positioning — scrolls naturally with page
       const ghost = ghostRef.current;
       if (!ghost) return;
       const r = ghost.getBoundingClientRect();
@@ -87,11 +68,51 @@ export default function Hero() {
         overflowY: "hidden" as const,
       });
     }
-
     updatePos();
     window.addEventListener("resize", updatePos);
+    return () => window.removeEventListener("resize", updatePos);
+  }, [widgetStep]);
+
+  // Step 2+: set overlay base styles, then pin position via direct DOM on every scroll
+  useEffect(() => {
+    if (widgetStep <= 1) return;
+    const el = overlayRef.current;
+    if (!el) return;
+
+    const overlayH = `calc(100vh - ${NAVBAR_H + 32}px)`;
+    const overlayW = Math.min(1200, window.innerWidth - 80);
+
+    // Base styles via React state (non-position props)
+    setWrapperPos({
+      position: "absolute", // will be overridden by direct DOM below
+      top: NAVBAR_H + 16 + window.scrollY,
+      left: "50%",
+      transform: "translateX(-50%)",
+      width: overlayW,
+      height: overlayH,
+      zIndex: 40,
+      opacity: 1,
+      borderRadius: "16px",
+      boxShadow: "0 32px 80px rgba(0,0,0,0.45)",
+      overflowY: "auto" as const,
+      WebkitOverflowScrolling: "touch" as const,
+      overscrollBehavior: "contain" as const,
+    });
+
+    // Manually keep overlay pinned by updating top directly on scroll (bypasses CSS fixed issues)
+    function pin() {
+      if (el) el.style.top = (NAVBAR_H + 16 + window.scrollY) + "px";
+    }
+    window.addEventListener("scroll", pin, { passive: true });
+
+    function updateWidth() {
+      if (el) el.style.width = Math.min(1200, window.innerWidth - 80) + "px";
+    }
+    window.addEventListener("resize", updateWidth, { passive: true });
+
     return () => {
-      window.removeEventListener("resize", updatePos);
+      window.removeEventListener("scroll", pin);
+      window.removeEventListener("resize", updateWidth);
     };
   }, [widgetStep]);
 
