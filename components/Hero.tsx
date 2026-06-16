@@ -48,29 +48,46 @@ export default function Hero() {
     });
   }, []);
 
-  // Step 1: measure ghost div once (on mount + resize), position wrapper absolutely
+  // Step 1: fixed position tracking ghost div; hide when ghost scrolls out of viewport
   useEffect(() => {
     if (widgetStep > 1) return;
-    function updatePos() {
-      const ghost = ghostRef.current;
-      if (!ghost) return;
-      const r = ghost.getBoundingClientRect();
-      setWrapperPos({
-        position: "absolute",
-        top: r.top + window.scrollY,
-        left: r.left + window.scrollX,
-        width: r.width,
-        height: r.height,
-        zIndex: 40,
-        opacity: 1,
-        borderRadius: "12px",
-        boxShadow: "0 25px 60px rgba(0,0,0,0.3)",
-        overflowY: "hidden" as const,
-      });
+    const el = overlayRef.current;
+    const ghost = ghostRef.current;
+    if (!el || !ghost) return;
+
+    // Set static styles once via React state
+    const r = ghost.getBoundingClientRect();
+    setWrapperPos({
+      position: "fixed",
+      top: r.top,
+      left: r.left,
+      width: r.width,
+      height: r.height,
+      zIndex: 40,
+      opacity: 1,
+      borderRadius: "12px",
+      boxShadow: "0 25px 60px rgba(0,0,0,0.3)",
+      overflowY: "hidden" as const,
+    });
+
+    function track() {
+      const r = ghost!.getBoundingClientRect();
+      const visible = r.bottom > 0 && r.top < window.innerHeight;
+      el!.style.opacity = visible ? "1" : "0";
+      el!.style.pointerEvents = visible ? "auto" : "none";
+      el!.style.top = r.top + "px";
+      el!.style.left = r.left + "px";
+      el!.style.width = r.width + "px";
+      el!.style.height = r.height + "px";
     }
-    updatePos();
-    window.addEventListener("resize", updatePos);
-    return () => window.removeEventListener("resize", updatePos);
+
+    track();
+    window.addEventListener("scroll", track, { passive: true });
+    window.addEventListener("resize", track, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", track);
+      window.removeEventListener("resize", track);
+    };
   }, [widgetStep]);
 
   // Step 2+: set overlay base styles, then pin position via direct DOM on every scroll
