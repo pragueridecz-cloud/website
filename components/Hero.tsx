@@ -90,22 +90,21 @@ export default function Hero() {
     };
   }, [widgetStep, mounted]);
 
-  // Step 2+: set overlay base styles, then pin position via direct DOM on every scroll
+  // Step 2+: position:fixed — no scroll listener needed, React state never changes top
   useEffect(() => {
     if (widgetStep <= 1) return;
     const el = overlayRef.current;
     if (!el) return;
 
-    const overlayH = `calc(100vh - ${NAVBAR_H + 32}px)`;
     const overlayW = Math.min(1200, window.innerWidth - 80);
 
-    // Base styles via React state — top is intentionally excluded so pin() owns it
     setWrapperPos({
-      position: "absolute",
+      position: "fixed",
+      top: NAVBAR_H + 16,
       left: "50%",
       transform: "translateX(-50%)",
       width: overlayW,
-      height: overlayH,
+      height: `calc(100vh - ${NAVBAR_H + 32}px)`,
       zIndex: 40,
       opacity: 1,
       borderRadius: "16px",
@@ -113,24 +112,12 @@ export default function Hero() {
       overflowY: "auto" as const,
       WebkitOverflowScrolling: "touch" as const,
     });
-    // Set initial top directly so pin() starts from the correct value
-    el.style.top = (NAVBAR_H + 16 + window.scrollY) + "px";
-
-    // Manually keep overlay pinned by updating top directly on scroll (bypasses CSS fixed issues)
-    function pin() {
-      if (el) el.style.top = (NAVBAR_H + 16 + window.scrollY) + "px";
-    }
-    window.addEventListener("scroll", pin, { passive: true });
 
     function updateWidth() {
       if (el) el.style.width = Math.min(1200, window.innerWidth - 80) + "px";
     }
     window.addEventListener("resize", updateWidth, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", pin);
-      window.removeEventListener("resize", updateWidth);
-    };
+    return () => window.removeEventListener("resize", updateWidth);
   }, [widgetStep]);
 
   const widgetStepRef = useRef(1);
