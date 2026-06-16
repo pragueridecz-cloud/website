@@ -48,21 +48,20 @@ export default function Hero() {
       if (widgetStep > 1) {
         setIframePos({
           position: "fixed",
-          top: NAVBAR_H,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          width: "100%",
-          height: `calc(100vh - ${NAVBAR_H}px)`,
+          top: NAVBAR_H + 16,
+          left: 40,
+          right: 40,
+          bottom: 16,
+          width: "calc(100% - 80px)",
+          height: `calc(100vh - ${NAVBAR_H + 32}px)`,
           zIndex: 40,
           transition: "all 0.4s ease",
           opacity: 1,
-          borderRadius: 0,
+          borderRadius: "16px",
+          boxShadow: "0 32px 80px rgba(0,0,0,0.4)",
         });
-        document.body.style.overflow = "hidden";
         return;
       }
-      document.body.style.overflow = "";
       const ghost = ghostRef.current;
       if (!ghost) return;
       const r = ghost.getBoundingClientRect();
