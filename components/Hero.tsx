@@ -116,13 +116,23 @@ export default function Hero() {
     };
   }, [widgetStep]);
 
+  const widgetStepRef = useRef(1);
+
   useEffect(() => {
     const handler = (e: MessageEvent) => {
+      // Step change
       if (e.data?.type === "nll-step") {
         const s = e.data.step as number;
+        widgetStepRef.current = s;
         setWidgetStep(s);
         if (e.data.height) setWidgetH(e.data.height + 32);
         if (s > 1) window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      // Height update — keep iframe sized to full content when overlay is open
+      if (e.data?.type === "nll-height" && e.data?.height) {
+        if (widgetStepRef.current > 1) {
+          setWidgetH(e.data.height + 32);
+        }
       }
       // Scroll forwarded from inside the iframe (wheel events don't propagate natively)
       if (e.data?.type === "nll-wheel") {

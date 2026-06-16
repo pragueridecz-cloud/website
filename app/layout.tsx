@@ -40,15 +40,6 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col antialiased">
         <ProgressBar />
         {children}
-        <script dangerouslySetInnerHTML={{__html: `
-          window.addEventListener('message', function(e) {
-            if (!e.data || e.data.type !== 'nll-height') return;
-            var h = parseInt(e.data.height);
-            if (!h || h < 100) return;
-            var iframe = document.querySelector('iframe[title="Rezervační formulář"]');
-            if (iframe) { iframe.style.height = h + 'px'; iframe.removeAttribute('height'); }
-          });
-        `}} />
       </body>
     </html>
   );
