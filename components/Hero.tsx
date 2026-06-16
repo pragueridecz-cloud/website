@@ -84,10 +84,8 @@ export default function Hero() {
     }
 
     updatePos();
-    window.addEventListener("scroll", updatePos);
     window.addEventListener("resize", updatePos);
     return () => {
-      window.removeEventListener("scroll", updatePos);
       window.removeEventListener("resize", updatePos);
       document.body.style.overflow = "";
     };
