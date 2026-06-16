@@ -47,8 +47,6 @@ export default function Hero() {
   useEffect(() => {
     function updatePos() {
       if (widgetStep > 1) {
-        const maxH = window.innerHeight - NAVBAR_H - 48;
-        const h = Math.min(widgetH, maxH);
         document.body.style.overflow = "hidden";
         setIframePos({
           position: "fixed",
@@ -56,13 +54,11 @@ export default function Hero() {
           left: "50%",
           transform: "translateX(-50%)",
           width: "min(1200px, calc(100vw - 80px))",
-          height: h + "px",
+          height: `calc(100vh - ${NAVBAR_H + 32}px)`,
           zIndex: 40,
-          transition: "height 0.3s ease, opacity 0.3s ease",
           opacity: 1,
           borderRadius: "16px",
           boxShadow: "0 32px 80px rgba(0,0,0,0.45)",
-          overflowY: "auto",
         });
         return;
       }
