@@ -55,10 +55,10 @@ export default function Hero() {
     const ghost = ghostRef.current;
     if (!el || !ghost) return;
 
-    function place() {
+    function place(animate = false) {
       if (!el || !ghost) return;
       if (widgetStepRef.current <= 1) {
-        // Step 1: align with ghost div in document space
+        // Step 1: instant tracking — no transition
         const r = ghost.getBoundingClientRect();
         el.style.cssText = `
           position: absolute;
@@ -74,27 +74,44 @@ export default function Hero() {
           background: transparent;
         `;
       } else {
-        // Step 2+: centered below navbar, same document position (scrolls away naturally)
+        // Step 2+: centered overlay. Use px left (not 50%) so CSS can animate from step 1.
         const w = Math.min(1200, window.innerWidth - 80);
-        el.style.cssText = `
-          position: absolute;
-          top: ${NAVBAR_H + 16}px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: ${w}px;
-          z-index: 40;
-          border-radius: 16px;
-          box-shadow: 0 32px 80px rgba(0,0,0,0.45);
-          overflow-y: auto;
-          display: block;
-          background: #f0f2f7;
-        `;
+        const targetLeft = Math.round((window.innerWidth - w) / 2);
+        const targetTop = NAVBAR_H + 16;
+        if (animate) {
+          // Animate from current step-1 position to step-2 position
+          el.style.transition = "top 0.5s cubic-bezier(0.4,0,0.2,1), left 0.5s cubic-bezier(0.4,0,0.2,1), width 0.5s cubic-bezier(0.4,0,0.2,1), border-radius 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease";
+          requestAnimationFrame(() => {
+            el!.style.top = targetTop + "px";
+            el!.style.left = targetLeft + "px";
+            el!.style.width = w + "px";
+            el!.style.borderRadius = "16px";
+            el!.style.boxShadow = "0 32px 80px rgba(0,0,0,0.45)";
+            el!.style.background = "#f0f2f7";
+            el!.style.overflowY = "auto";
+            setTimeout(() => { if (el) el.style.transition = ""; }, 600);
+          });
+        } else {
+          el.style.cssText = `
+            position: absolute;
+            top: ${targetTop}px;
+            left: ${targetLeft}px;
+            width: ${w}px;
+            z-index: 40;
+            border-radius: 16px;
+            box-shadow: 0 32px 80px rgba(0,0,0,0.45);
+            overflow-y: auto;
+            display: block;
+            background: #f0f2f7;
+          `;
+        }
       }
     }
 
-    place();
-    window.addEventListener("resize", place, { passive: true });
-    return () => window.removeEventListener("resize", place);
+    // Animate only when entering step 2+ for the first time
+    place(widgetStep > 1);
+    window.addEventListener("resize", () => place(false), { passive: true });
+    return () => window.removeEventListener("resize", () => place(false));
   }, [mounted, widgetStep]);
 
   const widgetStepRef = useRef(1);
