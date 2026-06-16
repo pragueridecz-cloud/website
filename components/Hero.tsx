@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 
 const WHY_US = [
   { num: "01", text: "Pevná cena — žádná překvapení" },
@@ -36,6 +37,10 @@ export default function Hero() {
   const [widgetH, setWidgetH] = useState(680);
   const ghostRef = useRef<HTMLDivElement>(null);
   const [wrapperPos, setWrapperPos] = useState<React.CSSProperties>({ opacity: 0 });
+  const [mounted, setMounted] = useState(false);
+  const overlayRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
     WHY_US.forEach((_, i) => {
@@ -103,35 +108,58 @@ export default function Hero() {
     return () => window.removeEventListener("message", handler);
   }, []);
 
+  // When overlay is open and user hits the bottom, transfer scroll to page
+  useEffect(() => {
+    if (widgetStep <= 1) return;
+    const el = overlayRef.current;
+    if (!el) return;
+    function onWheel(e: WheelEvent) {
+      if (!el) return;
+      const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 2;
+      const atTop = el.scrollTop <= 0;
+      if ((atBottom && e.deltaY > 0) || (atTop && e.deltaY < 0)) {
+        e.preventDefault();
+        window.scrollBy({ top: e.deltaY, behavior: "auto" });
+      }
+    }
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, [widgetStep]);
+
   const expanded = widgetStep > 1;
   const hidden = typeof wrapperPos.opacity === "number" && wrapperPos.opacity === 0;
 
+  const widgetEl = (
+    <div
+      ref={overlayRef}
+      style={{
+        ...wrapperPos,
+        display: hidden ? "none" : "block",
+        background: expanded ? "#f0f2f7" : "transparent",
+      }}
+    >
+      <iframe
+        id="nll-widget-frame"
+        src="https://taxisaas-widget.vercel.app/widget.html"
+        frameBorder="0"
+        title="Rezervační formulář"
+        scrolling="no"
+        style={{
+          width: "100%",
+          height: expanded ? `${widgetH}px` : "100%",
+          display: "block",
+          border: "none",
+          background: expanded ? "#f0f2f7" : "#1E3A8A",
+          borderRadius: expanded ? "16px" : "12px",
+        }}
+      />
+    </div>
+  );
+
   return (
     <>
-      {/* Scrollable wrapper — iframe sits inside, never remounts */}
-      <div
-        style={{
-          ...wrapperPos,
-          display: hidden ? "none" : "block",
-          background: expanded ? "#f0f2f7" : "transparent",
-        }}
-      >
-        <iframe
-          id="nll-widget-frame"
-          src="https://taxisaas-widget.vercel.app/widget.html"
-          frameBorder="0"
-          title="Rezervační formulář"
-          scrolling="no"
-          style={{
-            width: "100%",
-            height: expanded ? `${widgetH}px` : "100%",
-            display: "block",
-            border: "none",
-            background: expanded ? "#f0f2f7" : "#1E3A8A",
-            borderRadius: expanded ? "16px" : "12px",
-          }}
-        />
-      </div>
+      {/* Portal renders outside any transformed ancestor — position:fixed works correctly */}
+      {mounted && createPortal(widgetEl, document.body)}
 
       <section id="rezervace" className="px-4 pt-28 pb-0 md:pb-0" style={{ position: "relative", overflow: "hidden", background: "#0d1f4a" }}>
         {/* Praha fotka */}
