@@ -47,7 +47,7 @@ export default function Hero() {
   useEffect(() => {
     function updatePos() {
       if (widgetStep > 1) {
-        document.body.style.overflow = "hidden";
+        // Overlay mode: fixed, scrollable, background page scroll allowed
         setWrapperPos({
           position: "fixed",
           top: NAVBAR_H + 16,
@@ -64,18 +64,17 @@ export default function Hero() {
         });
         return;
       }
-      document.body.style.overflow = "";
+      // Step 1: absolute positioning — scrolls naturally with page
       const ghost = ghostRef.current;
       if (!ghost) return;
       const r = ghost.getBoundingClientRect();
       setWrapperPos({
-        position: "fixed",
-        top: r.top,
-        left: r.left,
+        position: "absolute",
+        top: r.top + window.scrollY,
+        left: r.left + window.scrollX,
         width: r.width,
         height: r.height,
         zIndex: 40,
-        transition: "all 0.4s ease",
         opacity: 1,
         borderRadius: "12px",
         boxShadow: "0 25px 60px rgba(0,0,0,0.3)",
@@ -87,7 +86,6 @@ export default function Hero() {
     window.addEventListener("resize", updatePos);
     return () => {
       window.removeEventListener("resize", updatePos);
-      document.body.style.overflow = "";
     };
   }, [widgetStep]);
 
