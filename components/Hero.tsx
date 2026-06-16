@@ -124,28 +124,23 @@ export default function Hero() {
         if (e.data.height) setWidgetH(e.data.height + 32);
         if (s > 1) window.scrollTo({ top: 0, behavior: "smooth" });
       }
+      // Scroll forwarded from inside the iframe (wheel events don't propagate natively)
+      if (e.data?.type === "nll-wheel") {
+        const delta = e.data.delta as number;
+        const el = overlayRef.current;
+        if (!el) { window.scrollBy({ top: delta }); return; }
+        const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 2;
+        const atTop = el.scrollTop <= 0;
+        if ((delta > 0 && !atBottom) || (delta < 0 && !atTop)) {
+          el.scrollTop += delta;
+        } else {
+          window.scrollBy({ top: delta });
+        }
+      }
     };
     window.addEventListener("message", handler);
     return () => window.removeEventListener("message", handler);
   }, []);
-
-  // When overlay is open and user hits the bottom, transfer scroll to page
-  useEffect(() => {
-    if (widgetStep <= 1) return;
-    const el = overlayRef.current;
-    if (!el) return;
-    function onWheel(e: WheelEvent) {
-      if (!el) return;
-      const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 2;
-      const atTop = el.scrollTop <= 0;
-      if ((atBottom && e.deltaY > 0) || (atTop && e.deltaY < 0)) {
-        e.preventDefault();
-        window.scrollBy({ top: e.deltaY, behavior: "auto" });
-      }
-    }
-    el.addEventListener("wheel", onWheel, { passive: false });
-    return () => el.removeEventListener("wheel", onWheel);
-  }, [widgetStep]);
 
   const expanded = widgetStep > 1;
   const hidden = typeof wrapperPos.opacity === "number" && wrapperPos.opacity === 0;
