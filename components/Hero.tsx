@@ -109,10 +109,13 @@ export default function Hero() {
         if (e.data.height) setWidgetH(e.data.height + 32);
         if (s > 1) window.scrollTo({ top: 0, behavior: "instant" });
       }
-      // Height update — keep iframe sized to full content when overlay is open
+      // Height update — always sync iframe and ghost div to widget content height
       if (e.data?.type === "nll-height" && e.data?.height) {
-        if (widgetStepRef.current > 1) {
-          setWidgetH(e.data.height + 32);
+        const h = e.data.height + 32;
+        setWidgetH(h);
+        // Update ghost div height directly to avoid layout re-render cascade
+        if (ghostRef.current && widgetStepRef.current <= 1) {
+          ghostRef.current.style.height = h + "px";
         }
       }
       // Scroll forwarded from inside the iframe (wheel events don't propagate natively)
@@ -145,10 +148,10 @@ export default function Hero() {
         scrolling="no"
         style={{
           width: "100%",
-          height: expanded ? `${widgetH}px` : "100%",
+          height: `${widgetH}px`,
           display: "block",
           border: "none",
-          background: expanded ? "#f0f2f7" : "#1E3A8A",
+          background: expanded ? "#f0f2f7" : "transparent",
           borderRadius: expanded ? "16px" : "12px",
         }}
       />
@@ -215,7 +218,7 @@ export default function Hero() {
             <div
               ref={ghostRef}
               className="flex-shrink-0"
-              style={{ width: "520px", height: "680px" }}
+              style={{ width: "520px", height: `${widgetH}px`, transition: "height 0.2s ease" }}
             />
           </div>
 
