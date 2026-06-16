@@ -33,6 +33,7 @@ export default function Hero() {
   const [openCount, setOpenCount] = useState(0);
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
   const [widgetStep, setWidgetStep] = useState(1);
+  const [widgetH, setWidgetH] = useState(680);
   const ghostRef = useRef<HTMLDivElement>(null);
   const [iframePos, setIframePos] = useState<React.CSSProperties>({ opacity: 0 });
 
@@ -46,19 +47,21 @@ export default function Hero() {
   useEffect(() => {
     function updatePos() {
       if (widgetStep > 1) {
+        const maxH = window.innerHeight - NAVBAR_H - 48;
+        const h = Math.min(widgetH, maxH);
         setIframePos({
           position: "fixed",
           top: NAVBAR_H + 16,
-          left: 40,
-          right: 40,
-          bottom: 16,
-          width: "calc(100% - 80px)",
-          height: `calc(100vh - ${NAVBAR_H + 32}px)`,
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "min(1200px, calc(100vw - 80px))",
+          height: h + "px",
           zIndex: 40,
-          transition: "all 0.4s ease",
+          transition: "height 0.3s ease, opacity 0.3s ease",
           opacity: 1,
           borderRadius: "16px",
-          boxShadow: "0 32px 80px rgba(0,0,0,0.4)",
+          boxShadow: "0 32px 80px rgba(0,0,0,0.45)",
+          overflow: "hidden",
         });
         return;
       }
@@ -97,6 +100,7 @@ export default function Hero() {
       if (e.data?.type === "nll-step") {
         const s = e.data.step as number;
         setWidgetStep(s);
+        if (e.data.height) setWidgetH(e.data.height + 32);
         if (s > 1) window.scrollTo({ top: 0, behavior: "smooth" });
       }
     };
@@ -114,7 +118,7 @@ export default function Hero() {
         src="https://taxisaas-widget.vercel.app/widget.html"
         frameBorder="0"
         title="Rezervační formulář"
-        scrolling={expanded ? "yes" : "no"}
+        scrolling="auto"
         style={{
           ...iframePos,
           background: expanded ? "#f0f2f7" : "#1E3A8A",
