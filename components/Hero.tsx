@@ -49,6 +49,7 @@ export default function Hero() {
       if (widgetStep > 1) {
         const maxH = window.innerHeight - NAVBAR_H - 48;
         const h = Math.min(widgetH, maxH);
+        document.body.style.overflow = "hidden";
         setIframePos({
           position: "fixed",
           top: NAVBAR_H + 16,
@@ -61,7 +62,7 @@ export default function Hero() {
           opacity: 1,
           borderRadius: "16px",
           boxShadow: "0 32px 80px rgba(0,0,0,0.45)",
-          overflow: "hidden",
+          overflowY: "auto",
         });
         return;
       }
