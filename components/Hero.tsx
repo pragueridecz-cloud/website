@@ -40,16 +40,11 @@ export default function Hero() {
     });
   }, []);
 
-  const [widgetStep, setWidgetStep] = useState(1);
-
   useEffect(() => {
     const handler = (e: MessageEvent) => {
       if (e.data?.type === 'nll-resize' && e.data?.height) {
         const frame = document.getElementById('nll-widget-frame') as HTMLIFrameElement;
         if (frame) frame.style.height = (e.data.height + 40) + 'px';
-      }
-      if (e.data?.type === 'nll-step') {
-        setWidgetStep(e.data.step);
       }
     };
     window.addEventListener('message', handler);
@@ -75,8 +70,8 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto pb-56" style={{ position:"relative", zIndex:2 }}>
 
         {/* Desktop */}
-                  <div className="hidden md:flex items-start gap-12" style={{ paddingTop:"48px", paddingBottom:"40px", position:"relative" }}>
-          <div className="flex-1" style={{ paddingTop: "0", display: widgetStep >= 2 ? "none" : undefined }}>
+        <div className="hidden md:flex items-start gap-12" style={{ paddingTop:"48px", paddingBottom:"40px" }}>
+          <div className="flex-1" style={{ paddingTop: "0" }}>
             {/* Nadpis */}
             <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(32px,4vw,52px)", margin: "0 0 8px" }}>
               Levná přeprava
@@ -106,11 +101,10 @@ export default function Hero() {
           </div>
 
           {/* Widget */}
-          <div style={{ flexShrink: 0, width: widgetStep >= 2 ? "100%" : "52%" }}>
-            <iframe id="nll-widget-frame" src="https://taxisaas-widget.vercel.app/widget.html" width="100%"
-              frameBorder="0" title="Rezervační formulář" className="w-full block shadow-2xl rounded-xl"
-              scrolling="no"
-              style={{ background: "#1E3A8A", height: "560px", display: "block" }} />
+          <div className="flex-shrink-0 w-full" style={{ maxWidth: "520px" }}>
+            <iframe id="nll-widget-frame" src="https://taxisaas-widget.vercel.app/widget.html" width="100%" height="680"
+              frameBorder="0" title="Rezervační formulář" className="w-full block rounded-xl shadow-2xl"
+              scrolling="no" style={{ background: "#1E3A8A", minHeight: "680px" }} />
           </div>
         </div>
 
