@@ -35,7 +35,7 @@ export default function Hero() {
   const [widgetStep, setWidgetStep] = useState(1);
   const [widgetH, setWidgetH] = useState(680);
   const ghostRef = useRef<HTMLDivElement>(null);
-  const [iframePos, setIframePos] = useState<React.CSSProperties>({ opacity: 0 });
+  const [wrapperPos, setWrapperPos] = useState<React.CSSProperties>({ opacity: 0 });
 
   useEffect(() => {
     WHY_US.forEach((_, i) => {
@@ -43,12 +43,12 @@ export default function Hero() {
     });
   }, []);
 
-  // Measure ghost div and place iframe over it (step 1) or full-screen (step 2+)
+  // Measure ghost div and position wrapper (step 1: over ghost, step 2+: scrollable overlay)
   useEffect(() => {
     function updatePos() {
       if (widgetStep > 1) {
         document.body.style.overflow = "hidden";
-        setIframePos({
+        setWrapperPos({
           position: "fixed",
           top: NAVBAR_H + 16,
           left: "50%",
@@ -59,13 +59,16 @@ export default function Hero() {
           opacity: 1,
           borderRadius: "16px",
           boxShadow: "0 32px 80px rgba(0,0,0,0.45)",
+          overflowY: "auto" as const,
+          WebkitOverflowScrolling: "touch" as const,
         });
         return;
       }
+      document.body.style.overflow = "";
       const ghost = ghostRef.current;
       if (!ghost) return;
       const r = ghost.getBoundingClientRect();
-      setIframePos({
+      setWrapperPos({
         position: "fixed",
         top: r.top,
         left: r.left,
@@ -76,6 +79,7 @@ export default function Hero() {
         opacity: 1,
         borderRadius: "12px",
         boxShadow: "0 25px 60px rgba(0,0,0,0.3)",
+        overflowY: "hidden" as const,
       });
     }
 
@@ -91,9 +95,6 @@ export default function Hero() {
 
   useEffect(() => {
     const handler = (e: MessageEvent) => {
-      if (e.data?.type === "nll-resize" && e.data?.height) {
-        // height handled via updatePos / fixed layout
-      }
       if (e.data?.type === "nll-step") {
         const s = e.data.step as number;
         setWidgetStep(s);
@@ -106,23 +107,34 @@ export default function Hero() {
   }, []);
 
   const expanded = widgetStep > 1;
+  const hidden = typeof wrapperPos.opacity === "number" && wrapperPos.opacity === 0;
 
   return (
     <>
-      {/* Single iframe — always fixed, changes position via CSS */}
-      <iframe
-        id="nll-widget-frame"
-        src="https://taxisaas-widget.vercel.app/widget.html"
-        frameBorder="0"
-        title="Rezervační formulář"
-        scrolling="auto"
+      {/* Scrollable wrapper — iframe sits inside, never remounts */}
+      <div
         style={{
-          ...iframePos,
-          background: expanded ? "#f0f2f7" : "#1E3A8A",
-          border: "none",
-          display: typeof iframePos.opacity === "number" && iframePos.opacity === 0 ? "none" : "block",
+          ...wrapperPos,
+          display: hidden ? "none" : "block",
+          background: expanded ? "#f0f2f7" : "transparent",
         }}
-      />
+      >
+        <iframe
+          id="nll-widget-frame"
+          src="https://taxisaas-widget.vercel.app/widget.html"
+          frameBorder="0"
+          title="Rezervační formulář"
+          scrolling="no"
+          style={{
+            width: "100%",
+            height: expanded ? `${widgetH}px` : "100%",
+            display: "block",
+            border: "none",
+            background: expanded ? "#f0f2f7" : "#1E3A8A",
+            borderRadius: expanded ? "16px" : "12px",
+          }}
+        />
+      </div>
 
       <section id="rezervace" className="px-4 pt-28 pb-0 md:pb-0" style={{ position: "relative", overflow: "hidden", background: "#0d1f4a" }}>
         {/* Praha fotka */}
