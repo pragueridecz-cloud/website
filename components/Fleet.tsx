@@ -7,7 +7,7 @@ const cars = [
   {
     name: "Sedan Economy",
     img: "/cars/sedan-economy.png",
-    model: "Škoda Octavia a podobný",
+    model: "VW Passat a podobný",
     passengers: 4,
     luggage: 3,
     price: "od 790 Kč",
@@ -27,7 +27,7 @@ const cars = [
   {
     name: "Sedan Executive",
     img: "/cars/sedan-executive.png",
-    model: "Mercedes / BMW a podobný",
+    model: "Mercedes-Benz C a podobný",
     passengers: 3,
     luggage: 3,
     price: "od 1 290 Kč",
@@ -37,7 +37,7 @@ const cars = [
   {
     name: "Minivan Economy",
     img: "/cars/minivan-economy.png",
-    model: "Volkswagen Caravelle a podobný",
+    model: "Ford Tourneo Custom a podobný",
     passengers: 7,
     luggage: 6,
     price: "od 990 Kč",
