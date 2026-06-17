@@ -71,7 +71,7 @@ export default function Hero() {
           z-index: 40;
           border-radius: 12px;
           box-shadow: 0 25px 60px rgba(0,0,0,0.3);
-          overflow: hidden;
+          overflow: visible;
           display: block;
           background: transparent;
         `;
@@ -132,9 +132,10 @@ export default function Hero() {
       if (e.data?.type === "nll-height" && e.data?.height) {
         const h = e.data.height + 32;
         setWidgetH(h);
-        // Update ghost div height directly to avoid layout re-render cascade
-        if (ghostRef.current && widgetStepRef.current <= 1) {
-          ghostRef.current.style.height = h + "px";
+        if (widgetStepRef.current <= 1) {
+          // Keep ghost div and overlay in sync so dropdowns aren't clipped
+          if (ghostRef.current) ghostRef.current.style.height = h + "px";
+          if (overlayRef.current) overlayRef.current.style.height = h + "px";
         }
       }
       // Scroll forwarded from inside the iframe (wheel events don't propagate natively)
