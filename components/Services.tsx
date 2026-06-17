@@ -76,12 +76,13 @@ export default function Services() {
 
   return (
     <section className="bg-white">
-      <div className="max-w-6xl mx-auto px-4 pt-16 pb-10">
+      <div className="max-w-6xl mx-auto px-4 pt-16 pb-8">
         <SectionHeading label="Naše služby" title="Přeprava" highlight="pro každou příležitost" />
       </div>
+      <div className="max-w-6xl mx-auto px-4 pb-16">
     <div
-      className="relative overflow-hidden bg-black"
-      style={{ height: "clamp(380px, 48vh, 520px)" }}
+      className="relative overflow-hidden bg-black rounded-2xl"
+      style={{ height: "clamp(500px, 62vh, 700px)" }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -213,6 +214,7 @@ export default function Services() {
         />
       </div>
     </div>
+      </div>
     </section>
   );
 }
