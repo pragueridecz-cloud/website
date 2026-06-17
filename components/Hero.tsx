@@ -90,7 +90,7 @@ export default function Hero() {
             el!.style.borderRadius = "16px";
             el!.style.boxShadow = "0 32px 80px rgba(0,0,0,0.45)";
             el!.style.background = "#f0f2f7";
-            el!.style.overflowY = "auto";
+            el!.style.overflow = "visible";
             setTimeout(() => { if (el) el.style.transition = ""; }, 600);
           });
         } else {
@@ -102,7 +102,7 @@ export default function Hero() {
             z-index: 40;
             border-radius: 16px;
             box-shadow: 0 32px 80px rgba(0,0,0,0.45);
-            overflow-y: auto;
+            overflow: visible;
             display: block;
             background: #f0f2f7;
           `;
