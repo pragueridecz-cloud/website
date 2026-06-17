@@ -19,7 +19,7 @@ export default function Navbar() {
   const langRef = useRef<HTMLDivElement>(null);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50" style={{ background: "#1E3A8A" }}>
+    <header className="fixed top-0 left-0 right-0 z-50" style={{ background: "#00205B" }}>
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Horní lišta – telefon + email */}
