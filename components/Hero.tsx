@@ -30,8 +30,6 @@ function PriceTag() {
 }
 
 export default function Hero() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [openCount, setOpenCount] = useState(0);
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
   const [widgetStep, setWidgetStep] = useState(1);
   const [widgetH, setWidgetH] = useState(680);
@@ -193,7 +191,7 @@ export default function Hero() {
           background: "linear-gradient(180deg, rgba(13,31,74,0.4) 0%, rgba(13,31,74,0.25) 40%, rgba(30,58,138,0.8) 100%)",
         }} />
 
-        <div className="max-w-6xl mx-auto pb-56" style={{ position: "relative", zIndex: 2 }}>
+        <div className="max-w-6xl mx-auto pb-0 md:pb-56" style={{ position: "relative", zIndex: 2 }}>
 
           {/* Desktop */}
           <div className="hidden md:flex items-start gap-12" style={{ paddingTop: "48px", paddingBottom: "40px" }}>
@@ -240,49 +238,29 @@ export default function Hero() {
           </div>
 
           {/* Mobil */}
-          <div className="md:hidden flex flex-col" style={{ margin: "0 -16px" }}>
-            {!mobileOpen && (
-              <>
-                <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(30px,8vw,42px)", margin: "0 0 4px" }}>
-                  Levná přeprava
-                </h1>
-                <h1 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(30px,8vw,42px)", margin: "0 0 20px", color: "#F97316" }}>
-                  na letiště Praha
-                </h1>
-                <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "24px" }}>
-                  {WHY_US.map((item, i) => (
-                    <div key={i} style={{
-                      display: "flex", alignItems: "center", gap: "14px",
-                      opacity: visibleItems.includes(i) ? 1 : 0,
-                      transform: visibleItems.includes(i) ? "translateX(0)" : "translateX(-16px)",
-                      transition: "opacity 0.5s ease, transform 0.5s ease",
-                    }}>
-                      <span style={{ fontFamily: "Poppins, sans-serif", fontSize: "12px", fontWeight: 800, color: "#F97316", minWidth: "22px", opacity: .8 }}>{item.num}</span>
-                      <div style={{ width: "1px", height: "18px", background: "rgba(249,115,22,.3)", flexShrink: 0 }} />
-                      <span style={{ color: "#fff", fontSize: "14px", fontWeight: 500 }}>{item.text}</span>
-                    </div>
-                  ))}
-                </div>
-                <button onClick={() => { setMobileOpen(true); setOpenCount(c => c + 1); }}
-                  style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "#F97316", color: "#fff", border: "none", cursor: "pointer", fontSize: "16px", fontWeight: 700, fontFamily: "Poppins, sans-serif", padding: "14px 28px", borderRadius: "12px", boxShadow: "0 8px 32px rgba(249,115,22,.4)", alignSelf: "flex-start" }}>
-                  Rezervovat jízdu →
-                </button>
-              </>
-            )}
-            {mobileOpen && (
-              <div className="w-full">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontSize: "18px", fontWeight: 700, margin: 0 }}>Rezervovat jízdu</h2>
-                  <button onClick={() => { setMobileOpen(false); setWidgetStep(1); }}
-                    style={{ display: "flex", alignItems: "center", gap: "6px", color: "#fff", background: "rgba(255,255,255,.1)", border: "1px solid rgba(255,255,255,.2)", borderRadius: "8px", padding: "7px 14px", fontSize: "13px", fontWeight: 600, cursor: "pointer" }}>
-                    ← Zpět
-                  </button>
-                </div>
-                <iframe key={openCount} src="https://taxisaas-widget.vercel.app/widget.html"
-                  width="100%" height="680" frameBorder="0" title="Rezervační formulář"
-                  className="w-full block rounded-xl shadow-2xl" scrolling="no" style={{ background: "#1E3A8A" }} />
-              </div>
-            )}
+          <div className="md:hidden flex flex-col pb-5" style={{ margin: "0 -16px" }}>
+            <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(28px,8vw,40px)", margin: "0 0 4px" }}>
+              Levná přeprava
+            </h1>
+            <h1 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(28px,8vw,40px)", margin: "0 0 16px", color: "#F97316" }}>
+              na letiště Praha
+            </h1>
+            <iframe
+              src="https://taxisaas-widget.vercel.app/widget.html"
+              frameBorder="0"
+              title="Rezervační formulář"
+              scrolling="no"
+              style={{
+                width: "100%",
+                height: "calc(100dvh - 280px)",
+                minHeight: "460px",
+                display: "block",
+                border: "none",
+                borderRadius: "12px",
+                boxShadow: "0 16px 48px rgba(0,0,0,0.4)",
+                background: "#f0f2f7",
+              }}
+            />
           </div>
         </div>
       </section>
