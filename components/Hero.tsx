@@ -35,9 +35,13 @@ export default function Hero() {
   const [widgetH, setWidgetH] = useState(680);
   const ghostRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
   const overlayRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => { setMounted(true); }, []);
+  useEffect(() => {
+    setMounted(true);
+    setIsDesktop(window.innerWidth >= 768);
+  }, []);
 
   useEffect(() => {
     WHY_US.forEach((_, i) => {
@@ -175,10 +179,10 @@ export default function Hero() {
 
   return (
     <>
-      {/* Portal renders outside any transformed ancestor — position:fixed works correctly */}
-      {mounted && createPortal(widgetEl, document.body)}
+      {/* Portal only on desktop — mobile uses inline iframe */}
+      {mounted && isDesktop && createPortal(widgetEl, document.body)}
 
-      <section id="rezervace" className="px-4 pt-28 pb-0 md:pb-0" style={{ position: "relative", overflow: "hidden", background: "#0d1f4a" }}>
+      <section id="rezervace" className="px-4 pt-28 pb-0 md:pb-0" style={{ position: "relative", overflowX: "hidden", background: "#0d1f4a" }}>
         {/* Praha fotka */}
         <div className="hero-bg" style={{
           position: "absolute", inset: 0, zIndex: 0,
@@ -249,11 +253,9 @@ export default function Hero() {
               src="https://taxisaas-widget.vercel.app/widget.html"
               frameBorder="0"
               title="Rezervační formulář"
-              scrolling="no"
               style={{
                 width: "100%",
-                height: "calc(100dvh - 280px)",
-                minHeight: "460px",
+                height: `${widgetH}px`,
                 display: "block",
                 border: "none",
                 borderRadius: "12px",
