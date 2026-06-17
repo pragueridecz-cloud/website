@@ -82,7 +82,7 @@ export default function Services() {
       <div className="max-w-6xl mx-auto px-4 pb-16">
     <div
       className="relative overflow-hidden bg-black rounded-2xl"
-      style={{ height: "clamp(500px, 62vh, 700px)" }}
+      style={{ height: "clamp(580px, 72vh, 820px)" }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
