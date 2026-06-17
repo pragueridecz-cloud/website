@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import SectionHeading from "./SectionHeading";
 
 const SERVICES = [
   {
@@ -74,9 +75,13 @@ export default function Services() {
   const cardIndices = [1, 2, 3].map(offset => (active + offset) % SERVICES.length);
 
   return (
-    <section
+    <section className="bg-white">
+      <div className="max-w-6xl mx-auto px-4 pt-16 pb-10">
+        <SectionHeading label="Naše služby" title="Přeprava" highlight="pro každou příležitost" />
+      </div>
+    <div
       className="relative overflow-hidden bg-black"
-      style={{ height: "clamp(520px, 65vh, 720px)" }}
+      style={{ height: "clamp(380px, 48vh, 520px)" }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -207,6 +212,7 @@ export default function Services() {
           style={{ width: `${progress}%` }}
         />
       </div>
+    </div>
     </section>
   );
 }
