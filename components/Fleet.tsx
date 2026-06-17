@@ -1,11 +1,13 @@
 "use client";
+import { useRef, useState, useEffect } from "react";
 import { Users, Briefcase } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 
 const cars = [
   {
     name: "Sedan Economy",
-    img: "/cars/sedan-economy.jpg",
+    img: "/cars/sedan-economy.png",
+    model: "Škoda Octavia a podobný",
     passengers: 4,
     luggage: 3,
     price: "od 790 Kč",
@@ -13,8 +15,29 @@ const cars = [
     tag: null,
   },
   {
+    name: "Sedan Business",
+    img: "/cars/sedan-business.png",
+    model: "Škoda Superb a podobný",
+    passengers: 4,
+    luggage: 3,
+    price: "od 1 090 Kč",
+    features: ["Klimatizace", "Wi-Fi", "Rozšířený interiér"],
+    tag: null,
+  },
+  {
+    name: "Sedan Executive",
+    img: "/cars/sedan-executive.png",
+    model: "Mercedes / BMW a podobný",
+    passengers: 3,
+    luggage: 3,
+    price: "od 1 290 Kč",
+    features: ["Prémiový interiér", "Tiché prostředí", "Voda zdarma"],
+    tag: null,
+  },
+  {
     name: "Minivan Economy",
-    img: "/cars/minivan-economy.jpg",
+    img: "/cars/minivan-economy.png",
+    model: "Volkswagen Caravelle a podobný",
     passengers: 7,
     luggage: 6,
     price: "od 990 Kč",
@@ -22,17 +45,19 @@ const cars = [
     tag: "Nejoblíbenější",
   },
   {
-    name: "Sedan Premium",
-    img: "/cars/sedan-premium.jpg",
-    passengers: 3,
-    luggage: 3,
-    price: "od 1 290 Kč",
-    features: ["Mercedes / BMW", "Prémiový interiér", "Tiché prostředí"],
+    name: "Minivan Business",
+    img: "/cars/minivan-business.png",
+    model: "Mercedes Vito a podobný",
+    passengers: 7,
+    luggage: 6,
+    price: "od 1 390 Kč",
+    features: ["Rozšířený prostor", "Klimatizace", "Wi-Fi"],
     tag: null,
   },
   {
     name: "Minivan Executive",
-    img: "/cars/minivan-executive.jpg",
+    img: "/cars/minivan-executive.png",
+    model: "Mercedes V-Class a podobný",
     passengers: 7,
     luggage: 6,
     price: "od 1 790 Kč",
@@ -42,32 +67,81 @@ const cars = [
 ];
 
 export default function Fleet() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const handleScroll = () => {
+      const cardW = el.offsetWidth * 0.78 + 16;
+      const idx = Math.round(el.scrollLeft / cardW);
+      setActiveIdx(Math.min(Math.max(idx, 0), cars.length - 1));
+    };
+    el.addEventListener("scroll", handleScroll, { passive: true });
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollTo = (idx: number) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardW = el.offsetWidth * 0.78 + 16;
+    el.scrollTo({ left: cardW * idx, behavior: "smooth" });
+  };
+
   return (
     <section id="vozovy-park" className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <SectionHeading label="Vozový park" title="Vozový park a ceny"
           subtitle="Pevné ceny bez překvapení. Vyberte vozidlo podle počtu cestujících a zavazadel." />
 
-        {/* Desktop – grid */}
-        <div className="hidden md:grid md:grid-cols-4 gap-6">
+        {/* Desktop – 3×2 grid */}
+        <div className="hidden md:grid md:grid-cols-3 gap-6">
           {cars.map((car) => (
             <CarCard key={car.name} car={car} />
           ))}
         </div>
 
-        {/* Mobil – karusel */}
+        {/* Mobil – snap karusel */}
         <div className="md:hidden">
-          <div style={{ display: "flex", overflowX: "auto", gap: "16px", paddingBottom: "12px", scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}>
+          <div
+            ref={scrollRef}
+            style={{
+              display: "flex",
+              overflowX: "auto",
+              gap: "16px",
+              paddingBottom: "4px",
+              scrollSnapType: "x mandatory",
+              WebkitOverflowScrolling: "touch",
+              scrollbarWidth: "none",
+              margin: "0 -16px",
+              paddingLeft: "16px",
+              paddingRight: "16px",
+            }}
+          >
+            <style>{`.fleet-scroll::-webkit-scrollbar{display:none}`}</style>
             {cars.map((car) => (
-              <div key={car.name} style={{ minWidth: "78vw", scrollSnapAlign: "start", flexShrink: 0 }}>
+              <div key={car.name} className="fleet-scroll" style={{ minWidth: "78vw", scrollSnapAlign: "start", flexShrink: 0 }}>
                 <CarCard car={car} />
               </div>
             ))}
           </div>
-          {/* Dots indikátor */}
-          <div style={{ display: "flex", justifyContent: "center", gap: "6px", marginTop: "12px" }}>
+          <div style={{ display: "flex", justifyContent: "center", gap: "6px", marginTop: "16px" }}>
             {cars.map((_, i) => (
-              <div key={i} style={{ width: "6px", height: "6px", borderRadius: "50%", background: i === 0 ? "#1E3A8A" : "#e2e8f0" }} />
+              <button
+                key={i}
+                onClick={() => scrollTo(i)}
+                style={{
+                  width: i === activeIdx ? "24px" : "6px",
+                  height: "6px",
+                  borderRadius: "9999px",
+                  background: i === activeIdx ? "#1E3A8A" : "#e2e8f0",
+                  border: "none",
+                  padding: 0,
+                  cursor: "pointer",
+                  transition: "width 0.3s ease, background 0.3s ease",
+                }}
+              />
             ))}
           </div>
         </div>
@@ -80,7 +154,7 @@ export default function Fleet() {
   );
 }
 
-function CarCard({ car }: { car: any }) {
+function CarCard({ car }: { car: typeof cars[0] }) {
   return (
     <div className="fleet-card relative bg-white border border-[#E2E8F0] rounded-2xl overflow-hidden flex flex-col"
       style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
@@ -89,13 +163,13 @@ function CarCard({ car }: { car: any }) {
           {car.tag}
         </div>
       )}
-      {/* Bílé pozadí + auto */}
-      <div style={{ height: "176px", background: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px", borderBottom: "1px solid #f1f5f9" }}>
+      <div style={{ height: "176px", background: "#f8fafc", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px", borderBottom: "1px solid #f1f5f9" }}>
         <img src={car.img} alt={car.name}
           style={{ maxHeight: "144px", maxWidth: "100%", objectFit: "contain", display: "block" }} />
       </div>
       <div className="p-5 flex flex-col flex-1">
-        <h3 className="font-bold text-[#1E3A8A] text-base mb-3">{car.name}</h3>
+        <h3 className="font-bold text-[#1E3A8A] text-base mb-0.5">{car.name}</h3>
+        <p className="text-xs text-gray-400 mb-3">{car.model}</p>
         <div className="flex gap-4 mb-3">
           <span className="flex items-center gap-1 text-xs text-gray-500">
             <Users size={13} /> {car.passengers} os.
