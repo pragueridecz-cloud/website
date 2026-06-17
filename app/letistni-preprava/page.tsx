@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Navbar from "@/components/Navbar"
-import CoverageMap from "@/components/CoverageMap"
+import AirportMapDetail from "@/components/AirportMapDetail"
 import Footer from "@/components/Footer"
 
 export const metadata: Metadata = {
@@ -62,68 +62,6 @@ const AIRPORTS_CZ = [
   },
 ]
 
-const AIRPORTS_INTL = [
-  {
-    code: "VIE",
-    name: "Vídeňské letiště",
-    city: "Vídeň, Rakousko",
-    desc: "Největší letiště ve středoevropském regionu s přímými lety do celého světa. Skvělá alternativa pro lety do Asie, Ameriky nebo Blízkého východu, které z Prahy neodjíždí přímo.",
-    price: "od 4 500 Kč",
-    time: "3,5 hod",
-    img: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=800&q=80",
-    facts: ["330 km od Prahy", "Přímé lety do 200+ destinací", "Hub Emirates, Austrian Airlines", "Výborná alternativa pro asijské lety"],
-  },
-  {
-    code: "BTS",
-    name: "Letiště Bratislava (Štefánik)",
-    city: "Bratislava, Slovensko",
-    desc: "Blízké slovenské letiště, které používají zejména nízkonákladové aerolinie. Ryanair zde létá do mnoha destinací, které nejsou dostupné z Prahy. Vzdálenost jen 330 km.",
-    price: "od 4 200 Kč",
-    time: "3,5 hod",
-    img: "https://images.unsplash.com/photo-1583170598970-cf6e74bb9f68?w=800&q=80",
-    facts: ["330 km od Prahy", "Silná základna Ryanair", "Levnější lety do mnoha destinací", "Bez front u bezpečnostní kontroly"],
-  },
-  {
-    code: "BUD",
-    name: "Letiště Budapešť Liszt Ferenc",
-    city: "Budapešť, Maďarsko",
-    desc: "Jedno z nejrušnějších letišť ve střední Evropě s výborným spojením do celého světa. Wizz Air má v Budapešti silnou základnu s levnými lety do stovek destinací.",
-    price: "od 6 900 Kč",
-    time: "5 hod",
-    img: "https://images.unsplash.com/photo-1605379399642-870262d3d051?w=800&q=80",
-    facts: ["520 km od Prahy", "Největší základna Wizz Air", "Lety do Asie a Ameriky", "Moderní terminály"],
-  },
-  {
-    code: "MUC",
-    name: "Letiště Mnichov",
-    city: "Mnichov, Německo",
-    desc: "Druhé největší německé letiště a jeden z největších hubů v Evropě. Lufthansa zde operuje mezikontinentální lety do Ameriky, Asie a Austrálie s výbornými přestupy.",
-    price: "od 7 900 Kč",
-    time: "4 hod",
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-    facts: ["380 km od Prahy", "Hub Lufthansy a Star Alliance", "Dva terminály, výborné přestupy", "Moderní, komfortní letiště"],
-  },
-  {
-    code: "FRA",
-    name: "Letiště Frankfurt",
-    city: "Frankfurt, Německo",
-    desc: "Největší německé letiště a jeden z nejvytíženějších hubů v celé Evropě. Lufthansa a její partneři odtud létají do téměř každého koutu světa. Ideální pro transatlantické přestupy.",
-    price: "od 8 900 Kč",
-    time: "4,5 hod",
-    img: "https://images.unsplash.com/photo-1596451190630-186aff535bf2?w=800&q=80",
-    facts: ["480 km od Prahy", "Největší hub v Evropě", "150+ airlines, 300+ destinací", "Přímé spojení na letiště vlakem"],
-  },
-  {
-    code: "DRS",
-    name: "Letiště Drážďany",
-    city: "Drážďany, Německo",
-    desc: "Malé a přehledné německé letiště pouhých 155 km od Prahy. Ideální pro rychlé lety do Německa a dalších evropských destinací bez přestupu v přeplněném Frankfurtu.",
-    price: "od 3 900 Kč",
-    time: "1,5 hod",
-    img: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?w=800&q=80",
-    facts: ["155 km od Prahy – nejbližší zahraniční letiště", "Bez front a stresu", "Lety Lufthansa, Eurowings", "Jednoduché parkování"],
-  },
-]
 
 export default function LetistniPreprava() {
   return (
@@ -213,57 +151,8 @@ export default function LetistniPreprava() {
           </div>
         </section>
 
-        {/* BLÍZKÁ ZAHRANIČNÍ LETIŠTĚ */}
-        <section className="py-20" style={{ background: "#f8fafc" }}>
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
-                style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>
-                🌍 Blízká zahraniční letiště
-              </div>
-              <h2 className="text-4xl font-bold mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>
-                Zahraniční letiště v dosahu
-              </h2>
-              <p className="text-gray-500 text-lg max-w-2xl">
-                Někdy se vyplatí letět z Vídně, Bratislavy nebo Mnichova. Přepravíme vás i tam – bez starostí, za pevnou cenu.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {AIRPORTS_INTL.map((airport) => (
-                <div key={airport.code} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                  <div className="relative">
-                    <img src={airport.img} alt={airport.name}
-                      style={{ width: "100%", height: "200px", objectFit: "cover" }}
-
-                    />
-                    <div style={{ position: "absolute", top: "12px", left: "12px", background: "#00205B", color: "#fff", fontFamily: "monospace", fontWeight: 700, padding: "4px 10px", borderRadius: "6px", fontSize: "14px" }}>
-                      {airport.code}
-                    </div>
-                    <div style={{ position: "absolute", top: "12px", right: "12px", background: "#F97316", color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, padding: "4px 12px", borderRadius: "6px", fontSize: "14px" }}>
-                      {airport.price}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-1" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>{airport.name}</h3>
-                    <div className="text-sm text-gray-400 mb-3">📍 {airport.city} · ⏱ {airport.time} z Prahy</div>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{airport.desc}</p>
-                    <ul className="space-y-1.5 mb-5">
-                      {airport.facts.map((fact) => (
-                        <li key={fact} className="flex items-center gap-2 text-sm text-gray-600">
-                          <span style={{ color: "#10b981", fontWeight: 700 }}>✓</span> {fact}
-                        </li>
-                      ))}
-                    </ul>
-                    <a href="/#rezervace" style={{ background: "#F97316", color: "#fff", padding: "10px 24px", borderRadius: "8px", fontWeight: 700, fontSize: "13px", textDecoration: "none", display: "inline-block" }}>
-                      Rezervovat na {airport.code} →
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* INTERAKTIVNÍ MAPA LETIŠŤ */}
+        <AirportMapDetail />
 
         {/* PROČ MY */}
         <section className="py-20 bg-white">
@@ -306,9 +195,6 @@ export default function LetistniPreprava() {
             </div>
           </div>
         </section>
-
-        {/* Mapa pokrytí */}
-        <CoverageMap />
 
         {/* FAQ */}
         <section className="py-20" style={{ background: "#f8fafc" }}>
