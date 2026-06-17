@@ -182,10 +182,10 @@ export default function Hero() {
 
       <section id="rezervace" className="px-4 pt-28 pb-0 md:pb-0" style={{ position: "relative", overflow: "hidden", background: "#0d1f4a" }}>
         {/* Praha fotka */}
-        <div style={{
+        <div className="hero-bg" style={{
           position: "absolute", inset: 0, zIndex: 0,
           backgroundImage: "url('/hero-prague.png')",
-          backgroundSize: "160%", backgroundPosition: "60% 40%",
+          backgroundSize: "cover", backgroundPosition: "65% 40%",
           opacity: 0.8, mixBlendMode: "luminosity",
         }} />
         <div style={{
