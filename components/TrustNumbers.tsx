@@ -67,8 +67,18 @@ export default function TrustNumbers() {
 
   return (
     <div ref={ref} style={{ background: "#162d6e", borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+      <style>{`
+        .trust-desktop { display: none; }
+        .trust-mobile  { display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+        .trust-mobile::-webkit-scrollbar { display: none; }
+        @media (min-width: 768px) {
+          .trust-desktop { display: block; }
+          .trust-mobile  { display: none; }
+        }
+      `}</style>
+
       {/* Desktop: 4-column grid */}
-      <div className="hidden md:block" style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 24px" }}>
+      <div className="trust-desktop" style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 24px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
           {stats.map((stat, i) => (
             <StatItem key={stat.label} stat={stat} active={active} index={i} borderRight={i < stats.length - 1} />
@@ -77,36 +87,19 @@ export default function TrustNumbers() {
       </div>
 
       {/* Mobile: horizontal scroll carousel */}
-      <div
-        className="md:hidden"
-        style={{
-          overflowX: "auto",
-          overflowY: "hidden",
-          scrollSnapType: "x mandatory",
-          WebkitOverflowScrolling: "touch",
-          display: "flex",
-          scrollbarWidth: "none",
-          msOverflowStyle: "none",
-        }}
-      >
-        <style>{`.trust-carousel::-webkit-scrollbar { display: none; }`}</style>
-        <div
-          className="trust-carousel"
-          style={{ display: "flex", width: "100%" }}
-        >
-          {stats.map((stat, i) => (
-            <div
-              key={stat.label}
-              style={{
-                flex: "0 0 52vw",
-                scrollSnapAlign: "start",
-                borderRight: i < stats.length - 1 ? "1px solid rgba(255,255,255,0.12)" : "none",
-              }}
-            >
-              <StatItem stat={stat} active={active} index={i} />
-            </div>
-          ))}
-        </div>
+      <div className="trust-mobile">
+        {stats.map((stat, i) => (
+          <div
+            key={stat.label}
+            style={{
+              flex: "0 0 52vw",
+              scrollSnapAlign: "start",
+              borderRight: i < stats.length - 1 ? "1px solid rgba(255,255,255,0.12)" : "none",
+            }}
+          >
+            <StatItem stat={stat} active={active} index={i} />
+          </div>
+        ))}
       </div>
     </div>
   );
