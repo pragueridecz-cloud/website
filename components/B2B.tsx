@@ -14,7 +14,7 @@ const partners = [
 
 export default function B2B() {
   return (
-    <section id="pro-firmy" className="py-20 bg-[#1E3A8A]">
+    <section id="pro-firmy" className="py-20 bg-[#00205B]">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-16 items-center">
 

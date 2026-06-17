@@ -52,7 +52,7 @@ export default function CoverageMap() {
       disableDefaultUI: true,
       zoomControl: true,
       styles: [
-        { featureType: "all", elementType: "labels.text.fill", stylers: [{ color: "#1E3A8A" }] },
+        { featureType: "all", elementType: "labels.text.fill", stylers: [{ color: "#00205B" }] },
         { featureType: "water", elementType: "geometry", stylers: [{ color: "#dbeafe" }] },
         { featureType: "landscape", elementType: "geometry", stylers: [{ color: "#f0f9ff" }] },
         { featureType: "road", elementType: "geometry", stylers: [{ color: "#bfdbfe" }] },
@@ -87,7 +87,7 @@ export default function CoverageMap() {
       icon: {
         path: window.google.maps.SymbolPath.CIRCLE,
         scale: 10,
-        fillColor: "#1E3A8A",
+        fillColor: "#00205B",
         fillOpacity: 1,
         strokeColor: "#fff",
         strokeWeight: 3,
@@ -105,7 +105,7 @@ export default function CoverageMap() {
         icon: {
           path: window.google.maps.SymbolPath.CIRCLE,
           scale: airport.primary ? 9 : 7,
-          fillColor: airport.primary ? "#F97316" : "#1E3A8A",
+          fillColor: airport.primary ? "#F97316" : "#00205B",
           fillOpacity: 1,
           strokeColor: "#fff",
           strokeWeight: 2,
@@ -122,7 +122,7 @@ export default function CoverageMap() {
       const line = new window.google.maps.Polyline({
         path: [PRAGUE, { lat: airport.lat, lng: airport.lng }],
         map,
-        strokeColor: active === airport.code ? "#F97316" : "#1E3A8A",
+        strokeColor: active === airport.code ? "#F97316" : "#00205B",
         strokeOpacity: active === airport.code ? 0.8 : 0.2,
         strokeWeight: active === airport.code ? 2 : 1,
         geodesic: true,
@@ -139,7 +139,7 @@ export default function CoverageMap() {
     if (!mapLoaded) return;
     linesRef.current.forEach(({ code, line }) => {
       line.setOptions({
-        strokeColor: code === active ? "#F97316" : "#1E3A8A",
+        strokeColor: code === active ? "#F97316" : "#00205B",
         strokeOpacity: code === active ? 0.8 : 0.2,
         strokeWeight: code === active ? 2.5 : 1,
       });
@@ -149,7 +149,7 @@ export default function CoverageMap() {
       marker.setIcon({
         path: window.google?.maps?.SymbolPath?.CIRCLE,
         scale: code === active ? 10 : (airport.primary ? 9 : 7),
-        fillColor: code === active ? "#F97316" : (airport.primary ? "#F97316" : "#1E3A8A"),
+        fillColor: code === active ? "#F97316" : (airport.primary ? "#F97316" : "#00205B"),
         fillOpacity: 1,
         strokeColor: "#fff",
         strokeWeight: code === active ? 3 : 2,
@@ -185,8 +185,8 @@ export default function CoverageMap() {
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px" }}>
                 <span style={{ fontSize: "22px" }}>{activeAirport.country}</span>
                 <div>
-                  <div style={{ background: "#1E3A8A", color: "#fff", fontFamily: "monospace", fontWeight: 700, fontSize: "13px", padding: "2px 8px", borderRadius: "5px", display: "inline-block" }}>{activeAirport.code}</div>
-                  <div style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, color: "#1E3A8A", fontSize: "15px", marginTop: "3px" }}>{activeAirport.name}</div>
+                  <div style={{ background: "#00205B", color: "#fff", fontFamily: "monospace", fontWeight: 700, fontSize: "13px", padding: "2px 8px", borderRadius: "5px", display: "inline-block" }}>{activeAirport.code}</div>
+                  <div style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, color: "#00205B", fontSize: "15px", marginTop: "3px" }}>{activeAirport.name}</div>
                 </div>
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
@@ -196,7 +196,7 @@ export default function CoverageMap() {
                 </div>
                 <div style={{ background: "#fff", borderRadius: "10px", padding: "12px", border: "1px solid #e2e8f0", textAlign: "center" as const }}>
                   <div style={{ fontSize: "10px", color: "#94a3b8", textTransform: "uppercase" as const, letterSpacing: "0.5px", marginBottom: "4px" }}>Čas jízdy</div>
-                  <div style={{ fontFamily: "Poppins, sans-serif", fontWeight: 900, color: "#1E3A8A", fontSize: "18px" }}>{activeAirport.time}</div>
+                  <div style={{ fontFamily: "Poppins, sans-serif", fontWeight: 900, color: "#00205B", fontSize: "18px" }}>{activeAirport.time}</div>
                 </div>
               </div>
               <a href="/#rezervace" style={{ display: "block", textAlign: "center" as const, background: "#F97316", color: "#fff", textDecoration: "none", padding: "11px", borderRadius: "10px", fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "14px" }}>
@@ -209,9 +209,9 @@ export default function CoverageMap() {
               {AIRPORTS.map(a => (
                 <button key={a.code} onClick={() => setActive(a.code)}
                   style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", padding: "8px 10px", marginBottom: "3px", background: active === a.code ? "#EFF6FF" : "transparent", border: active === a.code ? "1px solid #BFDBFE" : "1px solid transparent", borderRadius: "8px", cursor: "pointer", textAlign: "left" as const, transition: "all 0.15s" }}>
-                  <span style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "12px", fontWeight: 600, color: active === a.code ? "#1E3A8A" : "#475569" }}>
+                  <span style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "12px", fontWeight: 600, color: active === a.code ? "#00205B" : "#475569" }}>
                     <span>{a.country}</span>
-                    <span style={{ fontFamily: "monospace", fontSize: "11px", background: active === a.code ? "#1E3A8A" : "#e2e8f0", color: active === a.code ? "#fff" : "#64748b", padding: "1px 5px", borderRadius: "4px" }}>{a.code}</span>
+                    <span style={{ fontFamily: "monospace", fontSize: "11px", background: active === a.code ? "#00205B" : "#e2e8f0", color: active === a.code ? "#fff" : "#64748b", padding: "1px 5px", borderRadius: "4px" }}>{a.code}</span>
                     {a.name.length > 20 ? a.name.substring(0, 20) + "…" : a.name}
                   </span>
                   <span style={{ fontSize: "11px", color: "#F97316", fontWeight: 700, flexShrink: 0 }}>{a.price}</span>

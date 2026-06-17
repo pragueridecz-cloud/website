@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div style={{ marginBottom: "40px" }}>
-    <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "20px", color: "#1E3A8A", marginBottom: "16px", paddingBottom: "10px", borderBottom: "2px solid #F97316", display: "inline-block" }}>
+    <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "20px", color: "#00205B", marginBottom: "16px", paddingBottom: "10px", borderBottom: "2px solid #F97316", display: "inline-block" }}>
       {title}
     </h2>
     <div style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8 }}>
@@ -35,11 +35,11 @@ const Ul = ({ items }: { items: (string | React.ReactNode)[] }) => (
 
 const RightBox = ({ icon, title, text }: { icon: string; title: string; text: string }) => (
   <div style={{ background: "#f0f4ff", border: "1px solid #dbeafe", borderRadius: "10px", padding: "16px 20px", marginBottom: "10px", display: "flex", gap: "14px", alignItems: "flex-start" }}>
-    <div style={{ width: "36px", height: "36px", borderRadius: "8px", background: "#1E3A8A", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+    <div style={{ width: "36px", height: "36px", borderRadius: "8px", background: "#00205B", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
       <i className={icon} style={{ fontSize: "16px", color: "#fff" }} />
     </div>
     <div>
-      <div style={{ fontWeight: 700, color: "#1E3A8A", fontSize: "14px", marginBottom: "4px" }}>{title}</div>
+      <div style={{ fontWeight: 700, color: "#00205B", fontSize: "14px", marginBottom: "4px" }}>{title}</div>
       <div style={{ color: "#475569", fontSize: "13px", lineHeight: 1.6 }}>{text}</div>
     </div>
   </div>
@@ -53,7 +53,7 @@ export default function OchranaOsobnichUdaju() {
       <Navbar />
 
       {/* Hero */}
-      <div style={{ background: "#1E3A8A", padding: "100px 24px 50px" }}>
+      <div style={{ background: "#00205B", padding: "100px 24px 50px" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
             <div style={{ width: "32px", height: "2px", background: "#F97316" }} />
@@ -81,8 +81,8 @@ export default function OchranaOsobnichUdaju() {
               <strong>transfer-prague-car s.r.o.</strong><br />
               Sídlo: Sochařská 333/2, 170 00 Praha, Česká republika<br />
               IČO: 25706993<br />
-              E-mail: <a href="mailto:info@naletistelevne.cz" style={{ color: "#1E3A8A" }}>info@naletistelevne.cz</a><br />
-              Telefon: <a href="tel:+420606079179" style={{ color: "#1E3A8A" }}>+420 606 079 179</a>
+              E-mail: <a href="mailto:info@naletistelevne.cz" style={{ color: "#00205B" }}>info@naletistelevne.cz</a><br />
+              Telefon: <a href="tel:+420606079179" style={{ color: "#00205B" }}>+420 606 079 179</a>
             </div>
             <P>Tato stránka popisuje, jaké osobní údaje shromažďujeme, k jakým účelům je používáme a jaká máte v souvislosti s jejich zpracováním práva.</P>
           </Section>
@@ -115,7 +115,7 @@ export default function OchranaOsobnichUdaju() {
             <div style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", marginBottom: "12px", fontSize: "14px" }}>
                 <thead>
-                  <tr style={{ background: "#1E3A8A" }}>
+                  <tr style={{ background: "#00205B" }}>
                     <th style={{ padding: "11px 14px", textAlign: "left" as const, color: "#fff", fontWeight: 700 }}>Účel</th>
                     <th style={{ padding: "11px 14px", textAlign: "left" as const, color: "#fff", fontWeight: 700 }}>Právní základ</th>
                     <th style={{ padding: "11px 14px", textAlign: "left" as const, color: "#fff", fontWeight: 700 }}>Doba uchování</th>
@@ -164,8 +164,8 @@ export default function OchranaOsobnichUdaju() {
               <RightBox icon="ti ti-package" title="Právo na přenositelnost" text="Údaje zpracovávané automatizovaně na základě souhlasu nebo smlouvy vám předáme ve strojově čitelném formátu." />
               <RightBox icon="ti ti-ban" title="Právo vznést námitku" text="Proti zpracování na základě oprávněného zájmu můžete kdykoliv vznést námitku." />
             </div>
-            <P>Svá práva uplatněte e-mailem na <a href="mailto:info@naletistelevne.cz" style={{ color: "#1E3A8A" }}>info@naletistelevne.cz</a>. Na vaši žádost odpovíme do <strong>30 dnů</strong>.</P>
-            <P>Pokud se domníváte, že zpracováváme vaše údaje v rozporu s GDPR, máte právo podat stížnost u Úřadu pro ochranu osobních údajů (<a href="https://www.uoou.cz" target="_blank" rel="noopener noreferrer" style={{ color: "#1E3A8A" }}>www.uoou.cz</a>).</P>
+            <P>Svá práva uplatněte e-mailem na <a href="mailto:info@naletistelevne.cz" style={{ color: "#00205B" }}>info@naletistelevne.cz</a>. Na vaši žádost odpovíme do <strong>30 dnů</strong>.</P>
+            <P>Pokud se domníváte, že zpracováváme vaše údaje v rozporu s GDPR, máte právo podat stížnost u Úřadu pro ochranu osobních údajů (<a href="https://www.uoou.cz" target="_blank" rel="noopener noreferrer" style={{ color: "#00205B" }}>www.uoou.cz</a>).</P>
           </Section>
 
           <Section title="6. Zabezpečení údajů">
@@ -180,7 +180,7 @@ export default function OchranaOsobnichUdaju() {
           </Section>
 
           <Section title="7. Cookies">
-            <P>Náš web používá cookies. Podrobné informace o tom, jaké cookies používáme a jak je lze spravovat, naleznete v našich <a href="/zasady-zpracovani-cookies" style={{ color: "#1E3A8A" }}>Zásadách zpracování cookies</a>.</P>
+            <P>Náš web používá cookies. Podrobné informace o tom, jaké cookies používáme a jak je lze spravovat, naleznete v našich <a href="/zasady-zpracovani-cookies" style={{ color: "#00205B" }}>Zásadách zpracování cookies</a>.</P>
           </Section>
 
           <Section title="8. Změny těchto zásad">
@@ -188,7 +188,7 @@ export default function OchranaOsobnichUdaju() {
           </Section>
 
           {/* Kontaktní box */}
-          <div style={{ background: "#1E3A8A", borderRadius: "12px", padding: "24px 28px", marginTop: "40px", display: "flex", flexWrap: "wrap" as const, gap: "16px", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ background: "#00205B", borderRadius: "12px", padding: "24px 28px", marginTop: "40px", display: "flex", flexWrap: "wrap" as const, gap: "16px", alignItems: "center", justifyContent: "space-between" }}>
             <div>
               <div style={{ color: "#fff", fontWeight: 700, fontSize: "16px", marginBottom: "4px" }}>Chcete uplatnit svá práva nebo se zeptat?</div>
               <div style={{ color: "rgba(255,255,255,0.65)", fontSize: "13px" }}>Napište nám – odpovíme do 30 dnů.</div>
@@ -200,10 +200,10 @@ export default function OchranaOsobnichUdaju() {
 
           {/* Navigace mezi dokumenty */}
           <div style={{ display: "flex", gap: "12px", marginTop: "24px", flexWrap: "wrap" as const }}>
-            <a href="/obchodni-podminky" style={{ color: "#1E3A8A", textDecoration: "none", fontSize: "13px", padding: "8px 16px", border: "1px solid #dbeafe", borderRadius: "8px", background: "#f0f4ff" }}>
+            <a href="/obchodni-podminky" style={{ color: "#00205B", textDecoration: "none", fontSize: "13px", padding: "8px 16px", border: "1px solid #dbeafe", borderRadius: "8px", background: "#f0f4ff" }}>
               ← Obchodní podmínky
             </a>
-            <a href="/zasady-zpracovani-cookies" style={{ color: "#1E3A8A", textDecoration: "none", fontSize: "13px", padding: "8px 16px", border: "1px solid #dbeafe", borderRadius: "8px", background: "#f0f4ff" }}>
+            <a href="/zasady-zpracovani-cookies" style={{ color: "#00205B", textDecoration: "none", fontSize: "13px", padding: "8px 16px", border: "1px solid #dbeafe", borderRadius: "8px", background: "#f0f4ff" }}>
               Zásady cookies →
             </a>
           </div>

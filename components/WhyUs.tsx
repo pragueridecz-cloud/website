@@ -46,7 +46,7 @@ export default function WhyUs() {
               className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 hover:shadow-md transition-shadow duration-200 cursor-default"
             >
               <div className="w-10 h-10 bg-[#EFF6FF] rounded-xl flex items-center justify-center mb-4">
-                <f.icon size={20} className="text-[#1E3A8A]" />
+                <f.icon size={20} className="text-[#00205B]" />
               </div>
               <h3 className="font-semibold text-[#0F172A] mb-2">{f.title}</h3>
               <p className="text-[#475569] text-sm leading-relaxed">{f.desc}</p>

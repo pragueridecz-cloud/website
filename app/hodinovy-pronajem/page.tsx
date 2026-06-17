@@ -31,7 +31,7 @@ export default function HodinPronajem() {
       <main>
 
                 {/* Hero nadpis */}
-        <div style={{ background: "#1E3A8A", padding: "100px 24px 60px" }}>
+        <div style={{ background: "#00205B", padding: "100px 24px 60px" }}>
           <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
               <div style={{ width: "32px", height: "2px", background: "#F97316" }} />
@@ -55,7 +55,7 @@ export default function HodinPronajem() {
             <div className="mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
                 style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Ceník</div>
-              <h2 className="text-3xl font-bold mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>Ceny hodinového pronájmu</h2>
+              <h2 className="text-3xl font-bold mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Ceny hodinového pronájmu</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
@@ -66,13 +66,13 @@ export default function HodinPronajem() {
                 <div key={i} className="rounded-2xl p-6 border-2" style={{ borderColor: p.highlight ? "#F97316" : "#e2e8f0", background: p.highlight ? "#fff7ed" : "#f8fafc" }}>
                   {p.highlight && <div className="text-xs font-bold mb-2" style={{ color: "#F97316" }}>NEJOBLÍBENĚJŠÍ</div>}
                   <h3 className="font-bold text-gray-900 mb-3">{p.title}</h3>
-                  <div className="text-4xl font-black mb-1" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>{p.price} <span className="text-lg font-normal text-gray-500">{p.unit}</span></div>
+                  <div className="text-4xl font-black mb-1" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>{p.price} <span className="text-lg font-normal text-gray-500">{p.unit}</span></div>
                   <div className="text-xs text-gray-400 mb-4">{p.min} · {p.cap}</div>
                   <ul className="space-y-2 mb-6">
                     {p.features.map((f) => <li key={f} className="text-sm text-gray-600 flex items-center gap-2"><span style={{ color: "#10b981" }}>✓</span>{f}</li>)}
                   </ul>
                   <a href="/#rezervace" className="block text-center py-2.5 rounded-lg text-sm font-bold"
-                    style={{ background: p.highlight ? "#F97316" : "#1E3A8A", color: "#fff", textDecoration: "none" }}>
+                    style={{ background: p.highlight ? "#F97316" : "#00205B", color: "#fff", textDecoration: "none" }}>
                     Rezervovat
                   </a>
                 </div>
@@ -86,7 +86,7 @@ export default function HodinPronajem() {
             <div className="mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
                 style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Využití</div>
-              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>Kdy se hodí auto s řidičem</h2>
+              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Kdy se hodí auto s řidičem</h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
@@ -109,7 +109,7 @@ export default function HodinPronajem() {
           </div>
         </section>
 
-        <section className="py-16" style={{ background: "#1E3A8A" }}>
+        <section className="py-16" style={{ background: "#00205B" }}>
           <div className="max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-white text-3xl font-bold mb-4" style={{ fontFamily: "Poppins, sans-serif" }}>Pronajměte si auto s řidičem</h2>
             <p className="mb-8" style={{ color: "rgba(255,255,255,.75)" }}>Flexibilní, komfortní, bez starostí</p>

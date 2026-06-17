@@ -56,7 +56,7 @@ export default function MezimestskaPage() {
       <main>
 
                 {/* Hero nadpis */}
-        <div style={{ background: "#1E3A8A", padding: "100px 24px 60px" }}>
+        <div style={{ background: "#00205B", padding: "100px 24px 60px" }}>
           <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
               <div style={{ width: "32px", height: "2px", background: "#F97316" }} />
@@ -80,7 +80,7 @@ export default function MezimestskaPage() {
             <div className="mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
                 style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Oblíbené trasy</div>
-              <h2 className="text-3xl font-bold mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>Ceny nejoblíbenějších tras</h2>
+              <h2 className="text-3xl font-bold mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Ceny nejoblíbenějších tras</h2>
               <p className="text-gray-500">Všechny ceny jsou pevné a zahrnují veškeré poplatky. Cena pro jiné trasy se vypočítá automaticky.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -88,7 +88,7 @@ export default function MezimestskaPage() {
                 <div key={i} className="rounded-xl p-5 border border-gray-200 hover:border-orange-300 hover:shadow-md transition-all">
                   <div className="text-xs text-gray-400 mb-1 font-medium">{route.km} · {route.time}</div>
                   <div className="font-bold text-gray-900 mb-3">{route.from} → {route.to}</div>
-                  <div className="text-2xl font-black mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>od {route.price} Kč</div>
+                  <div className="text-2xl font-black mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>od {route.price} Kč</div>
                   <a href="/#rezervace" className="block text-center py-2 rounded-lg text-sm font-bold text-white"
                     style={{ background: "#F97316", textDecoration: "none" }}>
                     Rezervovat
@@ -107,7 +107,7 @@ export default function MezimestskaPage() {
             <div className="mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
                 style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Výhody</div>
-              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>Proč cestovat s námi</h2>
+              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Proč cestovat s námi</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
@@ -133,7 +133,7 @@ export default function MezimestskaPage() {
             <div className="mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
                 style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>FAQ</div>
-              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>Časté dotazy</h2>
+              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Časté dotazy</h2>
             </div>
             <div className="space-y-4">
               {FAQ_ITEMS.map((item, i) => (
@@ -148,7 +148,7 @@ export default function MezimestskaPage() {
           </div>
         </section>
 
-        <section className="py-16" style={{ background: "#1E3A8A" }}>
+        <section className="py-16" style={{ background: "#00205B" }}>
           <div className="max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-white text-3xl font-bold mb-4" style={{ fontFamily: "Poppins, sans-serif" }}>Rezervujte meziměstskou přepravu</h2>
             <p className="mb-8" style={{ color: "rgba(255,255,255,.75)" }}>Pevná cena, komfortní vozidlo, spolehlivý řidič</p>

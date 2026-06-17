@@ -20,7 +20,7 @@ function PriceTag() {
         </filter>
         <path d="M 12 0 L 252 0 Q 280 0 280 25 L 280 32 Q 290 40 280 48 L 280 55 Q 280 80 252 80 L 12 80 Q 0 80 0 68 L 0 12 Q 0 0 12 0 Z"
               fill="#F97316" filter="url(#ptsh)"/>
-        <circle cx="265" cy="40" r="8" fill="#1E3A8A"/>
+        <circle cx="265" cy="40" r="8" fill="#00205B"/>
         <circle cx="265" cy="40" r="5" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5"/>
         <text x="20" y="47" fontFamily="Poppins,sans-serif" fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.75)">již od</text>
         <text x="68" y="57" fontFamily="Poppins,sans-serif" fontSize="50" fontWeight="900" fill="#fff" letterSpacing="-2">740 Kč</text>

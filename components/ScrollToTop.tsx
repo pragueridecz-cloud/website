@@ -17,7 +17,7 @@ export default function ScrollToTop() {
       style={{
         position: "fixed", bottom: "96px", right: "24px", zIndex: 998,
         width: "44px", height: "44px", borderRadius: "50%",
-        background: "#1E3A8A", color: "#fff", border: "none",
+        background: "#00205B", color: "#fff", border: "none",
         display: "flex", alignItems: "center", justifyContent: "center",
         cursor: "pointer", boxShadow: "0 4px 16px rgba(30,58,138,0.3)",
         opacity: visible ? 1 : 0,
@@ -26,7 +26,7 @@ export default function ScrollToTop() {
         pointerEvents: visible ? "auto" : "none",
       }}
       onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = "#162d6e"; }}
-      onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = "#1E3A8A"; }}
+      onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = "#00205B"; }}
     >
       <i className="ti ti-arrow-up" style={{ fontSize: "18px" }} aria-hidden="true" />
     </button>

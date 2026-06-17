@@ -134,7 +134,7 @@ export default function LetistniPreprava() {
 
         {/* HERO */}
                 {/* Hero nadpis */}
-        <div style={{ background: "#1E3A8A", padding: "100px 24px 60px" }}>
+        <div style={{ background: "#00205B", padding: "100px 24px 60px" }}>
           <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
               <div style={{ width: "32px", height: "2px", background: "#F97316" }} />
@@ -161,7 +161,7 @@ export default function LetistniPreprava() {
                 style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>
                 🇨🇿 Letiště v České republice
               </div>
-              <h2 className="text-4xl font-bold mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>
+              <h2 className="text-4xl font-bold mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>
                 Česká letiště
               </h2>
               <p className="text-gray-500 text-lg max-w-2xl">
@@ -183,8 +183,8 @@ export default function LetistniPreprava() {
                       <div className="flex items-start justify-between mb-4 flex-wrap gap-3">
                         <div>
                           <span className="text-xs font-mono font-bold px-2 py-1 rounded mr-2"
-                            style={{ background: "#1E3A8A", color: "#fff" }}>{airport.code}</span>
-                          <h3 className="text-2xl font-bold mt-2" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>
+                            style={{ background: "#00205B", color: "#fff" }}>{airport.code}</span>
+                          <h3 className="text-2xl font-bold mt-2" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>
                             {airport.name}
                           </h3>
                           <div className="text-gray-400 text-sm">{airport.city}</div>
@@ -202,7 +202,7 @@ export default function LetistniPreprava() {
                           </li>
                         ))}
                       </ul>
-                      <a href="/#rezervace" style={{ background: "#1E3A8A", color: "#fff", padding: "11px 28px", borderRadius: "10px", fontWeight: 700, fontSize: "14px", textDecoration: "none", display: "inline-block" }}>
+                      <a href="/#rezervace" style={{ background: "#00205B", color: "#fff", padding: "11px 28px", borderRadius: "10px", fontWeight: 700, fontSize: "14px", textDecoration: "none", display: "inline-block" }}>
                         Rezervovat na {airport.code} →
                       </a>
                     </div>
@@ -221,7 +221,7 @@ export default function LetistniPreprava() {
                 style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>
                 🌍 Blízká zahraniční letiště
               </div>
-              <h2 className="text-4xl font-bold mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>
+              <h2 className="text-4xl font-bold mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>
                 Zahraniční letiště v dosahu
               </h2>
               <p className="text-gray-500 text-lg max-w-2xl">
@@ -237,7 +237,7 @@ export default function LetistniPreprava() {
                       style={{ width: "100%", height: "200px", objectFit: "cover" }}
 
                     />
-                    <div style={{ position: "absolute", top: "12px", left: "12px", background: "#1E3A8A", color: "#fff", fontFamily: "monospace", fontWeight: 700, padding: "4px 10px", borderRadius: "6px", fontSize: "14px" }}>
+                    <div style={{ position: "absolute", top: "12px", left: "12px", background: "#00205B", color: "#fff", fontFamily: "monospace", fontWeight: 700, padding: "4px 10px", borderRadius: "6px", fontSize: "14px" }}>
                       {airport.code}
                     </div>
                     <div style={{ position: "absolute", top: "12px", right: "12px", background: "#F97316", color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, padding: "4px 12px", borderRadius: "6px", fontSize: "14px" }}>
@@ -245,7 +245,7 @@ export default function LetistniPreprava() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-1" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>{airport.name}</h3>
+                    <h3 className="text-xl font-bold mb-1" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>{airport.name}</h3>
                     <div className="text-sm text-gray-400 mb-3">📍 {airport.city} · ⏱ {airport.time} z Prahy</div>
                     <p className="text-gray-600 text-sm leading-relaxed mb-4">{airport.desc}</p>
                     <ul className="space-y-1.5 mb-5">
@@ -273,7 +273,7 @@ export default function LetistniPreprava() {
                 style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>
                 Proč si vybrat nás
               </div>
-              <h2 className="text-4xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>
+              <h2 className="text-4xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>
                 Co dostanete s každou jízdou
               </h2>
             </div>
@@ -298,7 +298,7 @@ export default function LetistniPreprava() {
                 <div key={i} className="rounded-2xl overflow-hidden shadow-sm border border-gray-100">
                   <img src={item.img} alt={item.title} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
                   <div className="p-6">
-                    <h3 className="text-lg font-bold mb-2" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>{item.title}</h3>
+                    <h3 className="text-lg font-bold mb-2" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>{item.title}</h3>
                     <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -318,7 +318,7 @@ export default function LetistniPreprava() {
                 style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>
                 Časté dotazy
               </div>
-              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>Máte otázky?</h2>
+              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Máte otázky?</h2>
             </div>
             <div className="space-y-3">
               {[
@@ -342,7 +342,7 @@ export default function LetistniPreprava() {
         </section>
 
         {/* CTA */}
-        <section style={{ background: "linear-gradient(135deg, #1E3A8A 0%, #0d1f4a 100%)", padding: "80px 0", position: "relative", overflow: "hidden" }}>
+        <section style={{ background: "linear-gradient(135deg, #00205B 0%, #0d1f4a 100%)", padding: "80px 0", position: "relative", overflow: "hidden" }}>
           <div style={{ position: "absolute", inset: 0, backgroundImage: "url(https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=60)", backgroundSize: "cover", backgroundPosition: "center", opacity: 0.1 }} />
           <div className="max-w-3xl mx-auto px-4 text-center" style={{ position: "relative" }}>
             <h2 className="text-white font-bold mb-4" style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(28px,4vw,44px)" }}>

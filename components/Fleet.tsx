@@ -135,7 +135,7 @@ export default function Fleet() {
                   width: i === activeIdx ? "24px" : "6px",
                   height: "6px",
                   borderRadius: "9999px",
-                  background: i === activeIdx ? "#1E3A8A" : "#e2e8f0",
+                  background: i === activeIdx ? "#00205B" : "#e2e8f0",
                   border: "none",
                   padding: 0,
                   cursor: "pointer",
@@ -168,7 +168,7 @@ function CarCard({ car }: { car: typeof cars[0] }) {
           style={{ maxHeight: "144px", maxWidth: "100%", objectFit: "contain", display: "block" }} />
       </div>
       <div className="p-5 flex flex-col flex-1">
-        <h3 className="font-bold text-[#1E3A8A] text-base mb-0.5">{car.name}</h3>
+        <h3 className="font-bold text-[#00205B] text-base mb-0.5">{car.name}</h3>
         <p className="text-xs text-gray-400 mb-3">{car.model}</p>
         <div className="flex gap-4 mb-3">
           <span className="flex items-center gap-1 text-xs text-gray-500">
@@ -186,7 +186,7 @@ function CarCard({ car }: { car: typeof cars[0] }) {
           ))}
         </ul>
         <div className="border-t border-gray-100 pt-3 flex items-center justify-between">
-          <span className="text-lg font-black text-[#1E3A8A]">{car.price}</span>
+          <span className="text-lg font-black text-[#00205B]">{car.price}</span>
           <a href="/#rezervace" className="text-xs font-bold px-3 py-1.5 rounded-lg text-white"
             style={{ background: "#F97316", textDecoration: "none" }}>
             Rezervovat

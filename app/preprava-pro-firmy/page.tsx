@@ -30,7 +30,7 @@ export default function PrepravaPropFirmy() {
       <main>
 
                 {/* Hero nadpis */}
-        <div style={{ background: "#1E3A8A", padding: "100px 24px 60px" }}>
+        <div style={{ background: "#00205B", padding: "100px 24px 60px" }}>
           <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
               <div style={{ width: "32px", height: "2px", background: "#F97316" }} />
@@ -54,7 +54,7 @@ export default function PrepravaPropFirmy() {
             <div className="mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
                 style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Výhody pro firmy</div>
-              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>Proč nás volí firmy</h2>
+              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Proč nás volí firmy</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
@@ -80,7 +80,7 @@ export default function PrepravaPropFirmy() {
             <div className="mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
                 style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Využití</div>
-              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>Kdy využít firemní přepravu</h2>
+              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Kdy využít firemní přepravu</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
@@ -93,7 +93,7 @@ export default function PrepravaPropFirmy() {
               ].map((item, i) => (
                 <div key={i} className="bg-white rounded-xl p-5 flex gap-4 items-start shadow-sm">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-white text-sm font-bold"
-                    style={{ background: "#1E3A8A" }}>{i + 1}</div>
+                    style={{ background: "#00205B" }}>{i + 1}</div>
                   <div>
                     <h3 className="font-bold text-gray-900 mb-1">{item.title}</h3>
                     <p className="text-gray-500 text-sm">{item.desc}</p>
@@ -108,7 +108,7 @@ export default function PrepravaPropFirmy() {
           <div className="max-w-3xl mx-auto px-4 text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-6"
               style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Kontakt</div>
-            <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>
+            <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>
               Domluvme firemní spolupráci
             </h2>
             <p className="text-gray-500 mb-8 leading-relaxed">
@@ -116,7 +116,7 @@ export default function PrepravaPropFirmy() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="tel:+420606079179" className="inline-block font-bold rounded-xl px-8 py-4"
-                style={{ background: "#1E3A8A", color: "#fff", fontFamily: "Poppins, sans-serif", textDecoration: "none" }}>
+                style={{ background: "#00205B", color: "#fff", fontFamily: "Poppins, sans-serif", textDecoration: "none" }}>
                 📞 +420 606 079 179
               </a>
               <a href="mailto:info@naletistelevne.cz" className="inline-block font-bold rounded-xl px-8 py-4"

@@ -61,7 +61,7 @@ export default function TrustSection() {
           </div>
 
           {/* Right — stats */}
-          <div className="bg-[#1E3A8A] rounded-2xl p-8">
+          <div className="bg-[#00205B] rounded-2xl p-8">
             <div className="text-xs font-bold tracking-widest uppercase text-white/40 mb-6">Naše výsledky</div>
             <div className="grid grid-cols-2 gap-4 mb-6">
               {stats.map((s) => (

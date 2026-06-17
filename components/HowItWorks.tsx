@@ -91,8 +91,8 @@ export default function HowItWorks() {
                   {/* Ikona kruh */}
                   <div style={{
                     width: "56px", height: "56px", borderRadius: "50%",
-                    background: active >= i ? "#1E3A8A" : "#fff",
-                    border: `2px solid ${active >= i ? "#1E3A8A" : "#e2e8f0"}`,
+                    background: active >= i ? "#00205B" : "#fff",
+                    border: `2px solid ${active >= i ? "#00205B" : "#e2e8f0"}`,
                     display: "flex", alignItems: "center", justifyContent: "center",
                     marginBottom: "20px", flexShrink: 0,
                     transition: "background 0.4s ease, border-color 0.4s ease",
@@ -115,7 +115,7 @@ export default function HowItWorks() {
                   {/* Text */}
                   <h3 style={{
                     fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "16px",
-                    color: active >= i ? "#1E3A8A" : "#94a3b8",
+                    color: active >= i ? "#00205B" : "#94a3b8",
                     textAlign: "center", marginBottom: "8px",
                     transition: "color 0.4s ease",
                   }}>{step.title}</h3>
@@ -149,7 +149,7 @@ export default function HowItWorks() {
               <div style={{
                 position: "absolute", left: "-43px", top: "4px",
                 width: "20px", height: "20px", borderRadius: "50%",
-                background: active >= i ? "#1E3A8A" : "#e2e8f0",
+                background: active >= i ? "#00205B" : "#e2e8f0",
                 border: "3px solid #f8fafc",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 transition: "background 0.4s ease",
@@ -157,7 +157,7 @@ export default function HowItWorks() {
                 <i className={`ti ${step.icon}`} style={{ fontSize: "10px", color: active >= i ? "#fff" : "#94a3b8" }} aria-hidden="true" />
               </div>
               <div style={{ fontSize: "10px", fontWeight: 800, color: "#F97316", letterSpacing: "1px", marginBottom: "4px" }}>0{i + 1}</div>
-              <h3 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "16px", color: "#1E3A8A", marginBottom: "6px" }}>{step.title}</h3>
+              <h3 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "16px", color: "#00205B", marginBottom: "6px" }}>{step.title}</h3>
               <p style={{ fontSize: "13px", color: "#475569", lineHeight: 1.6, marginBottom: "4px" }}>{step.desc}</p>
               <p style={{ fontSize: "12px", color: "#F97316", fontStyle: "italic" }}>{step.detail}</p>
             </div>
@@ -168,7 +168,7 @@ export default function HowItWorks() {
         <div style={{ textAlign: "center", marginTop: "56px" }}>
           <a href="/#rezervace" style={{
             display: "inline-flex", alignItems: "center", gap: "10px",
-            background: "#1E3A8A", color: "#fff", textDecoration: "none",
+            background: "#00205B", color: "#fff", textDecoration: "none",
             padding: "14px 32px", borderRadius: "12px",
             fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "15px",
             boxShadow: "0 4px 16px rgba(30,58,138,0.2)",

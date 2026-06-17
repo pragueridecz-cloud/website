@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div style={{ marginBottom: "40px" }}>
-    <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "20px", color: "#1E3A8A", marginBottom: "16px", paddingBottom: "10px", borderBottom: "2px solid #F97316", display: "inline-block" }}>
+    <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "20px", color: "#00205B", marginBottom: "16px", paddingBottom: "10px", borderBottom: "2px solid #F97316", display: "inline-block" }}>
       {title}
     </h2>
     <div style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8 }}>
@@ -26,7 +26,7 @@ const CookieRow = ({ name, type, purpose, duration, essential }: {
   name: string; type: string; purpose: string; duration: string; essential: boolean
 }) => (
   <tr>
-    <td style={{ padding: "10px 14px", borderBottom: "1px solid #e5e7eb", fontFamily: "monospace", fontSize: "13px", color: "#1E3A8A" }}>{name}</td>
+    <td style={{ padding: "10px 14px", borderBottom: "1px solid #e5e7eb", fontFamily: "monospace", fontSize: "13px", color: "#00205B" }}>{name}</td>
     <td style={{ padding: "10px 14px", borderBottom: "1px solid #e5e7eb" }}>
       <span style={{ fontSize: "11px", fontWeight: 700, padding: "2px 8px", borderRadius: "10px", background: essential ? "#dcfce7" : "#fef3c7", color: essential ? "#166534" : "#92400e" }}>
         {type}
@@ -45,7 +45,7 @@ export default function ZasadyCookies() {
       <Navbar />
 
       {/* Hero */}
-      <div style={{ background: "#1E3A8A", padding: "100px 24px 50px" }}>
+      <div style={{ background: "#00205B", padding: "100px 24px 50px" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
             <div style={{ width: "32px", height: "2px", background: "#F97316" }} />
@@ -77,9 +77,9 @@ export default function ZasadyCookies() {
             {/* Nezbytné */}
             <div style={{ marginBottom: "28px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
-                <div style={{ width:"32px", height:"32px", borderRadius:"8px", background:"#1E3A8A", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}><i className="ti ti-lock" style={{ fontSize:"15px", color:"#fff" }} /></div>
+                <div style={{ width:"32px", height:"32px", borderRadius:"8px", background:"#00205B", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}><i className="ti ti-lock" style={{ fontSize:"15px", color:"#fff" }} /></div>
                 <div>
-                  <div style={{ fontWeight: 700, color: "#1E3A8A", fontSize: "15px" }}>Nezbytné cookies</div>
+                  <div style={{ fontWeight: 700, color: "#00205B", fontSize: "15px" }}>Nezbytné cookies</div>
                   <div style={{ fontSize: "12px", color: "#64748b" }}>Vždy aktivní – bez nich web nemůže fungovat. Souhlas se nevyžaduje.</div>
                 </div>
               </div>
@@ -87,10 +87,10 @@ export default function ZasadyCookies() {
                 <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "14px" }}>
                   <thead>
                     <tr style={{ background: "#f0f4ff" }}>
-                      <th style={{ padding: "10px 14px", textAlign: "left" as const, fontWeight: 700, color: "#1E3A8A", fontSize: "12px" }}>Název</th>
-                      <th style={{ padding: "10px 14px", textAlign: "left" as const, fontWeight: 700, color: "#1E3A8A", fontSize: "12px" }}>Typ</th>
-                      <th style={{ padding: "10px 14px", textAlign: "left" as const, fontWeight: 700, color: "#1E3A8A", fontSize: "12px" }}>Účel</th>
-                      <th style={{ padding: "10px 14px", textAlign: "left" as const, fontWeight: 700, color: "#1E3A8A", fontSize: "12px" }}>Platnost</th>
+                      <th style={{ padding: "10px 14px", textAlign: "left" as const, fontWeight: 700, color: "#00205B", fontSize: "12px" }}>Název</th>
+                      <th style={{ padding: "10px 14px", textAlign: "left" as const, fontWeight: 700, color: "#00205B", fontSize: "12px" }}>Typ</th>
+                      <th style={{ padding: "10px 14px", textAlign: "left" as const, fontWeight: 700, color: "#00205B", fontSize: "12px" }}>Účel</th>
+                      <th style={{ padding: "10px 14px", textAlign: "left" as const, fontWeight: 700, color: "#00205B", fontSize: "12px" }}>Platnost</th>
                     </tr>
                   </thead>
                   <tbody style={{ background: "#fff" }}>
@@ -108,7 +108,7 @@ export default function ZasadyCookies() {
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
                 <div style={{ width:"32px", height:"32px", borderRadius:"8px", background:"#92400e", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}><i className="ti ti-settings" style={{ fontSize:"15px", color:"#fff" }} /></div>
                 <div>
-                  <div style={{ fontWeight: 700, color: "#1E3A8A", fontSize: "15px" }}>Funkční cookies</div>
+                  <div style={{ fontWeight: 700, color: "#00205B", fontSize: "15px" }}>Funkční cookies</div>
                   <div style={{ fontSize: "12px", color: "#64748b" }}>Zlepšují funkčnost webu. Lze odmítnout, ale některé funkce pak nemusí fungovat správně.</div>
                 </div>
               </div>
@@ -136,7 +136,7 @@ export default function ZasadyCookies() {
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
                 <div style={{ width:"32px", height:"32px", borderRadius:"8px", background:"#475569", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}><i className="ti ti-chart-bar" style={{ fontSize:"15px", color:"#fff" }} /></div>
                 <div>
-                  <div style={{ fontWeight: 700, color: "#1E3A8A", fontSize: "15px" }}>Analytické cookies</div>
+                  <div style={{ fontWeight: 700, color: "#00205B", fontSize: "15px" }}>Analytické cookies</div>
                   <div style={{ fontSize: "12px", color: "#64748b" }}>Pomáhají nám pochopit, jak návštěvníci web používají. Všechna data jsou anonymizovaná.</div>
                 </div>
               </div>
@@ -156,11 +156,11 @@ export default function ZasadyCookies() {
               ].map((item, i) => (
                 <div key={i} style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "10px", padding: "14px 18px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap" as const, gap: "8px" }}>
                   <div>
-                    <div style={{ fontWeight: 700, color: "#1E3A8A", fontSize: "14px", marginBottom: "3px" }}>{item.name}</div>
+                    <div style={{ fontWeight: 700, color: "#00205B", fontSize: "14px", marginBottom: "3px" }}>{item.name}</div>
                     <div style={{ fontSize: "13px", color: "#64748b" }}>{item.purpose}</div>
                   </div>
                   {item.link && (
-                    <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ fontSize: "12px", color: "#1E3A8A", textDecoration: "none", padding: "5px 12px", border: "1px solid #dbeafe", borderRadius: "6px", whiteSpace: "nowrap" as const }}>
+                    <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ fontSize: "12px", color: "#00205B", textDecoration: "none", padding: "5px 12px", border: "1px solid #dbeafe", borderRadius: "6px", whiteSpace: "nowrap" as const }}>
                       Zásady ochrany →
                     </a>
                   )}
@@ -179,7 +179,7 @@ export default function ZasadyCookies() {
                 { browser: "Microsoft Edge", link: "https://support.microsoft.com/cs-cz/microsoft-edge/odstr%C3%A1n%C4%9Bn%C3%AD-soubor%C5%AF-cookie-v-prohlí%C5%BEe%C4%8Di-microsoft-edge" },
               ].map((item, i) => (
                 <a key={i} href={item.link} target="_blank" rel="noopener noreferrer"
-                  style={{ display: "flex", alignItems: "center", gap: "8px", padding: "12px 14px", background: "#f0f4ff", border: "1px solid #dbeafe", borderRadius: "8px", textDecoration: "none", color: "#1E3A8A", fontSize: "13px", fontWeight: 600 }}>
+                  style={{ display: "flex", alignItems: "center", gap: "8px", padding: "12px 14px", background: "#f0f4ff", border: "1px solid #dbeafe", borderRadius: "8px", textDecoration: "none", color: "#00205B", fontSize: "13px", fontWeight: 600 }}>
                   🌐 {item.browser}
                 </a>
               ))}
@@ -193,7 +193,7 @@ export default function ZasadyCookies() {
           </Section>
 
           {/* Kontaktní box */}
-          <div style={{ background: "#1E3A8A", borderRadius: "12px", padding: "24px 28px", marginTop: "40px", display: "flex", flexWrap: "wrap" as const, gap: "16px", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ background: "#00205B", borderRadius: "12px", padding: "24px 28px", marginTop: "40px", display: "flex", flexWrap: "wrap" as const, gap: "16px", alignItems: "center", justifyContent: "space-between" }}>
             <div>
               <div style={{ color: "#fff", fontWeight: 700, fontSize: "16px", marginBottom: "4px" }}>Otázky ohledně cookies?</div>
               <div style={{ color: "rgba(255,255,255,0.65)", fontSize: "13px" }}>Napište nám na info@naletistelevne.cz</div>
@@ -205,10 +205,10 @@ export default function ZasadyCookies() {
 
           {/* Navigace mezi dokumenty */}
           <div style={{ display: "flex", gap: "12px", marginTop: "24px", flexWrap: "wrap" as const }}>
-            <a href="/ochrana-osobnich-udaju" style={{ color: "#1E3A8A", textDecoration: "none", fontSize: "13px", padding: "8px 16px", border: "1px solid #dbeafe", borderRadius: "8px", background: "#f0f4ff" }}>
+            <a href="/ochrana-osobnich-udaju" style={{ color: "#00205B", textDecoration: "none", fontSize: "13px", padding: "8px 16px", border: "1px solid #dbeafe", borderRadius: "8px", background: "#f0f4ff" }}>
               ← Ochrana osobních údajů
             </a>
-            <a href="/obchodni-podminky" style={{ color: "#1E3A8A", textDecoration: "none", fontSize: "13px", padding: "8px 16px", border: "1px solid #dbeafe", borderRadius: "8px", background: "#f0f4ff" }}>
+            <a href="/obchodni-podminky" style={{ color: "#00205B", textDecoration: "none", fontSize: "13px", padding: "8px 16px", border: "1px solid #dbeafe", borderRadius: "8px", background: "#f0f4ff" }}>
               Obchodní podmínky →
             </a>
           </div>

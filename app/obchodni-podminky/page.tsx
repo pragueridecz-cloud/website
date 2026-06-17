@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div style={{ marginBottom: "40px" }}>
-    <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "20px", color: "#1E3A8A", marginBottom: "16px", paddingBottom: "10px", borderBottom: "2px solid #F97316", display: "inline-block" }}>
+    <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "20px", color: "#00205B", marginBottom: "16px", paddingBottom: "10px", borderBottom: "2px solid #F97316", display: "inline-block" }}>
       {title}
     </h2>
     <div style={{ color: "#374151", fontSize: "15px", lineHeight: 1.8 }}>
@@ -41,7 +41,7 @@ export default function ObchodniPodminky() {
       <Navbar />
 
       {/* Hero */}
-      <div style={{ background: "#1E3A8A", padding: "100px 24px 50px" }}>
+      <div style={{ background: "#00205B", padding: "100px 24px 50px" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
             <div style={{ width: "32px", height: "2px", background: "#F97316" }} />
@@ -64,15 +64,15 @@ export default function ObchodniPodminky() {
         <div style={{ maxWidth: "860px", margin: "0 auto", background: "#fff", borderRadius: "16px", padding: "clamp(24px,5vw,56px)", boxShadow: "0 2px 16px rgba(0,0,0,0.06)" }}>
 
           <Section title="1. Provozovatel a identifikační údaje">
-            <P>Provozovatelem přepravní platformy <strong>www.naletistelevne.cz</strong> (dostupné na adrese <a href="https://www.naletistelevne.cz" style={{ color: "#1E3A8A" }}>naletistelevne.cz</a>) je:</P>
+            <P>Provozovatelem přepravní platformy <strong>www.naletistelevne.cz</strong> (dostupné na adrese <a href="https://www.naletistelevne.cz" style={{ color: "#00205B" }}>naletistelevne.cz</a>) je:</P>
             <div style={{ background: "#f0f4ff", border: "1px solid #dbeafe", borderRadius: "10px", padding: "16px 20px", marginBottom: "12px" }}>
               <strong>transfer-prague-car s.r.o.</strong><br />
               Sídlo: Sochařská 333/2, 170 00 Praha, Česká republika<br />
               IČO: 25706993<br />
               DIČ: CZ25706993<br />
               Zapsáno v obchodním rejstříku vedeném Městským soudem v Praze<br />
-              E-mail: <a href="mailto:info@naletistelevne.cz" style={{ color: "#1E3A8A" }}>info@naletistelevne.cz</a><br />
-              Telefon: <a href="tel:+420606079179" style={{ color: "#1E3A8A" }}>+420 606 079 179</a>
+              E-mail: <a href="mailto:info@naletistelevne.cz" style={{ color: "#00205B" }}>info@naletistelevne.cz</a><br />
+              Telefon: <a href="tel:+420606079179" style={{ color: "#00205B" }}>+420 606 079 179</a>
             </div>
             <P>Tyto obchodní podmínky upravují vztahy mezi provozovatelem a zákazníkem při objednávání a poskytování přepravních služeb.</P>
           </Section>
@@ -120,7 +120,7 @@ export default function ObchodniPodminky() {
             <div style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", marginBottom: "16px" }}>
                 <thead>
-                  <tr style={{ background: "#1E3A8A" }}>
+                  <tr style={{ background: "#00205B" }}>
                     <th style={{ padding: "12px 16px", textAlign: "left" as const, color: "#fff", fontWeight: 700, fontSize: "13px" }}>Čas před jízdou</th>
                     <th style={{ padding: "12px 16px", textAlign: "left" as const, color: "#fff", fontWeight: 700, fontSize: "13px" }}>Storno poplatek</th>
                   </tr>
@@ -140,7 +140,7 @@ export default function ObchodniPodminky() {
                 </tbody>
               </table>
             </div>
-            <P>Storno lze provést e-mailem na <a href="mailto:info@naletistelevne.cz" style={{ color: "#1E3A8A" }}>info@naletistelevne.cz</a> nebo telefonicky. Rozhodující je čas doručení žádosti o storno provozovateli.</P>
+            <P>Storno lze provést e-mailem na <a href="mailto:info@naletistelevne.cz" style={{ color: "#00205B" }}>info@naletistelevne.cz</a> nebo telefonicky. Rozhodující je čas doručení žádosti o storno provozovateli.</P>
           </Section>
 
           <Section title="7. Povinnosti zákazníka">
@@ -179,7 +179,7 @@ export default function ObchodniPodminky() {
           </Section>
 
           <Section title="10. Ochrana osobních údajů">
-            <P>Provozovatel zpracovává osobní údaje zákazníků v souladu s nařízením GDPR a zákonem č. 110/2019 Sb. Podrobné informace o zpracování osobních údajů jsou dostupné v dokumentu <a href="/ochrana-osobnich-udaju" style={{ color: "#1E3A8A" }}>Ochrana osobních údajů</a>.</P>
+            <P>Provozovatel zpracovává osobní údaje zákazníků v souladu s nařízením GDPR a zákonem č. 110/2019 Sb. Podrobné informace o zpracování osobních údajů jsou dostupné v dokumentu <a href="/ochrana-osobnich-udaju" style={{ color: "#00205B" }}>Ochrana osobních údajů</a>.</P>
           </Section>
 
           <Section title="11. Závěrečná ustanovení">
@@ -189,7 +189,7 @@ export default function ObchodniPodminky() {
           </Section>
 
           {/* Kontaktní box */}
-          <div style={{ background: "#1E3A8A", borderRadius: "12px", padding: "24px 28px", marginTop: "40px", display: "flex", flexWrap: "wrap" as const, gap: "16px", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ background: "#00205B", borderRadius: "12px", padding: "24px 28px", marginTop: "40px", display: "flex", flexWrap: "wrap" as const, gap: "16px", alignItems: "center", justifyContent: "space-between" }}>
             <div>
               <div style={{ color: "#fff", fontWeight: 700, fontSize: "16px", marginBottom: "4px" }}>Máte otázky k podmínkám?</div>
               <div style={{ color: "rgba(255,255,255,0.65)", fontSize: "13px" }}>Napište nám nebo zavolejte – rádi vše vysvětlíme.</div>

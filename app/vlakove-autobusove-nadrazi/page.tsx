@@ -41,7 +41,7 @@ export default function NadraziPage() {
       <main>
 
                 {/* Hero nadpis */}
-        <div style={{ background: "#1E3A8A", padding: "100px 24px 60px" }}>
+        <div style={{ background: "#00205B", padding: "100px 24px 60px" }}>
           <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
               <div style={{ width: "32px", height: "2px", background: "#F97316" }} />
@@ -65,7 +65,7 @@ export default function NadraziPage() {
             <div className="mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
                 style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Obsloužená nádraží</div>
-              <h2 className="text-3xl font-bold mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>Přepravíme vás na každé nádraží</h2>
+              <h2 className="text-3xl font-bold mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Přepravíme vás na každé nádraží</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {STATIONS.map((s, i) => (
@@ -79,7 +79,7 @@ export default function NadraziPage() {
                     <div className="text-xs text-gray-500">{s.desc}</div>
                   </div>
                   <div className="ml-auto text-xs font-bold px-2 py-1 rounded-full"
-                    style={{ background: s.type === "vlak" ? "rgba(30,58,138,.08)" : "rgba(249,115,22,.1)", color: s.type === "vlak" ? "#1E3A8A" : "#F97316" }}>
+                    style={{ background: s.type === "vlak" ? "rgba(30,58,138,.08)" : "rgba(249,115,22,.1)", color: s.type === "vlak" ? "#00205B" : "#F97316" }}>
                     {s.type}
                   </div>
                 </div>
@@ -93,7 +93,7 @@ export default function NadraziPage() {
             <div className="mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
                 style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Výhody</div>
-              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>Proč jet s námi na nádraží</h2>
+              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Proč jet s námi na nádraží</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
@@ -119,7 +119,7 @@ export default function NadraziPage() {
             <div className="mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
                 style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>FAQ</div>
-              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#1E3A8A" }}>Časté dotazy</h2>
+              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Časté dotazy</h2>
             </div>
             <div className="space-y-4">
               {[
@@ -139,7 +139,7 @@ export default function NadraziPage() {
           </div>
         </section>
 
-        <section className="py-16" style={{ background: "#1E3A8A" }}>
+        <section className="py-16" style={{ background: "#00205B" }}>
           <div className="max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-white text-3xl font-bold mb-4" style={{ fontFamily: "Poppins, sans-serif" }}>Rezervujte transfer na nádraží</h2>
             <p className="mb-8" style={{ color: "rgba(255,255,255,.75)" }}>Stihnete každý spoj – my se postaráme o včasné odvezení</p>
