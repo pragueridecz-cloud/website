@@ -81,21 +81,6 @@ export default function Home() {
       </main>
       <Footer />
 
-      {/* Mobile sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white border-t border-gray-200 p-3 flex gap-2 shadow-lg">
-        <a
-          href="tel:+420606079179"
-          className="flex-1 flex items-center justify-center gap-2 border border-[#1E3A8A] text-[#1E3A8A] font-semibold text-sm py-3 rounded-xl cursor-pointer"
-        >
-          Zavolat
-        </a>
-        <a
-          href="#rezervace"
-          className="flex-1 flex items-center justify-center bg-[#F97316] text-white font-semibold text-sm py-3 rounded-xl cursor-pointer"
-        >
-          Rezervovat online
-        </a>
-      </div>
       <FloatingCTA />
     </>
   );
