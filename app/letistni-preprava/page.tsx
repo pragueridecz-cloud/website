@@ -49,7 +49,7 @@ const AIRPORTS_CZ = [
     price: "od 2 900 Kč",
     time: "2,5 hod z Prahy",
     img: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=800&q=80",
-    facts: ["210 km od Prahy", "Pravidelné linky Ryanair, Wizz Air", "Velké parkoviště, jednoduchá orientace", "Ideální pro cestovatele z Moravy"],
+    facts: ["210 km od Prahy", "Pravidelné linky Ryanair, Wizz Air"],
   },
   {
     code: "OSR",
@@ -59,7 +59,7 @@ const AIRPORTS_CZ = [
     price: "od 4 900 Kč",
     time: "3,5 hod z Prahy",
     img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
-    facts: ["360 km od Prahy", "Charterové lety do Turecka, Řecka, Egypta", "Blízko polských hranic", "Kapacitní záchytné parkoviště"],
+    facts: ["360 km od Prahy", "Charterové lety do Turecka, Řecka, Egypta"],
   },
 ]
 
@@ -139,7 +139,7 @@ export default function LetistniPreprava() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {AIRPORTS_CZ.slice(1).map((airport) => (
                 <div key={airport.code} className="rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
-                  <img src={airport.img} alt={airport.name} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
+                  <img src={airport.img} alt={airport.name} style={{ width: "100%", height: "160px", objectFit: "cover" }} />
                   <div className="flex-1 p-6">
                     <div className="flex items-start justify-between mb-3 flex-wrap gap-2">
                       <div>
