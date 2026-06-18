@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Navbar from "@/components/Navbar"
 import AirportMapDetail from "@/components/AirportMapDetail"
 import Footer from "@/components/Footer"
+import SectionHeading from "@/components/SectionHeading"
 
 export const metadata: Metadata = {
   title: "Doprava na letiště | Praha, Vídeň, Bratislava, Mnichov | Naletiště Levně",
@@ -94,18 +95,7 @@ export default function LetistniPreprava() {
         {/* LETIŠTĚ V ČR */}
         <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4">
-            <div className="mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
-                style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>
-                🇨🇿 Letiště v České republice
-              </div>
-              <h2 className="text-4xl font-bold mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>
-                Česká letiště
-              </h2>
-              <p className="text-gray-500 text-lg max-w-2xl">
-                Přepravujeme na všechna letiště v České republice. Nejčastěji samozřejmě na Letiště Václava Havla Praha, ale také do Brna a Ostravy.
-              </p>
-            </div>
+            <SectionHeading label="Letiště v České republice" title="Česká letiště" subtitle="Přepravujeme na všechna letiště v České republice. Nejčastěji samozřejmě na Letiště Václava Havla Praha, ale také do Brna a Ostravy." />
 
             <div className="space-y-8">
               {AIRPORTS_CZ.map((airport, i) => (
@@ -157,15 +147,7 @@ export default function LetistniPreprava() {
         {/* PROČ MY */}
         <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4">
-            <div className="mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
-                style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>
-                Proč si vybrat nás
-              </div>
-              <h2 className="text-4xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>
-                Co dostanete s každou jízdou
-              </h2>
-            </div>
+            <SectionHeading label="Proč si vybrat nás" title="Co dostanete s každou jízdou" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
@@ -199,13 +181,7 @@ export default function LetistniPreprava() {
         {/* FAQ */}
         <section className="py-20" style={{ background: "#f8fafc" }}>
           <div className="max-w-3xl mx-auto px-4">
-            <div className="mb-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
-                style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>
-                Časté dotazy
-              </div>
-              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Máte otázky?</h2>
-            </div>
+            <SectionHeading label="Časté dotazy" title="Máte otázky?" />
             <div className="space-y-3">
               {[
                 { q: "Přepravíte mě i na letiště ve Vídni nebo Mnichově?", a: "Ano, přepravujeme na všechna letiště v dosahu přibližně 700 km od Prahy. Vídeň, Bratislava, Budapešť, Mnichov, Frankfurt, Drážďany a další. Cenu dostanete ihned po zadání do rezervačního formuláře." },

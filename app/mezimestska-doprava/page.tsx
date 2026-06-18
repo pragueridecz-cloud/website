@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import SectionHeading from "@/components/SectionHeading"
 
 export const metadata: Metadata = {
   title: "Mezinárodní a meziměstská doprava | Praha–Vídeň, Praha–Berlín | Naletiště Levně",
@@ -77,12 +78,7 @@ export default function MezimestskaPage() {
 
         <section className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4">
-            <div className="mb-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
-                style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Oblíbené trasy</div>
-              <h2 className="text-3xl font-bold mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Ceny nejoblíbenějších tras</h2>
-              <p className="text-gray-500">Všechny ceny jsou pevné a zahrnují veškeré poplatky. Cena pro jiné trasy se vypočítá automaticky.</p>
-            </div>
+            <SectionHeading label="Oblíbené trasy" title="Ceny nejoblíbenějších tras" subtitle="Všechny ceny jsou pevné a zahrnují veškeré poplatky. Cena pro jiné trasy se vypočítá automaticky." />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {ROUTES.map((route, i) => (
                 <div key={i} className="rounded-xl p-5 border border-gray-200 hover:border-orange-300 hover:shadow-md transition-all">
@@ -104,11 +100,7 @@ export default function MezimestskaPage() {
 
         <section className="py-20" style={{ background: "#f8fafc" }}>
           <div className="max-w-5xl mx-auto px-4">
-            <div className="mb-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
-                style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Výhody</div>
-              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Proč cestovat s námi</h2>
-            </div>
+            <SectionHeading label="Výhody" title="Proč cestovat s námi" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { icon: "🔒", title: "Fixní cena předem", desc: "Cena je dohodnutá předem a nemění se. Žádné příplatky za mýto, parkování nebo čekání." },
@@ -130,11 +122,7 @@ export default function MezimestskaPage() {
 
         <section className="py-20 bg-white">
           <div className="max-w-3xl mx-auto px-4">
-            <div className="mb-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
-                style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>FAQ</div>
-              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Časté dotazy</h2>
-            </div>
+            <SectionHeading label="FAQ" title="Časté dotazy" />
             <div className="space-y-4">
               {FAQ_ITEMS.map((item, i) => (
                 <details key={i} className="border border-gray-200 rounded-xl overflow-hidden">

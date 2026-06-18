@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import SectionHeading from "@/components/SectionHeading"
 
 export const metadata: Metadata = {
   title: "Přeprava na vlakové a autobusové nádraží Praha | Taxi na nádraží",
@@ -62,11 +63,7 @@ export default function NadraziPage() {
 
         <section className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4">
-            <div className="mb-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
-                style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Obsloužená nádraží</div>
-              <h2 className="text-3xl font-bold mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Přepravíme vás na každé nádraží</h2>
-            </div>
+            <SectionHeading label="Obsloužená nádraží" title="Přepravíme vás na každé nádraží" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {STATIONS.map((s, i) => (
                 <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 hover:border-orange-300 transition-all">
@@ -90,11 +87,7 @@ export default function NadraziPage() {
 
         <section className="py-20" style={{ background: "#f8fafc" }}>
           <div className="max-w-5xl mx-auto px-4">
-            <div className="mb-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
-                style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Výhody</div>
-              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Proč jet s námi na nádraží</h2>
-            </div>
+            <SectionHeading label="Výhody" title="Proč jet s námi na nádraží" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { icon: "⏱️", title: "Přijedeme včas", desc: "Naplánujeme cestu s dostatečnou rezervou, abyste vlak nebo autobus určitě stihli." },
@@ -116,11 +109,7 @@ export default function NadraziPage() {
 
         <section className="py-20 bg-white">
           <div className="max-w-3xl mx-auto px-4">
-            <div className="mb-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
-                style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>FAQ</div>
-              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Časté dotazy</h2>
-            </div>
+            <SectionHeading label="FAQ" title="Časté dotazy" />
             <div className="space-y-4">
               {[
                 { q: "Jak daleko dopředu mám rezervovat?", a: "Doporučujeme alespoň 2 hodiny předem, ale přijímáme i urgentní objednávky dle aktuální dostupnosti." },

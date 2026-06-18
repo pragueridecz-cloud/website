@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import SectionHeading from "@/components/SectionHeading"
 
 export const metadata: Metadata = {
   title: "Firemní přeprava Praha | Transfer pro firmy | Naletiště Levně",
@@ -51,11 +52,7 @@ export default function PrepravaPropFirmy() {
 
         <section className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4">
-            <div className="mb-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
-                style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Výhody pro firmy</div>
-              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Proč nás volí firmy</h2>
-            </div>
+            <SectionHeading label="Výhody pro firmy" title="Proč nás volí firmy" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { icon: "📄", title: "Faktura na IČO", desc: "Každá jízda s daňovým dokladem. Neplátci DPH i plátci DPH." },
@@ -77,11 +74,7 @@ export default function PrepravaPropFirmy() {
 
         <section className="py-20" style={{ background: "#f8fafc" }}>
           <div className="max-w-5xl mx-auto px-4">
-            <div className="mb-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
-                style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Využití</div>
-              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Kdy využít firemní přepravu</h2>
-            </div>
+            <SectionHeading label="Využití" title="Kdy využít firemní přepravu" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
                 { title: "Přeprava zaměstnanců na letiště", desc: "Včasné odvezení na pracovní cesty s fakturou pro HR oddělení." },
@@ -106,11 +99,7 @@ export default function PrepravaPropFirmy() {
 
         <section className="py-20 bg-white">
           <div className="max-w-3xl mx-auto px-4 text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-6"
-              style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Kontakt</div>
-            <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>
-              Domluvme firemní spolupráci
-            </h2>
+            <SectionHeading label="Kontakt" title="Domluvme firemní spolupráci" center />
             <p className="text-gray-500 mb-8 leading-relaxed">
               Pro firmy s pravidelnou potřebou přepravy nabízíme výhodné podmínky, měsíční fakturu a dedikovanou podporu. Napište nám nebo zavolejte.
             </p>

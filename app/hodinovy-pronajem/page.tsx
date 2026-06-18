@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import SectionHeading from "@/components/SectionHeading"
 
 export const metadata: Metadata = {
   title: "Hodinový pronájem auta s řidičem Praha | Chauffeur service",
@@ -52,11 +53,7 @@ export default function HodinPronajem() {
 
         <section className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4">
-            <div className="mb-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
-                style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Ceník</div>
-              <h2 className="text-3xl font-bold mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Ceny hodinového pronájmu</h2>
-            </div>
+            <SectionHeading label="Ceník" title="Ceny hodinového pronájmu" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { title: "Economy Sedan", price: "699", unit: "Kč/hod", min: "Min. 2 hodiny", cap: "1–4 osoby", features: ["Klimatizace", "Velký kufr", "Wi-Fi"] },
@@ -83,11 +80,7 @@ export default function HodinPronajem() {
 
         <section className="py-20" style={{ background: "#f8fafc" }}>
           <div className="max-w-5xl mx-auto px-4">
-            <div className="mb-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
-                style={{ background: "rgba(249,115,22,.1)", color: "#F97316", border: "1px solid rgba(249,115,22,.2)" }}>Využití</div>
-              <h2 className="text-3xl font-bold" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>Kdy se hodí auto s řidičem</h2>
-            </div>
+            <SectionHeading label="Využití" title="Kdy se hodí auto s řidičem" />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { icon: "🏛️", title: "Prohlídka Prahy", desc: "Navštivte Hradčany, Starý Město a Malou Stranu v klidu s průvodcem za volantem." },
