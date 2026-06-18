@@ -97,43 +97,72 @@ export default function LetistniPreprava() {
           <div className="max-w-6xl mx-auto px-4">
             <SectionHeading label="Letiště v České republice" title="Česká letiště" subtitle="Přepravujeme na všechna letiště v České republice. Nejčastěji samozřejmě na Letiště Václava Havla Praha, ale také do Brna a Ostravy." />
 
-            <div className="space-y-8">
-              {AIRPORTS_CZ.map((airport, i) => (
-                <div key={airport.code} className="rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+            {/* PRG – full width */}
+            {(() => {
+              const prg = AIRPORTS_CZ[0];
+              return (
+                <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-100 mb-6">
                   <div className="flex flex-col md:flex-row">
                     <div className="md:w-2/5 flex-shrink-0">
-                      <img src={airport.img} alt={airport.name}
-                        style={{ width: "100%", height: "280px", objectFit: "cover" }}
-  
-                      />
+                      <img src={prg.img} alt={prg.name} style={{ width: "100%", height: "280px", objectFit: "cover" }} />
                     </div>
                     <div className="flex-1 p-8">
                       <div className="flex items-start justify-between mb-4 flex-wrap gap-3">
                         <div>
-                          <span className="text-xs font-mono font-bold px-2 py-1 rounded mr-2"
-                            style={{ background: "#00205B", color: "#fff" }}>{airport.code}</span>
-                          <h3 className="text-2xl font-bold mt-2" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>
-                            {airport.name}
-                          </h3>
-                          <div className="text-gray-400 text-sm">{airport.city}</div>
+                          <span className="text-xs font-mono font-bold px-2 py-1 rounded mr-2" style={{ background: "#00205B", color: "#fff" }}>{prg.code}</span>
+                          <h3 className="text-2xl font-bold mt-2" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>{prg.name}</h3>
+                          <div className="text-gray-400 text-sm">{prg.city}</div>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-black" style={{ fontFamily: "Poppins, sans-serif", color: "#F97316" }}>{airport.price}</div>
-                          <div className="text-xs text-gray-400">⏱ {airport.time}</div>
+                          <div className="text-2xl font-black" style={{ fontFamily: "Poppins, sans-serif", color: "#F97316" }}>{prg.price}</div>
+                          <div className="text-xs text-gray-400">⏱ {prg.time}</div>
                         </div>
                       </div>
-                      <p className="text-gray-600 leading-relaxed mb-5">{airport.desc}</p>
+                      <p className="text-gray-600 leading-relaxed mb-5">{prg.desc}</p>
                       <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-6">
-                        {airport.facts.map((fact) => (
+                        {prg.facts.map((fact) => (
                           <li key={fact} className="flex items-center gap-2 text-sm text-gray-600">
                             <span style={{ color: "#10b981", fontWeight: 700 }}>✓</span> {fact}
                           </li>
                         ))}
                       </ul>
                       <a href="/#rezervace" style={{ background: "#00205B", color: "#fff", padding: "11px 28px", borderRadius: "10px", fontWeight: 700, fontSize: "14px", textDecoration: "none", display: "inline-block" }}>
-                        Rezervovat na {airport.code} →
+                        Rezervovat na {prg.code} →
                       </a>
                     </div>
+                  </div>
+                </div>
+              );
+            })()}
+
+            {/* BRQ + OSR – side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {AIRPORTS_CZ.slice(1).map((airport) => (
+                <div key={airport.code} className="rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
+                  <img src={airport.img} alt={airport.name} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
+                  <div className="flex-1 p-6">
+                    <div className="flex items-start justify-between mb-3 flex-wrap gap-2">
+                      <div>
+                        <span className="text-xs font-mono font-bold px-2 py-1 rounded mr-2" style={{ background: "#00205B", color: "#fff" }}>{airport.code}</span>
+                        <h3 className="text-xl font-bold mt-2" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>{airport.name}</h3>
+                        <div className="text-gray-400 text-sm">{airport.city}</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xl font-black" style={{ fontFamily: "Poppins, sans-serif", color: "#F97316" }}>{airport.price}</div>
+                        <div className="text-xs text-gray-400">⏱ {airport.time}</div>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{airport.desc}</p>
+                    <ul className="space-y-1.5 mb-5">
+                      {airport.facts.map((fact) => (
+                        <li key={fact} className="flex items-center gap-2 text-sm text-gray-600">
+                          <span style={{ color: "#10b981", fontWeight: 700 }}>✓</span> {fact}
+                        </li>
+                      ))}
+                    </ul>
+                    <a href="/#rezervace" style={{ background: "#00205B", color: "#fff", padding: "10px 20px", borderRadius: "10px", fontWeight: 700, fontSize: "13px", textDecoration: "none", display: "inline-block" }}>
+                      Rezervovat na {airport.code} →
+                    </a>
                   </div>
                 </div>
               ))}
