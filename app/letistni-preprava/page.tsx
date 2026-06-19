@@ -189,7 +189,7 @@ export default function LetistniPreprava() {
                 {
                   img: "/flight-tracking.jpg",
                   imgPos: "65% 0%",
-                  imgZoom: 1.6,
+                  imgZoom: 1.3,
                   title: "Sledování letu v reálném čase",
                   desc: "Automaticky monitorujeme zpoždění vašeho letu. Řidič přijede přesně na čas – ani dříve, ani později. Nečekáte, neplatíte extra.",
                 },
