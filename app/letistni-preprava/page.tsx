@@ -205,7 +205,9 @@ export default function LetistniPreprava() {
                 },
               ].map((item, i) => (
                 <div key={i} className="rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-                  <img src={item.img} alt={item.title} style={{ width: "100%", height: "200px", objectFit: "cover", objectPosition: item.imgPos || "center", transform: item.imgZoom ? `scale(${item.imgZoom})` : undefined }} />
+                  <div style={{ width: "100%", height: "200px", overflow: "hidden", position: "relative" }}>
+                    <img src={item.img} alt={item.title} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: item.imgPos || "center", transform: item.imgZoom ? `scale(${item.imgZoom})` : undefined, transformOrigin: "center" }} />
+                  </div>
                   <div className="p-6">
                     <h3 className="text-lg font-bold mb-2" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>{item.title}</h3>
                     <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
