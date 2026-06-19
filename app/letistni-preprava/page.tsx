@@ -188,6 +188,8 @@ export default function LetistniPreprava() {
               {[
                 {
                   img: "/flight-tracking.jpg",
+                  imgPos: "75% 30%",
+                  imgZoom: 1.6,
                   title: "Sledování letu v reálném čase",
                   desc: "Automaticky monitorujeme zpoždění vašeho letu. Řidič přijede přesně na čas – ani dříve, ani později. Nečekáte, neplatíte extra.",
                 },
@@ -203,7 +205,7 @@ export default function LetistniPreprava() {
                 },
               ].map((item, i) => (
                 <div key={i} className="rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-                  <img src={item.img} alt={item.title} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
+                  <img src={item.img} alt={item.title} style={{ width: "100%", height: "200px", objectFit: "cover", objectPosition: item.imgPos || "center", transform: item.imgZoom ? `scale(${item.imgZoom})` : undefined }} />
                   <div className="p-6">
                     <h3 className="text-lg font-bold mb-2" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>{item.title}</h3>
                     <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
