@@ -187,7 +187,7 @@ export default function LetistniPreprava() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
-                  img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80",
+                  img: "/flight-tracking.jpg",
                   title: "Sledování letu v reálném čase",
                   desc: "Automaticky monitorujeme zpoždění vašeho letu. Řidič přijede přesně na čas – ani dříve, ani později. Nečekáte, neplatíte extra.",
                 },
