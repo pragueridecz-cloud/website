@@ -72,23 +72,30 @@ export default function LetistniPreprava() {
       <main>
 
         {/* HERO */}
-                {/* Hero nadpis */}
         <div style={{ background: "#00205B", padding: "100px 24px 60px" }}>
           <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
-              <div style={{ width: "32px", height: "2px", background: "#F97316" }} />
-              <span style={{ fontSize: "11px", fontWeight: 700, color: "#F97316", textTransform: "uppercase", letterSpacing: "1.5px" }}>
-                Letištní přeprava
-              </span>
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
+                  <div style={{ width: "32px", height: "2px", background: "#F97316" }} />
+                  <span style={{ fontSize: "11px", fontWeight: 700, color: "#F97316", textTransform: "uppercase", letterSpacing: "1.5px" }}>
+                    Letištní přeprava
+                  </span>
+                </div>
+                <h1 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.15, color: "#fff", fontSize: "clamp(32px,5vw,56px)", margin: "0 0 16px" }}>
+                  Transfer na letiště<br />
+                  <span style={{ color: "#F97316" }}>Praha a střední Evropa</span>
+                </h1>
+                <div style={{ width: "48px", height: "3px", background: "#F97316", borderRadius: "2px", marginBottom: "20px" }} />
+                <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "18px", lineHeight: 1.7, maxWidth: "600px" }}>
+                  Přepravujeme na všechna hlavní letiště v dosahu 700 km. Pevná cena, sledování letu, řidič na místě.
+                </p>
+              </div>
+              <div className="hidden md:block" style={{ borderRadius: "16px", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.4)" }}>
+                <img src="/driver-sign.jpg" alt="Řidič s cedulkou čeká na zákazníka u výstupu z letiště"
+                  style={{ width: "100%", height: "auto", display: "block" }} />
+              </div>
             </div>
-            <h1 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.15, color: "#fff", fontSize: "clamp(32px,5vw,56px)", margin: "0 0 16px" }}>
-              Transfer na letiště<br />
-              <span style={{ color: "#F97316" }}>Praha a střední Evropa</span>
-            </h1>
-            <div style={{ width: "48px", height: "3px", background: "#F97316", borderRadius: "2px", marginBottom: "20px" }} />
-            <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "18px", lineHeight: 1.7, maxWidth: "600px" }}>
-              Přepravujeme na všechna hlavní letiště v dosahu 700 km. Pevná cena, sledování letu, řidič na místě.
-            </p>
           </div>
         </div>
 
