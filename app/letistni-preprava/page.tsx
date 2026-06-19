@@ -192,7 +192,7 @@ export default function LetistniPreprava() {
                   desc: "Automaticky monitorujeme zpoždění vašeho letu. Řidič přijede přesně na čas – ani dříve, ani později. Nečekáte, neplatíte extra.",
                 },
                 {
-                  img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+                  img: "/driver-sign.jpg",
                   title: "Řidič s cedulkou u výstupu",
                   desc: "Po příletu vás váš řidič čeká přímo v příletové hale s cedulkou s vaším jménem. Žádné hledání, žádný stres po dlouhém letu.",
                 },
