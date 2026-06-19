@@ -60,14 +60,14 @@ export default function Navbar() {
             {/* Dropdown Služby */}
             <div className="relative"
               onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setTimeout(() => setServicesOpen(false), 150)}>
+              onMouseLeave={() => setTimeout(() => setServicesOpen(false), 250)}>
               <button className="flex items-center gap-1 px-3 py-1.5 text-sm font-medium cursor-pointer"
                 style={{ color: "rgba(255,255,255,.85)", background: "none", border: "none" }}>
                 Služby <ChevronDown size={13} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
               </button>
               {servicesOpen && (
                 <div className="absolute top-full left-0 py-2 z-50 rounded-lg min-w-56"
-                  style={{ background: "#162d6e", border: "1px solid rgba(255,255,255,.1)", boxShadow: "0 8px 24px rgba(0,0,0,.3)", marginTop: "4px" }}>
+                  style={{ background: "#162d6e", border: "1px solid rgba(255,255,255,.1)", boxShadow: "0 8px 24px rgba(0,0,0,.3)", marginTop: "0px", paddingTop: "10px" }}>
                   {services.map(s => (
                     <a key={s.name} href={s.href}
                       className="block px-5 py-2.5 text-sm cursor-pointer"
