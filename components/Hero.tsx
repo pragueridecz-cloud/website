@@ -243,7 +243,7 @@ export default function Hero() {
           </div>
 
           {/* Mobil */}
-          <div className="md:hidden flex flex-col pb-5" style={{ margin: "0 -16px" }}>
+          <div className="md:hidden flex flex-col pb-5">
             <h1 style={{ color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(28px,8vw,40px)", margin: "0 0 4px" }}>
               Levná přeprava
             </h1>
