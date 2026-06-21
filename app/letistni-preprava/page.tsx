@@ -199,7 +199,7 @@ export default function LetistniPreprava() {
                   desc: "Po příletu vás váš řidič čeká přímo v příletové hale s cedulkou s vaším jménem. Žádné hledání, žádný stres po dlouhém letu.",
                 },
                 {
-                  img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80",
+                  img: "/fixed-price-payment.jpg",
                   title: "Pevná cena bez příplatků",
                   desc: "Cena je dohodnutá předem a nemění se. Žádné příplatky za mýto, zpoždění, noční jízdu ani velká zavazadla.",
                 },
