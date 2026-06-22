@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import SectionHeading from "@/components/SectionHeading"
+import { Clock, Luggage, ArrowLeftRight, MapPin, Banknote, Moon, Train, Bus } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Přeprava na vlakové a autobusové nádraží Praha | Taxi na nádraží",
@@ -24,14 +25,23 @@ const schema = {
 }
 
 const STATIONS = [
-  { name: "Praha Hlavní nádraží", type: "vlak", desc: "Centrální vlaková stanice Prahy" },
-  { name: "Praha Smíchovské nádraží", type: "vlak", desc: "Moderní přestupní uzel na jihozápadě" },
-  { name: "Praha Masarykovo nádraží", type: "vlak", desc: "Historické centrum Prahy" },
-  { name: "Praha Holešovice", type: "vlak", desc: "Mezinárodní vlaky a přestupní bod" },
-  { name: "Florenc", type: "autobus", desc: "Hlavní autobusové nádraží Prahy" },
-  { name: "ÚAN Černý Most", type: "autobus", desc: "Autobusové nádraží na východě Prahy" },
-  { name: "Na Knížecí", type: "autobus", desc: "Jihozápadní autobusový terminál" },
-  { name: "Zličín", type: "autobus", desc: "Westfield Zličín – autobusový terminál" },
+  { name: "Praha Hlavní nádraží",      type: "vlak",   desc: "Centrální vlaková stanice Prahy" },
+  { name: "Praha Smíchovské nádraží",  type: "vlak",   desc: "Moderní přestupní uzel na jihozápadě" },
+  { name: "Praha Masarykovo nádraží",  type: "vlak",   desc: "Historické centrum Prahy" },
+  { name: "Praha Holešovice",          type: "vlak",   desc: "Mezinárodní vlaky a přestupní bod" },
+  { name: "Florenc",                   type: "autobus", desc: "Hlavní autobusové nádraží Prahy" },
+  { name: "ÚAN Černý Most",            type: "autobus", desc: "Autobusové nádraží na východě Prahy" },
+  { name: "Na Knížecí",                type: "autobus", desc: "Jihozápadní autobusový terminál" },
+  { name: "Zličín",                    type: "autobus", desc: "Westfield Zličín – autobusový terminál" },
+]
+
+const VYHODY = [
+  { Icon: Clock,          title: "Přijedeme včas",          desc: "Naplánujeme cestu s dostatečnou rezervou, abyste vlak nebo autobus určitě stihli.", img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80" },
+  { Icon: Luggage,        title: "Pomoc se zavazadly",       desc: "Řidič vám pomůže s nakládkou a vykládkou zavazadel, kočárků nebo jízdních kol.", img: "https://images.unsplash.com/photo-1553531384-397c80973a0b?w=600&q=80" },
+  { Icon: ArrowLeftRight, title: "Zpáteční jízda",           desc: "Objednáte i vyzvednutí z nádraží po návratu. Vše v jedné rezervaci.", img: "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=600&q=80" },
+  { Icon: MapPin,         title: "Přesné vyzvednutí",        desc: "Vyzvednutí přímo od vašich dveří nebo na dohodnutém místě.", img: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=600&q=80" },
+  { Icon: Banknote,       title: "Pevná cena",               desc: "Víte přesně, kolik zaplatíte. Bez taxametru, bez příplatků.", img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" },
+  { Icon: Moon,           title: "Ranní vlaky bez stresu",   desc: "Přepravujeme i v brzkých ranních hodinách. Žádný stres s MHD ve 4 ráno.", img: "https://images.unsplash.com/photo-1508962914676-134849a727f0?w=600&q=80" },
 ]
 
 export default function NadraziPage() {
@@ -41,7 +51,7 @@ export default function NadraziPage() {
       <Navbar />
       <main>
 
-                {/* Hero nadpis */}
+        {/* Hero */}
         <div style={{ background: "#00205B", padding: "100px 24px 60px" }}>
           <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
@@ -61,22 +71,25 @@ export default function NadraziPage() {
           </div>
         </div>
 
+        {/* Nádraží */}
         <section className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4">
             <SectionHeading label="Obsloužená nádraží" title="Přepravíme vás na každé nádraží" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {STATIONS.map((s, i) => (
                 <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 hover:border-orange-300 transition-all">
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center text-lg flex-shrink-0"
-                    style={{ background: s.type === "vlak" ? "rgba(30,58,138,.08)" : "rgba(249,115,22,.1)" }}>
-                    {s.type === "vlak" ? "🚆" : "🚌"}
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{ background: s.type === "vlak" ? "#EFF6FF" : "#FFF7ED" }}>
+                    {s.type === "vlak"
+                      ? <Train size={18} color="#00205B" strokeWidth={1.75} />
+                      : <Bus size={18} color="#F97316" strokeWidth={1.75} />}
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">{s.name}</div>
                     <div className="text-xs text-gray-500">{s.desc}</div>
                   </div>
                   <div className="ml-auto text-xs font-bold px-2 py-1 rounded-full"
-                    style={{ background: s.type === "vlak" ? "rgba(30,58,138,.08)" : "rgba(249,115,22,.1)", color: s.type === "vlak" ? "#00205B" : "#F97316" }}>
+                    style={{ background: s.type === "vlak" ? "#EFF6FF" : "#FFF7ED", color: s.type === "vlak" ? "#00205B" : "#F97316" }}>
                     {s.type}
                   </div>
                 </div>
@@ -85,28 +98,31 @@ export default function NadraziPage() {
           </div>
         </section>
 
+        {/* Výhody */}
         <section className="py-20" style={{ background: "#f8fafc" }}>
           <div className="max-w-5xl mx-auto px-4">
             <SectionHeading label="Výhody" title="Proč jet s námi na nádraží" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { icon: "⏱️", title: "Přijedeme včas", desc: "Naplánujeme cestu s dostatečnou rezervou, abyste vlak nebo autobus určitě stihli." },
-                { icon: "🧳", title: "Pomoc se zavazadly", desc: "Řidič vám pomůže s nakládkou a vykládkou zavazadel, kočárků nebo jízdních kol." },
-                { icon: "🔄", title: "Zpáteční jízda", desc: "Objednáte i vyzvednutí z nádraží po návratu. Vše v jedné rezervaci." },
-                { icon: "📍", title: "Přesné vyzvednutí", desc: "Vyzvednutí přímo od vašich dveří nebo na dohodnutém místě." },
-                { icon: "💰", title: "Pevná cena", desc: "Víte přesně, kolik zaplatíte. Bez taxametru, bez příplatků." },
-                { icon: "🌙", title: "Ranní vlaky bez stresu", desc: "Přepravujeme i v brzkých ranních hodinách. Žádný stres s MHD ve 4 ráno." },
-              ].map((item, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 shadow-sm">
-                  <div className="text-3xl mb-3">{item.icon}</div>
-                  <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+              {VYHODY.map(({ Icon, title, desc, img }) => (
+                <div key={title} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                  <div style={{ position: "relative", height: "160px" }}>
+                    <img src={img} alt={title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    <div style={{ position: "absolute", inset: 0, background: "rgba(0,32,91,0.35)" }} />
+                    <div style={{ position: "absolute", bottom: "12px", left: "12px", width: "36px", height: "36px", borderRadius: "10px", background: "#F97316", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      <Icon size={18} color="#fff" strokeWidth={2} />
+                    </div>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* FAQ */}
         <section className="py-20 bg-white">
           <div className="max-w-3xl mx-auto px-4">
             <SectionHeading label="FAQ" title="Časté dotazy" />
@@ -128,6 +144,7 @@ export default function NadraziPage() {
           </div>
         </section>
 
+        {/* CTA */}
         <section className="py-16" style={{ background: "#00205B" }}>
           <div className="max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-white text-3xl font-bold mb-4" style={{ fontFamily: "Poppins, sans-serif" }}>Rezervujte transfer na nádraží</h2>

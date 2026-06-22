@@ -2,6 +2,10 @@ import type { Metadata } from "next"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import SectionHeading from "@/components/SectionHeading"
+import {
+  Landmark, Briefcase, ShoppingBag, TreePine,
+  Heart, Music, Plane, Activity, DollarSign,
+} from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Hodinový pronájem auta s řidičem Praha | Chauffeur service",
@@ -24,6 +28,17 @@ const schema = {
   "offers": { "@type": "Offer", "priceCurrency": "CZK", "price": "699" },
 }
 
+const USES = [
+  { Icon: Landmark,    title: "Prohlídka Prahy",    desc: "Navštivte Hradčany, Starý Město a Malou Stranu v klidu s průvodcem za volantem." },
+  { Icon: Briefcase,   title: "Business schůzky",   desc: "Přesuny mezi schůzkami bez parkování a stresu. Pracujte v autě." },
+  { Icon: ShoppingBag, title: "Nákupy",              desc: "Velký nákup nebo výprodeje bez starostí se zavazadly a parkováním." },
+  { Icon: TreePine,    title: "Výlet za město",      desc: "Český ráj, Karlštejn, Kutná Hora. Bez kompromisů s jízdním řádem." },
+  { Icon: Heart,       title: "Svatba",              desc: "Exkluzivní přepravu pro novomanžele nebo hosty na velký den." },
+  { Icon: Music,       title: "Kulturní akce",       desc: "Opera, divadlo, konference. Dorazíte včas a v komfortu." },
+  { Icon: Plane,       title: "VIP transfer",        desc: "Vyzvednutí z letiště s čekáním a přesuny po celý den." },
+  { Icon: Activity,    title: "Zdravotní přesuny",   desc: "Pohodlné přepravení k lékaři nebo na rehabilitaci." },
+]
+
 export default function HodinPronajem() {
   return (
     <>
@@ -31,7 +46,7 @@ export default function HodinPronajem() {
       <Navbar />
       <main>
 
-                {/* Hero nadpis */}
+        {/* Hero */}
         <div style={{ background: "#00205B", padding: "100px 24px 60px" }}>
           <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
@@ -51,57 +66,60 @@ export default function HodinPronajem() {
           </div>
         </div>
 
+        {/* Ceník */}
         <section className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4">
             <SectionHeading label="Ceník" title="Ceny hodinového pronájmu" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { title: "Economy Sedan", price: "699", unit: "Kč/hod", min: "Min. 2 hodiny", cap: "1–4 osoby", features: ["Klimatizace", "Velký kufr", "Wi-Fi"] },
-                { title: "Minivan / Kombi", price: "899", unit: "Kč/hod", min: "Min. 2 hodiny", cap: "1–7 osob", features: ["Klimatizace", "Velký kufr", "Wi-Fi", "Dětská sedačka"], highlight: true },
-                { title: "VIP / Business", price: "1 299", unit: "Kč/hod", min: "Min. 3 hodiny", cap: "1–4 osoby", features: ["Prémiový interiér", "Voda v autě", "Wi-Fi", "Tichý provoz"] },
+                { title: "Economy Sedan", price: "699", unit: "Kč/hod", min: "Min. 2 hodiny", cap: "1–4 osoby", features: ["Klimatizace", "Velký kufr", "Wi-Fi"], img: "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=600&q=80" },
+                { title: "Minivan / Kombi", price: "899", unit: "Kč/hod", min: "Min. 2 hodiny", cap: "1–7 osob", features: ["Klimatizace", "Velký kufr", "Wi-Fi", "Dětská sedačka"], highlight: true, img: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&q=80" },
+                { title: "VIP / Business", price: "1 299", unit: "Kč/hod", min: "Min. 3 hodiny", cap: "1–4 osoby", features: ["Prémiový interiér", "Voda v autě", "Wi-Fi", "Tichý provoz"], img: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=600&q=80" },
               ].map((p, i) => (
-                <div key={i} className="rounded-2xl p-6 border-2" style={{ borderColor: p.highlight ? "#F97316" : "#e2e8f0", background: p.highlight ? "#fff7ed" : "#f8fafc" }}>
-                  {p.highlight && <div className="text-xs font-bold mb-2" style={{ color: "#F97316" }}>NEJOBLÍBENĚJŠÍ</div>}
-                  <h3 className="font-bold text-gray-900 mb-3">{p.title}</h3>
-                  <div className="text-4xl font-black mb-1" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>{p.price} <span className="text-lg font-normal text-gray-500">{p.unit}</span></div>
-                  <div className="text-xs text-gray-400 mb-4">{p.min} · {p.cap}</div>
-                  <ul className="space-y-2 mb-6">
-                    {p.features.map((f) => <li key={f} className="text-sm text-gray-600 flex items-center gap-2"><span style={{ color: "#10b981" }}>✓</span>{f}</li>)}
-                  </ul>
-                  <a href="/#rezervace" className="block text-center py-2.5 rounded-lg text-sm font-bold"
-                    style={{ background: p.highlight ? "#F97316" : "#00205B", color: "#fff", textDecoration: "none" }}>
-                    Rezervovat
-                  </a>
+                <div key={i} className="rounded-2xl overflow-hidden border-2 flex flex-col" style={{ borderColor: p.highlight ? "#F97316" : "#e2e8f0" }}>
+                  <div style={{ position: "relative", height: "160px" }}>
+                    <img src={p.img} alt={p.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    {p.highlight && (
+                      <div style={{ position: "absolute", top: "10px", right: "10px", background: "#F97316", color: "#fff", fontSize: "10px", fontWeight: 700, padding: "4px 10px", borderRadius: "20px" }}>NEJOBLÍBENĚJŠÍ</div>
+                    )}
+                  </div>
+                  <div className="p-6 flex flex-col flex-1" style={{ background: p.highlight ? "#fff7ed" : "#f8fafc" }}>
+                    <h3 className="font-bold text-gray-900 mb-3">{p.title}</h3>
+                    <div className="text-4xl font-black mb-1" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>{p.price} <span className="text-lg font-normal text-gray-500">{p.unit}</span></div>
+                    <div className="text-xs text-gray-400 mb-4">{p.min} · {p.cap}</div>
+                    <ul className="space-y-2 mb-6 flex-1">
+                      {p.features.map((f) => <li key={f} className="text-sm text-gray-600 flex items-center gap-2"><span style={{ color: "#10b981" }}>✓</span>{f}</li>)}
+                    </ul>
+                    <a href="/#rezervace" className="block text-center py-2.5 rounded-lg text-sm font-bold"
+                      style={{ background: p.highlight ? "#F97316" : "#00205B", color: "#fff", textDecoration: "none" }}>
+                      Rezervovat
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* Využití */}
         <section className="py-20" style={{ background: "#f8fafc" }}>
           <div className="max-w-5xl mx-auto px-4">
             <SectionHeading label="Využití" title="Kdy se hodí auto s řidičem" />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { icon: "🏛️", title: "Prohlídka Prahy", desc: "Navštivte Hradčany, Starý Město a Malou Stranu v klidu s průvodcem za volantem." },
-                { icon: "💼", title: "Business schůzky", desc: "Přesuny mezi schůzkami bez parkování a stresu. Pracujte v autě." },
-                { icon: "🛍️", title: "Nákupy", desc: "Velký nákup nebo výprodeje bez starostí se zavazadly a parkováním." },
-                { icon: "🌿", title: "Výlet za město", desc: "Český ráj, Karlštejn, Kutná Hora. Bez kompromisů s jízdním řádem." },
-                { icon: "💒", title: "Svatba", desc: "Exkluzivní přepravu pro novomanžele nebo hosty na velký den." },
-                { icon: "🎭", title: "Kulturní akce", desc: "Opera, divadlo, konference. Dorazíte včas a v komfortu." },
-                { icon: "✈️", title: "VIP transfer", desc: "Vyzvednutí z letiště s čekáním a přesuny po celý den." },
-                { icon: "🏥", title: "Zdravotní přesuny", desc: "Pohodlné přepravení k lékaři nebo na rehabilitaci." },
-              ].map((item, i) => (
-                <div key={i} className="bg-white rounded-xl p-5 shadow-sm text-center">
-                  <div className="text-3xl mb-2">{item.icon}</div>
-                  <h3 className="font-bold text-gray-900 text-sm mb-1">{item.title}</h3>
-                  <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+              {USES.map(({ Icon, title, desc }) => (
+                <div key={title} className="bg-white rounded-xl p-5 shadow-sm text-center">
+                  <div style={{ width: "44px", height: "44px", borderRadius: "12px", background: "#FFF7ED", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 12px" }}>
+                    <Icon size={20} color="#F97316" strokeWidth={1.75} />
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-sm mb-1">{title}</h3>
+                  <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* CTA */}
         <section className="py-16" style={{ background: "#00205B" }}>
           <div className="max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-white text-3xl font-bold mb-4" style={{ fontFamily: "Poppins, sans-serif" }}>Pronajměte si auto s řidičem</h2>

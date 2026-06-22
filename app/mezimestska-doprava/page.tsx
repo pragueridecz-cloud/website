@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import SectionHeading from "@/components/SectionHeading"
+import { Lock, Car, Clock, Globe, CreditCard, UserCheck } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Mezinárodní a meziměstská doprava | Praha–Vídeň, Praha–Berlín | Naletiště Levně",
@@ -41,6 +42,15 @@ const ROUTES = [
   { from: "Praha", to: "Wroclaw", price: "6 900", km: "280 km", time: "3 hod" },
 ]
 
+const VYHODY = [
+  { Icon: Lock,      title: "Fixní cena předem",    desc: "Cena je dohodnutá předem a nemění se. Žádné příplatky za mýto, parkování nebo čekání.", img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" },
+  { Icon: Car,       title: "Moderní vozidla",      desc: "Komfortní sedany a minivany s klimatizací, Wi-Fi a dostatkem místa pro zavazadla.", img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80" },
+  { Icon: Clock,     title: "Flexibilní časy",      desc: "Přepravujeme 24 hodin denně, 7 dní v týdnu. Rezervujte kdykoli, i na poslední chvíli.", img: "https://images.unsplash.com/photo-1508962914676-134849a727f0?w=600&q=80" },
+  { Icon: Globe,     title: "Celá střední Evropa",  desc: "Jezdíme do Německa, Rakouska, Polska, Slovenska, Maďarska a dalších zemí.", img: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&q=80" },
+  { Icon: CreditCard,title: "Platba kartou",        desc: "Platba kartou online nebo hotově řidiči. Na vyžádání faktura na firmu.", img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" },
+  { Icon: UserCheck, title: "Profesionální řidiči", desc: "Zkušení, jazykově vybavení řidiči se znalostí tras a místních podmínek.", img: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80" },
+]
+
 const FAQ_ITEMS = [
   { q: "Jezdíte i mimo ČR?", a: "Ano, přepravujeme po celé střední Evropě – Německo, Rakousko, Slovensko, Polsko, Maďarsko a další. Cenu trasy získáte ihned po zadání do rezervačního formuláře." },
   { q: "Je cena fixní i pro mezinárodní trasy?", a: "Ano, cena je vždy fixní a dohodnuta předem. Žádné příplatky za mýto, zpoždění nebo noční jízdu." },
@@ -56,7 +66,7 @@ export default function MezimestskaPage() {
       <Navbar />
       <main>
 
-                {/* Hero nadpis */}
+        {/* Hero */}
         <div style={{ background: "#00205B", padding: "100px 24px 60px" }}>
           <div style={{ maxWidth: "1152px", margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
@@ -76,6 +86,7 @@ export default function MezimestskaPage() {
           </div>
         </div>
 
+        {/* Trasy */}
         <section className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4">
             <SectionHeading label="Oblíbené trasy" title="Ceny nejoblíbenějších tras" subtitle="Všechny ceny jsou pevné a zahrnují veškeré poplatky. Cena pro jiné trasy se vypočítá automaticky." />
@@ -98,28 +109,31 @@ export default function MezimestskaPage() {
           </div>
         </section>
 
+        {/* Výhody */}
         <section className="py-20" style={{ background: "#f8fafc" }}>
           <div className="max-w-5xl mx-auto px-4">
             <SectionHeading label="Výhody" title="Proč cestovat s námi" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { icon: "🔒", title: "Fixní cena předem", desc: "Cena je dohodnutá předem a nemění se. Žádné příplatky za mýto, parkování nebo čekání." },
-                { icon: "🚗", title: "Moderní vozidla", desc: "Komfortní sedany a minivany s klimatizací, Wi-Fi a dostatkem místa pro zavazadla." },
-                { icon: "⏰", title: "Flexibilní časy", desc: "Přepravujeme 24 hodin denně, 7 dní v týdnu. Rezervujte kdykoli, i na poslední chvíli." },
-                { icon: "🌍", title: "Celá střední Evropa", desc: "Jezdíme do Německa, Rakouska, Polska, Slovenska, Maďarska a dalších zemí." },
-                { icon: "💳", title: "Platba kartou", desc: "Platba kartou online nebo hotově řidiči. Na vyžádání faktura na firmu." },
-                { icon: "👤", title: "Profesionální řidiči", desc: "Zkušení, jazykově vybavení řidiči se znalostí tras a místních podmínek." },
-              ].map((item, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 shadow-sm">
-                  <div className="text-3xl mb-3">{item.icon}</div>
-                  <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+              {VYHODY.map(({ Icon, title, desc, img }) => (
+                <div key={title} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                  <div style={{ position: "relative", height: "160px" }}>
+                    <img src={img} alt={title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    <div style={{ position: "absolute", inset: 0, background: "rgba(0,32,91,0.35)" }} />
+                    <div style={{ position: "absolute", bottom: "12px", left: "12px", width: "36px", height: "36px", borderRadius: "10px", background: "#F97316", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      <Icon size={18} color="#fff" strokeWidth={2} />
+                    </div>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* FAQ */}
         <section className="py-20 bg-white">
           <div className="max-w-3xl mx-auto px-4">
             <SectionHeading label="FAQ" title="Časté dotazy" />
@@ -136,6 +150,7 @@ export default function MezimestskaPage() {
           </div>
         </section>
 
+        {/* CTA */}
         <section className="py-16" style={{ background: "#00205B" }}>
           <div className="max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-white text-3xl font-bold mb-4" style={{ fontFamily: "Poppins, sans-serif" }}>Rezervujte meziměstskou přepravu</h2>
