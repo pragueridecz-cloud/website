@@ -70,7 +70,7 @@ export default function Hero() {
           height: ${r.height}px;
           z-index: 40;
           border-radius: 12px;
-          box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+          box-shadow: none;
           overflow: hidden;
           display: block;
           background: transparent;
@@ -88,7 +88,7 @@ export default function Hero() {
             el!.style.left = targetLeft + "px";
             el!.style.width = w + "px";
             el!.style.borderRadius = "16px";
-            el!.style.boxShadow = "0 32px 80px rgba(0,0,0,0.45)";
+            el!.style.boxShadow = "none";
             el!.style.background = "#f0f2f7";
             el!.style.overflow = "visible";
             setTimeout(() => { if (el) el.style.transition = ""; }, 600);
@@ -101,7 +101,7 @@ export default function Hero() {
             width: ${w}px;
             z-index: 40;
             border-radius: 16px;
-            box-shadow: 0 32px 80px rgba(0,0,0,0.45);
+            box-shadow: none;
             overflow: visible;
             display: block;
             background: #f0f2f7;
