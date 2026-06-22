@@ -13,6 +13,7 @@ const cars = [
     price: "od 790 Kč",
     features: ["Klimatizace", "Wi-Fi", "Voda zdarma"],
     tag: null,
+    category: "sedan",
   },
   {
     name: "Sedan Business",
@@ -23,6 +24,7 @@ const cars = [
     price: "od 1 090 Kč",
     features: ["Klimatizace", "Wi-Fi", "Rozšířený interiér"],
     tag: null,
+    category: "sedan",
   },
   {
     name: "Sedan Executive",
@@ -33,6 +35,7 @@ const cars = [
     price: "od 1 290 Kč",
     features: ["Prémiový interiér", "Tiché prostředí", "Voda zdarma"],
     tag: null,
+    category: "sedan",
   },
   {
     name: "Minivan Economy",
@@ -43,6 +46,7 @@ const cars = [
     price: "od 990 Kč",
     features: ["Klimatizace", "Wi-Fi", "Velký kufr"],
     tag: "Nejoblíbenější",
+    category: "minivan",
   },
   {
     name: "Minivan Business",
@@ -53,6 +57,7 @@ const cars = [
     price: "od 1 390 Kč",
     features: ["Rozšířený prostor", "Klimatizace", "Wi-Fi"],
     tag: null,
+    category: "minivan",
   },
   {
     name: "Minivan Executive",
@@ -63,12 +68,29 @@ const cars = [
     price: "od 1 790 Kč",
     features: ["Mercedes V-Class", "Firemní standard", "Velký prostor"],
     tag: "Firemní volba",
+    category: "minivan",
   },
 ];
 
+const TABS = [
+  { id: "sedan", label: "Sedan", desc: "1–4 osoby" },
+  { id: "minivan", label: "Minivan", desc: "1–7 osob" },
+] as const;
+
+type Category = typeof TABS[number]["id"];
+
 export default function Fleet() {
+  const [category, setCategory] = useState<Category>("sedan");
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIdx, setActiveIdx] = useState(0);
+
+  const filtered = cars.filter(c => c.category === category);
+
+  // Reset carousel position when category changes
+  useEffect(() => {
+    setActiveIdx(0);
+    if (scrollRef.current) scrollRef.current.scrollTo({ left: 0, behavior: "instant" as ScrollBehavior });
+  }, [category]);
 
   useEffect(() => {
     const el = scrollRef.current;
@@ -76,11 +98,11 @@ export default function Fleet() {
     const handleScroll = () => {
       const cardW = el.offsetWidth * 0.78 + 16;
       const idx = Math.round(el.scrollLeft / cardW);
-      setActiveIdx(Math.min(Math.max(idx, 0), cars.length - 1));
+      setActiveIdx(Math.min(Math.max(idx, 0), filtered.length - 1));
     };
     el.addEventListener("scroll", handleScroll, { passive: true });
     return () => el.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [filtered.length]);
 
   const scrollTo = (idx: number) => {
     const el = scrollRef.current;
@@ -95,14 +117,41 @@ export default function Fleet() {
         <SectionHeading label="Vozový park" title="Vozový park a ceny"
           subtitle="Pevné ceny bez překvapení. Vyberte vozidlo podle počtu cestujících a zavazadel." />
 
-        {/* Desktop – 3×2 grid */}
+        {/* Category tabs */}
+        <div style={{ display: "flex", gap: "8px", marginBottom: "32px" }}>
+          {TABS.map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => setCategory(tab.id)}
+              style={{
+                display: "flex", flexDirection: "column", alignItems: "flex-start",
+                padding: "10px 20px", borderRadius: "12px", border: "2px solid",
+                borderColor: category === tab.id ? "#00205B" : "#e2e8f0",
+                background: category === tab.id ? "#00205B" : "#fff",
+                cursor: "pointer", transition: "all 0.18s",
+              }}
+            >
+              <span style={{
+                fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "15px",
+                color: category === tab.id ? "#fff" : "#00205B",
+              }}>
+                {tab.label}
+              </span>
+              <span style={{ fontSize: "11px", color: category === tab.id ? "rgba(255,255,255,0.65)" : "#94a3b8", marginTop: "1px" }}>
+                {tab.desc}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        {/* Desktop – 3-column grid */}
         <div className="hidden md:grid md:grid-cols-3 gap-6">
-          {cars.map((car) => (
+          {filtered.map((car) => (
             <CarCard key={car.name} car={car} />
           ))}
         </div>
 
-        {/* Mobil – snap karusel */}
+        {/* Mobile – snap carousel */}
         <div className="md:hidden">
           <div
             ref={scrollRef}
@@ -120,14 +169,14 @@ export default function Fleet() {
             }}
           >
             <style>{`.fleet-scroll::-webkit-scrollbar{display:none}`}</style>
-            {cars.map((car) => (
+            {filtered.map((car) => (
               <div key={car.name} className="fleet-scroll" style={{ minWidth: "78vw", scrollSnapAlign: "start", flexShrink: 0 }}>
                 <CarCard car={car} />
               </div>
             ))}
           </div>
           <div style={{ display: "flex", justifyContent: "center", gap: "6px", marginTop: "16px" }}>
-            {cars.map((_, i) => (
+            {filtered.map((_, i) => (
               <button
                 key={i}
                 onClick={() => scrollTo(i)}
