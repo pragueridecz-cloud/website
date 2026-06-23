@@ -33,6 +33,7 @@ export default function Hero() {
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
   const [widgetStep, setWidgetStep] = useState(1);
   const [widgetH, setWidgetH] = useState(680);
+  const [rawWidgetH, setRawWidgetH] = useState(680);
   const ghostRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -125,13 +126,14 @@ export default function Hero() {
         const s = e.data.step as number;
         widgetStepRef.current = s;
         setWidgetStep(s);
-        if (e.data.height) setWidgetH(e.data.height + 32);
+        if (e.data.height) { setWidgetH(e.data.height + 32); setRawWidgetH(e.data.height); }
         if (s > 1) window.scrollTo({ top: 0, behavior: "instant" });
       }
       // Height update — always sync iframe and ghost div to widget content height
       if (e.data?.type === "nll-height" && e.data?.height) {
         const h = e.data.height + 32;
         setWidgetH(h);
+        setRawWidgetH(e.data.height);
         if (widgetStepRef.current <= 1) {
           // Keep ghost div and overlay in sync so dropdowns aren't clipped
           if (ghostRef.current) ghostRef.current.style.height = h + "px";
@@ -256,7 +258,7 @@ export default function Hero() {
               title="Rezervační formulář"
               style={{
                 width: "100%",
-                height: `${widgetH}px`,
+                height: `${rawWidgetH}px`,
                 display: "block",
                 border: "none",
                 borderRadius: "12px",
