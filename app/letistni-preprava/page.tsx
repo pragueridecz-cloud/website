@@ -48,7 +48,7 @@ const AIRPORTS_CZ = [
     desc: "Druhé největší letiště v ČR. Pravidelné linky do Londýna, Amsterdamu, Frankfurtu a dalších evropských destinací. Ideální alternativa pro cestující z jižní Moravy.",
     price: "od 2 900 Kč",
     time: "2,5 hod z Prahy",
-    img: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=800&q=80",
+    img: "/airport-brno.webp",
     facts: ["210 km od Prahy", "Pravidelné linky Ryanair, Wizz Air"],
   },
   {
@@ -58,7 +58,7 @@ const AIRPORTS_CZ = [
     desc: "Letiště v srdci Slezska. Sezónní i pravidelné charterové lety do celé Evropy a Turecka. Dobré spojení s Polskem a Slovenskem.",
     price: "od 4 900 Kč",
     time: "3,5 hod z Prahy",
-    img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
+    img: "/airport-ostrava.jpg",
     facts: ["360 km od Prahy", "Charterové lety do Turecka, Řecka, Egypta"],
   },
 ]
