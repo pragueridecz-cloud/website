@@ -5,7 +5,7 @@ const steps = [
   {
     icon: "ti-device-laptop",
     title: "Rezervujte online",
-    desc: "Zadejte odkud, kam a kdy. Cena se zobrazí okamžitě — pevná, bez skrytých poplatků.",
+    desc: "Zadejte odkud, kam a kdy — letiště, hotel, nebo přímo domů. Cena se zobrazí okamžitě, pevná a bez skrytých poplatků.",
     detail: "Platba kartou online se slevou 10 %, nebo hotově řidiči.",
   },
   {
@@ -16,8 +16,8 @@ const steps = [
   },
   {
     icon: "ti-user-check",
-    title: "Řidič čeká s cedulkou",
-    desc: "Přesné vyzvednutí na dohodnutém místě. U letišť přímo v příletové hale.",
+    title: "Řidič čeká na místě",
+    desc: "Přesné vyzvednutí na dohodnutém místě — u letišť v příletové hale, jinak přímo před vašimi dveřmi.",
     detail: "Pomoc se zavazadly, klimatizované auto, Wi-Fi.",
   },
   {
