@@ -10,8 +10,8 @@ const steps = [
   },
   {
     icon: "ti-plane",
-    title: "Sledujeme váš let",
-    desc: "Systém hlídá zpoždění v reálném čase a automaticky upraví čas příjezdu řidiče.",
+    title: "Sledujeme váš spoj",
+    desc: "Systém hlídá zpoždění letu, vlaku i autobusu v reálném čase a automaticky upraví čas příjezdu řidiče.",
     detail: "Bez příplatků za zpoždění. Bez telefonování.",
   },
   {
