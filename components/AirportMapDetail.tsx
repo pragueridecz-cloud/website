@@ -11,7 +11,7 @@ const AIRPORTS = [
     lat: 48.1103, lng: 16.5697, price: "od 4 500 Kč",
     country: "🇦🇹",
     addr: "Vienna International Airport, Schwechat, Austria",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Airport-Vienna_1740.JPG/960px-Airport-Vienna_1740.JPG",
+    img: "/airport-vienna.jpg",
     desc: "Největší letiště ve středoevropském regionu s přímými lety do celého světa. Skvělá alternativa pro lety do Asie, Ameriky nebo Blízkého východu, které z Prahy neodjíždí přímo.",
     facts: ["Přímé lety do 200+ destinací", "Hub Emirates, Austrian Airlines", "Výborná alternativa pro asijské lety", "Moderní terminály s duty free"],
   },
