@@ -198,7 +198,7 @@ export default function Hero() {
           background: "linear-gradient(180deg, rgba(13,31,74,0.4) 0%, rgba(13,31,74,0.25) 40%, rgba(30,58,138,0.8) 100%)",
         }} />
 
-        <div className="max-w-6xl mx-auto pb-0 md:pb-56" style={{ position: "relative", zIndex: 2 }}>
+        <div className="max-w-6xl mx-auto pb-0 md:pb-10" style={{ position: "relative", zIndex: 2 }}>
 
           {/* Desktop */}
           <div className="hidden md:flex items-start gap-12" style={{ paddingTop: "48px", paddingBottom: "40px" }}>
