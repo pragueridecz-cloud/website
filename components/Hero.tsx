@@ -190,7 +190,7 @@ export default function Hero() {
         <div className="hero-bg" style={{
           position: "absolute", top: 0, left: 0, right: 0, height: "960px", zIndex: 0,
           backgroundImage: "url('/hero-prague.png')",
-          backgroundSize: "cover", backgroundPosition: "65% 40%", backgroundAttachment: "fixed",
+          backgroundSize: "cover", backgroundPosition: "65% 40%", backgroundAttachment: isDesktop ? "fixed" : "scroll",
           opacity: 0.8, mixBlendMode: "luminosity",
         }} />
         <div style={{
