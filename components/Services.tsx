@@ -7,6 +7,7 @@ import SectionHeading from "./SectionHeading";
 const SERVICES = [
   {
     img: "/service-airport.png",
+    zoom: 0.75,
     label: "Letištní přeprava",
     title: "Letiště Praha",
     desc: "Pevná cena, žádné čekání. Sledujeme váš let v reálném čase a přizpůsobíme čas vyzvednutí případným zpožděním.",
@@ -14,6 +15,7 @@ const SERVICES = [
   },
   {
     img: "/service-mezimestska.png",
+    zoom: 0.8,
     label: "Meziměstská přeprava",
     title: "Celá ČR i Evropa",
     desc: "Pohodlná přeprava na delší vzdálenosti — Praha, Brno, Ostrava i zahraniční destinace v celé střední Evropě.",
@@ -35,6 +37,7 @@ const SERVICES = [
   },
   {
     img: "/service-firmy.png",
+    zoom: 0.8,
     label: "Pro firmy",
     title: "Firemní přeprava",
     desc: "Pravidelné jízdy, fakturace, firemní slevy. Svěřte přepravu svých zaměstnanců a klientů do profesionálních rukou.",
@@ -98,7 +101,7 @@ export default function Services() {
               className="absolute inset-0 transition-opacity duration-700"
               style={{ opacity: i === active ? 1 : 0 }}
             >
-              <Image src={s.img} alt={s.title} fill className="object-cover" priority={i === 0} sizes="100vw" />
+              <Image src={s.img} alt={s.title} fill className="object-cover" priority={i === 0} sizes="100vw" style={s.zoom ? { transform: `scale(${s.zoom})` } : undefined} />
             </div>
           ))}
 
@@ -149,7 +152,7 @@ export default function Services() {
                     boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
                   }}
                 >
-                  <Image src={s.img} alt={s.title} fill className="object-cover" sizes="160px" />
+                  <Image src={s.img} alt={s.title} fill className="object-cover" sizes="160px" style={s.zoom ? { transform: `scale(${s.zoom})` } : undefined} />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 60%)" }} />
                   <div className="absolute bottom-0 left-0 p-3">
                     <div style={{ width: "20px", height: "2px", background: "#F97316", marginBottom: "6px" }} />
