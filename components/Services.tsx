@@ -30,7 +30,7 @@ const SERVICES = [
     img: "/service-hodinovy.png",
     label: "Hodinový pronájem",
     title: "Řidič k dispozici",
-    desc: "Řidič po celý den jen pro vás. Ideální pro obchodní schůzky, výlety nebo víkendové výpravy bez starostí o parkování.",
+    desc: "Řidič po celý den jen pro vás. Ideální pro svatby, obchodní schůzky, výlety nebo víkendové výpravy bez starostí o parkování.",
     href: "/hodinovy-pronajem",
   },
   {
