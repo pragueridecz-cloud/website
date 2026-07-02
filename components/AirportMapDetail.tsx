@@ -47,7 +47,7 @@ const AIRPORTS = [
     lat: 50.0379, lng: 8.5622, price: "od 8 900 Kč",
     country: "🇩🇪",
     addr: "Frankfurt Airport, Frankfurt am Main, Germany",
-    img: "/airport-frankfurt.png",
+    img: "/airport-frankfurt.jpg",
     desc: "Největší německé letiště a jeden z nejvytíženějších hubů v celé Evropě. Lufthansa a její partneři odtud létají do téměř každého koutu světa. Ideální pro transatlantické přestupy.",
     facts: ["Největší hub v Evropě", "150+ airlines, 300+ destinací", "Přímé vlakové spojení na terminál", "Lety do celého světa"],
   },

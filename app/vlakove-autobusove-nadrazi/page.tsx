@@ -37,11 +37,11 @@ const STATIONS = [
 
 const VYHODY = [
   { Icon: Clock,          title: "Přijedeme včas",          desc: "Naplánujeme cestu s dostatečnou rezervou, abyste vlak nebo autobus určitě stihli.", img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80" },
-  { Icon: Luggage,        title: "Pomoc se zavazadly",       desc: "Řidič vám pomůže s nakládkou a vykládkou zavazadel, kočárků nebo jízdních kol.", img: "/service-zavazadla.png" },
+  { Icon: Luggage,        title: "Pomoc se zavazadly",       desc: "Řidič vám pomůže s nakládkou a vykládkou zavazadel, kočárků nebo jízdních kol.", img: "/service-zavazadla.jpg" },
   { Icon: ArrowLeftRight, title: "Zpáteční jízda",           desc: "Objednáte i vyzvednutí z nádraží po návratu. Vše v jedné rezervaci.", img: "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=600&q=80" },
   { Icon: MapPin,         title: "Přesné vyzvednutí",        desc: "Vyzvednutí přímo od vašich dveří nebo na dohodnutém místě.", img: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=600&q=80" },
   { Icon: Banknote,       title: "Pevná cena",               desc: "Víte přesně, kolik zaplatíte. Bez taxametru, bez příplatků.", img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" },
-  { Icon: Moon,           title: "Ranní vlaky bez stresu",   desc: "Přepravujeme i v brzkých ranních hodinách. Žádný stres s MHD ve 4 ráno.", img: "/service-ranni-vlak.png" },
+  { Icon: Moon,           title: "Ranní vlaky bez stresu",   desc: "Přepravujeme i v brzkých ranních hodinách. Žádný stres s MHD ve 4 ráno.", img: "/service-ranni-vlak.jpg" },
 ]
 
 export default function NadraziPage() {

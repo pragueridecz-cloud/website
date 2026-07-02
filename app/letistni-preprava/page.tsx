@@ -48,7 +48,7 @@ const AIRPORTS_CZ = [
     desc: "Druhé největší letiště v ČR. Pravidelné linky do Londýna, Amsterdamu, Frankfurtu a dalších evropských destinací. Ideální alternativa pro cestující z jižní Moravy.",
     price: "od 2 900 Kč",
     time: "2,5 hod z Prahy",
-    img: "/airport-brno.webp",
+    img: "/airport-brno.jpg",
     facts: ["210 km od Prahy", "Pravidelné linky Ryanair, Wizz Air"],
   },
   {

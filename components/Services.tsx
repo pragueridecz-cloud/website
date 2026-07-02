@@ -27,7 +27,7 @@ const SERVICES = [
     href: "/vlakove-autobusove-nadrazi",
   },
   {
-    img: "/service-hodinovy.png",
+    img: "/service-hodinovy.jpg",
     label: "Hodinový pronájem",
     title: "Řidič k dispozici",
     desc: "Řidič po celý den jen pro vás. Ideální pro svatby, obchodní schůzky, výlety nebo víkendové výpravy bez starostí o parkování.",
