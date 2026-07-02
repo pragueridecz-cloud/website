@@ -92,7 +92,7 @@ export default function B2B() {
               <div key={p.name} className="flex items-center justify-center rounded-xl px-7 py-3"
                 style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", minWidth: "130px" }}>
                 <img src={p.logo} alt={p.name}
-                  style={{ maxHeight: "48px", maxWidth: "130px", objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.7 }} />
+                  style={{ maxHeight: "64px", maxWidth: "160px", objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 1 }} />
               </div>
             ))}
             <div className="flex items-center justify-center rounded-xl px-7 py-3"
