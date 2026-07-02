@@ -80,26 +80,24 @@ export default function B2B() {
         </div>
 
         {/* Partner bar */}
-        <div style={{ marginTop: "48px" }}>
-          <div style={{ background: "#fff", borderRadius: "16px", padding: "24px 36px" }}>
-            <div style={{ fontSize: "11px", fontWeight: 700, color: "#94a3b8", textTransform: "uppercase" as const, letterSpacing: "2px", textAlign: "center" as const, marginBottom: "18px" }}>
-              Nám důvěřují
-            </div>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              {[
-                { name: "Česká televize", logo: "/partner-ct.png" },
-                { name: "Blažek", logo: "/partner-blazek.png" },
-              ].map((p) => (
-                <div key={p.name} className="flex items-center justify-center rounded-xl px-8 py-4"
-                  style={{ background: "#00205B", minWidth: "140px" }}>
-                  <img src={p.logo} alt={p.name}
-                    style={{ maxHeight: "40px", maxWidth: "120px", objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.9 }} />
-                </div>
-              ))}
-              <div className="flex items-center justify-center rounded-xl px-8 py-4"
-                style={{ background: "#00205B", minWidth: "140px" }}>
-                <span style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", fontWeight: 600 }}>a mnoho dalších…</span>
+        <div style={{ marginTop: "56px", paddingTop: "40px", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
+          <div style={{ fontSize: "11px", fontWeight: 700, color: "rgba(255,255,255,0.35)", textTransform: "uppercase" as const, letterSpacing: "2px", textAlign: "center" as const, marginBottom: "28px" }}>
+            Nám důvěřují
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-8">
+            {[
+              { name: "Česká televize", logo: "/partner-ct.png" },
+              { name: "Blažek", logo: "/partner-blazek.png" },
+            ].map((p) => (
+              <div key={p.name} className="flex items-center justify-center rounded-2xl px-10 py-6"
+                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", minWidth: "160px" }}>
+                <img src={p.logo} alt={p.name}
+                  style={{ maxHeight: "52px", maxWidth: "140px", objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.7 }} />
               </div>
+            ))}
+            <div className="flex items-center justify-center rounded-2xl px-10 py-6"
+              style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", minWidth: "160px" }}>
+              <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "13px", fontWeight: 600 }}>a mnoho dalších…</span>
             </div>
           </div>
         </div>
