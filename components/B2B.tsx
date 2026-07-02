@@ -18,7 +18,7 @@ const useCases = [
 
 export default function B2B() {
   return (
-    <section id="pro-firmy" className="py-20 bg-[#00205B]">
+    <section id="pro-firmy" className="py-20" style={{ background: "linear-gradient(135deg, #111827 0%, #1a1a2e 50%, #111827 100%)" }}>
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-16 items-start">
 
@@ -41,7 +41,7 @@ export default function B2B() {
             <ul className="space-y-3 mb-8">
               {perks.map((p) => (
                 <li key={p.text} className="flex items-center gap-3 text-sm" style={{ color: "rgba(255,255,255,0.9)" }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "rgba(255,255,255,0.1)" }}>
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "rgba(249,115,22,0.2)" }}>
                     <p.icon size={15} style={{ color: "#F97316" }} />
                   </div>
                   {p.text}
@@ -63,7 +63,7 @@ export default function B2B() {
             <div className="grid grid-cols-1 gap-3">
               {useCases.map((u) => (
                 <div key={u.title} className="flex items-start gap-4 rounded-xl p-4"
-                  style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
+                  style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(249,115,22,0.2)" }}>
                   <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
                     style={{ background: "rgba(249,115,22,0.15)" }}>
                     <u.icon size={17} style={{ color: "#F97316" }} />
@@ -92,7 +92,7 @@ export default function B2B() {
               <div key={p.name} className="flex items-center justify-center rounded-2xl px-10 py-6"
                 style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", minWidth: "160px" }}>
                 <img src={p.logo} alt={p.name}
-                  style={{ maxHeight: "52px", maxWidth: "140px", objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.7 }} />
+                  style={{ maxHeight: "52px", maxWidth: "140px", objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.85 }} />
               </div>
             ))}
             <div className="flex items-center justify-center rounded-2xl px-10 py-6"
