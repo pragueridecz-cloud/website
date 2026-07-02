@@ -89,13 +89,13 @@ export default function B2B() {
               { name: "Česká televize", logo: "/partner-ct.png" },
               { name: "Blažek", logo: "/partner-blazek.png" },
             ].map((p) => (
-              <div key={p.name} className="flex items-center justify-center rounded-xl px-7 py-4"
+              <div key={p.name} className="flex items-center justify-center rounded-xl px-7 py-3"
                 style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", minWidth: "130px" }}>
                 <img src={p.logo} alt={p.name}
-                  style={{ maxHeight: "36px", maxWidth: "110px", objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.7 }} />
+                  style={{ maxHeight: "48px", maxWidth: "130px", objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.7 }} />
               </div>
             ))}
-            <div className="flex items-center justify-center rounded-xl px-7 py-4"
+            <div className="flex items-center justify-center rounded-xl px-7 py-3"
               style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", minWidth: "130px" }}>
               <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "12px", fontWeight: 600 }}>a mnoho dalších…</span>
             </div>
