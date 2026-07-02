@@ -18,30 +18,30 @@ const useCases = [
 
 export default function B2B() {
   return (
-    <section id="pro-firmy" className="py-20" style={{ background: "linear-gradient(135deg, #111827 0%, #1a1a2e 50%, #111827 100%)" }}>
+    <section id="pro-firmy" className="py-20 bg-[#00205B]">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-0 items-stretch rounded-2xl overflow-hidden" style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.3)" }}>
 
-          {/* Vlevo – text + výhody */}
-          <div>
+          {/* Vlevo – bílý panel */}
+          <div style={{ background: "#fff", padding: "48px 40px" }}>
             <div className="flex items-center gap-3 mb-4">
               <div style={{ width: "32px", height: "2px", background: "#F97316", flexShrink: 0 }} />
               <span style={{ fontSize: "11px", fontWeight: 700, color: "#F97316", textTransform: "uppercase" as const, letterSpacing: "1.5px" }}>
                 Pro firmy a korporace
               </span>
             </div>
-            <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.15, color: "#fff", fontSize: "clamp(28px,4vw,44px)", margin: "0 0 12px" }}>
+            <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.15, color: "#00205B", fontSize: "clamp(28px,4vw,44px)", margin: "0 0 12px" }}>
               Firemní doprava<br />
               <span style={{ color: "#F97316" }}>na každou příležitost</span>
             </h2>
             <div style={{ width: "48px", height: "3px", background: "#F97316", borderRadius: "2px", marginBottom: "20px" }} />
-            <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "16px", lineHeight: 1.7, marginBottom: "28px" }}>
+            <p style={{ color: "#475569", fontSize: "16px", lineHeight: 1.7, marginBottom: "28px" }}>
               Letiště, obchodní schůzky, firemní akce nebo hodinový pronájem s řidičem. Uzavřete firemní smlouvu a mějte dopravu pod kontrolou – s fakturou, přehledem jízd a slevou pro pravidelné zákazníky.
             </p>
             <ul className="space-y-3 mb-8">
               {perks.map((p) => (
-                <li key={p.text} className="flex items-center gap-3 text-sm" style={{ color: "rgba(255,255,255,0.9)" }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "rgba(249,115,22,0.2)" }}>
+                <li key={p.text} className="flex items-center gap-3 text-sm" style={{ color: "#1e293b" }}>
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "#fff7ed" }}>
                     <p.icon size={15} style={{ color: "#F97316" }} />
                   </div>
                   {p.text}
@@ -55,15 +55,15 @@ export default function B2B() {
             </a>
           </div>
 
-          {/* Vpravo – 6 využití */}
-          <div>
+          {/* Vpravo – navy panel s využitími */}
+          <div style={{ background: "#00205B", padding: "48px 40px" }}>
             <div style={{ fontSize: "11px", fontWeight: 700, color: "rgba(255,255,255,0.4)", textTransform: "uppercase" as const, letterSpacing: "2px", marginBottom: "20px" }}>
               Kdy nás využít
             </div>
             <div className="grid grid-cols-1 gap-3">
               {useCases.map((u) => (
                 <div key={u.title} className="flex items-start gap-4 rounded-xl p-4"
-                  style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(249,115,22,0.2)" }}>
+                  style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)" }}>
                   <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
                     style={{ background: "rgba(249,115,22,0.15)" }}>
                     <u.icon size={17} style={{ color: "#F97316" }} />
@@ -79,8 +79,8 @@ export default function B2B() {
 
         </div>
 
-        {/* Partner bar */}
-        <div style={{ marginTop: "56px", paddingTop: "40px", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
+        {/* Partner bar – přes celou šířku pod oběma sloupci */}
+        <div style={{ marginTop: "48px", paddingTop: "36px", borderTop: "1px solid rgba(255,255,255,0.12)" }}>
           <div style={{ fontSize: "11px", fontWeight: 700, color: "rgba(255,255,255,0.35)", textTransform: "uppercase" as const, letterSpacing: "2px", textAlign: "center" as const, marginBottom: "28px" }}>
             Nám důvěřují
           </div>
