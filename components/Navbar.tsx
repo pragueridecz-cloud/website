@@ -9,7 +9,6 @@ const services = [
   { name: "Vlakové a autobusové nádraží", href: "/vlakove-autobusove-nadrazi" },
   { name: "Meziměstská doprava", href: "/mezimestska-doprava" },
   { name: "Hodinový pronájem", href: "/hodinovy-pronajem" },
-  { name: "Pro firmy a korporace", href: "/preprava-pro-firmy" },
 ];
 
 export default function Navbar() {
@@ -85,10 +84,6 @@ export default function Navbar() {
               style={{ color: "rgba(255,255,255,.85)" }}
               onMouseEnter={e => (e.currentTarget.style.color = "#F97316")}
               onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,.85)")}>Jak to funguje</a>
-            <a href="/#pro-firmy" className="px-3 py-1.5 text-sm font-medium cursor-pointer"
-              style={{ color: "rgba(255,255,255,.85)" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "#F97316")}
-              onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,.85)")}>Pro firmy</a>
             <a href="/#faq" className="px-3 py-1.5 text-sm font-medium cursor-pointer"
               style={{ color: "rgba(255,255,255,.85)" }}
               onMouseEnter={e => (e.currentTarget.style.color = "#F97316")}
@@ -166,7 +161,6 @@ export default function Navbar() {
               className="pl-2" style={{ color: "rgba(255,255,255,.8)", textDecoration: "none" }}>{s.name}</a>
           ))}
           <a href="/#jak-to-funguje" onClick={() => setMenuOpen(false)} style={{ color: "rgba(255,255,255,.8)" }}>Jak to funguje</a>
-          <a href="/#pro-firmy" onClick={() => setMenuOpen(false)} style={{ color: "rgba(255,255,255,.8)" }}>Pro firmy</a>
           <a href="/#faq" onClick={() => setMenuOpen(false)} style={{ color: "rgba(255,255,255,.8)" }}>FAQ</a>
           <div className="flex gap-2 pt-1">
             <a href="https://portal.naletistelevne.cz" target="_blank" rel="noopener noreferrer"
