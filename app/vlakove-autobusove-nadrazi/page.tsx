@@ -41,7 +41,7 @@ const VYHODY = [
   { Icon: ArrowLeftRight, title: "Zpáteční jízda",           desc: "Objednáte i vyzvednutí z nádraží po návratu. Vše v jedné rezervaci.", img: "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=600&q=80" },
   { Icon: MapPin,         title: "Přesné vyzvednutí",        desc: "Vyzvednutí přímo od vašich dveří nebo na dohodnutém místě.", img: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=600&q=80" },
   { Icon: Banknote,       title: "Pevná cena",               desc: "Víte přesně, kolik zaplatíte. Bez taxametru, bez příplatků.", img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" },
-  { Icon: Moon,           title: "Ranní vlaky bez stresu",   desc: "Přepravujeme i v brzkých ranních hodinách. Žádný stres s MHD ve 4 ráno.", img: "https://images.unsplash.com/photo-1508962914676-134849a727f0?w=600&q=80" },
+  { Icon: Moon,           title: "Ranní vlaky bez stresu",   desc: "Přepravujeme i v brzkých ranních hodinách. Žádný stres s MHD ve 4 ráno.", img: "/service-ranni-vlak.png" },
 ]
 
 export default function NadraziPage() {
