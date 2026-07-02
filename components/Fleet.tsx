@@ -6,7 +6,7 @@ import SectionHeading from "./SectionHeading";
 const cars = [
   {
     name: "Sedan Economy",
-    img: "/cars/sedan-economy.png",
+    img: "/cars/sedan-economy.jpg",
     model: "VW Passat a podobný",
     passengers: 4,
     luggage: 3,
@@ -18,7 +18,7 @@ const cars = [
   },
   {
     name: "Sedan Business",
-    img: "/cars/sedan-business.png",
+    img: "/cars/sedan-business.jpg",
     model: "Škoda Superb a podobný",
     passengers: 4,
     luggage: 3,
@@ -30,7 +30,7 @@ const cars = [
   },
   {
     name: "Sedan Executive",
-    img: "/cars/sedan-executive.png",
+    img: "/cars/sedan-executive.jpg",
     model: "Mercedes-Benz C a podobný",
     passengers: 3,
     luggage: 3,
@@ -42,7 +42,7 @@ const cars = [
   },
   {
     name: "Minivan Economy",
-    img: "/cars/minivan-economy.png",
+    img: "/cars/minivan-economy.jpg",
     model: "Ford Tourneo Custom a podobný",
     passengers: 7,
     luggage: 6,
@@ -54,7 +54,7 @@ const cars = [
   },
   {
     name: "Minivan Business",
-    img: "/cars/minivan-business.png",
+    img: "/cars/minivan-business.jpg",
     model: "Mercedes Vito a podobný",
     passengers: 7,
     luggage: 6,
@@ -66,7 +66,7 @@ const cars = [
   },
   {
     name: "Minivan Executive",
-    img: "/cars/minivan-executive.png",
+    img: "/cars/minivan-executive.jpg",
     model: "Mercedes V-Class a podobný",
     passengers: 7,
     luggage: 6,
