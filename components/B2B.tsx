@@ -18,7 +18,7 @@ const useCases = [
 
 export default function B2B() {
   return (
-    <section id="pro-firmy" className="py-20 bg-[#00205B]">
+    <section id="pro-firmy" className="pt-20 pb-10 bg-[#00205B]">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-16 items-start">
 
@@ -84,7 +84,7 @@ export default function B2B() {
           <div style={{ fontSize: "11px", fontWeight: 700, color: "rgba(255,255,255,0.35)", textTransform: "uppercase" as const, letterSpacing: "2px", textAlign: "center" as const, marginBottom: "20px" }}>
             Nám důvěřují
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-4" style={{ maxWidth: "640px", margin: "0 auto" }}>
+          <div className="flex flex-wrap items-center justify-center gap-4" style={{ maxWidth: "640px", margin: "0 auto", paddingBottom: "0" }}>
             {[
               { name: "Česká televize", logo: "/partner-ct.png" },
               { name: "Blažek", logo: "/partner-blazek.png" },
