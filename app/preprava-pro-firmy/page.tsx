@@ -27,7 +27,7 @@ const schema = {
 const VYHODY = [
   { Icon: FileText,   title: "Faktura na IČO",          desc: "Každá jízda s daňovým dokladem. Neplátci DPH i plátci DPH.", img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" },
   { Icon: BarChart2,  title: "Měsíční vyúčtování",      desc: "Pro pravidelné zákazníky nabízíme měsíční vyúčtování a hromadné faktury.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" },
-  { Icon: UserCheck,  title: "Profesionální řidiči",     desc: "Řidiči ve formálním oblečení s chováním odpovídajícím firemnímu prostředí.", img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80" },
+  { Icon: UserCheck,  title: "Profesionální řidiči",     desc: "Řidiči ve formálním oblečení s chováním odpovídajícím firemnímu prostředí.", img: "/service-ridici.jpg" },
   { Icon: Clock,      title: "Přesnost a spolehlivost",  desc: "Víme, že v byznysu záleží na každé minutě. Přijedeme vždy včas.", img: "https://images.unsplash.com/photo-1508962914676-134849a727f0?w=600&q=80" },
   { Icon: Plane,      title: "Letišťní transfer",        desc: "Vyzvednutí a odvoz zaměstnanců a klientů na letiště. Sledování letu.", img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80" },
   { Icon: Phone,      title: "Dedikovaná linka",         desc: "Pro firemní zákazníky prioritní telefonická podpora 24/7.", img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80" },
