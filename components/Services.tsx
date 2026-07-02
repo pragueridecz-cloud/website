@@ -33,13 +33,6 @@ const SERVICES = [
     desc: "Řidič po celý den jen pro vás. Ideální pro svatby, obchodní schůzky, výlety nebo víkendové výpravy bez starostí o parkování.",
     href: "/hodinovy-pronajem",
   },
-  {
-    img: "/service-firmy.png",
-    label: "Pro firmy",
-    title: "Firemní přeprava",
-    desc: "Pravidelné jízdy, fakturace, firemní slevy. Svěřte přepravu svých zaměstnanců a klientů do profesionálních rukou.",
-    href: "/preprava-pro-firmy",
-  },
 ];
 
 const INTERVAL = 5000;

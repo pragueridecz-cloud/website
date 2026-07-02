@@ -1,4 +1,4 @@
-import { FileText, Repeat, PhoneCall, BarChart2 } from "lucide-react";
+import { FileText, Repeat, PhoneCall, BarChart2, Plane, Users, MapPin, Calendar, Star, Presentation } from "lucide-react";
 
 const perks = [
   { icon: FileText, text: "Faktura na firmu — DPH doklad ke každé jízdě" },
@@ -7,18 +7,22 @@ const perks = [
   { icon: PhoneCall, text: "Dedikovaná telefonní linka pro firemní zákazníky" },
 ];
 
-const partners = [
-  { name: "Česká televize", logo: "/partner-ct.png", desc: "Mediální partner" },
-  { name: "Blažek", logo: "/partner-blazek.png", desc: "Módní partner" },
+const useCases = [
+  { icon: Plane,         title: "Přeprava zaměstnanců na letiště",       desc: "Včasné odvezení na pracovní cesty s fakturou pro HR oddělení." },
+  { icon: Users,         title: "Vyzvednutí obchodních partnerů",         desc: "Reprezentativní přivítání klientů přímo na letišti nebo nádraží." },
+  { icon: MapPin,        title: "Přesuny mezi schůzkami",                 desc: "Flexibilní doprava v průběhu celého dne bez starostí s parkováním." },
+  { icon: Calendar,      title: "Firemní akce a teambuildingy",           desc: "Přeprava celého týmu na firemní event nebo za hranice města." },
+  { icon: Presentation,  title: "Roadshow a konference",                  desc: "Logistika přepravy pro účastníky konferencí a roadshow po Praze." },
+  { icon: Star,          title: "VIP hosté a delegace",                   desc: "Prémiový servis pro zahraniční delegace nebo VIP hosty." },
 ];
 
 export default function B2B() {
   return (
     <section id="pro-firmy" className="py-20 bg-[#00205B]">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
 
-          {/* Vlevo – text */}
+          {/* Vlevo – text + výhody */}
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div style={{ width: "32px", height: "2px", background: "#F97316", flexShrink: 0 }} />
@@ -51,23 +55,26 @@ export default function B2B() {
             </a>
           </div>
 
-          {/* Vpravo – partneři */}
+          {/* Vpravo – 6 využití */}
           <div>
-            <div style={{ fontSize: "11px", fontWeight: 700, color: "rgba(255,255,255,0.4)", textTransform: "uppercase" as const, letterSpacing: "2px", marginBottom: "24px" }}>
-              Nám důvěřují
+            <div style={{ fontSize: "11px", fontWeight: 700, color: "rgba(255,255,255,0.4)", textTransform: "uppercase" as const, letterSpacing: "2px", marginBottom: "20px" }}>
+              Kdy nás využít
             </div>
-            <div className="grid grid-cols-2 gap-6">
-              {partners.map((p) => (
-                <div key={p.name} className="flex items-center justify-center rounded-2xl p-8"
-                  style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)", minHeight: "140px" }}>
-                  <img src={p.logo} alt={p.name}
-                    style={{ maxHeight: "80px", maxWidth: "160px", objectFit: "contain", filter: "brightness(0) invert(1)" }} />
+            <div className="grid grid-cols-1 gap-3">
+              {useCases.map((u) => (
+                <div key={u.title} className="flex items-start gap-4 rounded-xl p-4"
+                  style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{ background: "rgba(249,115,22,0.15)" }}>
+                    <u.icon size={17} style={{ color: "#F97316" }} />
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "13px", color: "#fff", marginBottom: "2px" }}>{u.title}</div>
+                    <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.55)", lineHeight: 1.5 }}>{u.desc}</div>
+                  </div>
                 </div>
               ))}
             </div>
-            <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "12px", marginTop: "16px", textAlign: "center" as const }}>
-              a mnoho dalších firem po celé ČR
-            </p>
           </div>
 
         </div>
