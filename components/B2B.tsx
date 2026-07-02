@@ -80,7 +80,7 @@ export default function B2B() {
         </div>
 
         {/* Partner bar */}
-        <div style={{ marginTop: "48px", paddingTop: "32px", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
+        <div style={{ marginTop: "24px", paddingTop: "24px", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
           <div style={{ fontSize: "11px", fontWeight: 700, color: "rgba(255,255,255,0.35)", textTransform: "uppercase" as const, letterSpacing: "2px", textAlign: "center" as const, marginBottom: "20px" }}>
             Nám důvěřují
           </div>
