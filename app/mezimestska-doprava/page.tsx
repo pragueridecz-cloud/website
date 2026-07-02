@@ -46,7 +46,7 @@ const VYHODY = [
   { Icon: Lock,      title: "Fixní cena předem",    desc: "Cena je dohodnutá předem a nemění se. Žádné příplatky za mýto, parkování nebo čekání.", img: "/service-fixni-cena.jpg" },
   { Icon: Car,       title: "Moderní vozidla",      desc: "Komfortní sedany a minivany s klimatizací, Wi-Fi a dostatkem místa pro zavazadla.", img: "/service-vozidla.jpg" },
   { Icon: Clock,     title: "Flexibilní časy",      desc: "Přepravujeme 24 hodin denně, 7 dní v týdnu. Rezervujte kdykoli, i na poslední chvíli.", img: "https://images.unsplash.com/photo-1508962914676-134849a727f0?w=600&q=80" },
-  { Icon: Globe,     title: "Celá střední Evropa",  desc: "Jezdíme do Německa, Rakouska, Polska, Slovenska, Maďarska a dalších zemí.", img: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&q=80" },
+  { Icon: Globe,     title: "Celá střední Evropa",  desc: "Jezdíme do Německa, Rakouska, Polska, Slovenska, Maďarska a dalších zemí.", img: "/service-evropa.jpg" },
   { Icon: CreditCard,title: "Platba kartou",        desc: "Platba kartou online nebo hotově řidiči. Na vyžádání faktura na firmu.", img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" },
   { Icon: UserCheck, title: "Profesionální řidiči", desc: "Zkušení, jazykově vybavení řidiči se znalostí tras a místních podmínek.", img: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80" },
 ]
