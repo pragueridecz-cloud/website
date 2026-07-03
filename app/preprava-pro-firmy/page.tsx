@@ -53,13 +53,10 @@ export default function PrepravaPropFirmy() {
         {/* Kdy nás využít */}
         <section style={{ background: "#f8fafc", padding: "64px 20px" }}>
           <div className="max-w-6xl mx-auto">
-            <div style={{ marginBottom: "48px" }}>
-              <p style={{ fontSize: "13px", color: "#94a3b8", textTransform: "uppercase" as const, letterSpacing: "2px", marginBottom: "8px" }}>Kdy nás využít</p>
-              <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, fontSize: "clamp(28px,4vw,48px)", color: "#00205B", lineHeight: 1.1 }}>
-                Přeprava pro<br />
-                <span style={{ color: "#F97316" }}>každou situaci</span>
-              </h2>
-            </div>
+            <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, fontSize: "clamp(24px,3vw,36px)", color: "#00205B", marginBottom: "8px" }}>
+              Kdy nás využít
+            </h2>
+            <p style={{ color: "#475569", fontSize: "16px", marginBottom: "40px" }}>Pokryjeme každou situaci, kdy vaše firma potřebuje spolehlivou přepravu.</p>
 
             <FirmsUseCases />
           </div>
