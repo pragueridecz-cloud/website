@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
-import { FileText, Repeat, PhoneCall, BarChart2, Plane, Users, MapPin, Calendar, Star, Presentation } from "lucide-react";
+import FirmsPerks from "@/components/FirmsPerks";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,12 +9,6 @@ export const metadata: Metadata = {
   description: "Firemní taxi Praha na fakturu s DPH. Přeprava zaměstnanců na letiště, korporátní transfery, VIP přeprava pro delegace. Business taxi Praha — pevná cena, měsíční fakturace, dedikovaná linka.",
 };
 
-const perks = [
-  { icon: FileText, text: "Faktura na firmu — DPH doklad ke každé jízdě" },
-  { icon: Repeat, text: "Pravidelné jízdy s fixní cenou a slevou" },
-  { icon: BarChart2, text: "Přehled všech jízd a výdajů online" },
-  { icon: PhoneCall, text: "Dedikovaná telefonní linka pro firemní zákazníky" },
-];
 
 const useCases = [
   { icon: Plane,        title: "Přeprava zaměstnanců na letiště",   desc: "Včasné odvezení na pracovní cesty s fakturou pro HR oddělení." },
@@ -60,58 +54,7 @@ export default function PrepravaPropFirmy() {
               Proč firemní účet?
             </h2>
             <p style={{ color: "#475569", fontSize: "16px", marginBottom: "48px" }}>Výhody, které oceníte při pravidelné firemní přepravě.</p>
-
-            <div className="grid md:grid-cols-2 gap-12 items-start">
-              {/* Vlevo – seznam výhod */}
-              <div className="flex flex-col gap-4">
-                {perks.map((p) => (
-                  <div key={p.text} className="flex items-center gap-4 rounded-xl p-4"
-                    style={{ background: "#f8fafc", border: "1px solid #e2e8f0" }}>
-                    <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                      style={{ background: "#fff7ed" }}>
-                      <p.icon size={17} style={{ color: "#F97316" }} />
-                    </div>
-                    <span style={{ fontSize: "14px", fontWeight: 700, color: "#1e293b" }}>{p.text}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Vpravo – rozepsané výhody */}
-              <div className="flex flex-col gap-8">
-                <div>
-                  <h3 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "16px", color: "#00205B", marginBottom: "8px" }}>
-                    Faktura na firmu a DPH doklad
-                  </h3>
-                  <p style={{ color: "#475569", fontSize: "14px", lineHeight: 1.7 }}>
-                    Ke každé jízdě vystavíme daňový doklad s DPH, který jednoduše uplatníte jako firemní výdaj. Firemní taxi Praha s fakturou ocení zejména HR oddělení, office manažeři i účetní — žádné sbírání papírových paragonů, vše elektronicky na váš firemní email.
-                  </p>
-                </div>
-                <div>
-                  <h3 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "16px", color: "#00205B", marginBottom: "8px" }}>
-                    Firemní slevy a pevné sazby
-                  </h3>
-                  <p style={{ color: "#475569", fontSize: "14px", lineHeight: 1.7 }}>
-                    Při uzavření firemní smlouvy na pravidelnou přepravu získáte fixní sazby a množstevní slevy. Korporátní přeprava Praha za předem dohodnutou cenu — bez taxametru, bez přirážek za víkend nebo noční hodiny, bez překvapení na faktuře.
-                  </p>
-                </div>
-                <div>
-                  <h3 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "16px", color: "#00205B", marginBottom: "8px" }}>
-                    Přehled jízd a výdajů online
-                  </h3>
-                  <p style={{ color: "#475569", fontSize: "14px", lineHeight: 1.7 }}>
-                    Všechny jízdy, výdaje a dokumenty na jednom místě. Firemní zákazníci mají přístup k přehledu přepravy zaměstnanců — kdo jezdil, kdy, kam a za kolik. Ideální pro controlling, schvalování výdajů i interní reporty.
-                  </p>
-                </div>
-                <div>
-                  <h3 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "16px", color: "#00205B", marginBottom: "8px" }}>
-                    Dedikovaná linka pro firemní zákazníky
-                  </h3>
-                  <p style={{ color: "#475569", fontSize: "14px", lineHeight: 1.7 }}>
-                    Firemní klienti mají přímý kontakt na dispečink bez čekání. Business taxi Praha k dispozici 24/7 — ať potřebujete odvézt zaměstnance na ranní let v 5:00 nebo vyzvednout VIP hosta z večerního vlaku, vždy víme, kdo volá a co potřebujete.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <FirmsPerks />
           </div>
         </section>
 
