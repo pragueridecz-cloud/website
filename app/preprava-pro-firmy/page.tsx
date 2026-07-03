@@ -2,6 +2,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 import { FileText, Repeat, PhoneCall, BarChart2, Plane, Users, MapPin, Calendar, Star, Presentation } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Firemní přeprava Praha | naletistelevne.cz",
+  description: "Letištní transfery, přesuny mezi schůzkami, firemní akce i VIP hosté. Faktura na firmu, fixní ceny, dedikovaná linka. Uzavřete firemní smlouvu ještě dnes.",
+};
 
 const perks = [
   { icon: FileText, text: "Faktura na firmu — DPH doklad ke každé jízdě" },
