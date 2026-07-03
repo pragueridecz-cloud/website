@@ -8,11 +8,11 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Hodinový pronájem auta s řidičem Praha | Chauffeur service",
+  title: "Hodinový pronájem auta s řidičem Praha | naletištělevně.cz",
   description: "Pronajměte si auto s řidičem na hodiny nebo celý den. Prohlídky Prahy, business schůzky, nákupy, výlety. Od 699 Kč/hod. Sedan, minivan, VIP.",
   keywords: "pronájem auta s řidičem Praha, chauffeur service Praha, auto s šoférem Praha, hodinový transfer Praha, firemní řidič Praha, prohlídka Prahy s řidičem",
   openGraph: {
-    title: "Hodinový pronájem auta s řidičem Praha | Od 699 Kč/hod",
+    title: "Hodinový pronájem auta s řidičem Praha | Od 699 Kč/hod | naletištělevně.cz",
     description: "Auto s řidičem na celý den nebo pár hodin. Business, turistika, nákupy.",
     url: "https://www.naletistelevne.cz/hodinovy-pronajem",
   },

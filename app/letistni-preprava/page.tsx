@@ -5,11 +5,11 @@ import Footer from "@/components/Footer"
 import SectionHeading from "@/components/SectionHeading"
 
 export const metadata: Metadata = {
-  title: "Doprava na letiště | Praha, Vídeň, Bratislava, Mnichov | Naletiště Levně",
+  title: "Doprava na letiště Praha | naletištělevně.cz",
   description: "Transfer na letiště Václava Havla Praha od 790 Kč. Také Vídeň, Bratislava, Budapešť, Mnichov, Frankfurt. Pevná cena, řidič čeká u výstupu, sledování letu 24/7.",
   keywords: "doprava na letiště Praha, transfer letiště Václava Havla, taxi letiště Vídeň, transfer letiště Bratislava, přeprava letiště Mnichov, airport transfer Praha",
   openGraph: {
-    title: "Doprava na letiště Praha a okolní letiště | Naletiště Levně",
+    title: "Doprava na letiště Praha a okolní letiště | naletištělevně.cz",
     description: "Transfer na letiště PRG, VIE, BTS, BUD, MUC, FRA. Pevná cena, sledování letu.",
     url: "https://www.naletistelevne.cz/letistni-preprava",
     images: [{ url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/PRG_Airport_Terminal_2.jpg/1280px-PRG_Airport_Terminal_2.jpg", width: 1280, height: 720 }],

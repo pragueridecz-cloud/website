@@ -5,11 +5,11 @@ import SectionHeading from "@/components/SectionHeading"
 import { Lock, Car, Clock, Globe, CreditCard, UserCheck } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Mezinárodní a meziměstská doprava | Praha–Vídeň, Praha–Berlín | Naletiště Levně",
+  title: "Meziměstská a mezinárodní doprava Praha | naletištělevně.cz",
   description: "Přeprava mezi městy a do zahraničí. Praha–Brno od 2 500 Kč, Praha–Vídeň od 4 500 Kč, Praha–Berlín od 8 900 Kč. Pevné ceny, komfortní vozidla, 24/7.",
   keywords: "meziměstská doprava, mezinárodní transfer, Praha Vídeň taxi, Praha Berlín taxi, Praha Brno taxi, přeprava do zahraničí, taxi Praha Mnichov",
   openGraph: {
-    title: "Mezinárodní a meziměstská doprava | Pevné ceny",
+    title: "Meziměstská a mezinárodní doprava | naletištělevně.cz",
     description: "Praha–Vídeň od 4 500 Kč, Praha–Berlín od 8 900 Kč. Komfortní přeprava po celé Evropě.",
     url: "https://www.naletistelevne.cz/mezimestska-doprava",
   },

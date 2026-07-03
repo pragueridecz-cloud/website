@@ -5,11 +5,11 @@ import SectionHeading from "@/components/SectionHeading"
 import { Clock, Luggage, ArrowLeftRight, MapPin, Banknote, Moon, Train, Bus } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Přeprava na vlakové a autobusové nádraží Praha | Taxi na nádraží",
+  title: "Přeprava na nádraží Praha | naletištělevně.cz",
   description: "Transfer na Hlavní nádraží, Smíchovské nádraží, Florenc a jiná nádraží v Praze i mimo ni. Pevné ceny, včasné odvezení, 24/7 dostupnost.",
   keywords: "taxi na nádraží Praha, transfer hlavní nádraží Praha, odvoz na nádraží, přeprava Florenc, taxi Smíchovské nádraží, taxi autobusové nádraží",
   openGraph: {
-    title: "Přeprava na vlakové a autobusové nádraží | Naletiště Levně",
+    title: "Přeprava na vlakové a autobusové nádraží | naletištělevně.cz",
     description: "Transfer na Hlavní nádraží, Florenc, Smíchovské nádraží. Pevné ceny 24/7.",
     url: "https://www.naletistelevne.cz/vlakove-autobusove-nadrazi",
   },

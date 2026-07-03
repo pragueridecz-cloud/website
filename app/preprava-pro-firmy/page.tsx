@@ -5,7 +5,7 @@ import { FileText, Repeat, PhoneCall, BarChart2, Plane, Users, MapPin, Calendar,
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Firemní přeprava Praha | naletiště levně.cz",
+  title: "Firemní přeprava Praha | naletištělevně.cz",
   description: "Letištní transfery, přesuny mezi schůzkami, firemní akce i VIP hosté. Faktura na firmu, fixní ceny, dedikovaná linka. Uzavřete firemní spolupráci ještě dnes.",
 };
 
