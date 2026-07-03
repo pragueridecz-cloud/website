@@ -5,8 +5,8 @@ import SectionHeading from "@/components/SectionHeading"
 import { Lock, Car, Clock, Globe, CreditCard, UserCheck } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Meziměstská a mezinárodní doprava Praha | naletištělevně.cz",
-  description: "Přeprava mezi městy a do zahraničí. Praha–Brno od 2 500 Kč, Praha–Vídeň od 4 500 Kč, Praha–Berlín od 8 900 Kč. Pevné ceny, komfortní vozidla, 24/7.",
+  title: "Dálkové taxi a meziměstská doprava Praha | naletištělevně.cz",
+  description: "Dálkové taxi z Prahy za pevnou cenu — Praha–Vídeň od 4 500 Kč, Praha–Berlín od 8 900 Kč, Praha–Bratislava od 3 200 Kč. Meziměstská doprava po celé ČR i Evropě, 24/7.",
   keywords: "meziměstská doprava, mezinárodní transfer, Praha Vídeň taxi, Praha Berlín taxi, Praha Brno taxi, přeprava do zahraničí, taxi Praha Mnichov",
   openGraph: {
     title: "Meziměstská a mezinárodní doprava | naletištělevně.cz",
@@ -147,6 +147,43 @@ export default function MezimestskaPage() {
                 </details>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Dálkové taxi */}
+        <section className="py-16" style={{ background: "#fff" }}>
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, fontSize: "clamp(24px,3vw,36px)", color: "#00205B", marginBottom: "8px" }}>
+              Dálkové taxi z Prahy
+            </h2>
+            <p style={{ color: "#475569", fontSize: "16px", lineHeight: 1.7, marginBottom: "40px", maxWidth: "680px" }}>
+              Dálkový transfer z Prahy do jakéhokoli města v ČR nebo zahraničí — pevná cena dohodnutá předem, bez taxametru a bez překvapení. Dálkové taxi Praha zajišťujeme 24 hodin denně, 7 dní v týdnu, se sedany i minibusy pro skupiny.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { from: "Praha", to: "Vídeň", price: "4 500", km: "330 km" },
+                { from: "Praha", to: "Berlín", price: "8 900", km: "350 km" },
+                { from: "Praha", to: "Bratislava", price: "3 200", km: "330 km" },
+                { from: "Praha", to: "Budapešť", price: "5 900", km: "525 km" },
+                { from: "Praha", to: "Mnichov", price: "6 900", km: "380 km" },
+                { from: "Praha", to: "Frankfurt", price: "9 900", km: "545 km" },
+                { from: "Praha", to: "Drážďany", price: "3 900", km: "155 km" },
+                { from: "Praha", to: "Karlovy Vary", price: "1 900", km: "130 km" },
+                { from: "Praha", to: "Brno", price: "2 500", km: "210 km" },
+              ].map((r) => (
+                <div key={r.to} className="flex items-center justify-between rounded-xl p-4"
+                  style={{ background: "#f8fafc", border: "1px solid #e2e8f0" }}>
+                  <div>
+                    <div style={{ fontSize: "13px", fontWeight: 700, color: "#00205B" }}>{r.from} → {r.to}</div>
+                    <div style={{ fontSize: "11px", color: "#94a3b8", marginTop: "2px" }}>{r.km}</div>
+                  </div>
+                  <div style={{ fontSize: "16px", fontWeight: 800, color: "#F97316" }}>od {r.price} Kč</div>
+                </div>
+              ))}
+            </div>
+            <p style={{ color: "#64748b", fontSize: "13px", marginTop: "16px" }}>
+              * Ceny jsou orientační pro sedan (1–4 osoby). Minivan pro skupiny až 7 osob a přesná cena na vyžádání. Platba kartou online nebo hotově řidiči.
+            </p>
           </div>
         </section>
 
