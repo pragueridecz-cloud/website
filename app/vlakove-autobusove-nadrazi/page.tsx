@@ -6,7 +6,7 @@ import { Clock, Luggage, ArrowLeftRight, MapPin, Banknote, Moon, Train, Bus } fr
 
 export const metadata: Metadata = {
   title: "Přeprava na nádraží Praha | naletištělevně.cz",
-  description: "Transfer na Hlavní nádraží, Smíchovské nádraží, Florenc a jiná nádraží v Praze i mimo ni. Pevné ceny, včasné odvezení, 24/7 dostupnost.",
+  description: "Taxi na nádraží Praha — Hlavní nádraží, Florenc, Smíchovské nádraží, Holešovice, Masarykovo. Pevná cena, pomoc se zavazadly, 24/7 dostupnost. Rezervujte online.",
   keywords: "taxi na nádraží Praha, transfer hlavní nádraží Praha, odvoz na nádraží, přeprava Florenc, taxi Smíchovské nádraží, taxi autobusové nádraží",
   openGraph: {
     title: "Přeprava na vlakové a autobusové nádraží | naletištělevně.cz",
@@ -66,7 +66,7 @@ export default function NadraziPage() {
             </h1>
             <div style={{ width: "48px", height: "3px", background: "#F97316", borderRadius: "2px", marginBottom: "20px" }} />
             <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "18px", lineHeight: 1.7, maxWidth: "600px" }}>
-              Dovezeme vás přesně na vlakové nebo autobusové nádraží. Hlavní nádraží, Florenc, Holešovice.
+              Taxi na nádraží Praha s pevnou cenou a bez čekání. Přivezeme vás přesně včas na Hlavní nádraží Praha, autobusové nádraží Florenc, Smíchovské nádraží, nádraží Holešovice nebo Masarykovo nádraží. Pomoc se zavazadly, vyzvednutí přímo od dveří — a stejnou službu nabízíme i na zpáteční cestě z nádraží domů.
             </p>
           </div>
         </div>

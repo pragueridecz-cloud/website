@@ -88,7 +88,7 @@ export default function LetistniPreprava() {
                 </h1>
                 <div style={{ width: "48px", height: "3px", background: "#F97316", borderRadius: "2px", marginBottom: "20px" }} />
                 <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "18px", lineHeight: 1.7, maxWidth: "600px" }}>
-                  Přepravujeme na všechna hlavní letiště v dosahu 700 km. Pevná cena, sledování letu, řidič na místě.
+                  Taxi na letiště Václava Havla Praha od 790 Kč — pevná cena, žádné příplatky za čekání ani zpoždění letu. Zajišťujeme také transfer na letiště Vídeň, Bratislava, Budapešť, Mnichov, Frankfurt a Drážďany. Řidič čeká s cedulkou v příletové hale, sleduje váš let v reálném čase a odveze vás z letiště Ruzyně přímo domů nebo do hotelu.
                 </p>
               </div>
               <div className="hidden md:block" style={{ borderRadius: "16px", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.4)" }}>

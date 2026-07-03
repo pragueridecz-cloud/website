@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Firemní přeprava Praha | naletištělevně.cz",
-  description: "Letištní transfery, přesuny mezi schůzkami, firemní akce i VIP hosté. Faktura na firmu, fixní ceny, dedikovaná linka. Uzavřete firemní spolupráci ještě dnes.",
+  description: "Firemní taxi Praha na fakturu s DPH. Přeprava zaměstnanců na letiště, korporátní transfery, VIP přeprava pro delegace. Business taxi Praha — pevná cena, měsíční fakturace, dedikovaná linka.",
 };
 
 const perks = [
@@ -44,7 +44,7 @@ export default function PrepravaPropFirmy() {
               <span style={{ color: "#F97316" }}>na každou příležitost</span>
             </h1>
             <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "18px", lineHeight: 1.7, maxWidth: "600px", marginBottom: "36px" }}>
-              Letiště, obchodní schůzky, firemní akce nebo hodinový pronájem s řidičem. Uzavřete firemní smlouvu a mějte dopravu pod kontrolou – s fakturou, přehledem jízd a slevou.
+              Firemní taxi Praha na fakturu s DPH dokladem ke každé jízdě. Zajišťujeme přepravu zaměstnanců na letiště, vyzvednutí obchodních partnerů, korporátní transfery i VIP přepravu pro delegace. Business taxi Praha s pevnou cenou, měsíční fakturací a dedikovanou linkou pro firemní zákazníky. Uzavřete firemní smlouvu a mějte dopravu pod kontrolou.
             </p>
             <a href="mailto:info@naletistelevne.cz?subject=Firemní spolupráce"
               style={{ display: "inline-block", background: "#F97316", color: "#fff", fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "15px", padding: "14px 32px", borderRadius: "12px", textDecoration: "none" }}>

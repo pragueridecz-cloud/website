@@ -9,7 +9,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Hodinový pronájem auta s řidičem Praha | naletištělevně.cz",
-  description: "Pronajměte si auto s řidičem na hodiny nebo celý den. Prohlídky Prahy, business schůzky, nákupy, výlety. Od 699 Kč/hod. Sedan, minivan, VIP.",
+  description: "Auto s řidičem Praha od 699 Kč/hod — chauffeur service, VIP přeprava, pronájem řidiče na hodiny nebo celý den. Business schůzky, svatby, výlety za město. Sedan i minivan.",
   keywords: "pronájem auta s řidičem Praha, chauffeur service Praha, auto s šoférem Praha, hodinový transfer Praha, firemní řidič Praha, prohlídka Prahy s řidičem",
   openGraph: {
     title: "Hodinový pronájem auta s řidičem Praha | Od 699 Kč/hod | naletištělevně.cz",
@@ -61,7 +61,7 @@ export default function HodinPronajem() {
             </h1>
             <div style={{ width: "48px", height: "3px", background: "#F97316", borderRadius: "2px", marginBottom: "20px" }} />
             <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "18px", lineHeight: 1.7, maxWidth: "600px" }}>
-              Řidič k dispozici přesně tak dlouho, jak potřebujete. Ideální pro obchodní schůzky, výlety nebo VIP hosty.
+              Pronájem auta s řidičem Praha od 699 Kč/hod — chauffeur service pro business i soukromé účely. Ideální pro obchodní schůzky, VIP přepravu, prohlídky Prahy, nákupy nebo výlety za město. Sedany i minibusy, k dispozici na hodiny nebo celý den. Řidič čeká pouze na vás — žádné sdílené jízdy, žádný stres s parkováním.
             </p>
           </div>
         </div>
