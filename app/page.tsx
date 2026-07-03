@@ -6,7 +6,6 @@ import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
 import Fleet from "@/components/Fleet";
 import Testimonials from "@/components/Testimonials";
-import B2B from "@/components/B2B";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
@@ -76,7 +75,6 @@ export default function Home() {
         <Services />
         <Fleet />
         <Testimonials />
-        <B2B />
         <FAQ />
       </main>
       <Footer />
