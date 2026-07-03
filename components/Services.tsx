@@ -38,7 +38,7 @@ const SERVICES = [
     label: "Pro firmy",
     title: "Firemní přeprava",
     desc: "Pravidelné jízdy, fakturace, firemní slevy. Svěřte přepravu svých zaměstnanců a klientů do profesionálních rukou.",
-    href: "/#pro-firmy",
+    href: "/preprava-pro-firmy",
   },
 ];
 
