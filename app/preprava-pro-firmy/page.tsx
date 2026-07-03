@@ -10,15 +10,6 @@ export const metadata: Metadata = {
 };
 
 
-const useCases = [
-  { icon: Plane,        title: "Přeprava zaměstnanců na letiště",   desc: "Včasné odvezení na pracovní cesty s fakturou pro HR oddělení." },
-  { icon: Users,        title: "Vyzvednutí obchodních partnerů",     desc: "Reprezentativní přivítání klientů přímo na letišti nebo nádraží." },
-  { icon: MapPin,       title: "Přesuny mezi schůzkami",             desc: "Flexibilní doprava v průběhu celého dne bez starostí s parkováním." },
-  { icon: Calendar,     title: "Firemní akce a teambuildingy",       desc: "Přeprava celého týmu na firemní event nebo za hranice města." },
-  { icon: Presentation, title: "Roadshow a konference",              desc: "Logistika přepravy pro účastníky konferencí a roadshow po Praze." },
-  { icon: Star,         title: "VIP hosté a delegace",               desc: "Prémiový servis pro zahraniční delegace nebo VIP hosty." },
-];
-
 export default function PrepravaPropFirmy() {
   return (
     <>
@@ -61,24 +52,82 @@ export default function PrepravaPropFirmy() {
         {/* Kdy nás využít */}
         <section style={{ background: "#f8fafc", padding: "64px 20px" }}>
           <div className="max-w-6xl mx-auto">
-            <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, fontSize: "clamp(24px,3vw,36px)", color: "#00205B", marginBottom: "8px" }}>
-              Kdy nás využít
-            </h2>
-            <p style={{ color: "#475569", fontSize: "16px", marginBottom: "40px" }}>Pokryjeme každou situaci, kdy vaše firma potřebuje spolehlivou přepravu.</p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {useCases.map((u) => (
-                <div key={u.title} className="flex items-start gap-4 rounded-xl p-5"
-                  style={{ background: "#fff", border: "1px solid #e2e8f0" }}>
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: "#fff7ed" }}>
-                    <u.icon size={18} style={{ color: "#F97316" }} />
-                  </div>
-                  <div>
-                    <div style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "14px", color: "#00205B", marginBottom: "4px" }}>{u.title}</div>
-                    <div style={{ fontSize: "13px", color: "#64748b", lineHeight: 1.5 }}>{u.desc}</div>
-                  </div>
+            <div style={{ marginBottom: "48px" }}>
+              <p style={{ fontSize: "13px", color: "#94a3b8", textTransform: "uppercase" as const, letterSpacing: "2px", marginBottom: "8px" }}>Kdy nás využít</p>
+              <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, fontSize: "clamp(28px,4vw,48px)", color: "#00205B", lineHeight: 1.1 }}>
+                Přeprava pro<br />
+                <span style={{ color: "#F97316" }}>každou situaci</span>
+              </h2>
+            </div>
+
+            {/* BA-style masonry grid */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridTemplateRows: "280px 220px", gap: "12px" }}>
+
+              {/* Velká karta vlevo nahoře */}
+              <div style={{ gridColumn: "1", gridRow: "1", borderRadius: "16px", overflow: "hidden", position: "relative", cursor: "pointer" }}
+                onMouseEnter={e => (e.currentTarget.querySelector("img") as HTMLImageElement).style.transform = "scale(1.05)"}
+                onMouseLeave={e => (e.currentTarget.querySelector("img") as HTMLImageElement).style.transform = "scale(1)"}>
+                <img src="/service-ridici.jpg" alt="Přeprava zaměstnanců na letiště"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform .5s ease" }} />
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,32,91,.85) 0%, transparent 55%)" }} />
+                <div style={{ position: "absolute", bottom: "20px", left: "20px", right: "20px" }}>
+                  <div style={{ fontFamily: "Poppins, sans-serif", fontSize: "18px", fontWeight: 700, color: "#fff", marginBottom: "4px" }}>Přeprava zaměstnanců na letiště</div>
+                  <div style={{ fontSize: "12px", color: "rgba(255,255,255,.7)" }}>Včasné odvezení s fakturou pro HR oddělení</div>
                 </div>
-              ))}
+              </div>
+
+              {/* Střední karta nahoře uprostřed */}
+              <div style={{ gridColumn: "2", gridRow: "1", borderRadius: "16px", overflow: "hidden", position: "relative", cursor: "pointer" }}
+                onMouseEnter={e => (e.currentTarget.querySelector("img") as HTMLImageElement).style.transform = "scale(1.05)"}
+                onMouseLeave={e => (e.currentTarget.querySelector("img") as HTMLImageElement).style.transform = "scale(1)"}>
+                <img src="/service-firmy.png" alt="Vyzvednutí obchodních partnerů"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform .5s ease" }} />
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,32,91,.85) 0%, transparent 55%)" }} />
+                <div style={{ position: "absolute", bottom: "20px", left: "20px", right: "20px" }}>
+                  <div style={{ fontFamily: "Poppins, sans-serif", fontSize: "18px", fontWeight: 700, color: "#fff", marginBottom: "4px" }}>Vyzvednutí obchodních partnerů</div>
+                  <div style={{ fontSize: "12px", color: "rgba(255,255,255,.7)" }}>Reprezentativní přivítání klientů na letišti</div>
+                </div>
+              </div>
+
+              {/* Velká karta vpravo — přes 2 řádky */}
+              <div style={{ gridColumn: "3", gridRow: "1 / 3", borderRadius: "16px", overflow: "hidden", position: "relative", cursor: "pointer" }}
+                onMouseEnter={e => (e.currentTarget.querySelector("img") as HTMLImageElement).style.transform = "scale(1.05)"}
+                onMouseLeave={e => (e.currentTarget.querySelector("img") as HTMLImageElement).style.transform = "scale(1)"}>
+                <img src="/service-hodinovy.jpg" alt="Hodinový pronájem a firemní akce"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform .5s ease" }} />
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,32,91,.9) 0%, transparent 50%)" }} />
+                <div style={{ position: "absolute", bottom: "24px", left: "24px", right: "24px" }}>
+                  <div style={{ fontFamily: "Poppins, sans-serif", fontSize: "22px", fontWeight: 800, color: "#fff", marginBottom: "8px" }}>Firemní akce a teambuildingy</div>
+                  <div style={{ fontSize: "13px", color: "rgba(255,255,255,.75)", lineHeight: 1.5 }}>Přeprava celého týmu na firemní event nebo výjezdní zasedání</div>
+                </div>
+              </div>
+
+              {/* Karta dole vlevo */}
+              <div style={{ gridColumn: "1", gridRow: "2", borderRadius: "16px", overflow: "hidden", position: "relative", cursor: "pointer" }}
+                onMouseEnter={e => (e.currentTarget.querySelector("img") as HTMLImageElement).style.transform = "scale(1.05)"}
+                onMouseLeave={e => (e.currentTarget.querySelector("img") as HTMLImageElement).style.transform = "scale(1)"}>
+                <img src="/service-mezimestska.png" alt="Roadshow a konference"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform .5s ease" }} />
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,32,91,.85) 0%, transparent 55%)" }} />
+                <div style={{ position: "absolute", bottom: "16px", left: "16px", right: "16px" }}>
+                  <div style={{ fontFamily: "Poppins, sans-serif", fontSize: "16px", fontWeight: 700, color: "#fff", marginBottom: "2px" }}>Roadshow a konference</div>
+                  <div style={{ fontSize: "11px", color: "rgba(255,255,255,.7)" }}>Logistika přepravy po Praze i za hranice</div>
+                </div>
+              </div>
+
+              {/* Karta dole uprostřed */}
+              <div style={{ gridColumn: "2", gridRow: "2", borderRadius: "16px", overflow: "hidden", position: "relative", cursor: "pointer" }}
+                onMouseEnter={e => (e.currentTarget.querySelector("img") as HTMLImageElement).style.transform = "scale(1.05)"}
+                onMouseLeave={e => (e.currentTarget.querySelector("img") as HTMLImageElement).style.transform = "scale(1)"}>
+                <img src="/service-vozidla.jpg" alt="VIP hosté a delegace"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform .5s ease" }} />
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,32,91,.85) 0%, transparent 55%)" }} />
+                <div style={{ position: "absolute", bottom: "16px", left: "16px", right: "16px" }}>
+                  <div style={{ fontFamily: "Poppins, sans-serif", fontSize: "16px", fontWeight: 700, color: "#fff", marginBottom: "2px" }}>VIP hosté a delegace</div>
+                  <div style={{ fontSize: "11px", color: "rgba(255,255,255,.7)" }}>Prémiový servis pro zahraniční hosty</div>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
