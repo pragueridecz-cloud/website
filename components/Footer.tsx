@@ -121,7 +121,7 @@ export default function Footer() {
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
               <img src="/logo-tpc.png" alt="Transfer Prague Car" style={{ height: "28px", objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.6 }} />
               <div>
-                <div style={{ fontSize: "12px", fontWeight: 600, color: "#94a3b8" }}>Transfer Prague Car s.r.o.</div>
+                <div style={{ fontSize: "12px", fontWeight: 600, color: "#94a3b8" }}>transfer-prague-car s.r.o.</div>
                 <div style={{ fontSize: "11px", color: "#475569" }}>IČO: 25706993 · Sochařská 2, 170 00 Praha</div>
               </div>
             </div>
@@ -137,7 +137,7 @@ export default function Footer() {
             </div>
           </div>
           <div style={{ fontSize: "11px", color: "#334155" }}>
-            © {new Date().getFullYear()} NaLetistelevne.cz — provozuje Transfer Prague Car s.r.o. Všechna práva vyhrazena.
+            © {new Date().getFullYear()} naletistelevne.cz — provozuje transfer-prague-car s.r.o. Všechna práva vyhrazena.
           </div>
         </div>
       </div>
