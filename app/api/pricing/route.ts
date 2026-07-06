@@ -1,11 +1,8 @@
 import { NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
 
-const sb = createClient(
-  'https://pqmoyykyshmtiapnowxc.supabase.co',
-  process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxbW95eWt5c2htdGlhcG5vd3hjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3ODE1NjIwNSwiZXhwIjoyMDkzNzMyMjA1fQ.JR1T8uCQKYEp-27qjBTlyGIP2HzUoXoLXablgFjqLxw'
-)
-
+const SB_URL = 'https://pqmoyykyshmtiapnowxc.supabase.co/rest/v1'
+const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxbW95eWt5c2htdGlhcG5vd3hjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3ODE1NjIwNSwiZXhwIjoyMDkzNzMyMjA1fQ.JR1T8uCQKYEp-27qjBTlyGIP2HzUoXoLXablgFjqLxw'
+const H = { 'apikey': SB_KEY, 'Authorization': `Bearer ${SB_KEY}` }
 const CORS = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET' }
 
 export async function OPTIONS() {
@@ -14,16 +11,16 @@ export async function OPTIONS() {
 
 export async function GET() {
   const [zones, matrix, pricing, settings] = await Promise.all([
-    sb.from('pricing_zones').select('*').order('sort_order'),
-    sb.from('zone_matrix').select('*'),
-    sb.from('distance_pricing').select('*').order('km_from'),
-    sb.from('tenant_settings').select('*').limit(1).single(),
+    fetch(`${SB_URL}/pricing_zones?select=*&order=sort_order.asc`, { headers: H }).then(r => r.json()),
+    fetch(`${SB_URL}/zone_matrix?select=*`, { headers: H }).then(r => r.json()),
+    fetch(`${SB_URL}/distance_pricing?select=*&order=km_from.asc`, { headers: H }).then(r => r.json()),
+    fetch(`${SB_URL}/tenant_settings?select=*&limit=1`, { headers: H }).then(r => r.json()),
   ])
 
   return NextResponse.json({
-    zones: zones.data || [],
-    zone_matrix: matrix.data || [],
-    distance_pricing: pricing.data || [],
-    settings: settings.data || {},
+    zones: zones || [],
+    zone_matrix: matrix || [],
+    distance_pricing: pricing || [],
+    settings: settings?.[0] || {},
   }, { headers: CORS })
 }
