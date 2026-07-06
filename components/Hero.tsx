@@ -164,7 +164,7 @@ export default function Hero() {
     <div ref={overlayRef}>
       <iframe
         id="nll-widget-frame"
-        src="https://taxisaas-widget.vercel.app/widget.html?proxy=https%3A%2F%2Fwebsite-five-beta-94.vercel.app%2Fapi%2Fflight-status"
+        src="https://taxisaas-widget.vercel.app/widget.html?proxy=https%3A%2F%2Fadmin.naletistelevne.cz%2Fapi%2Fflight-status"
         frameBorder="0"
         title="Rezervační formulář"
         scrolling="no"
@@ -253,7 +253,7 @@ export default function Hero() {
               na letiště Praha
             </h1>
             <iframe
-              src="https://taxisaas-widget.vercel.app/widget.html?proxy=https%3A%2F%2Fwebsite-five-beta-94.vercel.app%2Fapi%2Fflight-status"
+              src="https://taxisaas-widget.vercel.app/widget.html?proxy=https%3A%2F%2Fadmin.naletistelevne.cz%2Fapi%2Fflight-status"
               frameBorder="0"
               title="Rezervační formulář"
               style={{
