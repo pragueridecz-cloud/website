@@ -1,11 +1,11 @@
 'use client'
 
 const cards = [
-  { img: "/service-ridici.jpg",      title: "Přeprava zaměstnanců na letiště",  desc: "Včasné odvezení s fakturou pro HR oddělení",       size: "normal" },
-  { img: "/service-firmy.png",       title: "Vyzvednutí obchodních partnerů",   desc: "Reprezentativní přivítání klientů na letišti",      size: "normal" },
-  { img: "/service-hodinovy.jpg",    title: "Firemní akce a teambuildingy",     desc: "Přeprava celého týmu na firemní event nebo výjezdní zasedání", size: "tall" },
-  { img: "/service-mezimestska.png", title: "Roadshow a konference",            desc: "Logistika přepravy po Praze i za hranice",          size: "small" },
-  { img: "/service-vozidla.jpg",     title: "VIP hosté a delegace",             desc: "Prémiový servis pro zahraniční hosty",              size: "small" },
+  { img: "/firmy-letiste-zamestnanci.jpg", title: "Přeprava zaměstnanců na letiště",  desc: "Včasné odvezení s fakturou pro HR oddělení",       size: "normal" },
+  { img: "/service-firmy.png",             title: "Vyzvednutí obchodních partnerů",   desc: "Reprezentativní přivítání klientů na letišti",      size: "normal" },
+  { img: "/firmy-teambuilding.jpg",        title: "Firemní akce a teambuildingy",     desc: "Přeprava celého týmu na firemní event nebo výjezdní zasedání", size: "tall" },
+  { img: "/firmy-konference.jpg",          title: "Roadshow a konference",            desc: "Logistika přepravy po Praze i za hranice",          size: "small" },
+  { img: "/service-vozidla.jpg",           title: "VIP hosté a delegace",             desc: "Prémiový servis pro zahraniční hosty",              size: "small" },
 ]
 
 export default function FirmsUseCases() {
