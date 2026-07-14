@@ -7,17 +7,18 @@ const SB_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY
 
 const BASE = 'https://fr24api.flightradar24.com/api/live'
 
-// Krátká cache, ať se company_settings nečte přes Supabase při každém požadavku
+// Krátká cache, ať se company_settings nečte přes Supabase při každém požadavku.
+// Nastavení → API klíče v adminu má přednost před env proměnnou, aby úprava
+// klíče tam měla okamžitý efekt i když je ve Vercelu nastavená fallback hodnota.
 let cachedKey: { value: string; expires: number } | null = null
 async function getFr24Key(): Promise<string | null> {
-  if (process.env.FR24_API_KEY) return process.env.FR24_API_KEY
   if (cachedKey && cachedKey.expires > Date.now()) return cachedKey.value
-  if (!SB_URL || !SB_KEY) return null
+  if (!SB_URL || !SB_KEY) return process.env.FR24_API_KEY || null
   const res = await fetch(`${SB_URL}/rest/v1/tenant_settings?select=company_settings&limit=1`, {
     headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` },
   })
   const rows = res.ok ? await res.json() : []
-  const key = rows?.[0]?.company_settings?.fr24_key || null
+  const key = rows?.[0]?.company_settings?.fr24_key || process.env.FR24_API_KEY || null
   if (key) cachedKey = { value: key, expires: Date.now() + 5 * 60 * 1000 }
   return key
 }
