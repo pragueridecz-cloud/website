@@ -1,7 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const FR24_KEY = '019f2988-3173-7201-983c-93062c60b0c5|Cy5pj9dcxKXbVmDtqDzP9mBM9PUpnPN57JeUn1l0ea0f17f2'
+// Tenhle repo nemá @supabase/supabase-js jako závislost (viz app/api/pricing/route.ts) —
+// stejně jako tam, jde se přímo přes REST rozhraní.
+const SB_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
+const SB_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY
+
 const BASE = 'https://fr24api.flightradar24.com/api/live'
+
+// Krátká cache, ať se company_settings nečte přes Supabase při každém požadavku
+let cachedKey: { value: string; expires: number } | null = null
+async function getFr24Key(): Promise<string | null> {
+  if (process.env.FR24_API_KEY) return process.env.FR24_API_KEY
+  if (cachedKey && cachedKey.expires > Date.now()) return cachedKey.value
+  if (!SB_URL || !SB_KEY) return null
+  const res = await fetch(`${SB_URL}/rest/v1/tenant_settings?select=company_settings&limit=1`, {
+    headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` },
+  })
+  const rows = res.ok ? await res.json() : []
+  const key = rows?.[0]?.company_settings?.fr24_key || null
+  if (key) cachedKey = { value: key, expires: Date.now() + 5 * 60 * 1000 }
+  return key
+}
 const CORS = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET,OPTIONS' }
 
 const IATA: Record<string, string> = {
@@ -30,6 +49,8 @@ export async function OPTIONS() { return new NextResponse(null, { status: 204, h
 
 export async function GET(req: NextRequest) {
   const p = req.nextUrl.searchParams
+  const FR24_KEY = await getFr24Key()
+  if (!FR24_KEY) return NextResponse.json({ error: 'not configured' }, { status: 500, headers: CORS })
   const fr24 = { 'NameToken': FR24_KEY, 'Accept': 'application/json' }
   try {
     if (p.get('airport')) {
