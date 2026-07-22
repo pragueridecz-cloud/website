@@ -11,7 +11,7 @@ const cars = [
     passengers: 4,
     luggage: 3,
     price: "od 790 Kč",
-    hourlyPrice: "699 Kč/h",
+    hourlyPrice: "750 Kč/hod",
     features: ["Klimatizace", "Wi-Fi", "Voda zdarma"],
     tag: null,
     category: "sedan",
@@ -23,7 +23,7 @@ const cars = [
     passengers: 4,
     luggage: 3,
     price: "od 1 090 Kč",
-    hourlyPrice: "899 Kč/h",
+    hourlyPrice: "900 Kč/hod",
     features: ["Klimatizace", "Wi-Fi", "Rozšířený interiér"],
     tag: null,
     category: "sedan",
@@ -35,7 +35,7 @@ const cars = [
     passengers: 3,
     luggage: 3,
     price: "od 1 290 Kč",
-    hourlyPrice: "1 199 Kč/h",
+    hourlyPrice: "1 150 Kč/hod",
     features: ["Prémiový interiér", "Tiché prostředí", "Voda zdarma"],
     tag: null,
     category: "sedan",
@@ -47,7 +47,7 @@ const cars = [
     passengers: 7,
     luggage: 6,
     price: "od 990 Kč",
-    hourlyPrice: "899 Kč/h",
+    hourlyPrice: "950 Kč/hod",
     features: ["Klimatizace", "Wi-Fi", "Velký kufr"],
     tag: "Nejoblíbenější",
     category: "minivan",
@@ -59,7 +59,7 @@ const cars = [
     passengers: 7,
     luggage: 6,
     price: "od 1 390 Kč",
-    hourlyPrice: "1 199 Kč/h",
+    hourlyPrice: "1 150 Kč/hod",
     features: ["Rozšířený prostor", "Klimatizace", "Wi-Fi"],
     tag: null,
     category: "minivan",
@@ -71,7 +71,7 @@ const cars = [
     passengers: 7,
     luggage: 6,
     price: "od 1 790 Kč",
-    hourlyPrice: "1 599 Kč/h",
+    hourlyPrice: "1 650 Kč/hod",
     features: ["Mercedes V-Class", "Firemní standard", "Velký prostor"],
     tag: "Firemní volba",
     category: "minivan",
@@ -85,7 +85,7 @@ const TABS = [
 
 type Category = typeof TABS[number]["id"];
 
-export default function Fleet() {
+export default function Fleet({ mode = "transfer" }: { mode?: "transfer" | "hourly" }) {
   const [category, setCategory] = useState<Category>("sedan");
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIdx, setActiveIdx] = useState(0);
@@ -153,7 +153,7 @@ export default function Fleet() {
         {/* Desktop – 3-column grid */}
         <div className="hidden md:grid md:grid-cols-3 gap-6">
           {filtered.map((car) => (
-            <CarCard key={car.name} car={car} />
+            <CarCard key={car.name} car={car} mode={mode} />
           ))}
         </div>
 
@@ -177,7 +177,7 @@ export default function Fleet() {
             <style>{`.fleet-scroll::-webkit-scrollbar{display:none}`}</style>
             {filtered.map((car) => (
               <div key={car.name} className="fleet-scroll" style={{ minWidth: "78vw", scrollSnapAlign: "start", flexShrink: 0 }}>
-                <CarCard car={car} />
+                <CarCard car={car} mode={mode} />
               </div>
             ))}
           </div>
@@ -209,7 +209,7 @@ export default function Fleet() {
   );
 }
 
-function CarCard({ car }: { car: typeof cars[0] }) {
+function CarCard({ car, mode = "transfer" }: { car: typeof cars[0]; mode?: string }) {
   return (
     <div className="fleet-card relative bg-white border border-[#E2E8F0] rounded-2xl overflow-hidden flex flex-col"
       style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
@@ -241,7 +241,7 @@ function CarCard({ car }: { car: typeof cars[0] }) {
           ))}
         </ul>
         <div className="border-t border-gray-100 pt-3 flex items-center justify-between">
-          <span className="text-lg font-black text-[#00205B]">{car.price}</span>
+          <span className="text-lg font-black text-[#00205B]">{mode === "hourly" ? car.hourlyPrice : car.price}</span>
           <a href="/#rezervace" className="text-xs font-bold px-3 py-1.5 rounded-lg text-white"
             style={{ background: "#F97316", textDecoration: "none" }}>
             Rezervovat

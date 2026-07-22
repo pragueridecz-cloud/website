@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import SectionHeading from "@/components/SectionHeading"
+import Fleet from "@/components/Fleet"
 import {
   Landmark, Briefcase, ShoppingBag, TreePine,
   Heart, Music, Plane, Activity, DollarSign,
@@ -67,56 +68,7 @@ export default function HodinPronajem() {
         </div>
 
         {/* Ceník */}
-        <section className="py-20 bg-white">
-          <div className="max-w-5xl mx-auto px-4">
-            <SectionHeading label="Ceník" title="Ceny hodinového pronájmu" />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { title: "Sedan Economy", model: "VW Passat a podobný", price: "699 Kč/hod", from: "od 790 Kč / jízda", cap: "1–4 osoby", luggage: 3, min: "Min. 2 hodiny", features: ["Klimatizace", "Velký kufr", "Wi-Fi"], img: "/cars/sedan-economy.jpg", tag: null },
-                { title: "Minivan Economy", model: "Ford Tourneo Custom a podobný", price: "899 Kč/hod", from: "od 990 Kč / jízda", cap: "1–7 osob", luggage: 6, min: "Min. 2 hodiny", features: ["Klimatizace", "Velký kufr", "Wi-Fi", "Dětská sedačka"], img: "/cars/minivan-economy.jpg", tag: "Nejoblíbenější" },
-                { title: "Sedan Executive", model: "Mercedes-Benz C a podobný", price: "1 199 Kč/hod", from: "od 1 290 Kč / jízda", cap: "1–4 osoby", luggage: 3, min: "Min. 3 hodiny", features: ["Prémiový interiér", "Voda v autě", "Wi-Fi", "Tichý provoz"], img: "/cars/sedan-executive.jpg", tag: null },
-              ].map((p, i) => (
-                <div key={i} className="relative bg-white border border-[#E2E8F0] rounded-2xl overflow-hidden flex flex-col"
-                  style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
-                  {p.tag && (
-                    <div className="absolute top-3 right-3 bg-[#F97316] text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
-                      {p.tag}
-                    </div>
-                  )}
-                  <div style={{ height: "176px", background: "#f8fafc", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px", borderBottom: "1px solid #f1f5f9" }}>
-                    <img src={p.img} alt={p.title} style={{ maxHeight: "144px", maxWidth: "100%", objectFit: "contain", display: "block" }} />
-                  </div>
-                  <div className="p-5 flex flex-col flex-1">
-                    <h3 className="font-bold text-[#00205B] text-base mb-0.5">{p.title}</h3>
-                    <p className="text-xs text-gray-400 mb-2">{p.model}</p>
-                    <div className="flex gap-4 mb-3">
-                      <span className="text-xs text-gray-500">👤 {p.cap}</span>
-                      <span className="text-xs text-gray-500">🧳 {p.luggage} kufry</span>
-                    </div>
-                    <ul className="space-y-1 mb-4 flex-1">
-                      {p.features.map((f) => (
-                        <li key={f} className="text-xs text-gray-500 flex items-center gap-1.5">
-                          <span className="text-green-500 font-bold">✓</span> {f}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="border-t border-gray-100 pt-3">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-lg font-black text-[#00205B]">{p.price}</span>
-                        <span className="text-xs text-gray-400">{p.min}</span>
-                      </div>
-                      <div className="text-xs text-gray-400 mb-3">{p.from}</div>
-                      <a href="/#rezervace" className="block text-center text-xs font-bold px-3 py-2 rounded-lg text-white"
-                        style={{ background: "#F97316", textDecoration: "none" }}>
-                        Rezervovat
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Fleet mode="hourly" />
 
         {/* Využití */}
         <section className="py-20" style={{ background: "#f8fafc" }}>
