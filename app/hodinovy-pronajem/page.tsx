@@ -72,28 +72,45 @@ export default function HodinPronajem() {
             <SectionHeading label="Ceník" title="Ceny hodinového pronájmu" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { title: "Economy Sedan", price: "699", unit: "Kč/hod", min: "Min. 2 hodiny", cap: "1–4 osoby", features: ["Klimatizace", "Velký kufr", "Wi-Fi"], img: "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=600&q=80" },
-                { title: "Minivan / Kombi", price: "899", unit: "Kč/hod", min: "Min. 2 hodiny", cap: "1–7 osob", features: ["Klimatizace", "Velký kufr", "Wi-Fi", "Dětská sedačka"], highlight: true, img: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&q=80" },
-                { title: "VIP / Business", price: "1 299", unit: "Kč/hod", min: "Min. 3 hodiny", cap: "1–4 osoby", features: ["Prémiový interiér", "Voda v autě", "Wi-Fi", "Tichý provoz"], img: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=600&q=80" },
+                { title: "Sedan Economy", model: "VW Passat a podobný", price: "699 Kč/hod", from: "od 790 Kč / jízda", cap: "1–4 osoby", luggage: 3, min: "Min. 2 hodiny", features: ["Klimatizace", "Velký kufr", "Wi-Fi"], img: "/cars/sedan-economy.jpg", tag: null },
+                { title: "Minivan Economy", model: "Ford Tourneo Custom a podobný", price: "899 Kč/hod", from: "od 990 Kč / jízda", cap: "1–7 osob", luggage: 6, min: "Min. 2 hodiny", features: ["Klimatizace", "Velký kufr", "Wi-Fi", "Dětská sedačka"], img: "/cars/minivan-economy.jpg", tag: "Nejoblíbenější" },
+                { title: "Sedan Executive", model: "Mercedes-Benz C a podobný", price: "1 199 Kč/hod", from: "od 1 290 Kč / jízda", cap: "1–4 osoby", luggage: 3, min: "Min. 3 hodiny", features: ["Prémiový interiér", "Voda v autě", "Wi-Fi", "Tichý provoz"], img: "/cars/sedan-executive.jpg", tag: null },
               ].map((p, i) => (
-                <div key={i} className="rounded-2xl overflow-hidden border-2 flex flex-col" style={{ borderColor: p.highlight ? "#F97316" : "#e2e8f0" }}>
-                  <div style={{ position: "relative", height: "160px" }}>
-                    <img src={p.img} alt={p.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                    {p.highlight && (
-                      <div style={{ position: "absolute", top: "10px", right: "10px", background: "#F97316", color: "#fff", fontSize: "10px", fontWeight: 700, padding: "4px 10px", borderRadius: "20px" }}>NEJOBLÍBENĚJŠÍ</div>
-                    )}
+                <div key={i} className="relative bg-white border border-[#E2E8F0] rounded-2xl overflow-hidden flex flex-col"
+                  style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
+                  {p.tag && (
+                    <div className="absolute top-3 right-3 bg-[#F97316] text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
+                      {p.tag}
+                    </div>
+                  )}
+                  <div style={{ height: "176px", background: "#f8fafc", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px", borderBottom: "1px solid #f1f5f9" }}>
+                    <img src={p.img} alt={p.title} style={{ maxHeight: "144px", maxWidth: "100%", objectFit: "contain", display: "block" }} />
                   </div>
-                  <div className="p-6 flex flex-col flex-1" style={{ background: p.highlight ? "#fff7ed" : "#f8fafc" }}>
-                    <h3 className="font-bold text-gray-900 mb-3">{p.title}</h3>
-                    <div className="text-4xl font-black mb-1" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>{p.price} <span className="text-lg font-normal text-gray-500">{p.unit}</span></div>
-                    <div className="text-xs text-gray-400 mb-4">{p.min} · {p.cap}</div>
-                    <ul className="space-y-2 mb-6 flex-1">
-                      {p.features.map((f) => <li key={f} className="text-sm text-gray-600 flex items-center gap-2"><span style={{ color: "#10b981" }}>✓</span>{f}</li>)}
+                  <div className="p-5 flex flex-col flex-1">
+                    <h3 className="font-bold text-[#00205B] text-base mb-0.5">{p.title}</h3>
+                    <p className="text-xs text-gray-400 mb-2">{p.model}</p>
+                    <div className="flex gap-4 mb-3">
+                      <span className="text-xs text-gray-500">👤 {p.cap}</span>
+                      <span className="text-xs text-gray-500">🧳 {p.luggage} kufry</span>
+                    </div>
+                    <ul className="space-y-1 mb-4 flex-1">
+                      {p.features.map((f) => (
+                        <li key={f} className="text-xs text-gray-500 flex items-center gap-1.5">
+                          <span className="text-green-500 font-bold">✓</span> {f}
+                        </li>
+                      ))}
                     </ul>
-                    <a href="/#rezervace" className="block text-center py-2.5 rounded-lg text-sm font-bold"
-                      style={{ background: p.highlight ? "#F97316" : "#00205B", color: "#fff", textDecoration: "none" }}>
-                      Rezervovat
-                    </a>
+                    <div className="border-t border-gray-100 pt-3">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-lg font-black text-[#00205B]">{p.price}</span>
+                        <span className="text-xs text-gray-400">{p.min}</span>
+                      </div>
+                      <div className="text-xs text-gray-400 mb-3">{p.from}</div>
+                      <a href="/#rezervace" className="block text-center text-xs font-bold px-3 py-2 rounded-lg text-white"
+                        style={{ background: "#F97316", textDecoration: "none" }}>
+                        Rezervovat
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
