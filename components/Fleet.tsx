@@ -71,7 +71,7 @@ const cars = [
     passengers: 7,
     luggage: 6,
     price: "od 1 790 Kč",
-    hourlyPrice: "1 750 Kč/hod",
+    hourlyPrice: "1 650 Kč/hod",
     features: ["Mercedes V-Class", "Firemní standard", "Velký prostor"],
     tag: "Firemní volba",
     category: "minivan",
