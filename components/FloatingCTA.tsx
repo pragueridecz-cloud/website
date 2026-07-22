@@ -64,7 +64,7 @@ export default function FloatingCTA() {
           padding: "2px 10px",
           fontSize: "12px",
           fontWeight: 600,
-        }}>od 740 Kč</span>
+        }}>od 750 Kč</span>
       </button>
       <style>{`
         @media (max-width: 480px) {

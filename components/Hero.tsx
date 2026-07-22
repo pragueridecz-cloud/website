@@ -23,7 +23,7 @@ function PriceTag() {
         <circle cx="265" cy="40" r="8" fill="#00205B"/>
         <circle cx="265" cy="40" r="5" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5"/>
         <text x="20" y="47" fontFamily="Poppins,sans-serif" fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.75)">již od</text>
-        <text x="68" y="57" fontFamily="Poppins,sans-serif" fontSize="50" fontWeight="900" fill="#fff" letterSpacing="-2">740 Kč</text>
+        <text x="68" y="57" fontFamily="Poppins,sans-serif" fontSize="50" fontWeight="900" fill="#fff" letterSpacing="-2">750 Kč</text>
       </svg>
     </div>
   );
@@ -214,7 +214,7 @@ export default function Hero() {
                 Levná přeprava
               </h1>
               <h1 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(32px,4vw,52px)", margin: "0 0 6px", color: "#F97316" }}>
-                na letiště Praha
+                na/z letiště Praha
               </h1>
               <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600, lineHeight: 1.3, fontSize: "clamp(16px,2vw,22px)", margin: "0 0 28px", color: "#fff" }}>
                 a transfery po celé ČR a střední Evropě
@@ -250,7 +250,7 @@ export default function Hero() {
               Levná přeprava
             </h1>
             <h1 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, lineHeight: 1.1, fontSize: "clamp(28px,8vw,40px)", margin: "0 0 16px", color: "#F97316" }}>
-              na letiště Praha
+              na/z letiště Praha
             </h1>
             <iframe
               src="https://taxisaas-widget.vercel.app/widget.html?proxy=https%3A%2F%2Fadmin.naletistelevne.cz%2Fapi%2Fflight-status"

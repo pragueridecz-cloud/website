@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: "Jezdíte i mimo Prahu?",
-    a: "Ano — zajišťujeme transfery z/na letiště Praha pro celou ČR i do sousedních zemí (Vídeň, Drážďany, Varšava a další).",
+    a: "Ano — zajišťujeme transfery na/z letiště Praha pro celou ČR i do sousedních zemí (Vídeň, Drážďany, Varšava a další).",
   },
 ];
 

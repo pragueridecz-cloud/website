@@ -13,7 +13,7 @@ export default function Footer() {
               <img src="/logo-tpc.png" alt="Transfer Prague Car" style={{ height: "40px", objectFit: "contain", filter: "brightness(0) invert(1)" }} />
             </div>
             <p style={{ color: "#94a3b8", fontSize: "13px", lineHeight: 1.7 }}>
-              Spolehlivá doprava na letiště Praha a do celé střední Evropy. Pevná cena, profesionální řidiči, sledování letu.
+              Spolehlivá doprava na/z letiště Praha a do celé střední Evropy. Pevná cena, profesionální řidiči, sledování letu.
             </p>
             {/* Social ikonky */}
             <div style={{ display: "flex", gap: "10px", marginTop: "16px" }}>
