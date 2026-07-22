@@ -13,7 +13,7 @@ const schemaOrg = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "NaLetistelevne.cz",
-  "description": "Spolehlivá a levná doprava na letiště Praha. Pevná cena, profesionální řidiči, sledování letu.",
+  "description": "Spolehlivá a levná doprava na/z letiště Praha. Pevná cena, profesionální řidiči, sledování letu.",
   "url": "https://www.naletistelevne.cz",
   "telephone": "+420606079179",
   "email": "info@naletistelevne.cz",
@@ -35,7 +35,7 @@ const schemaOrg = {
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Transfery na letiště Praha",
+    "name": "Transfery na/z letiště Praha",
     "itemListElement": [
       {
         "@type": "Offer",

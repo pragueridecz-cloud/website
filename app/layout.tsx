@@ -3,8 +3,8 @@ import ProgressBar from "@/components/ProgressBar";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Na letiště levně | Doprava na letiště Praha od 790 Kč",
-  description: "Rezervujte dopravu na letiště Praha předem. Pevná cena, profesionální řidiči, sledování letu. Sedan od 790 Kč, minivan od 990 Kč. Bez příplatků za zpoždění.",
+  title: "Na letiště levně | Doprava na/z letiště Praha od 750 Kč",
+  description: "Rezervujte dopravu na/z letiště Praha předem. Pevná cena, profesionální řidiči, sledování letu. Sedan od 750 Kč, minivan od 950 Kč. Bez příplatků za zpoždění.",
   keywords: "doprava na letiště Praha, transfer letiště Praha, odvoz na letiště levně, taxi letiště Praha, rezervace auta na letiště",
   openGraph: {
     title: "Na letiště levně | Doprava na letiště Praha od 790 Kč",
