@@ -90,14 +90,7 @@ export default function MezimestskaPage() {
           </div>
         </div>
 
-        {/* Trasy - jen "vase trasa neni" box */}
-        <section className="py-6 bg-white">
-          <div className="max-w-5xl mx-auto px-4">
-            <div className="p-4 rounded-xl text-sm text-center" style={{ background: "#f8fafc", color: "#64748b" }}>
-              Vaše trasa není v seznamu? Zadejte ji do <a href="/#rezervace" style={{ color: "#F97316", fontWeight: 700 }}>rezervačního formuláře</a> – cena se vypočítá okamžitě.
-            </div>
-          </div>
-        </section>
+
 
         {/* Dálkové taxi */}
         <section className="py-16" style={{ background: "#fff" }}>
@@ -130,9 +123,9 @@ export default function MezimestskaPage() {
                 </div>
               ))}
             </div>
-            <p style={{ color: "#64748b", fontSize: "13px", marginTop: "16px" }}>
-              * Ceny jsou orientační pro sedan (1–4 osoby). Minivan pro skupiny až 7 osob a přesná cena na vyžádání. Platba kartou online nebo hotově řidiči.
-            </p>
+            <div className="mt-4 p-4 rounded-xl text-sm text-center" style={{ background: "#f8fafc", color: "#64748b" }}>
+              Vaše trasa není v seznamu? Zadejte ji do <a href="/#rezervace" style={{ color: "#F97316", fontWeight: 700 }}>rezervačního formuláře</a> – cena se vypočítá okamžitě.
+            </div>
           </div>
         </section>
 
