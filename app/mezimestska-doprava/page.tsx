@@ -32,14 +32,18 @@ const schema = {
 }
 
 const ROUTES = [
-  { from: "Praha", to: "Brno", price: "2 500", km: "210 km", time: "2,5 hod" },
-  { from: "Praha", to: "Vídeň", price: "4 500", km: "330 km", time: "3,5 hod" },
-  { from: "Praha", to: "Mnichov", price: "7 900", km: "380 km", time: "4 hod" },
-  { from: "Praha", to: "Berlín", price: "8 900", km: "350 km", time: "4 hod" },
-  { from: "Praha", to: "Drážďany", price: "3 900", km: "155 km", time: "1,5 hod" },
-  { from: "Praha", to: "Varšava", price: "11 900", km: "660 km", time: "7 hod" },
-  { from: "Praha", to: "Bratislava", price: "4 900", km: "330 km", time: "3,5 hod" },
-  { from: "Praha", to: "Wroclaw", price: "6 900", km: "280 km", time: "3 hod" },
+  { from: "Praha", to: "Brno", price: "6 400", km: "227 km", time: "2,5 hod" },
+  { from: "Praha", to: "Vídeň", price: "9 750", km: "356 km", time: "3,5 hod" },
+  { from: "Praha", to: "Mnichov", price: "10 350", km: "378 km", time: "4 hod" },
+  { from: "Praha", to: "Berlín", price: "9 650", km: "352 km", time: "4 hod" },
+  { from: "Praha", to: "Drážďany", price: "4 600", km: "153 km", time: "1,5 hod" },
+  { from: "Praha", to: "Varšava", price: "17 650", km: "660 km", time: "7 hod" },
+  { from: "Praha", to: "Bratislava", price: "9 550", km: "349 km", time: "3,5 hod" },
+  { from: "Praha", to: "Wroclaw", price: "7 800", km: "280 km", time: "3 hod" },
+  { from: "Praha", to: "Plzeň", price: "3 100", km: "91 km", time: "1 hod" },
+  { from: "Praha", to: "České Budějovice", price: "4 950", km: "168 km", time: "2 hod" },
+  { from: "Praha", to: "Olomouc", price: "8 400", km: "303 km", time: "3 hod" },
+  { from: "Praha", to: "Salzburg", price: "10 800", km: "396 km", time: "4,5 hod" },
 ]
 
 const VYHODY = [
@@ -86,28 +90,52 @@ export default function MezimestskaPage() {
           </div>
         </div>
 
-        {/* Trasy */}
-        <section className="py-20 bg-white">
+        {/* Trasy - jen "vase trasa neni" box */}
+        <section className="py-6 bg-white">
           <div className="max-w-5xl mx-auto px-4">
-            <SectionHeading label="Oblíbené trasy" title="Ceny nejoblíbenějších tras" subtitle="Všechny ceny jsou pevné a zahrnují veškeré poplatky. Cena pro jiné trasy se vypočítá automaticky." />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {ROUTES.map((route, i) => (
-                <div key={i} className="rounded-xl p-5 border border-gray-200 hover:border-orange-300 hover:shadow-md transition-all">
-                  <div className="text-xs text-gray-400 mb-1 font-medium">{route.km} · {route.time}</div>
-                  <div className="font-bold text-gray-900 mb-3">{route.from} → {route.to}</div>
-                  <div className="text-2xl font-black mb-3" style={{ fontFamily: "Poppins, sans-serif", color: "#00205B" }}>od {route.price} Kč</div>
-                  <a href="/#rezervace" className="block text-center py-2 rounded-lg text-sm font-bold text-white"
-                    style={{ background: "#F97316", textDecoration: "none" }}>
-                    Rezervovat
-                  </a>
-                </div>
-              ))}
-            </div>
-            <div className="mt-6 p-4 rounded-xl text-sm text-center" style={{ background: "#f8fafc", color: "#64748b" }}>
+            <div className="p-4 rounded-xl text-sm text-center" style={{ background: "#f8fafc", color: "#64748b" }}>
               Vaše trasa není v seznamu? Zadejte ji do <a href="/#rezervace" style={{ color: "#F97316", fontWeight: 700 }}>rezervačního formuláře</a> – cena se vypočítá okamžitě.
             </div>
           </div>
         </section>
+
+        {/* Dálkové taxi */}
+        <section className="py-16" style={{ background: "#fff" }}>
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, fontSize: "clamp(24px,3vw,36px)", color: "#00205B", marginBottom: "8px" }}>
+              Dálkové taxi z Prahy
+            </h2>
+            <p style={{ color: "#475569", fontSize: "16px", lineHeight: 1.7, marginBottom: "40px", maxWidth: "680px" }}>
+              Dálkový transfer z Prahy do jakéhokoli města v ČR nebo zahraničí — pevná cena dohodnutá předem, bez taxametru a bez překvapení. Dálkové taxi Praha zajišťujeme 24 hodin denně, 7 dní v týdnu, se sedany i minibusy pro skupiny.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { from: "Praha", to: "Vídeň", price: "9 750", km: "356 km" },
+                { from: "Praha", to: "Berlín", price: "9 650", km: "352 km" },
+                { from: "Praha", to: "Bratislava", price: "9 550", km: "349 km" },
+                { from: "Praha", to: "Budapešť", price: "14 300", km: "525 km" },
+                { from: "Praha", to: "Mnichov", price: "10 350", km: "378 km" },
+                { from: "Praha", to: "Frankfurt", price: "14 750", km: "545 km" },
+                { from: "Praha", to: "Drážďany", price: "4 600", km: "153 km" },
+                { from: "Praha", to: "Karlovy Vary", price: "3 800", km: "130 km" },
+                { from: "Praha", to: "Brno", price: "6 400", km: "227 km" },
+              ].map((r) => (
+                <div key={r.to} className="flex items-center justify-between rounded-xl p-4"
+                  style={{ background: "#f8fafc", border: "1px solid #e2e8f0" }}>
+                  <div>
+                    <div style={{ fontSize: "13px", fontWeight: 700, color: "#00205B" }}>{r.from} → {r.to}</div>
+                    <div style={{ fontSize: "11px", color: "#94a3b8", marginTop: "2px" }}>{r.km}</div>
+                  </div>
+                  <div style={{ fontSize: "16px", fontWeight: 800, color: "#F97316" }}>od {r.price} Kč</div>
+                </div>
+              ))}
+            </div>
+            <p style={{ color: "#64748b", fontSize: "13px", marginTop: "16px" }}>
+              * Ceny jsou orientační pro sedan (1–4 osoby). Minivan pro skupiny až 7 osob a přesná cena na vyžádání. Platba kartou online nebo hotově řidiči.
+            </p>
+          </div>
+        </section>
+
 
         {/* Výhody */}
         <section className="py-20" style={{ background: "#f8fafc" }}>
@@ -147,43 +175,6 @@ export default function MezimestskaPage() {
                 </details>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Dálkové taxi */}
-        <section className="py-16" style={{ background: "#fff" }}>
-          <div className="max-w-6xl mx-auto px-4">
-            <h2 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, fontSize: "clamp(24px,3vw,36px)", color: "#00205B", marginBottom: "8px" }}>
-              Dálkové taxi z Prahy
-            </h2>
-            <p style={{ color: "#475569", fontSize: "16px", lineHeight: 1.7, marginBottom: "40px", maxWidth: "680px" }}>
-              Dálkový transfer z Prahy do jakéhokoli města v ČR nebo zahraničí — pevná cena dohodnutá předem, bez taxametru a bez překvapení. Dálkové taxi Praha zajišťujeme 24 hodin denně, 7 dní v týdnu, se sedany i minibusy pro skupiny.
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                { from: "Praha", to: "Vídeň", price: "4 500", km: "330 km" },
-                { from: "Praha", to: "Berlín", price: "8 900", km: "350 km" },
-                { from: "Praha", to: "Bratislava", price: "3 200", km: "330 km" },
-                { from: "Praha", to: "Budapešť", price: "5 900", km: "525 km" },
-                { from: "Praha", to: "Mnichov", price: "6 900", km: "380 km" },
-                { from: "Praha", to: "Frankfurt", price: "9 900", km: "545 km" },
-                { from: "Praha", to: "Drážďany", price: "3 900", km: "155 km" },
-                { from: "Praha", to: "Karlovy Vary", price: "1 900", km: "130 km" },
-                { from: "Praha", to: "Brno", price: "2 500", km: "210 km" },
-              ].map((r) => (
-                <div key={r.to} className="flex items-center justify-between rounded-xl p-4"
-                  style={{ background: "#f8fafc", border: "1px solid #e2e8f0" }}>
-                  <div>
-                    <div style={{ fontSize: "13px", fontWeight: 700, color: "#00205B" }}>{r.from} → {r.to}</div>
-                    <div style={{ fontSize: "11px", color: "#94a3b8", marginTop: "2px" }}>{r.km}</div>
-                  </div>
-                  <div style={{ fontSize: "16px", fontWeight: 800, color: "#F97316" }}>od {r.price} Kč</div>
-                </div>
-              ))}
-            </div>
-            <p style={{ color: "#64748b", fontSize: "13px", marginTop: "16px" }}>
-              * Ceny jsou orientační pro sedan (1–4 osoby). Minivan pro skupiny až 7 osob a přesná cena na vyžádání. Platba kartou online nebo hotově řidiči.
-            </p>
           </div>
         </section>
 
