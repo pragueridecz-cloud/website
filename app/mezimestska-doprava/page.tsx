@@ -63,11 +63,21 @@ const FAQ_ITEMS = [
   { q: "Co když trasa není v ceníku?", a: "Zadejte ji do rezervačního formuláře – cena se vypočítá automaticky podle vzdálenosti. Nebo nás kontaktujte přímo." },
 ]
 
+const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Domů", "item": "https://www.naletistelevne.cz"},
+        {"@type": "ListItem", "position": 2, "name": "Meziměstská doprava", "item": "https://www.naletistelevne.cz/mezimestska-doprava"}
+      ]
+    }
+
 export default function MezimestskaPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Navbar />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbSchema)}} />
       <main>
 
         {/* Hero */}

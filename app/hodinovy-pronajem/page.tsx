@@ -40,11 +40,21 @@ const USES = [
   { Icon: Activity,    title: "Zdravotní přesuny",   desc: "Pohodlné přepravení k lékaři nebo na rehabilitaci." },
 ]
 
+const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Domů", "item": "https://www.naletistelevne.cz"},
+        {"@type": "ListItem", "position": 2, "name": "Hodinový pronájem", "item": "https://www.naletistelevne.cz/hodinovy-pronajem"}
+      ]
+    }
+
 export default function HodinPronajem() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Navbar />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbSchema)}} />
       <main>
 
         {/* Hero */}

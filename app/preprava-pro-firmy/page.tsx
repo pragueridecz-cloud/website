@@ -11,10 +11,20 @@ export const metadata: Metadata = {
 };
 
 
+const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Domů", "item": "https://www.naletistelevne.cz"},
+        {"@type": "ListItem", "position": 2, "name": "Přeprava pro firmy", "item": "https://www.naletistelevne.cz/preprava-pro-firmy"}
+      ]
+    }
+
 export default function PrepravaPropFirmy() {
   return (
     <>
       <Navbar />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbSchema)}} />
       <main>
         {/* Hero */}
         <section style={{ background: "linear-gradient(135deg, #00205B 0%, #0a3a8a 100%)", padding: "80px 20px 60px" }}>
