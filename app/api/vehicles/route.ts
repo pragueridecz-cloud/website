@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
-const SUPABASE_URL = 'https://pqmoyykyshmtiapnowxc.supabase.co'
-const SERVICE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxbW95eWt5c2htdGlhcG5vd3hjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NzE1NjIwNSwiZXhwIjoyMDYyNzMyMjA1fQ.gSa6QTvsqcBMgpBtLKXz1YYSzjEiNpPGlYzMHGk-kX8'
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!
+const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!
 const TENANT_ID = '768a3345-9118-421b-a162-2508a3b462dd'
 
 export const dynamic = 'force-dynamic'

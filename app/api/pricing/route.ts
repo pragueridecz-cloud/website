@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server'
 
-const SB_URL = 'https://pqmoyykyshmtiapnowxc.supabase.co/rest/v1'
-const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxbW95eWt5c2htdGlhcG5vd3hjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3ODE1NjIwNSwiZXhwIjoyMDkzNzMyMjA1fQ.JR1T8uCQKYEp-27qjBTlyGIP2HzUoXoLXablgFjqLxw'
+// Tenhle repo nemá @supabase/supabase-js jako závislost, jde se přímo přes REST.
+const SB_URL = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1`
+const SB_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!
 const H = { 'apikey': SB_KEY, 'Authorization': `Bearer ${SB_KEY}` }
 const CORS = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET' }
 
